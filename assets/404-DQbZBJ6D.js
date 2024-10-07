@@ -1,0 +1,1 @@
+import{_ as r}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{c as a,a as n,t,b as s,w as c,r as l,o as _,d as i}from"./index-DbL-wovi.js";const d={};function f(e,m){const o=l("router-link");return _(),a("div",null,[n("h1",null,t(e.$t("404")),1),s(o,{to:"/"},{default:c(()=>[i(t(e.$t("back404")),1)]),_:1})])}const k=r(d,[["render",f]]);export{k as default};
