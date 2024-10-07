@@ -18,5 +18,12 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     base,
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+        },
+      },
+    },
   }
 })

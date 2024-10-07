@@ -1,10 +1,12 @@
 <template>
-  <!-- <theme-switcher /> -->
+  <header-block />
+  <loader-view />
   <router-view />
 </template>
 
 <script setup>
-// import ThemeSwitcher from '@/components/ThemeSwitcher.vue'
+import LoaderView from '@/components/LoaderView.vue'
+import HeaderBlock from '@/components/HeaderBlock.vue'
 </script>
 
 <style scoped></style>
