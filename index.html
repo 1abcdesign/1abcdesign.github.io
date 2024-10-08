@@ -9,29 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
     <title>1ABCDesign</title>
     <script type="text/javascript">
-      (function() {
-        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        let savedTheme = localStorage.getItem('theme');
-
-        // Set the default theme based on the system preference if not saved in localStorage
-        if (!savedTheme) {
-          savedTheme = prefersDarkMode ? 'dark' : 'light';
-          localStorage.setItem('theme', savedTheme);
-        }
-
-        // Apply the theme to the document root
-        document.documentElement.setAttribute('data-theme', savedTheme);
-
-        // Set favicon based on theme
-        const favicon = document.getElementById('favicon');
-        if (savedTheme === 'dark') {
-          favicon.href = 'favicon_dark.ico';
-        } else {
-          favicon.href = 'favicon_light.ico';
-        }
-      })();
-    </script>
-    <script type="text/javascript">
       (function (l) {
         if (l.search[1] === "/") {
           var decoded = l.search
@@ -45,8 +22,23 @@
         }
       })(window.location);
     </script>
-    <script type="module" crossorigin src="/assets/index-DaoEHWRQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-RbRHvCLO.css">
+    <script type="text/javascript">
+      (function() {
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        let savedTheme = localStorage.getItem('theme');
+
+        // Set the default theme based on the system preference if not saved in localStorage
+        if (!savedTheme) {
+          savedTheme = prefersDarkMode ? 'dark' : 'light';
+          localStorage.setItem('theme', savedTheme);
+        }
+
+        // Apply the theme to the document root
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-BFyIV0jy.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DcpnRm-F.css">
   </head>
   <body>
     <div id="app"></div>

@@ -1,0 +1,1 @@
+import{_ as n,c as o,a as r,b as t,o as s}from"./index-BFyIV0jy.js";const a={};function c(l,e){return s(),o("div",null,e[0]||(e[0]=[r(" ABCDesign.one "),t("hr",null,null,-1)]))}const d=n(a,[["render",c]]);export{d as default};
