@@ -1,51 +1,60 @@
 <template>
-  <menu>
-    <li>
-      <router-link to="/" id="logo_link">
-        <span id="logo"></span>
-        <span>ABCDΞsign</span>
-      </router-link>
-    </li>
+  <header>
+    <nav>
+      <li>
+        <router-link to="/" id="logo_link">
+          <span id="logo"></span>
+          <span>ABCDΞsign</span>
+        </router-link>
+      </li>
 
-    <li>
-      <router-link to="/company">About us</router-link>
-    </li>
+      <li>
+        <router-link to="/company">{{ $t('company') }}</router-link>
+      </li>
 
-    <li>
-      <router-link to="/projects">Our projects</router-link>
-    </li>
+      <li>
+        <router-link to="/projects">{{ $t('projects') }}</router-link>
+      </li>
 
-    <li>
-      <router-link to="/contacts">Contact us</router-link>
-    </li>
+      <li>
+        <router-link to="/contacts">{{ $t('contacts') }}</router-link>
+      </li>
 
-    <li>
-      <theme-switcher />
-    </li>
-  </menu>
+      <li class="global-view">
+        <theme-switcher />
+
+        <span class="lang-wrapper">
+          <lang-switcher />
+        </span>
+      </li>
+    </nav>
+  </header>
 </template>
 
 <script setup>
-// import { ref, watch } from 'vue'
 import ThemeSwitcher from './ThemeSwitcher.vue';
-
-// const logoSrc = ref('logo_' + localStorage.getItem('theme') + '.png')
-
-// watch(localStorage.getItem('theme'), (newTheme) => {
-//   logoSrc.value = 'logo_' + localStorage.getItem('theme') + '.png'
-// })
+import LangSwitcher from './LangSwitcher.vue'
 </script>
 
 <style lang="scss" scoped>
-menu {
+header {
+  width: 100%;
+}
+
+nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style: none;
   padding: 0;
 
+  height: 12vmin;
+  margin: 0;
+
+  border-bottom: 1px solid var(--shadow);
+
   li {
-    margin: 1rem;
+    height: 12vmin;
 
     display: flex;
     align-items: center;
@@ -53,12 +62,33 @@ menu {
 
     text-align: center;
   }
+
+  li:not(.global-view) {
+    padding: 2vmin 3vmin;
+  }
+
+  .global-view {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+      display: inline-block;
+      height: 6vmin;
+      width: 10vmin;
+    }
+
+    .lang-wrapper {
+      position: relative;
+    }
+  }
 }
 
 #logo_link {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 1vmin;
 }
 
 #logo {

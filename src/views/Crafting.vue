@@ -1,6 +1,6 @@
 <template>
   <div>
-    Crafting
+    {{ $t('crafting') }}
   </div>
 </template>
 

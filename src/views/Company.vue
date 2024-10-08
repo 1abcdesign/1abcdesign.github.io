@@ -1,6 +1,6 @@
 <template>
   <div>
-    Company
+    {{ $t('about') }}
   </div>
 </template>
 

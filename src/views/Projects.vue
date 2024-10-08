@@ -1,6 +1,6 @@
 <template>
   <div>
-    Projects
+    {{ $t('showcases') }}
   </div>
 </template>
 

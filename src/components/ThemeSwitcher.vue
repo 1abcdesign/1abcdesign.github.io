@@ -53,19 +53,18 @@ onMounted(() => {
 </script>
 
 <style>
-
-
 .theme-switcher {
+  cursor: pointer;
+  display: inline-flex;
+  text-align: center;
+  width: 100%;
   background-color: transparent;
   border: none;
-  padding: 1rem;
-  font-size: 1rem;
+  padding: 1vmin;
+  font-size: 4vmin;
+  line-height: 4vmin;
   position: relative;
   z-index: 5;
   transition: transform 0.5s;
-}
-
-.theme-switcher:hover {
-  transform: scale(1.2);
 }
 </style>
