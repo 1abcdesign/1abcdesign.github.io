@@ -2,13 +2,8 @@
   <menu>
     <li>
       <router-link to="/" id="logo_link">
-        <span>
-          ABCD
-        </span>
-        <img :src="logoSrc" id='logo' alt="logo">
-        <span>
-          sign
-        </span>
+        <span id="logo"></span>
+        <span>ABCDΞsign</span>
       </router-link>
     </li>
 
@@ -23,13 +18,22 @@
     <li>
       <router-link to="/contacts">Contact us</router-link>
     </li>
+
+    <li>
+      <theme-switcher />
+    </li>
   </menu>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+// import { ref, watch } from 'vue'
+import ThemeSwitcher from './ThemeSwitcher.vue';
 
-const logoSrc = ref('logo_' + localStorage.getItem('theme') + '.png')
+// const logoSrc = ref('logo_' + localStorage.getItem('theme') + '.png')
+
+// watch(localStorage.getItem('theme'), (newTheme) => {
+//   logoSrc.value = 'logo_' + localStorage.getItem('theme') + '.png'
+// })
 </script>
 
 <style lang="scss" scoped>
@@ -53,11 +57,18 @@ menu {
 
 #logo_link {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 #logo {
   display: flex;
-  height: 10vmin;
+  height: 7vmin;
+  width: 7vmin;
+
+  background-image: var(--logo);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 </style>

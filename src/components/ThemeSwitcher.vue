@@ -1,8 +1,8 @@
 <template>
   <button
-    @click="toggleTheme"
-    class="theme-toggler"
-    :title="buttonTitle"
+    @click="themeSwitch"
+    class="theme-switcher"
+    title="buttonTitle"
   >
     {{ themeIcon }}
   </button>
@@ -14,17 +14,17 @@ import i18n from '@/i18n'
 
 const theme = ref('light')
 const themeIcon = ref('')
-const lang = 'eng'
-const localTitle = i18n.global.messages[lang]['toggleThemeTip']
-const buttonTitle = computed(() => {
-  return `
-      theme.value === 'light' ? '🌞' : '🌚'
-      + localTitle
-      + theme.value === 'light' ? '🌚' : '🌞'
-      `
-})
+// const lang = 'eng'
+// const localTitle = i18n.global.messages[lang]['toggleThemeTip']
+// const buttonTitle = computed(() => {
+//   return `
+//       theme.value === 'light' ? '🌞' : '🌚'
+//       + localTitle
+//       + theme.value === 'light' ? '🌚' : '🌞'
+//       `
+// })
 
-const toggleTheme = () => {
+const themeSwitch = () => {
   const newTheme = theme.value === 'light' ? 'dark' : 'light'
   themeIcon.value = newTheme === 'light' ? '🌚' : '🌞'
   theme.value = newTheme
@@ -41,13 +41,21 @@ onMounted(() => {
   theme.value = savedTheme
   document.documentElement.setAttribute('data-theme', savedTheme)
   themeIcon.value = savedTheme === 'light' ? '🌚' : '🌞'
+
+  // Set favicon based on theme
+  const favicon = document.getElementById('favicon');
+  if (savedTheme === 'dark') {
+    favicon.href = 'favicon_dark.ico';
+  } else {
+    favicon.href = 'favicon_light.ico';
+  }
 })
 </script>
 
 <style>
 
 
-.theme-toggler {
+.theme-switcher {
   background-color: transparent;
   border: none;
   padding: 1rem;
@@ -57,7 +65,7 @@ onMounted(() => {
   transition: transform 0.5s;
 }
 
-.theme-toggler:hover {
+.theme-switcher:hover {
   transform: scale(1.2);
 }
 </style>
