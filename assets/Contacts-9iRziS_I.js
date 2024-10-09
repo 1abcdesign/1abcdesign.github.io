@@ -1,1 +1,0 @@
-import{_ as a,c as o,d as n,t as r,a as s,o as c}from"./index-BUbiFjz3.js";const l={};function d(t,e){return c(),o("div",null,[n(r(t.$t("contact_phone"))+": ",1),e[0]||(e[0]=s("a",{href:"tel:+380930370327"}," +38(093)037-03-27 ",-1))])}const _=a(l,[["render",d]]);export{_ as default};
