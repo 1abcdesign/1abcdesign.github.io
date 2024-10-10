@@ -19,9 +19,14 @@
 <style lang="scss" scoped>
 footer {
   width: 100%;
+  height: 10vh;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   border-top: 1px solid var(--shadow);
+
+  position: fixed;
+  bottom: 0;
 
   span {
     display: inline-block;

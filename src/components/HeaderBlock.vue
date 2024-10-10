@@ -3,7 +3,7 @@
     <nav>
       <li>
         <router-link to="/" id="logo_link">
-          <span id="logo"></span>
+          <img src="/logo_light.png" alt="logo" id="logoImage" ref="logoImage"/>
           <span>ABCDΞsign</span>
         </router-link>
       </li>
@@ -32,13 +32,16 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onUpdated } from 'vue'
 import ThemeSwitcher from './ThemeSwitcher.vue';
 import LangSwitcher from './LangSwitcher.vue'
 </script>
 
+
 <style lang="scss" scoped>
 header {
   width: 100%;
+  border-bottom: 1px solid var(--shadow);
 }
 
 nav {
@@ -48,10 +51,9 @@ nav {
   list-style: none;
   padding: 0;
 
-  height: 12vmin;
+  height: 12vh;
   margin: 0;
 
-  border-bottom: 1px solid var(--shadow);
 
   li {
     height: 12vmin;
@@ -91,7 +93,7 @@ nav {
   padding: 0 1vmin;
 }
 
-#logo {
+#logoImage {
   display: flex;
   height: 7vmin;
   width: 7vmin;

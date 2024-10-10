@@ -1,14 +1,28 @@
+<!-- App.vue -->
 <template>
   <header-block />
-  <loader-view />
+  <loader-view :showOnRouteChange="showLoader" @loaderEnded="handleLoaderEnded" />
   <router-view />
   <footer-block />
 </template>
 
 <script setup>
-import LoaderView from '@/components/LoaderView.vue'
-import HeaderBlock from '@/components/HeaderBlock.vue'
-import FooterBlock from '@/components/FooterBlock.vue'
-</script>
+import { onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
+import LoaderView from '@/components/LoaderView.vue';
+import HeaderBlock from '@/components/HeaderBlock.vue';
+import FooterBlock from '@/components/FooterBlock.vue';
 
-<style scoped></style>
+const router = useRouter();
+const showLoader = ref(true);
+
+onMounted(() => {
+  router.afterEach((to, from, next) => {
+    showLoader.value = true; // Show loader on route change
+  });
+});
+
+function handleLoaderEnded() {
+  showLoader.value = false; // Hide loader once animation ends
+}
+</script>

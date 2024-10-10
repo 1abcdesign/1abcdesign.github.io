@@ -9,26 +9,25 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed } from 'vue'
-import i18n from '@/i18n'
+import { ref, onMounted, watch, onUpdated } from 'vue'
+// import i18n from '@/i18n'
 
 const theme = ref('light')
 const themeIcon = ref('')
-// const lang = 'eng'
-// const localTitle = i18n.global.messages[lang]['toggleThemeTip']
-// const buttonTitle = computed(() => {
-//   return `
-//       theme.value === 'light' ? '🌞' : '🌚'
-//       + localTitle
-//       + theme.value === 'light' ? '🌚' : '🌞'
-//       `
-// })
 
 const themeSwitch = () => {
   const newTheme = theme.value === 'light' ? 'dark' : 'light'
   themeIcon.value = newTheme === 'light' ? '🌚' : '🌞'
   theme.value = newTheme
   localStorage.setItem('theme', newTheme)
+}
+
+function setLogoImage() {
+  const theme = localStorage.getItem('theme')
+  console.log('theme', theme)
+  const logo = document.getElementById('logoImage')
+  const logoSrc = theme === 'light' ? '/logo_light.png' : '/logo_dark.png'
+  logo.setAttribute('src', logoSrc)
 }
 
 watch(theme, (newTheme) => {
@@ -42,6 +41,8 @@ onMounted(() => {
   document.documentElement.setAttribute('data-theme', savedTheme)
   themeIcon.value = savedTheme === 'light' ? '🌚' : '🌞'
 
+  setLogoImage()
+
   // Set favicon based on theme
   const favicon = document.getElementById('favicon');
   if (savedTheme === 'dark') {
@@ -50,6 +51,8 @@ onMounted(() => {
     favicon.href = 'favicon_light.ico';
   }
 })
+
+onUpdated(() => setLogoImage())
 </script>
 
 <style>
