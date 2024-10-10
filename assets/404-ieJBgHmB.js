@@ -1,1 +1,0 @@
-import{_ as a,c as n,e as r,t,d as s,w as c,g as l,b as _,f as d}from"./index-DUZfkxCE.js";const i={};function f(e,u){const o=l("router-link");return _(),n("div",null,[r("h1",null,t(e.$t("404")),1),s(o,{to:"/"},{default:c(()=>[d(t(e.$t("back404")),1)]),_:1})])}const m=a(i,[["render",f]]);export{m as default};
