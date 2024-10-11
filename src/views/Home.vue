@@ -62,6 +62,7 @@ import Logo3dView from '@/components/Logo3dView.vue'
       background: var(--color);
       color: var(--background);
       text-decoration: underline var(--background);
+      font-weight: bold;
     }
 
     li:hover::first-letter {
