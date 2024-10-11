@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav>
-      <li>
+      <li class="logo_link">
         <router-link to="/" id="logo_link">
           <img src="/logo_light.png" alt="logo" id="logoImage" ref="logoImage"/>
           <span><b>ABCDΞsign.one</b></span>
@@ -50,7 +50,7 @@ nav {
   list-style: none;
   padding: 0;
 
-  height: 12vh;
+  height: 10vh;
   margin: 0;
 
 
@@ -64,8 +64,8 @@ nav {
     text-align: center;
   }
 
-  li:not(.global-view) {
-    padding: 2vmin 3vmin;
+  li:not(.logo_link, .global-view) {
+    padding: 2vmin;
   }
 
   .global-view {
