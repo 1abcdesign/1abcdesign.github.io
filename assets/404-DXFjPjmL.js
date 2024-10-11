@@ -1,1 +1,0 @@
-import{_ as a,c as n,d as r,t,b as s,w as c,e as l,a as _,f as d}from"./index-CTfLupvd.js";const i={};function f(e,u){const o=l("router-link");return _(),n("div",null,[r("h1",null,t(e.$t("404")),1),s(o,{to:"/"},{default:c(()=>[d(t(e.$t("back404")),1)]),_:1})])}const m=a(i,[["render",f]]);export{m as default};
