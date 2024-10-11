@@ -4,7 +4,7 @@
       <li>
         <router-link to="/" id="logo_link">
           <img src="/logo_light.png" alt="logo" id="logoImage" ref="logoImage"/>
-          <span>ABCDΞsign</span>
+          <span><b>ABCDΞsign.one</b></span>
         </router-link>
       </li>
 
@@ -41,7 +41,6 @@ import LangSwitcher from './LangSwitcher.vue'
 <style lang="scss" scoped>
 header {
   width: 100%;
-  border-bottom: 1px solid var(--shadow);
 }
 
 nav {

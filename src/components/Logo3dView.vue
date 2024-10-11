@@ -16,7 +16,7 @@ export default {
       // Initialize the Three.js scene
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      
+
       // Set renderer with alpha for transparency
       const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
@@ -24,7 +24,7 @@ export default {
       canvasContainer.value.appendChild(renderer.domElement); // Append renderer to the DOM
 
       // Adjust camera position
-      camera.position.z = 5;
+      camera.position.z = 2;
 
       // Load the GLB model using GLTFLoader
       const loader = new GLTFLoader();

@@ -2,7 +2,7 @@
   <button
     @click="themeSwitch"
     class="theme-switcher"
-    title="buttonTitle"
+    :title="$t('toggleThemeTip')"
   >
     {{ themeIcon }}
   </button>
@@ -24,10 +24,19 @@ const themeSwitch = () => {
 
 function setLogoImage() {
   const theme = localStorage.getItem('theme')
-  console.log('theme', theme)
   const logo = document.getElementById('logoImage')
   const logoSrc = theme === 'light' ? '/logo_light.png' : '/logo_dark.png'
   logo.setAttribute('src', logoSrc)
+}
+
+function setFavIcon() {
+  const theme = localStorage.getItem('theme')
+  const favicon = document.getElementById('favicon');
+  if (theme === 'dark') {
+    favicon.href = 'favicon_dark.ico';
+  } else {
+    favicon.href = 'favicon_light.ico';
+  }
 }
 
 watch(theme, (newTheme) => {
@@ -42,17 +51,10 @@ onMounted(() => {
   themeIcon.value = savedTheme === 'light' ? '🌚' : '🌞'
 
   setLogoImage()
-
-  // Set favicon based on theme
-  const favicon = document.getElementById('favicon');
-  if (savedTheme === 'dark') {
-    favicon.href = 'favicon_dark.ico';
-  } else {
-    favicon.href = 'favicon_light.ico';
-  }
+  setFavIcon()
 })
 
-onUpdated(() => setLogoImage())
+onUpdated(() => {setLogoImage(); setFavIcon();})
 </script>
 
 <style>

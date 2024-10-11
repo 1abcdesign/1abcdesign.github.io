@@ -1,17 +1,17 @@
 [data-theme="light"] {
   --background: #fff;
   --color: #000;
-  --shadow: #0004;
+  --shadow: #8888;
 }
 
 [data-theme="dark"] {
   --background: #000;
   --color: #fff;
-  --shadow: #fff4;
+  --shadow: #8888;
 }
 
 :root {
-  --grey: #8884;
+  --grey: #888;
 
   font-family: 'Victor Mono', system-ui, sans-serif;
 
@@ -61,9 +61,19 @@ a:visited,
 a:hover,
 a:active {
   color: inherit;
+  border: 1px solid transparent;
+}
+
+a:not(#logo_link):hover {
+  background: var(--color);
+  color: var(--background);
+  border: 1px solid var(--grey);
+  box-shadow: 0 0 1.5rem 1rem var(--shadow);
 }
 
 header,
 footer {
-  padding: 0.25rem 0.5rem;
+  z-index: 1;
+  padding: 0.25rem 1rem;
+  box-shadow: 0 0 0.5rem 0.25rem var(--shadow);
 }

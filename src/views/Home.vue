@@ -8,11 +8,15 @@
       <li><router-link to="/design">{{ $t('design')}}</router-link></li>
     </ul>
     <hr>
-    ABCDΞsign.one
+    <h1 class="main-header">
+      ABCDΞsign.one
+    </h1>
     <hr>
-    <span>
-      {{ $t('moto') }}
-    </span>
+    <strong class="moto">
+      <em>
+        {{ $t('moto') }}
+      </em>
+    </strong>
   </section>
 </template>
 
@@ -39,14 +43,43 @@ import Logo3dView from '@/components/Logo3dView.vue'
   ul {
     list-style: none;
     margin: 0;
+    padding: 0;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    width: 78vw;
+
+    li {
+      position: relative;
+    }
 
     li::first-letter {
       background: var(--color);
       color: var(--background);
+      text-decoration: underline var(--background);
     }
+
+    li:hover::first-letter {
+      background: var(--background);
+      color: var(--color);
+      text-decoration: underline var(--color) !important;
+    }
+  }
+
+  .main-header {
+    letter-spacing: 1ch;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 0 1rem 0.5rem var(--shadow);
+  }
+
+  .main-header, .moto {
+    text-shadow: 0 0 0.5ch var(--shadow);
   }
 }
 </style>

@@ -23,7 +23,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid var(--shadow);
 
   position: fixed;
   bottom: 0;
