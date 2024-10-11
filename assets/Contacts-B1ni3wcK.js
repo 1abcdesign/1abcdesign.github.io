@@ -1,0 +1,1 @@
+import{_ as a,c as o,f as n,t as r,d as s,a as c}from"./index-B3yToYLU.js";const f={};function l(t,e){return c(),o("div",null,[n(r(t.$t("contact_phone"))+": ",1),e[0]||(e[0]=s("a",{href:"tel:+380930370327"}," +38(093)037-03-27 ",-1))])}const _=a(f,[["render",l]]);export{_ as default};
