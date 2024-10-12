@@ -61,7 +61,7 @@ const basePath = './projects/';
 const photoObjects = photos.map((photo, index) => {
   return {
     title: `Image ${index + 1}`,
-    content: `<div style="background-image: url('${basePath}${photo}'); width: 100vw; height: 31vh; background-size: cover; background-position: center;"></div>`
+    content: `<div style="background-image: url('${basePath}${photo}'); width: 100vw; height: 33vh; background-size: cover; background-position: center;"></div>`
   };
 });
 
