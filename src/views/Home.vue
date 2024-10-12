@@ -1,6 +1,7 @@
 <template>
   <section class="home">
     <logo3d-view />
+
     <ul>
       <li><router-link to="/ambience">{{ $t('ambience')}}</router-link></li>
       <li><router-link to="/building">{{ $t('building')}}</router-link></li>
@@ -17,11 +18,14 @@
         {{ $t('moto') }}
       </em>
     </strong>
+
+    <projects-slider/>
   </section>
 </template>
 
 <script setup>
 import Logo3dView from '@/components/Logo3dView.vue'
+import ProjectsSlider from '@/components/ProjectsSlider.vue'
 </script>
 
 <style lang="scss">
@@ -75,7 +79,7 @@ import Logo3dView from '@/components/Logo3dView.vue'
   .main-header {
     letter-spacing: 1ch;
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 1ch;
     box-shadow: 0 0 1rem 0.5rem var(--shadow);
   }
 
