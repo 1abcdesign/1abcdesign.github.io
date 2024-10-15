@@ -12,39 +12,14 @@ const routes = [
     component: () => import('./views/Company.vue'),
   },
   {
-    path: '/projects',
-    name: 'Projects',
-    component: () => import('./views/Projects.vue'),
+    path: '/services',
+    name: 'Services',
+    component: () => import('./views/Services.vue'),
   },
   {
     path: '/contacts',
     name: 'Contacts',
     component: () => import('./views/Contacts.vue'),
-  },
-  {
-    path: '/ambience',
-    name: 'Ambience',
-    component: () => import('./views/Ambience.vue'),
-  },
-  {
-    path: '/building',
-    name: 'Building',
-    component: () => import('./views/Building.vue'),
-  },
-  {
-    path: '/crafting',
-    name: 'Crafting',
-    component: () => import('./views/Crafting.vue'),
-  },
-  {
-    path: '/design',
-    name: 'Design',
-    component: () => import('./views/Design.vue'),
-  },
-  {
-    path: '/loader',
-    name: 'Loader',
-    component: () => import('./components/LoaderView.vue'),
   },
   {
     path: '/:catchAll(.*)',
@@ -55,6 +30,15 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth', // Adds smooth scrolling
+      };
+    }
+    return savedPosition || { top: 0 };
+  },
 })
 
 export default router

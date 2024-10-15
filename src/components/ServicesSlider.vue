@@ -24,30 +24,20 @@ console.log(shuffledSlides)
 <style lang="scss" scoped>
 .vueperslides--fixed-height {
   position: absolute;
-  bottom: 5vh;
-
-  @media (orientation: landscape) {
-    & {
-      height: 30vh;
-    }
-  }
-
-  @media (orientation: portrait) {
-    & {
-      height: 30vh;
-    }
-  }
+  top: calc(47 * var(--usable-vh));
 }
 
 .vueperslides {
-  width: 100%;
-  height: 36vh;
+  width: 100vmin;
+  height: calc(38 * var(--usable-vh));
 
+  @media (orientation: portrait) {}
+  @media (orientation: landscape) {}
   .vueperslide__content-wrapper {}
 }
 
 .vueperslide__content {
-  width: 100% !important;
+  width: 100%;
 
   /* These styles are already added in `src\assets\slides.js` */
   .content {}

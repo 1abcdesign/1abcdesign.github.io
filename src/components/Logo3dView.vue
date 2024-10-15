@@ -1,5 +1,5 @@
 <template>
-  <div ref="canvasContainer" style="width: 100%; height: 33vh"></div>
+  <div class="canvas-container" ref="canvasContainer" style="width: 100%; height: calc(33 * var(--usable-vh));"></div>
 </template>
 
 <script>
@@ -75,9 +75,10 @@ export default {
 
 <style scoped>
 /* Optional styles for the container */
-div {
-  width: 100vw;
-  height: 33vh;
+.canvas-container {
+  position: relative;
+  top: calc(0.5 * var(--usable-vh));
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;

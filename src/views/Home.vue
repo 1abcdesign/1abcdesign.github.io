@@ -1,31 +1,35 @@
 <template>
-  <section class="home">
-    <logo3d-view />
+  <main class="home">
+    <div class="top-left">
+      <logo3d-view />
 
-    <ul>
-      <li><router-link to="/ambience">{{ $t('ambience')}}</router-link></li>
-      <li><router-link to="/building">{{ $t('building')}}</router-link></li>
-      <li><router-link to="/crafting">{{ $t('crafting')}}</router-link></li>
-      <li><router-link to="/design">{{ $t('design')}}</router-link></li>
-    </ul>
-    <hr>
-    <h1 class="main-header">
-      ABCDΞsign.one
-    </h1>
-    <hr>
-    <strong class="moto">
-      <em>
-        {{ $t('moto') }}
-      </em>
-    </strong>
+      <section class="middle">
+        <ul>
+          <li><router-link to="/services#ambience">{{ $t('ambience')}}</router-link></li>
+          <li><router-link to="/services#building">{{ $t('building')}}</router-link></li>
+          <li><router-link to="/services#crafting">{{ $t('crafting')}}</router-link></li>
+          <li><router-link to="/services#design">{{ $t('design')}}</router-link></li>
+        </ul>
+        <hr>
+        <h1 class="main-header">
+          ABCDΞsign.one
+        </h1>
+        <hr>
+        <strong class="moto">
+          <em>
+            {{ $t('moto') }}
+          </em>
+        </strong>
+      </section>
+    </div>
 
-    <projects-slider/>
-  </section>
+    <services-slider/>
+  </main>
 </template>
 
 <script setup>
 import Logo3dView from '@/components/Logo3dView.vue'
-import ProjectsSlider from '@/components/ProjectsSlider.vue'
+import ServicesSlider from '@/components/ServicesSlider.vue'
 </script>
 
 <style lang="scss">
@@ -37,8 +41,18 @@ import ProjectsSlider from '@/components/ProjectsSlider.vue'
   align-items: center;
   justify-content: flex-start;
 
-  width: 100%;
-  height: 80vh;
+  .middle {
+    width: 100%;
+    height: calc(12 * var(--usable-vh));
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    position: absolute;
+    top: calc(34 * var(--usable-vh));
+  }
 
   hr {
     width: 100%;
@@ -49,14 +63,12 @@ import ProjectsSlider from '@/components/ProjectsSlider.vue'
     margin: 0;
     padding: 0;
 
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
     display: flex;
     align-items: center;
-    align-content: center;
-    justify-items: center;
     justify-content: center;
     width: 78vw;
+    font-weight: bold;
+    font-size: 120%;
 
     li {
       position: relative;
@@ -66,7 +78,6 @@ import ProjectsSlider from '@/components/ProjectsSlider.vue'
       background: var(--color);
       color: var(--background);
       text-decoration: underline var(--background);
-      font-weight: bold;
     }
 
     li:hover::first-letter {
@@ -86,5 +97,7 @@ import ProjectsSlider from '@/components/ProjectsSlider.vue'
   .main-header, .moto {
     text-shadow: 0 0 0.5ch var(--shadow);
   }
+
+  .moto {}
 }
 </style>

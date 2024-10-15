@@ -9,15 +9,47 @@
       </li>
 
       <li>
-        <router-link to="/company">{{ $t('company') }}</router-link>
+        <router-link to="/services">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+
+          {{ $t('services') }}
+        </router-link>
       </li>
 
       <li>
-        <router-link to="/projects">{{ $t('projects') }}</router-link>
+        <router-link to="/company">
+          <svg
+            xmlns="http://www.w3.org/2000/svg" width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-circle"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="22" x2="12" y2="2" />
+            <line x1="12" y1="2" x2="2" y2="12" />
+            <line x1="2" y1="12" x2="12" y2="12" />
+            <path d="M 12,2 A 5,5, 0 1 1 12,12" fill="none" />
+          </svg>
+
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-compass"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg> -->
+
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> -->
+
+          {{ $t('company') }}
+        </router-link>
       </li>
 
       <li>
-        <router-link to="/contacts">{{ $t('contacts') }}</router-link>
+        <router-link to="/contacts">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
+
+          {{ $t('contacts') }}
+        </router-link>
       </li>
 
       <li class="global-view">
@@ -41,21 +73,28 @@ import LangSwitcher from './LangSwitcher.vue'
 <style lang="scss" scoped>
 header {
   width: 100%;
+  box-shadow: 0 0 0.5rem 0.25rem var(--shadow);
+  background: linear-gradient(180deg, var(--background), transparent 100%);
+  position: fixed;
+  top: 0;
 }
 
 nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  font-weight: bold;
   list-style: none;
   padding: 0;
 
-  height: 10vh;
+  height: calc(10 * var(--usable-vh));
   margin: 0;
 
 
   li {
-    height: 12vmin;
+    height: calc(10 * var(--usable-vh));
 
     display: flex;
     align-items: center;
@@ -64,8 +103,12 @@ nav {
     text-align: center;
   }
 
-  li:not(.logo_link, .global-view) {
+  li:not(.global-view) {
     padding: 2vmin;
+  }
+
+  li:not(.logo_link, .global-view) > .router-link-active {
+    border: 1px dashed green;
   }
 
   .global-view {
@@ -74,9 +117,8 @@ nav {
     flex-direction: column;
 
     & > * {
-      display: inline-block;
-      height: 6vmin;
-      width: 10vmin;
+      height: calc(5 * var(--usable-vh));
+      width: calc(5 * var(--usable-vh));
     }
 
     .lang-wrapper {
@@ -90,12 +132,13 @@ nav {
   flex-direction: column;
   align-items: center;
   padding: 0 1vmin;
+  text-decoration: none;
 }
 
 #logoImage {
   display: flex;
-  height: 7vmin;
-  width: 7vmin;
+  height: calc(7 * var(--usable-vh));
+  width: calc(7 * var(--usable-vh));
 
   background-image: var(--logo);
   background-repeat: no-repeat;

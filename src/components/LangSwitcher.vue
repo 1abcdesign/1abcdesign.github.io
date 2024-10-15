@@ -82,21 +82,25 @@ onMounted(async () => {
   padding: 0;
   margin: 0;
   list-style: none;
-  border-radius: 0.5vmin;
-  background: var(--grey);
-  box-shadow: inset 0 0 0.5vmin 0.25vmin var(--shadow);
+  border-radius: calc(5 * var(--usable-vh));
   display: flex;
   flex-direction: column;
   overflow: hidden;
   height: auto;
+  background-color: var(--grey);
 
   &-option {
-    padding: 0;
     margin: 0;
+    width: calc(5 * var(--usable-vh));
 
     &-img {
       box-shadow: 0 0 0.5vmin 0.25vmin var(--shadow);
-      border-radius: 0.5vmin;
+      border-radius: 50%;
+      box-shadow: inset 0 0 0.5vmin 0.25vmin var(--shadow);
+      padding: calc(0.25 * var(--usable-vh));
+
+      width: calc(5 * var(--usable-vh));
+      height: calc(5 * var(--usable-vh));
     }
   }
 
@@ -105,6 +109,7 @@ onMounted(async () => {
 
 .close {
   z-index: 5;
+  height: calc(5 * var(--usable-vh));
 }
 
 .selected {
@@ -113,30 +118,6 @@ onMounted(async () => {
 
 .open {
   display: flex;
+  height: calc(10.5 * var(--usable-vh));
 }
-
-.select {
-  width: 10vmin;
-
-  &-option {
-    padding: 1vmin 1vmin 0.5vmin;
-
-    &-img {
-      width: 8vmin;
-      height: 4vmin;
-    }
-  }
-}
-
-.close {
-  height: 6vmin;
-}
-
-.open {
-  height: 12vmin;
-}
-
-@media (orientation: landscape) {}
-
-@media (orientation: portrait) {}
 </style>

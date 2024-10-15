@@ -4,8 +4,8 @@ const messages = {
   en: {
     company: 'About us',
     about: 'About the company',
-    projects: 'Our projects',
-    showcases: 'About our projects',
+    services: 'Our services',
+    showcases: 'About our services',
     contacts: 'Contact us',
     contact_phone: 'Phone number',
     ambience: 'Ambience',
@@ -30,8 +30,8 @@ const messages = {
   uk: {
     company: 'Про нас',
     about: 'Про нашу компанію',
-    projects: 'Наші проекти',
-    showcases: 'Про наші проекти',
+    services: 'Наші послуги',
+    showcases: 'Про наші послуги',
     contacts: 'Зв\'язатися з нами',
     contact_phone: 'Номер телефону',
     ambience: 'Атмосфера',

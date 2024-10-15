@@ -1,67 +1,22 @@
 const photos = [
-  'photo_2024-09-06_15-03-20 (2).jpg',
-  'photo_2024-09-06_15-03-20.jpg',
-  'photo_2024-09-06_15-03-28.jpg',
-  'photo_2024-09-06_15-03-41 (2).jpg',
-  'photo_2024-09-06_15-03-41 (3).jpg',
-  'photo_2024-09-06_15-03-41 (4).jpg',
-  'photo_2024-09-06_15-03-41.jpg',
-  'photo_2024-09-06_15-03-48 (2).jpg',
-  'photo_2024-09-06_15-03-48 (3).jpg',
-  'photo_2024-09-06_15-03-48.jpg',
-  'photo_2024-10-11_13-36-09.jpg',
-  'photo_2024-10-11_13-36-44.jpg',
-  'photo_2024-10-11_13-37-04.jpg',
-  'photo_2024-10-11_13-37-47.jpg',
-  'photo_2024-10-11_13-38-22.jpg',
-  'photo_2024-10-11_13-38-42.jpg',
-  'photo_2024-10-11_13-39-58.jpg',
-  'photo_2024-10-11_13-40-23.jpg',
-  'photo_2024-10-11_13-40-45.jpg',
-  'photo_2024-10-11_13-41-11.jpg',
-  'photo_2024-10-11_13-47-52 (2).jpg',
-  'photo_2024-10-11_13-47-52 (3).jpg',
-  'photo_2024-10-11_13-47-52.jpg',
-  'photo_2024-10-11_13-47-53 (2).jpg',
-  'photo_2024-10-11_13-47-53 (3).jpg',
-  'photo_2024-10-11_13-47-53 (4).jpg',
-  'photo_2024-10-11_13-47-53.jpg',
-  'photo_2024-10-11_13-47-54 (2).jpg',
-  'photo_2024-10-11_13-47-54 (3).jpg',
-  'photo_2024-10-11_13-47-54 (4).jpg',
-  'photo_2024-10-11_13-47-54.jpg',
-  'photo_2024-10-11_13-47-55 (2).jpg',
-  'photo_2024-10-11_13-47-55.jpg',
-  'photo_2024-10-11_13-47-56 (2).jpg',
-  'photo_2024-10-11_13-47-56.jpg',
-  'photo_2024-10-11_13-47-57 (10).jpg',
-  'photo_2024-10-11_13-47-57 (11).jpg',
-  'photo_2024-10-11_13-47-57 (2).jpg',
-  'photo_2024-10-11_13-47-57 (3).jpg',
-  'photo_2024-10-11_13-47-57 (4).jpg',
-  'photo_2024-10-11_13-47-57 (5).jpg',
-  'photo_2024-10-11_13-47-57 (6).jpg',
-  'photo_2024-10-11_13-47-57 (7).jpg',
-  'photo_2024-10-11_13-47-57 (8).jpg',
-  'photo_2024-10-11_13-47-57 (9).jpg',
-  'photo_2024-10-11_13-47-57.jpg',
-  'photo_2024-10-11_13-47-58 (2).jpg',
-  'photo_2024-10-11_13-47-58 (3).jpg',
-  'photo_2024-10-11_13-47-58 (4).jpg',
-  'photo_2024-10-11_13-47-58 (5).jpg',
-  'photo_2024-10-11_13-47-58 (6).jpg',
-  'photo_2024-10-11_13-47-58 (7).jpg',
-  'photo_2024-10-11_13-47-58.jpg'
+  "a01.jpg",  "a09.jpg",  "b07.jpg",  "c05.jpg",  "d03.jpg",
+  "a02.jpg",  "a10.jpg",  "b08.jpg",  "c06.jpg",  "d04.jpg",
+  "a03.jpg",  "b01.jpg",  "b09.jpg",  "c07.jpg",  "d05.jpg",
+  "a04.jpg",  "b02.jpg",  "b10.jpg",  "c08.jpg",  "d06.jpg",
+  "a05.jpg",  "b03.jpg",  "c01.jpg",  "c09.jpg",  "d07.jpg",
+  "a06.jpg",  "b04.jpg",  "c02.jpg",  "c10.jpg",  "d08.jpg",
+  "a07.jpg",  "b05.jpg",  "c03.jpg",  "d01.jpg" , "d09.jpg",
+  "a08.jpg" , "b06.jpg" , "c04.jpg" , "d02.jpg",  "d0.jpg"
 ]
 
 // Base directory where your photos are stored
-const basePath = './projects/';
+const basePath = './services/';
 
 // Create array of JSON objects
 const photoObjects = photos.map((photo, index) => {
   return {
-    title: `Image ${index + 1}`,
-    content: `<div style="background-image: url('${basePath}${photo}'); width: 100vw; height: 33vh; background-size: cover; background-position: center;"></div>`
+    title: `Image ${photo} ${index + 1}`,
+    content: `<div style="background-image: url('${basePath}${photo}'); width: 100vmin; height: calc(36 * var(--usable-vh)); background-size: cover; background-position: center;"></div>`
   };
 });
 
