@@ -1,1 +1,0 @@
-import{_ as a,c as n,e as o,t as r,h as s,a as c}from"./index-CPx6YyzW.js";const l={};function f(t,e){return c(),n("main",null,[o(r(t.$t("contact_phone"))+": ",1),e[0]||(e[0]=s("a",{href:"tel:+380930370327"}," +38(093)037-03-27 ",-1))])}const i=a(l,[["render",f]]);export{i as default};
