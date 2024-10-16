@@ -88,7 +88,25 @@ nav {
   grid-template-columns: repeat(5, 1fr);
 
   font-weight: bold;
-  font-size: 120%;
+
+
+  @media (max-width: 400px) {
+    &{
+      font-size: 90%;
+    }
+  }
+
+  @media (min-width: 401px) and (max-width: 999px) {
+    &{
+      font-size: 125%;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    &{
+      font-size: 133%;
+    }
+  }
   list-style: none;
 
   padding: 0;
