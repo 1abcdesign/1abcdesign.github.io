@@ -24,7 +24,7 @@ console.log(shuffledSlides)
 <style lang="scss" scoped>
 .vueperslides--fixed-height {
   position: absolute;
-  top: calc(47 * var(--usable-vh));
+  top: calc(46.25 * var(--usable-vh));
 }
 
 .vueperslides {

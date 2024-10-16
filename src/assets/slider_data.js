@@ -6,7 +6,7 @@ const photos = [
   "a05.jpg",  "b03.jpg",  "c01.jpg",  "c09.jpg",  "d07.jpg",
   "a06.jpg",  "b04.jpg",  "c02.jpg",  "c10.jpg",  "d08.jpg",
   "a07.jpg",  "b05.jpg",  "c03.jpg",  "d01.jpg" , "d09.jpg",
-  "a08.jpg" , "b06.jpg" , "c04.jpg" , "d02.jpg",  "d0.jpg"
+  "a08.jpg" , "b06.jpg" , "c04.jpg" , "d02.jpg",  "d10.jpg"
 ]
 
 // Base directory where your photos are stored

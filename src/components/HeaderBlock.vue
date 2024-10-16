@@ -83,36 +83,54 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
+
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  font-weight: bold;
-  list-style: none;
-  padding: 0;
 
-  height: calc(10 * var(--usable-vh));
+  font-weight: bold;
+  font-size: 120%;
+  list-style: none;
+
+  padding: 0;
   margin: 0;
+
+  height: calc(10 * var(--usable-vh) + 0.5rem);
 
 
   li {
-    height: calc(10 * var(--usable-vh));
-
+    height: calc(10 * var(--usable-vh) + 0.5rem);
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
+    border: 1px solid transparent;
+
+    a:link,
+    a:visited {
+      text-decoration: none;
+    }
+
+    &:not(:has(#logo_link) , .global-view):hover {
+      border: 1px solid var(--grey);
+    }
+
+    a:hover,
+    a:active {
+      text-decoration: underline;
+    }
   }
 
   li:not(.global-view) {
-    padding: 2vmin;
+
   }
 
   li:not(.logo_link, .global-view) > .router-link-active {
-    border: 1px dashed green;
+    background: var(--background);
   }
 
   .global-view {
-    padding: 0;
+    padding: 0 0.25rem;
     display: flex;
     flex-direction: column;
 

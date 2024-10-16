@@ -58,6 +58,25 @@ const themeSwitch = () => {
   localStorage.setItem('theme', theme.value)
   updateThemeColor()
   addTransitionClass()
+  setLogoImage()
+  setFavIcon()
+}
+
+function setLogoImage() {
+  const theme = localStorage.getItem('theme')
+  const logo = document.getElementById('logoImage')
+  const logoSrc = theme === 'light' ? '/logo_light.png' : '/logo_dark.png'
+  logo.setAttribute('src', logoSrc)
+}
+
+function setFavIcon() {
+  const theme = localStorage.getItem('theme')
+  const favicon = document.getElementById('favicon');
+  if (theme === 'dark') {
+    favicon.href = 'favicon_dark.ico';
+  } else {
+    favicon.href = 'favicon_light.ico';
+  }
 }
 
 const updateThemeColor = () => {
@@ -83,6 +102,8 @@ onMounted(() => {
   const savedTheme = localStorage.getItem('theme') || 'light'
   theme.value = savedTheme
   updateThemeColor()
+  setLogoImage()
+  setFavIcon()
 })
 
 watch(theme, (newTheme) => {

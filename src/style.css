@@ -35,7 +35,7 @@
 
 @media (orientation: portrait) {
   :root {
-    font-size: 3vmin;
+    font-size: 1.5vmax;
   }
 }
 @media (orientation: landscape) {
@@ -72,22 +72,37 @@ a:active {
   border: 1px solid transparent;
 }
 
-a:not(#logo_link):hover {
+li:has(a:not(#logo_link).router-link-active),
+a:not(#logo_link).router-link-active {
   background: var(--color);
   color: var(--background);
-  border: 1px solid var(--grey);
-  box-shadow: 0 0 1.5rem 1rem var(--shadow);
+}
+
+a:not(#logo_link).router-link-active svg {
+  stroke: var(--background);
 }
 
 header a,
 footer a {
-  display: inline-flex;
-  flex-direction: column;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-header a:not(#logo_link):hover svg,
+header a {
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+footer a {
+  flex-direction: column-reverse;
+}
+
+
+footer a:hover {
+  background: var(--color);
+}
+
 footer a:hover svg {
   stroke: var(--background);
 }
@@ -101,7 +116,7 @@ footer svg {
 header,
 footer {
   z-index: 1;
-  padding: 0.25rem 1rem;
+
 }
 
 header {
@@ -119,5 +134,5 @@ main {
 }
 
 footer {
-  height: calc((5 * var(--usable-vh)) - 0.5rem);
+  height: calc((5 * var(--usable-vh)));
 }

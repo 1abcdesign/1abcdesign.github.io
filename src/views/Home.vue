@@ -10,11 +10,11 @@
           <li><router-link to="/services#crafting">{{ $t('crafting')}}</router-link></li>
           <li><router-link to="/services#design">{{ $t('design')}}</router-link></li>
         </ul>
-        <hr>
+
         <h1 class="main-header">
           ABCDΞsign.one
         </h1>
-        <hr>
+
         <strong class="moto">
           <em>
             {{ $t('moto') }}
@@ -51,11 +51,7 @@ import ServicesSlider from '@/components/ServicesSlider.vue'
     justify-content: space-between;
 
     position: absolute;
-    top: calc(34 * var(--usable-vh));
-  }
-
-  hr {
-    width: 100%;
+    top: calc(33.5 * var(--usable-vh));
   }
 
   ul {
@@ -72,6 +68,11 @@ import ServicesSlider from '@/components/ServicesSlider.vue'
 
     li {
       position: relative;
+    }
+
+    li:hover {
+      background: var(--color);
+      color: var(--background);
     }
 
     li::first-letter {
@@ -98,6 +99,8 @@ import ServicesSlider from '@/components/ServicesSlider.vue'
     text-shadow: 0 0 0.5ch var(--shadow);
   }
 
-  .moto {}
+  .moto {
+    word-spacing: 0.5ch;
+  }
 }
 </style>
