@@ -89,24 +89,6 @@ nav {
 
   font-weight: bold;
 
-
-  @media (max-width: 400px) {
-    &{
-      font-size: 90%;
-    }
-  }
-
-  @media (min-width: 401px) and (max-width: 999px) {
-    &{
-      font-size: 125%;
-    }
-  }
-
-  @media (min-width: 1000px) {
-    &{
-      font-size: 133%;
-    }
-  }
   list-style: none;
 
   padding: 0;
@@ -124,6 +106,11 @@ nav {
     text-align: center;
     border: 1px solid transparent;
 
+    a {
+      width: 100%;
+      height: calc(10 * var(--usable-vh) + 0.5rem);
+    }
+
     a:link,
     a:visited {
       text-decoration: none;
@@ -139,8 +126,22 @@ nav {
     }
   }
 
-  li:not(.global-view) {
+  @media (max-width: 400px) {
+    nav {
+      font-size: 90%;
+    }
+  }
 
+  @media (min-width: 401px) and (max-width: 999px) {
+    nav {
+      font-size: 125%;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    nav {
+      font-size: 133%;
+    }
   }
 
   li:not(.logo_link, .global-view) > .router-link-active {

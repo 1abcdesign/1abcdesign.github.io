@@ -43,7 +43,7 @@ import ServicesSlider from '@/components/ServicesSlider.vue'
 
   .middle {
     width: 100%;
-    height: calc(12 * var(--usable-vh));
+    height: calc(11 * var(--usable-vh));
 
     display: flex;
     flex-direction: column;

@@ -3,20 +3,19 @@
     <vueper-slide
       v-for="(slide, i) in shuffledSlides"
       :key="i"
-      :title="slide.title"
+      :title="'<em>'+$t(slide.group) + ' : ' + $t(slide.title)+'</em>'"
       :content="slide.content">
     </vueper-slide>
   </vueper-slides>
 </template>
 
 <script setup>
-import { ref, onMounted, onUpdated } from 'vue'
+import { ref } from 'vue'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 // import slides from '@/assets/slider_data.js'
-import i18n from '@/i18n'
-
-const locale = ref(i18n.global.locale)
+// import i18n from '@/i18n'
+// const locale = ref(i18n.global.locale)
 
 const photos = [
   "a01.jpg",  "a09.jpg",  "b07.jpg",  "c05.jpg",  "d03.jpg",
@@ -32,24 +31,16 @@ const photos = [
 // Base directory where your photos are stored
 const basePath = './services/';
 
-const getGroupName = (fileName) => {
-  return fileName.startsWith('a') ? 'Ambience'
-    : fileName.startsWith('b') ? 'Building'
-      : fileName.startsWith('c') ? 'Crafting'
-        : fileName.startsWith('d') ? 'Design'
-          : 'Image';
-}
 // Create array of JSON objects
-const slides = photos.map((photo, index) => {
+const slides = photos.map((photo) => {
   return {
-    title: `${getGroupName(photo)} ${index + 1}`,
+    group: `${photo.charAt(0) + '00'}`,
+    title: `${photo.slice(0, 3) + '_title'}`,
     content: `<div style="background-image: url('${basePath}${photo}'); width: 100vmin; height: calc(36 * var(--usable-vh)); background-size: cover; background-position: center;"></div>`
   };
 });
 
 const shuffledSlides = ref(slides.sort(() => Math.random() - 0.5))
-
-console.log(shuffledSlides)
 </script>
 
 <style lang="scss" scoped>

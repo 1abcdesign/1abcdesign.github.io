@@ -32,10 +32,16 @@ const router = createRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth', // Adds smooth scrolling
-      };
+      const element = document.querySelector(to.hash);
+      if (element) {
+        // Scroll to the specific section within the .main block
+        const mainBlock = document.querySelector('.main');
+        mainBlock.scrollTo({
+          top: element.offsetTop,
+          behavior: 'smooth',
+        });
+        return; // Prevent default behavior
+      }
     }
     return savedPosition || { top: 0 };
   },

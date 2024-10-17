@@ -60,6 +60,7 @@ const themeSwitch = () => {
   addTransitionClass()
   setLogoImage()
   setFavIcon()
+  updateIconsStroke()
 }
 
 function setLogoImage() {
@@ -80,10 +81,27 @@ function setFavIcon() {
 }
 
 const updateThemeColor = () => {
-  const currentTheme = theme.value
-  const rootStyle = document.documentElement.style
-  rootStyle.setProperty('--theme-color', currentTheme === 'light' ? '#000' : '#fff')
+  const currentTheme = theme.value;
+  const rootStyle = document.documentElement.style;
+
+  // Примусове оновлення властивостей стилю
+  rootStyle.setProperty('--theme-color', currentTheme === 'light' ? '#000' : '#fff');
+
+  // Додаємо і видаляємо клас для оновлення стилю (для iOS)
+  document.documentElement.classList.add('force-redraw');
+  setTimeout(() => {
+    document.documentElement.classList.remove('force-redraw');
+  }, 50);
 }
+
+const updateIconsStroke = () => {
+  const icons = document.querySelectorAll('.feather'); // Отримуємо всі елементи з класом .feather
+  const strokeColor = theme.value === 'light' ? '#000' : '#fff'; // Вибір кольору для світлої або темної теми
+
+  icons.forEach(icon => {
+    icon.setAttribute('stroke', strokeColor); // Оновлюємо атрибут stroke для кожного іконки
+  });
+};
 
 // Додає клас для анімації при зміні теми
 const addTransitionClass = () => {
@@ -104,6 +122,7 @@ onMounted(() => {
   updateThemeColor()
   setLogoImage()
   setFavIcon()
+  updateIconsStroke()
 })
 
 watch(theme, (newTheme) => {

@@ -104,7 +104,10 @@ onMounted(async () => {
     }
   }
 
-  transition: all 0.5s;
+  // Огортаємо декларацію transition у блок з &
+  & {
+    transition: all 0.5s;
+  }
 }
 
 .close {

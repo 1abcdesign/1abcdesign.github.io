@@ -136,3 +136,9 @@ main {
 footer {
   height: calc((5 * var(--usable-vh)));
 }
+
+/* Клас для примусового оновлення стилів */
+.force-redraw {
+  transform: scale(1); /* Будь-яка зміна для примусового рендерінгу */
+  overflow: hidden;
+}
