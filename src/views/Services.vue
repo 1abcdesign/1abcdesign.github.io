@@ -5,26 +5,34 @@
     <h2>{{ $t('design_description_full') }}</h2> <!-- Додано тут -->
 
     <section id="ambience">
-      <h3>{{ $t('a00') }}</h3>
-      <p>{{ $t('ambience_description') }}</p>
+      <div class="head">
+        <h3>{{ $t('a00') }}</h3>
+        <p>{{ $t('ambience_description') }}</p>
+      </div>
       <photo-gallery group="a" />
     </section>
-
+    
     <section id="building">
-      <h3>{{ $t('b00') }}</h3>
-      <p>{{ $t('building_description') }}</p>
+      <div class="head">
+        <h3>{{ $t('b00') }}</h3>
+        <p>{{ $t('building_description') }}</p>
+      </div>
       <photo-gallery group="b" />
     </section>
-
+    
     <section id="crafting">
-      <h3>{{ $t('c00') }}</h3>
-      <p>{{ $t('crafting_description') }}</p>
+      <div class="head">
+        <h3>{{ $t('c00') }}</h3>
+        <p>{{ $t('crafting_description') }}</p>
+      </div>
       <photo-gallery group="c" />
     </section>
 
     <section id="design">
-      <h3>{{ $t('d00') }}</h3>
-      <p>{{ $t('design_description') }}</p>
+      <div class="head">
+        <h3>{{ $t('d00') }}</h3>
+        <p>{{ $t('design_description') }}</p>
+      </div>
       <photo-gallery group="d" />
     </section>
   </main>
@@ -34,4 +42,12 @@
 import PhotoGallery from '@/components/PhotoGallery.vue';
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.head {
+  border: solid var(--shadow);
+  border-width: 1px 0;
+  font-size: 150%;
+  box-shadow: 0 0 1rem 0.5rem var(--shadow);
+  margin: 1.5rem 0;
+}
+</style>

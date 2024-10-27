@@ -2,7 +2,11 @@
   <div class="photo-article" :class="{ 'reverse': isReverse }">
     <img :src="image" alt="Article Image" class="article-image" />
     <div class="article-info">
-      <h4>{{ title }}</h4>
+      <h3>
+        <span class="group">{{ $t(`${group}00`) }}</span>
+        <br>
+        {{ title }}
+      </h3>
       <p>{{ description }}</p>
     </div>
   </div>
@@ -25,27 +29,37 @@ const props = defineProps({
   isReverse: {
     type: Boolean,
     default: false
+  },
+  group: {
+    type: String,
+    required: true
   }
 });
 </script>
 
-<style>
+<style scoped>
 .photo-article {
-  width: 50vw;
+  width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 1.5rem 0;
   flex-direction: column;
+  box-shadow: 0 0 1rem var(--shadow);
 }
 
 .article-image {
-  width: 50vw;
+  width: 100%;
   height: auto;
 }
 
 .article-info {
-  width: 100vw;
+  width: 100%;
   padding: 10px;
+  font-size: 125%;
+}
+
+.group {
+  color: var(--shadow);
 }
 
 @media (orientation: landscape) {

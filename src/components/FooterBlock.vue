@@ -26,7 +26,7 @@
       </a>
 
       <a
-        href="tel:+380930370327"
+        href="tel:+380933789883"
         aria-label="phone"
         :title="$t('phoneUs')"
       >

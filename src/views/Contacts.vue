@@ -22,5 +22,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+main {
+  font-size: larger;
+}
 </style>
