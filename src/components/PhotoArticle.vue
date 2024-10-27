@@ -1,5 +1,5 @@
 <template>
-  <div class="photo-article" :style="{ flexDirection: style.flexDirection }">
+  <div class="photo-article" :class="{ 'reverse': isReverse }">
     <img :src="image" alt="Article Image" class="article-image" />
     <div class="article-info">
       <h4>{{ title }}</h4>
@@ -22,35 +22,47 @@ const props = defineProps({
     type: String,
     required: true
   },
-  style: {
-    type: Object,
-    default: () => ({ flexDirection: 'row' })
+  isReverse: {
+    type: Boolean,
+    default: false
   }
 });
 </script>
 
-<style scoped>
+<style>
 .photo-article {
+  width: 50vw;
   display: flex;
   align-items: center;
-  margin-bottom: 20px; /* Adjust as needed */
-  width: 100%;
+  margin-bottom: 20px;
+  flex-direction: column;
 }
 
 .article-image {
-  max-width: 100%;
+  width: 50vw;
   height: auto;
-  flex: 1;
 }
 
 .article-info {
-  flex: 1;
-  padding: 10px; /* Adjust as needed */
+  width: 100vw;
+  padding: 10px;
 }
 
 @media (orientation: landscape) {
   .photo-article {
     flex-direction: row;
+  }
+
+  .photo-article.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .article-image {
+    width: 50vw;
+  }
+
+  .article-info {
+    width: 50vw;
   }
 }
 </style>

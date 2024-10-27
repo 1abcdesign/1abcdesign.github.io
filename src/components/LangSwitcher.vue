@@ -23,18 +23,18 @@ import { ref, onMounted, computed, watch } from 'vue'
 import i18n from '@/i18n'
 import getIPInfo from '@/helpers/ipInfoHelper'
 
+const BASE_URL = import.meta.env.BASE_URL
+
 const languageOptions = Object.keys(i18n.global.messages).map((locale) => ({
   value: locale,
-  image: i18n.global.messages[locale].flag,
+  image: BASE_URL + i18n.global.messages[locale].flag,
 }))
 
 const selectedLanguage = ref(i18n.global.locale)
 const showOptions = ref(false)
 
 const sortedLanguageOptions = computed(() => {
-  const sortedOptions = [...languageOptions]
-  sortedOptions.sort((o1) => (i18n.global.locale === o1.value ? -1 : 1))
-  return sortedOptions
+  return [...languageOptions].sort((o1) => (i18n.global.locale === o1.value ? -1 : 1))
 })
 
 const setLanguage = (lang) => {

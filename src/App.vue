@@ -19,8 +19,9 @@ const showLoader = ref(true);
 onMounted(() => {
   router.afterEach((to, from, next) => {
     showLoader.value = true; // Show loader on route change
+    console.log(BASE_URL);
   });
-});
+
 
 function handleLoaderEnded() {
   showLoader.value = false; // Hide loader once animation ends

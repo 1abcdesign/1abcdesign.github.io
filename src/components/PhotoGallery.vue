@@ -6,7 +6,7 @@
       :image="article.image"
       :title="$t(article.title)"
       :description="$t(article.description)"
-      :style="{ flexDirection: index % 2 === 1 ? 'row-reverse' : 'row' }"
+      :class="{ 'reverse': index % 2 === 1 }"
     />
   </div>
 </template>
@@ -34,14 +34,15 @@ const photos = [
   "a08.jpg" , "b06.jpg" , "c04.jpg" , "d02.jpg",  "d10.jpg"
 ];
 
-// Base directory where your photos are stored
-const basePath = './services/';
+// // Base directory where your photos are stored
+// const basePath = 'https://1abcdesign.github.io/';
+const BASE_URL = import.meta.env.BASE_URL
 
 // Create array of JSON objects for articles based on group
 const articles = photos.map((photo) => {
   return {
     title: `${photo.slice(0, 3) + '_title'}`,
-    image: `${basePath}${photo}`,
+    image: `${BASE_URL}${photo}`,
     description: `${photo.slice(0, 3) + '_description'}`
   };
 });

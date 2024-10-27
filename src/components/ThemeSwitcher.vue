@@ -50,12 +50,14 @@
 
 <script setup>
 import { ref, onMounted, watch } from 'vue'
-
+const BASE_URL = import.meta.env.BASE_URL
 const theme = ref('light')
 
-const themeSwitch = () => {
+
+function themeSwitch() {
   theme.value = theme.value === 'light' ? 'dark' : 'light'
   localStorage.setItem('theme', theme.value)
+  console.log(BASE_URL)
   updateThemeColor()
   addTransitionClass()
   setLogoImage()
@@ -66,7 +68,7 @@ const themeSwitch = () => {
 function setLogoImage() {
   const theme = localStorage.getItem('theme')
   const logo = document.getElementById('logoImage')
-  const logoSrc = theme === 'light' ? '/logo_light.png' : '/logo_dark.png'
+  const logoSrc = theme === 'light' ? BASE_URL + 'logo_light.png' : BASE_URL +  'logo_dark.png'
   logo.setAttribute('src', logoSrc)
 }
 
@@ -74,9 +76,9 @@ function setFavIcon() {
   const theme = localStorage.getItem('theme')
   const favicon = document.getElementById('favicon');
   if (theme === 'dark') {
-    favicon.href = 'favicon_dark.ico';
+    favicon.href = BASE_URL + 'favicon_dark.ico';
   } else {
-    favicon.href = 'favicon_light.ico';
+    favicon.href = BASE_URL + 'favicon_light.ico';
   }
 }
 
@@ -143,6 +145,7 @@ watch(theme, (newTheme) => {
   cursor: pointer;
   background-color: transparent;
   border: none;
+  border-radius: calc(2.5 * var(--usable-vh));
   position: relative;
   z-index: 5;
   transition: transform 0.5s;

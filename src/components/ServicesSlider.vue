@@ -29,14 +29,14 @@ const photos = [
 ]
 
 // Base directory where your photos are stored
-const basePath = './services/';
+const BASE_URL = import.meta.env.BASE_URL
 
 // Create array of JSON objects
 const slides = photos.map((photo) => {
   return {
     group: `${photo.charAt(0) + '00'}`,
     title: `${photo.slice(0, 3) + '_title'}`,
-    content: `<div style="background-image: url('${basePath}${photo}'); width: 100vmin; height: calc(36 * var(--usable-vh)); background-size: cover; background-position: center;"></div>`
+    content: `<div style="background-image: url('${BASE_URL}${photo}'); width: 100vmin; height: calc(36 * var(--usable-vh)); background-size: cover; background-position: center;"></div>`
   };
 });
 
