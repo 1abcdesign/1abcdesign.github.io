@@ -102,7 +102,7 @@ nav {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     border: 1px solid transparent;
 
@@ -174,8 +174,8 @@ nav {
 
 #logoImage {
   display: flex;
-  height: calc(7 * var(--usable-vh));
-  width: calc(7 * var(--usable-vh));
+  height: calc(5.5 * var(--usable-vh));
+  width: calc(5.5 * var(--usable-vh));
 
   background-image: var(--logo);
   background-repeat: no-repeat;

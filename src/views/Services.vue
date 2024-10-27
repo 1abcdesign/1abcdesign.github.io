@@ -50,4 +50,8 @@ import PhotoGallery from '@/components/PhotoGallery.vue';
   box-shadow: 0 0 1rem 0.5rem var(--shadow);
   margin: 1.5rem 0;
 }
+
+h2, .head {
+  padding: 1rem;
+}
 </style>
