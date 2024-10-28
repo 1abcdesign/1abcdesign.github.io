@@ -66,7 +66,7 @@ import LangSwitcher from './LangSwitcher.vue'
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 header {
   width: 100%;
   box-shadow: 0 0 1rem 0.5rem var(--shadow);
@@ -122,9 +122,9 @@ nav {
     }
   }
 
-  @media (max-width: 400px) {
+  @media (min-width: 1000px) {
     nav {
-      font-size: 90%;
+      font-size: 133%;
     }
   }
 
@@ -134,9 +134,9 @@ nav {
     }
   }
 
-  @media (min-width: 1000px) {
+  @media (max-width: 400px) {
     nav {
-      font-size: 133%;
+      font-size: 10px;
     }
   }
 
@@ -166,6 +166,16 @@ nav {
   align-items: center;
   padding: 0 1vmin;
   text-decoration: none;
+}
+
+@media (max-width: 400px) {
+  #logo_link {
+    padding: 0;
+  }
+
+  .global-view {
+    padding: 0;
+  }
 }
 
 #logoImage {

@@ -60,6 +60,12 @@
   }
 }
 
+@media (max-width: 400px) {
+  :root {
+    font-size: 1.25vmax;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -125,8 +131,8 @@ footer a:hover svg {
 
 header nav li a svg,
 footer svg {
-  width: 1.5rem !important;
-  height: 1.5rem !important;
+  width: 2rem !important;
+  height: 2rem !important;
 }
 
 header,
@@ -143,7 +149,7 @@ main {
   position: fixed;
   width: 100%;
   height: calc(85 * var(--usable-vh) - 0.5rem);
-  top: calc(10 * var(--usable-vh) + 0.5rem);
+  top: calc(10 * var(--usable-vh) + 0.5rem - 1px);
 
   overflow-x: hidden;
   overflow-y: auto;
