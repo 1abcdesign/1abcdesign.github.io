@@ -1,7 +1,5 @@
 <template>
   <main class="main">
-    <!-- <h2>{{ $t('showcases') }}</h2> -->
-
     <h2>{{ $t('design_description_full') }}</h2> <!-- Додано тут -->
 
     <section id="ambience">
@@ -11,7 +9,7 @@
       </div>
       <photo-gallery group="a" />
     </section>
-    
+
     <section id="building">
       <div class="head">
         <h3>{{ $t('b00') }}</h3>
@@ -19,7 +17,7 @@
       </div>
       <photo-gallery group="b" />
     </section>
-    
+
     <section id="crafting">
       <div class="head">
         <h3>{{ $t('c00') }}</h3>
