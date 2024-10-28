@@ -27,15 +27,11 @@ const props = defineProps({
 });
 
 const photos = [
-  "a01.jpg", "a09.jpg", "b07.jpg", "c05.jpg", "d03.jpg",
-  "a02.jpg", "a10.jpg", "b08.jpg", "c06.jpg", "d04.jpg",
-  "a03.jpg", "b01.jpg", "b09.jpg", "c07.jpg", "d05.jpg",
-  "a04.jpg", "b02.jpg", "b10.jpg", "c08.jpg", "d06.jpg",
-  "a05.jpg", "b03.jpg", "c01.jpg", "c09.jpg", "d07.jpg",
-  "a06.jpg", "b04.jpg", "c02.jpg", "c10.jpg", "d08.jpg",
-  "a07.jpg", "b05.jpg", "c03.jpg", "d01.jpg", "d09.jpg",
-  "a08.jpg", "b06.jpg", "c04.jpg", "d02.jpg", "d10.jpg"
-];
+  "a01.jpg", "a02.jpg", "a03.jpg", "a04.jpg", "a05.jpg", "a06.jpg", "a07.jpg", "a08.jpg", "a09.jpg", "a10.jpg",
+  "b01.jpg", "b02.jpg", "b03.jpg", "b04.jpg", "b05.jpg", "b06.jpg", "b07.jpg", "b08.jpg", "b09.jpg", "b10.jpg",
+  "c01.jpg", "c02.jpg", "c03.jpg", "c04.jpg", "c05.jpg", "c06.jpg", "c07.jpg", "c08.jpg", "c09.jpg", "c10.jpg",
+  "d01.jpg", "d02.jpg", "d03.jpg", "d04.jpg", "d05.jpg", "d06.jpg", "d07.jpg", "d08.jpg", "d09.jpg", "d10.jpg",
+]
 
 const BASE_URL = import.meta.env.BASE_URL;
 
@@ -45,6 +41,8 @@ const articles = photos.map((photo) => ({
   image: `${BASE_URL}${photo}`,
   description: `${photo.slice(0, 3) + '_description'}`
 }));
+
+// const shuffledArticles = articles.sort(() => Math.random() - 0.5)
 
 const filteredArticles = computed(() => {
   return articles.filter(article => article.title.startsWith(props.group));
