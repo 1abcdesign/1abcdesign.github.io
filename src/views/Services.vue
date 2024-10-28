@@ -64,7 +64,7 @@ import PhotoGallery from '@/components/PhotoGallery.vue';
   border-width: 1px 0;
   font-size: 150%;
   box-shadow: 0 0 1rem 0.5rem var(--shadow);
-  margin: 1.5rem 0;
+  margin: 2rem 0 3.5rem 0;
 
   h3::first-letter {
     background: var(--color);

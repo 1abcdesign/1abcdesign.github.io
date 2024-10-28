@@ -46,6 +46,14 @@ const props = defineProps({
   background: var(--background);
   position: sticky;
   top: 0;
+
+  h3 {
+    margin-bottom: 0.415em;
+  }
+
+  p {
+    margin: 0.56em;
+  }
 }
 
 .photo-article:not(.last-in-group) {
