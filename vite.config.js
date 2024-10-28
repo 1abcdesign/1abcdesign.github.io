@@ -9,9 +9,7 @@ export default defineConfig(({ command, mode }) => {
   const base = isProduction ? process.env.VITE_BASE_URL : '/'
 
   return {
-    plugins: [
-      vue(),
-    ],
+    plugins: [vue()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src'),
@@ -25,5 +23,20 @@ export default defineConfig(({ command, mode }) => {
         },
       },
     },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'vendor': ['vue', 'vue-router', 'vue-i18n'],
+            'three': ['three'],
+            'common': ['axios', 'emailjs-com', 'vueperslides']
+          }
+        }
+      },
+      chunkSizeWarningLimit: 600,
+    },
+    optimizeDeps: {
+      include: ['axios', 'emailjs-com']
+    }
   }
 })
