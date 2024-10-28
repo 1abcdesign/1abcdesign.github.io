@@ -1,1 +1,0 @@
-import{_ as o,c as n,h as r,t,p as s,w as c,k as l,a as _,e as i}from"./index-DtWjDTwn.js";const p={};function u(e,d){const a=l("router-link");return _(),n("main",null,[r("h1",null,t(e.$t("404")),1),s(a,{to:"/"},{default:c(()=>[i(t(e.$t("back404")),1)]),_:1})])}const m=o(p,[["render",u]]);export{m as default};
