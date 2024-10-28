@@ -48,11 +48,11 @@ const props = defineProps({
   top: 0;
 
   h3 {
-    margin-bottom: 0.415em;
+    margin-bottom: 0.2075em;
   }
 
   p {
-    margin: 0.56em;
+    margin: 0.28em;
   }
 }
 
@@ -143,7 +143,7 @@ const props = defineProps({
   .article-info {
     width: 100%;
     height: calc(30 * var(--usable-vh) - 0.25rem);
-    padding: 0 3rem;
+    padding: 0 2rem;
     font-size: 125%;
   }
 }

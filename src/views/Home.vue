@@ -28,8 +28,9 @@
 </template>
 
 <script setup>
-import Logo3dView from '@/components/Logo3dView.vue'
-import ServicesSlider from '@/components/ServicesSlider.vue'
+import { defineAsyncComponent } from 'vue'
+const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vue'))
+const ServicesSlider = defineAsyncComponent(() => import('@/components/ServicesSlider.vue'))
 </script>
 
 <style lang="scss">
