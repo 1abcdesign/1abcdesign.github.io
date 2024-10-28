@@ -98,7 +98,6 @@ nav {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     text-align: center;
     border: 1px solid transparent;
 
@@ -134,12 +133,6 @@ nav {
     }
   }
 
-  @media (max-width: 400px) {
-    nav {
-      font-size: 10px;
-    }
-  }
-
   li:not(.logo_link, .global-view) > .router-link-active {
     background: var(--background);
   }
@@ -147,6 +140,7 @@ nav {
   .global-view {
     padding: 0 0.25rem;
     display: flex;
+    gap: 0.25rem;
     flex-direction: column;
 
     & > * {

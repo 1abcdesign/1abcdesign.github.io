@@ -82,11 +82,11 @@ onMounted(async () => {
   padding: 0;
   margin: 0;
   list-style: none;
-  border-radius: calc(5 * var(--usable-vh));
+  border-radius: calc(2.5 * var(--usable-vh));
+
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  height: auto;
   background-color: var(--grey);
 
   &-option {
@@ -94,11 +94,9 @@ onMounted(async () => {
     width: calc(5 * var(--usable-vh));
 
     &-img {
-      box-shadow: 0 0 0.5vmin 0.25vmin var(--shadow);
-      border-radius: 50%;
-      box-shadow: inset 0 0 0.5vmin 0.25vmin var(--shadow);
-      padding: calc(0.25 * var(--usable-vh));
-
+      margin: -1px;
+      border-radius: calc(2.5 * var(--usable-vh));
+      object-fit: cover;
       width: calc(5 * var(--usable-vh));
       height: calc(5 * var(--usable-vh));
     }
@@ -121,6 +119,6 @@ onMounted(async () => {
 
 .open {
   display: flex;
-  height: calc(10.5 * var(--usable-vh));
+  height: calc(10 * var(--usable-vh));
 }
 </style>
