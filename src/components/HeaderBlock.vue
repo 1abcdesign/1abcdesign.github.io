@@ -3,7 +3,8 @@
     <nav>
       <li class="logo_link">
         <router-link to="/" id="logo_link">
-          <img src="/logo_light.png" alt="logo" id="logoImage" ref="logoImage"/>
+          <img src="/logo_light.png" alt="company logo image" id="logoImage" ref="logoImage"/>
+
           <span><b>ABCDΞsign.one</b></span>
         </router-link>
       </li>
@@ -36,10 +37,6 @@
             <path d="M 12,2 A 5,5, 0 1 1 12,12" fill="none" />
           </svg>
 
-          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-compass"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg> -->
-
-          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> -->
-
           {{ $t('company') }}
         </router-link>
       </li>
@@ -64,7 +61,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUpdated } from 'vue'
 import ThemeSwitcher from './ThemeSwitcher.vue';
 import LangSwitcher from './LangSwitcher.vue'
 </script>
@@ -174,8 +170,8 @@ nav {
 
 #logoImage {
   display: flex;
-  height: calc(5.5 * var(--usable-vh));
-  width: calc(5.5 * var(--usable-vh));
+  height: calc(5 * var(--usable-vh));
+  width: calc(5 * var(--usable-vh));
 
   background-image: var(--logo);
   background-repeat: no-repeat;

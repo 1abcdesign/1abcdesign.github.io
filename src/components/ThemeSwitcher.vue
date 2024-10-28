@@ -68,8 +68,10 @@ function themeSwitch() {
 function setLogoImage() {
   const theme = localStorage.getItem('theme')
   const logo = document.getElementById('logoImage')
+  const logoFooter = document.getElementById('logoImageFooter')
   const logoSrc = theme === 'light' ? BASE_URL + 'logo_light.png' : BASE_URL +  'logo_dark.png'
   logo.setAttribute('src', logoSrc)
+  logoFooter.setAttribute('src', logoSrc)
 }
 
 function setFavIcon() {

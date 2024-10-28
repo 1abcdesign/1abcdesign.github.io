@@ -1,11 +1,9 @@
 <template>
   <footer>
     <section class="copy-right">
-      &copy; {{ new Date().getFullYear() }}
-      ABCDΞsign.one
+      &copy;&nbsp;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;<img src="/logo_light.png" alt="company logo image" id="logoImageFooter" />&nbsp;ABCDΞsign.one
+      <!-- <img src="/logo_light.png" alt="company logo image" id="logoImageFooter" /> -->
     </section>
-
-    <!-- | -->
 
     <section class="links">
 
@@ -57,6 +55,8 @@ footer {
   height: calc(5 * var(--usable-vh)) !important;
   display: flex;
 
+  line-height: calc(5 * var(--usable-vh));
+
 
   background: linear-gradient(0deg, var(--background), transparent 100%);
 
@@ -91,6 +91,8 @@ footer {
     position: relative;
     left: 1vmax;
     text-align: left;
+
+    word-spacing: -0.075ch;
   }
 
   span:last-of-type {
@@ -101,5 +103,18 @@ footer {
     height: 2vh;
     width: 2vh;
   }
+}
+
+#logoImageFooter {
+  display: inline-flex;
+  height: calc(2 * var(--usable-vh));
+  width: calc(2 * var(--usable-vh));
+  position: relative;
+  top: calc(0.5 * var(--usable-vh));
+
+  background-image: var(--logo);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 </style>
