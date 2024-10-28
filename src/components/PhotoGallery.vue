@@ -6,7 +6,10 @@
       :image="article.image"
       :title="$t(article.title)"
       :description="$t(article.description)"
-      :class="{ 'reverse': index % 2 === 1 }"
+      :class="{
+        'reverse': index % 2 === 1,
+        'last-in-group': index === 9
+              }"
       :group="group"
       />
   </div>
@@ -48,7 +51,7 @@ const filteredArticles = computed(() => {
 });
 </script>
 
-<style scoped>
+<style>
 .photo-gallery {
   display: flex;
   flex-direction: column;

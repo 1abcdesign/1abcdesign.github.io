@@ -1,36 +1,54 @@
 <template>
   <main class="main">
-    <h2>{{ $t('design_description_full') }}</h2> <!-- Додано тут -->
+    <h2>
+      {{ $t('design_description_full') }}
+    </h2>
 
     <section id="ambience">
       <div class="head">
-        <h3>{{ $t('a00') }}</h3>
+        <h3>
+          {{ $t('a00') }}
+        </h3>
+
         <p>{{ $t('ambience_description') }}</p>
       </div>
+
       <photo-gallery group="a" />
     </section>
 
     <section id="building">
       <div class="head">
-        <h3>{{ $t('b00') }}</h3>
+        <h3>
+          {{ $t('b00') }}
+        </h3>
+
         <p>{{ $t('building_description') }}</p>
       </div>
+
       <photo-gallery group="b" />
     </section>
 
     <section id="crafting">
       <div class="head">
-        <h3>{{ $t('c00') }}</h3>
+        <h3>
+          {{ $t('c00') }}
+        </h3>
+
         <p>{{ $t('crafting_description') }}</p>
       </div>
+
       <photo-gallery group="c" />
     </section>
 
     <section id="design">
       <div class="head">
-        <h3>{{ $t('d00') }}</h3>
+        <h3>
+          {{ $t('d00') }}
+        </h3>
+
         <p>{{ $t('design_description') }}</p>
       </div>
+
       <photo-gallery group="d" />
     </section>
   </main>
@@ -47,6 +65,11 @@ import PhotoGallery from '@/components/PhotoGallery.vue';
   font-size: 150%;
   box-shadow: 0 0 1rem 0.5rem var(--shadow);
   margin: 1.5rem 0;
+
+  h3::first-letter {
+    background: var(--color);
+    color: var(--background);
+  }
 }
 
 h2, .head {

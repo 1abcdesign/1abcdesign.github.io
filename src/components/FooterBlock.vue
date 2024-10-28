@@ -54,7 +54,7 @@
 <style lang="scss" scoped>
 footer {
   width: 100%;
-  height: calc(5 * var(--usable-vh));
+  height: calc(5 * var(--usable-vh)) !important;
   display: flex;
 
 
@@ -89,7 +89,7 @@ footer {
 
   .copy-right {
     position: relative;
-    left: 0.5rem;
+    left: 1vmax;
     text-align: left;
   }
 

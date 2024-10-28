@@ -1,6 +1,5 @@
 <template>
   <div class="photo-article" :class="{ 'reverse': isReverse }">
-    <!-- <div class="article-image" :style="{ 'backgroundImage': image }"></div> -->
     <img :src="image" alt="Article Image" class="article-image" />
     <div class="article-info">
       <h3>
@@ -38,16 +37,25 @@ const props = defineProps({
 });
 </script>
 
-<style scoped>
+<style lang="scss">
 .photo-article {
   width: 100%;
   display: flex;
   align-items: center;
-  margin: 1.5rem 0;
-  box-shadow: 0 0 1rem var(--shadow);
+  overflow: hidden !important;
   background: var(--background);
   position: sticky;
   top: 0;
+}
+
+.photo-article:not(.last-in-group) {
+  padding-bottom: calc((15 * var(--usable-vh)));
+  height: calc(100 * var(--usable-vh));
+}
+
+.photo-article.last-in-group {
+  padding-bottom: 0;
+  height: calc(85 * var(--usable-vh) - 0.5rem);
 }
 
 .article-image {
@@ -61,7 +69,19 @@ const props = defineProps({
 }
 
 .group {
+  display: inline-block;
+  height: 1rem;
   color: var(--shadow);
+}
+
+.group::first-letter {
+  color: var(--background);
+  background: var(--shadow);
+}
+
+.group::selection {
+  background: var(--shadow) !important;
+  color: var(--background) !important;
 }
 
 @media (orientation: landscape) {
@@ -69,7 +89,6 @@ const props = defineProps({
     position: sticky;
     top: 0;
     flex-direction: row;
-    height: calc(85 * var(--usable-vh));
     align-items: center;
     text-align: left;
   }
@@ -81,7 +100,7 @@ const props = defineProps({
 
   .article-image {
     width: 50%;
-    height: calc(85 * var(--usable-vh));
+    height: calc(85 * var(--usable-vh) - 0.5rem);
   }
 
   .article-info {
@@ -101,7 +120,6 @@ const props = defineProps({
 @media (orientation: portrait) {
   .photo-article {
     flex-direction: column;
-    height: calc(85 * var(--usable-vh));
     align-items: flex-start;
     justify-content: flex-start;
   }
@@ -111,12 +129,12 @@ const props = defineProps({
 
   .article-image {
     width: 100%;
-    height: calc(55 * var(--usable-vh));
+    height: calc(55 * var(--usable-vh) - 0.25rem);
   }
 
   .article-info {
     width: 100%;
-    height: calc(30 * var(--usable-vh));
+    height: calc(30 * var(--usable-vh) - 0.25rem);
     padding: 0 3rem;
     font-size: 125%;
   }
