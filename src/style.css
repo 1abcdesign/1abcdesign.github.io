@@ -149,7 +149,7 @@ main {
   position: fixed;
   width: 100%;
   height: calc(85 * var(--usable-vh) - 0.5rem);
-  top: calc(10 * var(--usable-vh) + 0.5rem - 1px);
+  top: calc(10 * var(--usable-vh) + 0.5rem);
 
   overflow-x: hidden;
   overflow-y: auto;
