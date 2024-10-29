@@ -64,7 +64,7 @@ footer {
   bottom: 0;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: calc(50% - 0.25rem) calc(50% + 0.25rem);
   align-items: center;
 
   .links {

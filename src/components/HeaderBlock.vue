@@ -163,10 +163,6 @@ nav {
 }
 
 @media (max-width: 400px) {
-  #logo_link {
-    padding: 0;
-  }
-
   .global-view {
     padding: 0;
   }
