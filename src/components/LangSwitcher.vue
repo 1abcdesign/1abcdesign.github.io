@@ -80,7 +80,7 @@ onMounted(async () => {
 
 .select {
   padding: 0;
-  margin: -1px 0 0 -1px;
+  margin: 0;
   list-style: none;
   border-radius: calc(2.5 * var(--usable-vh));
 
@@ -91,7 +91,7 @@ onMounted(async () => {
 
   &-option {
     padding: 0;
-    margin: 0;
+    margin: -1px 0 0 -1px;
     width: calc(5 * var(--usable-vh));
 
     &-img {

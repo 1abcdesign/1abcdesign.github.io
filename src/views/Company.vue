@@ -2,6 +2,7 @@
   <main>
     {{ $t('about') }}
   </main>
+  
 </template>
 
 <script setup>

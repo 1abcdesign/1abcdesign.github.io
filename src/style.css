@@ -189,11 +189,13 @@ footer {
   scrollbar-color: var(--grey) var(--background);
 }  */
 
-main::-webkit-scrollbar {
+main::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
   width: 0.5rem;
 }
 
-main::-webkit-scrollbar-thumb {
+main::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb {
   background-color: var(--grey);
   border-radius: 0.25rem;
   -webkit-border-radius: 0.25rem;
@@ -202,14 +204,17 @@ main::-webkit-scrollbar-thumb {
   -o-border-radius: 0.25rem;
 }
 
-main::-webkit-scrollbar-track {
+main::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track {
   background-color: var(--background);
 }
 
-main::-webkit-scrollbar-thumb:hover {
+main::-webkit-scrollbar-thumb:hover,
+textarea::-webkit-scrollbar-thumb:hover {
   background-color: var(--color);
 }
 
-main::-webkit-scrollbar-track:hover {
+main::-webkit-scrollbar-track:hover,
+textarea::-webkit-scrollbar-track:hover {
   background-color: var(--shadow);
 }
