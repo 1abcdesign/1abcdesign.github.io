@@ -3,7 +3,12 @@
     <nav>
       <li class="logo_link">
         <router-link to="/" id="logo_link">
-          <img src="/logo_light.png" alt="company logo image" id="logoImage" ref="logoImage"/>
+          <img
+            src="/logo_light.png"
+            alt="company logo image"
+            id="logoImage"
+            ref="logoImage"
+          />
 
           <span><b>ABCDΞsign.one</b></span>
         </router-link>
@@ -11,8 +16,21 @@
 
       <li>
         <router-link to="/services">
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-briefcase"
+          >
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
 
           {{ $t('services') }}
         </router-link>
@@ -21,13 +39,15 @@
       <li>
         <router-link to="/company">
           <svg
-            xmlns="http://www.w3.org/2000/svg" width="24"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
             height="24"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-linejoin="round"
             class="feather feather-circle"
           >
             <circle cx="12" cy="12" r="10"></circle>
@@ -43,7 +63,21 @@
 
       <li>
         <router-link to="/contacts">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-at-sign"
+          >
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+          </svg>
 
           {{ $t('contacts') }}
         </router-link>
@@ -61,10 +95,9 @@
 </template>
 
 <script setup>
-import ThemeSwitcher from './ThemeSwitcher.vue';
+import ThemeSwitcher from './ThemeSwitcher.vue'
 import LangSwitcher from './LangSwitcher.vue'
 </script>
-
 
 <style lang="scss">
 header {
@@ -91,7 +124,6 @@ nav {
 
   height: calc(10 * var(--usable-vh) + 0.5rem);
 
-
   li {
     height: calc(10 * var(--usable-vh) + 0.5rem);
     width: 100%;
@@ -110,7 +142,7 @@ nav {
       text-decoration: none;
     }
 
-    &:not(:has(#logo_link) , .global-view):hover {
+    &:not(:has(#logo_link), .global-view):hover {
       border: 1px solid var(--grey);
     }
 

@@ -4,10 +4,18 @@
       <strong>
         <em>{{ $t('contact_intro') }}</em>
       </strong>
-      </p>
-    <p>{{ $t('contact_phone') }}: <a href="tel:+380933789883">+380 93 378 9883</a></p>
-    <p>{{ $t('contact_tg') }}: <a href="http://t.me/abcdesign1">@abcdesign1</a></p>
-    <p>{{ $t('contact_mail') }}: <a href="mailto:one.abcdesign@gmail.com">one.abcdesign@gmail.com</a></p>
+    </p>
+    <p>
+      {{ $t('contact_phone') }}:
+      <a href="tel:+380933789883">+380 93 378 9883</a>
+    </p>
+    <p>
+      {{ $t('contact_tg') }}: <a href="http://t.me/abcdesign1">@abcdesign1</a>
+    </p>
+    <p>
+      {{ $t('contact_mail') }}:
+      <a href="mailto:one.abcdesign@gmail.com">one.abcdesign@gmail.com</a>
+    </p>
 
     <form @submit.prevent="submitForm" class="form" autocomplete="on">
       <label :data-text="$t('form_name')">
@@ -84,22 +92,24 @@ const comment = ref('')
 const showSuccess = ref(false)
 const showError = ref(false)
 
-const prependCountryCode = (event) => {
+const prependCountryCode = event => {
   if (!event.target.value.startsWith('+380')) {
     event.target.value = '+380'
   }
 }
 
-const restrictPhoneInput = (event) => {
+const restrictPhoneInput = event => {
   const input = event.target.value.replace(/[^0-9+]/g, '').slice(0, 13)
-  event.target.value = input.startsWith('+380') ? input : '+380' + input.slice(4)
+  event.target.value = input.startsWith('+380')
+    ? input
+    : '+380' + input.slice(4)
   phone.value = event.target.value
 }
 
 const {
   VITE_EMAILER_SERVICE_ID: SERVICE_ID,
   VITE_EMAILER_TEMPLATE_ID: TEMPLATE_ID,
-  VITE_EMAILER_USER_KEY: USER_KEY
+  VITE_EMAILER_USER_KEY: USER_KEY,
 } = import.meta.env
 
 const submitForm = async () => {
@@ -117,7 +127,12 @@ const submitForm = async () => {
   }
 
   try {
-    const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_KEY)
+    const response = await emailjs.send(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      templateParams,
+      USER_KEY
+    )
     console.log('Email sent successfully!', response)
 
     // Show success message
@@ -192,7 +207,7 @@ main * {
       top: -0.33ch;
     }
 
-    &>* {
+    & > * {
       padding: 1rem;
       border-width: 1px;
     }

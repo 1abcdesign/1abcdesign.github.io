@@ -1,10 +1,10 @@
 <template>
-  <div class="photo-article" :class="{ 'reverse': isReverse }">
+  <div class="photo-article" :class="{ reverse: isReverse }">
     <img :src="image" alt="Article Image" class="article-image" />
     <div class="article-info">
       <h3>
         <span class="group">{{ $t(`${group}00`) }}</span>
-        <br>
+        <br />
         {{ title }}
       </h3>
       <p>{{ description }}</p>
@@ -16,25 +16,25 @@
 const props = defineProps({
   image: {
     type: String,
-    required: true
+    required: true,
   },
   title: {
     type: String,
-    required: true
+    required: true,
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   isReverse: {
     type: Boolean,
-    default: false
+    default: false,
   },
   group: {
     type: String,
-    required: true
-  }
-});
+    required: true,
+  },
+})
 </script>
 
 <style lang="scss">

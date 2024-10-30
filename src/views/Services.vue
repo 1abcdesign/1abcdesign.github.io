@@ -55,7 +55,7 @@
 </template>
 
 <script setup>
-import PhotoGallery from '@/components/PhotoGallery.vue';
+import PhotoGallery from '@/components/PhotoGallery.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -72,7 +72,8 @@ import PhotoGallery from '@/components/PhotoGallery.vue';
   }
 }
 
-h2, .head {
+h2,
+.head {
   padding: 1rem;
 }
 </style>

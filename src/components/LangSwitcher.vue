@@ -9,10 +9,14 @@
         v-for="(option, index) in sortedLanguageOptions"
         :key="index"
         @click="handleClick(option.value)"
-        :class="{ selected:  selectedLanguage === option.value }"
+        :class="{ selected: selectedLanguage === option.value }"
         class="select-option"
       >
-        <img :src="option.image" :alt="$t('lang') + ' flag'" class="select-option-img" />
+        <img
+          :src="option.image"
+          :alt="$t('lang') + ' flag'"
+          class="select-option-img"
+        />
       </li>
     </menu>
   </section>
@@ -25,7 +29,7 @@ import getIPInfo from '@/helpers/ipInfoHelper'
 
 const BASE_URL = import.meta.env.BASE_URL
 
-const languageOptions = Object.keys(i18n.global.messages).map((locale) => ({
+const languageOptions = Object.keys(i18n.global.messages).map(locale => ({
   value: locale,
   image: BASE_URL + i18n.global.messages[locale].flag,
 }))
@@ -34,16 +38,18 @@ const selectedLanguage = ref(i18n.global.locale)
 const showOptions = ref(false)
 
 const sortedLanguageOptions = computed(() => {
-  return [...languageOptions].sort((o1) => (i18n.global.locale === o1.value ? -1 : 1))
+  return [...languageOptions].sort(o1 =>
+    i18n.global.locale === o1.value ? -1 : 1
+  )
 })
 
-const setLanguage = (lang) => {
+const setLanguage = lang => {
   i18n.global.locale = lang
   localStorage.setItem('lang', lang)
   selectedLanguage.value = lang
 }
 
-const handleClick = (lang) => {
+const handleClick = lang => {
   setLanguage(lang)
   showOptions.value = !showOptions.value
 }
@@ -64,10 +70,6 @@ onMounted(async () => {
 
   i18n.global.locale = defaultLang
 })
-
-// watch(selectedLanguage, () => {
-//   window.location.reload()
-// }, { deep: true })
 </script>
 
 <style lang="scss">

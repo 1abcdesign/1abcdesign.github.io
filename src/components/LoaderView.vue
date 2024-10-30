@@ -1,8 +1,17 @@
 <template>
   <div id="logo_overlay" v-if="isVisible" @animationend="handleAnimationEnd">
     <div id="logo_2d_wrapper">
-      <canvas id="logo_2d" width="400" height="400" style="stroke: var(--color0);"></canvas>
-      <svg id="svg_placeholder" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <canvas
+        id="logo_2d"
+        width="400"
+        height="400"
+        style="stroke: var(--color0)"
+      ></canvas>
+      <svg
+        id="svg_placeholder"
+        viewBox="0 0 400 400"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <line x1="200" y1="400" x2="200" y2="0" />
         <line x1="200" y1="0" x2="0" y2="200" />
         <line x1="0" y1="200" x2="200" y2="200" />
@@ -14,64 +23,110 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue'
 
-const getTheme = () => document.documentElement.getAttribute('data-theme') === 'dark' ? '#fff' : '#000';
-const totalDuration = ref(2340); // Загальна тривалість анімації в мілісекундах
-const isVisible = ref(true);
+const getTheme = () =>
+  document.documentElement.getAttribute('data-theme') === 'dark'
+    ? '#fff'
+    : '#000'
+const totalDuration = ref(2340) // Загальна тривалість анімації в мілісекундах
+const isVisible = ref(true)
 
 onMounted(() => {
-  const canvas = document.getElementById("logo_2d");
-  const ctx = canvas.getContext("2d");
-  ctx.lineWidth = 28;
-  ctx.strokeStyle = getTheme();
+  const canvas = document.getElementById('logo_2d')
+  const ctx = canvas.getContext('2d')
+  ctx.lineWidth = 28
+  ctx.strokeStyle = getTheme()
 
   const drawFunctions = [
-    (progress) => { ctx.beginPath(); ctx.moveTo(200, 400); ctx.lineTo(200, 400 - progress); ctx.stroke(); },
-    (progress) => { ctx.beginPath(); ctx.moveTo(200, 0); ctx.lineTo(200 - progress, progress); ctx.stroke(); },
-    (progress) => { ctx.beginPath(); ctx.moveTo(0, 200); ctx.lineTo(progress, 200); ctx.stroke(); },
-    (progress) => { ctx.beginPath(); ctx.ellipse(200, 105, 93, 93, Math.PI / 2, 0, -Math.PI / 180 * progress, true); ctx.stroke(); },
-    (progress) => { ctx.beginPath(); ctx.ellipse(200, 200, 186, 186, -Math.PI / 2, 0, -Math.PI / 180 * progress, true); ctx.stroke(); }
-  ];
+    progress => {
+      ctx.beginPath()
+      ctx.moveTo(200, 400)
+      ctx.lineTo(200, 400 - progress)
+      ctx.stroke()
+    },
+    progress => {
+      ctx.beginPath()
+      ctx.moveTo(200, 0)
+      ctx.lineTo(200 - progress, progress)
+      ctx.stroke()
+    },
+    progress => {
+      ctx.beginPath()
+      ctx.moveTo(0, 200)
+      ctx.lineTo(progress, 200)
+      ctx.stroke()
+    },
+    progress => {
+      ctx.beginPath()
+      ctx.ellipse(
+        200,
+        105,
+        93,
+        93,
+        Math.PI / 2,
+        0,
+        (-Math.PI / 180) * progress,
+        true
+      )
+      ctx.stroke()
+    },
+    progress => {
+      ctx.beginPath()
+      ctx.ellipse(
+        200,
+        200,
+        186,
+        186,
+        -Math.PI / 2,
+        0,
+        (-Math.PI / 180) * progress,
+        true
+      )
+      ctx.stroke()
+    },
+  ]
 
-  const segmentDurations = [0.17, 0.12, 0.08, 0.13, 0.50].map(percentage => totalDuration.value * percentage);
-  const segmentMaxValues = [400, 200, 200, 180, 360];
+  const segmentDurations = [0.17, 0.12, 0.08, 0.13, 0.5].map(
+    percentage => totalDuration.value * percentage
+  )
+  const segmentMaxValues = [400, 200, 200, 180, 360]
 
-  let startTime = null;
+  let startTime = null
 
   function animate(timestamp) {
-    if (!startTime) startTime = timestamp;
-    const elapsed = timestamp - startTime;
+    if (!startTime) startTime = timestamp
+    const elapsed = timestamp - startTime
 
-    let accumulatedTime = 0;
+    let accumulatedTime = 0
 
     for (let i = 0; i < drawFunctions.length; i++) {
-      const segmentStart = accumulatedTime;
-      const segmentEnd = accumulatedTime + segmentDurations[i];
+      const segmentStart = accumulatedTime
+      const segmentEnd = accumulatedTime + segmentDurations[i]
 
       if (elapsed >= segmentStart && elapsed <= segmentEnd) {
-        const segmentProgress = (elapsed - segmentStart) / segmentDurations[i];
-        const progressValue = segmentMaxValues[i] * segmentProgress;
-        drawFunctions[i](Math.min(progressValue, segmentMaxValues[i]));
+        const segmentProgress = (elapsed - segmentStart) / segmentDurations[i]
+        const progressValue = segmentMaxValues[i] * segmentProgress
+        drawFunctions[i](Math.min(progressValue, segmentMaxValues[i]))
       } else if (elapsed > segmentEnd) {
-        drawFunctions[i](segmentMaxValues[i]);
+        drawFunctions[i](segmentMaxValues[i])
       }
 
-      accumulatedTime += segmentDurations[i];
+      accumulatedTime += segmentDurations[i]
     }
 
     if (elapsed < totalDuration.value) {
-      requestAnimationFrame(animate);
+      requestAnimationFrame(animate)
     }
   }
 
-  requestAnimationFrame(animate);
-});
+  requestAnimationFrame(animate)
+})
 
 const handleAnimationEnd = () => {
   // This method will be triggered after the fade-out animation completes
-  isVisible.value = false;
-};
+  isVisible.value = false
+}
 </script>
 
 <style lang="scss">
