@@ -175,7 +175,7 @@ main * {
   flex-direction: column;
   align-items: center;
   color: var(--color);
-  border: 1px solid var(--background);
+  border: none;
   box-shadow: 0 0 1rem 0.5rem var(--shadow);
   padding: 2rem;
 
@@ -185,18 +185,19 @@ main * {
 
   label {
     position: relative;
-    font-weight: 300;
     padding: 0.5rem 0;
-    border: 1px solid var(--background);
+    border: none;
+    margin: 2px 0;
 
     &::before {
       position: absolute;
       content: attr(data-text);
       background: var(--background);
       left: 0.5ch;
-      padding: 0 0.25ch;
-      top: -0.5ch;
+      padding: 0 0.25ch 0 0.5ch;
+      top: -0.15ch;
       letter-spacing: 0.15ch;
+      line-height: 100%;
     }
 
     &:has(:required)::after {
@@ -209,7 +210,7 @@ main * {
 
     & > * {
       padding: 1rem;
-      border-width: 1px;
+      border-width: 2px;
     }
   }
 }
@@ -229,7 +230,7 @@ main * {
 
 button {
   height: 5rem;
-  border: 1px solid var(--color);
+  border: 2px solid var(--color);
   background: var(--background);
   color: var(--color);
   cursor: pointer;
@@ -245,7 +246,7 @@ button {
 :invalid button {
   background: var(--background); /* Set your invalid background color */
   color: var(--shadow); /* Set your invalid text color */
-  border: 1px solid var(--shadow);
+  border: 2px solid var(--shadow);
 }
 
 input:-webkit-autofill,
@@ -265,8 +266,8 @@ textarea {
 .success,
 .error {
   position: absolute;
-  top: -1px;
-  left: -1px;
+  top: -2px;
+  left: -2px;
   height: 5rem;
   font-size: inherit;
   display: flex;
@@ -275,7 +276,7 @@ textarea {
 }
 
 .success {
-  border: 1px solid green;
+  border: 2px solid green;
   color: green !important;
   background: var(--background) !important;
 
@@ -285,7 +286,7 @@ textarea {
   }
 }
 .error {
-  border: 1px solid red;
+  border: 2px solid red;
   color: red !important;
   background: var(--background) !important;
 

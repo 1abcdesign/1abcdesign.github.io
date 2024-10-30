@@ -19,7 +19,7 @@ const messages = {
     form_project_ph: 'Interior design and decor',
     form_budget: 'BUDGET (in UAH ₴)',
     form_comment: 'COMMENT',
-    form_comment_ph: 'Call me back between 10AM and 16PM',
+    form_comment_ph: 'Call me from 10:00 to 16:00',
     form_send: 'SEND',
     success: 'Sent!',
 try_again: 'Try again',
