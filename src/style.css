@@ -53,6 +53,10 @@
   --transition-duration: 666ms; /* Initialize variable for transition duration */
 }
 
+* * {
+  box-sizing: border-box;
+}
+
 * {
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;

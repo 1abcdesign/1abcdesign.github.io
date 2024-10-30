@@ -58,7 +58,11 @@
         ></textarea>
       </label>
 
-      <button type="submit">{{ $t('form_send') }}</button>
+      <button type="submit">
+        {{ $t('form_send') }}
+        <span class="success" v-if="showSuccess">{{ $t('success') }}</span>
+        <span class="error" v-if="showError">{{ $t('try_again') }}</span>
+      </button>
     </form>
   </main>
 </template>
@@ -72,6 +76,8 @@ const phone = ref('')
 const project = ref('')
 const budget = ref('')
 const comment = ref('')
+const showSuccess = ref(false)
+const showError = ref(false)
 
 const prependCountryCode = (event) => {
   if (!event.target.value.startsWith('+380')) {
@@ -89,7 +95,7 @@ const {
   VITE_EMAILER_SERVICE_ID: SERVICE_ID,
   VITE_EMAILER_TEMPLATE_ID: TEMPLATE_ID,
   VITE_EMAILER_USER_KEY: USER_KEY
-  } = import.meta.env
+} = import.meta.env
 
 const submitForm = async () => {
   const templateParams = {
@@ -108,8 +114,16 @@ const submitForm = async () => {
   try {
     const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_KEY)
     console.log('Email sent successfully!', response)
+
+    // Show success message
+    showSuccess.value = true
+    showError.value = false
   } catch (error) {
     console.error('Error sending email:', error)
+
+    // Show error message
+    showSuccess.value = false
+    showError.value = true
   }
 
   // Reset form fields
@@ -118,6 +132,12 @@ const submitForm = async () => {
   project.value = ''
   budget.value = ''
   comment.value = ''
+
+  // Hide messages after 3 seconds
+  setTimeout(() => {
+    showSuccess.value = false
+    showError.value = false
+  }, 3000)
 }
 </script>
 
@@ -179,7 +199,6 @@ main * {
 .form *:not([type='submit']) {
   background: transparent;
   color: var(--color);
-  align-items: flex-end;
 
   &:focus {
     font-style: italic;
@@ -187,11 +206,12 @@ main * {
 }
 
 button {
-  min-height: 5rem;
+  height: 5rem;
   border: 1px solid var(--color);
   background: var(--background);
   color: var(--color);
   cursor: pointer;
+  position: relative;
 
   &:hover {
     background: var(--color);
@@ -217,5 +237,39 @@ input:-webkit-autofill:active {
 
 textarea {
   resize: none;
+}
+
+/* Add styles for success and error messages */
+.success,
+.error {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  height: 5rem;
+  font-size: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success {
+  border: 1px solid green;
+  color: green !important;
+  background: var(--background) !important;
+
+  &:hover {
+    color: var(--background) !important;
+    background: green !important;
+  }
+}
+.error {
+  border: 1px solid red;
+  color: red !important;
+  background: var(--background) !important;
+
+  &:hover {
+    color: var(--background) !important;
+    background: red !important;
+  }
 }
 </style>
