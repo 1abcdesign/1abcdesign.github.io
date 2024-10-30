@@ -32,16 +32,6 @@
         />
       </label>
 
-      <label :data-text="$t('form_email')">
-        <input
-          autocomplete="email"
-          type="email"
-          placeholder="yourname@example.com"
-          v-model="email"
-          aria-label="email-input"
-        />
-      </label>
-
       <label :data-text="$t('form_project')">
         <input
           type="text"
@@ -79,7 +69,6 @@ import emailjs from 'emailjs-com'
 
 const name = ref('')
 const phone = ref('')
-const email = ref('')
 const project = ref('')
 const budget = ref('')
 const comment = ref('')
@@ -106,12 +95,10 @@ const submitForm = async () => {
   const templateParams = {
     name: name.value,
     phone: phone.value,
-    email: email.value,
-    subject: project.value,
+    project: project.value,
     message: `
       Name: ${name.value}
       Phone: ${phone.value}
-      Email: ${email.value}
       Project: ${project.value}
       Budget: ${budget.value}
       Comment: ${comment.value}
@@ -128,7 +115,6 @@ const submitForm = async () => {
   // Reset form fields
   name.value = ''
   phone.value = ''
-  email.value = ''
   project.value = ''
   budget.value = ''
   comment.value = ''
@@ -136,42 +122,52 @@ const submitForm = async () => {
 </script>
 
 <style lang="scss" scoped>
+main {
+  padding: 0 0.5rem;
+}
+
+main * {
+  font-size: 115%;
+}
+
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: var(--color);
+  border: 1px solid var(--background);
 
   & * {
-    width: 68vmin;
-    border-width: 1px;
+    width: 66.6vmin;
   }
 
   label {
     position: relative;
     font-weight: 300;
     padding: 1rem 0;
+    border: 1px solid var(--background);
 
     &::before {
       position: absolute;
       content: attr(data-text);
       background: var(--background);
-      left: 0.25ch;
+      left: 0.5ch;
       padding: 0 0.25ch;
       top: 0;
+      letter-spacing: 0.15ch;
     }
 
     &:has(:required)::after {
       content: '*';
       color: red;
-      font-size: 1.2rem;
       position: absolute;
-      left: -1ch;
+      left: -1.5ch;
       top: 0;
     }
 
     &>* {
       padding: 1rem;
+      border-width: 1px;
     }
   }
 }
@@ -183,7 +179,6 @@ const submitForm = async () => {
 .form *:not([type='submit']) {
   background: transparent;
   color: var(--color);
-  font-size: 1.5rem;
   align-items: flex-end;
 
   &:focus {
@@ -193,10 +188,22 @@ const submitForm = async () => {
 
 button {
   min-height: 5rem;
-  background: var(--color);
-  border: none;
-  color: var(--background);
+  border: 1px solid var(--color);
+  background: var(--background);
+  color: var(--color);
   cursor: pointer;
+
+  &:hover {
+    background: var(--color);
+    color: var(--background);
+  }
+}
+
+/* Change color of submit till form is valid */
+:invalid button {
+  background: var(--background); /* Set your invalid background color */
+  color: var(--shadow); /* Set your invalid text color */
+  border: 1px solid var(--shadow);
 }
 
 input:-webkit-autofill,
@@ -210,6 +217,5 @@ input:-webkit-autofill:active {
 
 textarea {
   resize: none;
-  font-size: 1.5rem;
 }
 </style>

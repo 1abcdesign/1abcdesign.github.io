@@ -45,23 +45,50 @@
 
 :root {
   --grey: #888;
-  font-family: "Noto Sans", sans-serif;
-  font-optical-sizing: auto;
-
-  scroll-behavior: smooth;
-
-  transition: color 1s, background 1s, backgroundColor 1s, boxShadow 1s;
-  -webkit-transition: color 1s, background 1s, backgroundColor 1s, boxShadow 1s;
-  -moz-transition: color 1s, background 1s, backgroundColor 1s, boxShadow 1s;
-  -ms-transition: color 1s, background 1s, backgroundColor 1s, boxShadow 1s;
-  -o-transition: color 1s, background 1s, backgroundColor 1s, boxShadow 1s;
-
   background: var(--background);
   color: var(--color);
-
   --safe-top: env(safe-area-inset-top);
   --safe-bottom: env(safe-area-inset-bottom);
   --usable-vh: calc((100vh - var(--safe-top) - var(--safe-bottom)) / 100);
+  --transition-duration: 666ms; /* Initialize variable for transition duration */
+}
+
+* {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  scroll-behavior: smooth;
+  transition:
+    background-color var(--transition-duration), /* Background color */
+    border var(--transition-duration),           /* Border */
+    border-color var(--transition-duration),     /* Border color */
+    border-radius var(--transition-duration),    /* Border radius */
+    box-shadow var(--transition-duration),        /* Box shadow */
+    opacity var(--transition-duration),           /* Opacity */
+    transform var(--transition-duration),         /* Transform (scale, rotate, etc.) */
+    width var(--transition-duration),             /* Width */
+    height var(--transition-duration),            /* Height */
+    max-width var(--transition-duration),         /* Max width */
+    max-height var(--transition-duration),        /* Max height */
+    min-width var(--transition-duration),         /* Min width */
+    min-height var(--transition-duration),        /* Min height */
+    margin var(--transition-duration),            /* Margin */
+    padding var(--transition-duration),           /* Padding */
+    left var(--transition-duration),              /* Left position */
+    right var(--transition-duration),             /* Right position */
+    top var(--transition-duration),               /* Top position */
+    bottom var(--transition-duration),            /* Bottom position */
+    z-index var(--transition-duration),           /* Z-index (note: z-index transition might not have visual effect) */
+    filter var(--transition-duration),            /* Filter (blur, brightness, etc.) */
+    visibility var(--transition-duration),        /* Visibility */
+    white-space var(--transition-duration),       /* White space */
+    line-height var(--transition-duration),       /* Line height */
+    font-size var(--transition-duration),         /* Font size */
+    transform-origin var(--transition-duration),  /* Transform origin */
+    clip-path var(--transition-duration),         /* Clip path */
+    object-fit var(--transition-duration),        /* Object fit */
+    cursor var(--transition-duration),            /* Cursor */
+    transition-delay var(--transition-duration),  /* Delay of transition */
+    transition-timing-function var(--transition-duration); /* Timing function */
 }
 
 @media (orientation: portrait) {
