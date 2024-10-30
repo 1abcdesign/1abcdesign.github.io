@@ -50,6 +50,7 @@
         <input
           type="number"
           placeholder="100000"
+          min="10000"
           v-model="budget"
           aria-label="budget-input"
         />
