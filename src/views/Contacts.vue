@@ -1,7 +1,11 @@
 <template>
   <main>
-    <p><em>{{ $t('contact_intro') }}</em></p>
-    <p>{{ $t('contact_phone') }}: <a href="tel:+380933789883">+380 933 789 883</a></p>
+    <p>
+      <strong>
+        <em>{{ $t('contact_intro') }}</em>
+      </strong>
+      </p>
+    <p>{{ $t('contact_phone') }}: <a href="tel:+380933789883">+380 93 378 9883</a></p>
     <p>{{ $t('contact_tg') }}: <a href="http://t.me/abcdesign1">@abcdesign1</a></p>
     <p>{{ $t('contact_mail') }}: <a href="mailto:one.abcdesign@gmail.com">one.abcdesign@gmail.com</a></p>
 
@@ -142,7 +146,7 @@ const submitForm = async () => {
 </script>
 
 <style lang="scss" scoped>
-main {
+main p {
   padding: 0 0.5rem;
 }
 
@@ -156,6 +160,8 @@ main * {
   align-items: center;
   color: var(--color);
   border: 1px solid var(--background);
+  box-shadow: 0 0 1rem 0.5rem var(--shadow);
+  padding: 2rem;
 
   & * {
     width: 66.6vmin;
@@ -164,7 +170,7 @@ main * {
   label {
     position: relative;
     font-weight: 300;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     border: 1px solid var(--background);
 
     &::before {
@@ -173,7 +179,7 @@ main * {
       background: var(--background);
       left: 0.5ch;
       padding: 0 0.25ch;
-      top: 0;
+      top: -0.5ch;
       letter-spacing: 0.15ch;
     }
 
@@ -182,7 +188,7 @@ main * {
       color: red;
       position: absolute;
       left: -1.5ch;
-      top: 0;
+      top: -0.33ch;
     }
 
     &>* {

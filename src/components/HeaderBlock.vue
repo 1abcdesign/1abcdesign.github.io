@@ -69,7 +69,6 @@ import LangSwitcher from './LangSwitcher.vue'
 <style lang="scss">
 header {
   width: 100%;
-  box-shadow: 0 0 1rem 0.5rem var(--shadow);
   background: linear-gradient(180deg, var(--background), transparent 100%);
   position: fixed;
   top: 0;
