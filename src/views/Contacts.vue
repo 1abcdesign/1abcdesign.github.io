@@ -185,9 +185,8 @@ main * {
 
   label {
     position: relative;
-    padding: 0.5rem 0;
+    padding: 0.33rem 0;
     border: none;
-    margin: 2px 0;
 
     &::before {
       position: absolute;
@@ -195,7 +194,7 @@ main * {
       background: var(--background);
       left: 0.5ch;
       padding: 0 0.25ch 0 0.5ch;
-      top: -0.15ch;
+      top: -0.33ch;
       letter-spacing: 0.15ch;
       line-height: 100%;
     }
@@ -204,13 +203,14 @@ main * {
       content: '*';
       color: red;
       position: absolute;
-      left: -1.5ch;
-      top: -0.33ch;
+      left: -1.25ch;
+      top: -0.5ch;
     }
 
     & > * {
       padding: 1rem;
       border-width: 2px;
+      border-color: var(--color);
     }
   }
 }
