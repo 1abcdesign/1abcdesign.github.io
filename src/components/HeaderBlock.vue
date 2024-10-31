@@ -2,7 +2,12 @@
   <header>
     <nav>
       <li class="logo_link">
-        <router-link to="/" id="logo_link" style="position: relative;" >
+        <router-link
+          to="/"
+          id="logo_link"
+          style="position: relative;"
+          :title="$t('')"
+        >
           <svg
             id="logoImage"
             ref="logoImage"
@@ -21,7 +26,7 @@
       </li>
 
       <li>
-        <router-link to="/services">
+        <router-link to="/services" :title="$t('showcases')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -43,7 +48,7 @@
       </li>
 
       <li>
-        <router-link to="/company">
+        <router-link to="/company" :title="$t('about')" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -68,7 +73,7 @@
       </li>
 
       <li>
-        <router-link to="/contacts">
+        <router-link to="/contacts" :title="$t('contactTip')" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
