@@ -64,7 +64,7 @@ const ServicesSlider = defineAsyncComponent(() =>
     align-items: center;
     justify-content: center;
     height: calc(13 * var(--usable-vh));
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
     .middle {
       width: 100vmin;
@@ -79,18 +79,22 @@ const ServicesSlider = defineAsyncComponent(() =>
     }
 
     ul {
+      width: calc(43.25 * var(--usable-vh));
+      font-size: calc(2 * var(--usable-vh));
       list-style: none;
       margin: 0;
       padding: 0;
 
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
       align-items: center;
       justify-content: center;
 
       font-weight: bold;
 
-      li {}
+      li {
+        display: inline-block;
+        text-align: center;
+      }
 
       li:hover {
         background: var(--color);
@@ -114,28 +118,42 @@ const ServicesSlider = defineAsyncComponent(() =>
       width: 100%;
       margin: 0;
       box-shadow: 0 0 1rem 0.5rem var(--shadow);
-      font-size: calc(6 * var(--usable-vh));
-      height: calc(9 * var(--usable-vh));
+      font-size: calc(5 * var(--usable-vh));
+      height: calc(8 * var(--usable-vh));
 
       color: var(--background);
       position: relative;
       text-shadow: 0 0 0.5ch var(--color);
       letter-spacing: calc(3.5ch / 9);
+
       padding-left: 0.6ch;
 
+      --top-offset: calc(0.5 * var(--usable-vh));
+      padding-top: var(--top-offset);
+
       &::after {
+        width: 100%;
         position: absolute;
         content: 'ABCDΞsign1';
-        top: 0;
+        top: var(--top-offset);
         left: 0.3ch;
         color: var(--background);
-        width: 100%;
       }
     }
 
     .moto {
-      text-shadow: 0 0 0.5ch var(--shadow);
-      word-spacing: -0.05ch;
+      display: block;
+      width: calc(43.25 * var(--usable-vh));
+      position: relative;
+      bottom: 0.1rem;
+
+      & em {
+        width: 100%;
+        text-shadow: 0 0 0.5ch var(--shadow);
+        --spacing: 0.089ch;
+        letter-spacing: var(--spacing);
+        word-spacing: var(--spacing);
+      }
     }
   }
 

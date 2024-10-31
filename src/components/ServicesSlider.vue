@@ -4,6 +4,8 @@
     :arrows="false"
     :bullets="false"
     :fixed-height="true"
+    class="no-shadow"
+    :style="'box-shadow: inset 0 0 1rem 0.5rem var(--shadow)'"
   >
     <vueper-slide
       v-for="(slide, i) in slides"
@@ -111,7 +113,6 @@ const slides = ref(
 
   @media (orientation: portrait) {}
   @media (orientation: landscape) {}
-  .vueperslide__content-wrapper {}
 }
 
 .vueperslide__content {
