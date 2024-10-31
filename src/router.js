@@ -96,8 +96,6 @@ function preloadImages() {
     'https://1abcdesign.github.io/d08.jpg',
     'https://1abcdesign.github.io/d09.jpg',
     'https://1abcdesign.github.io/d10.jpg',
-    'https://1abcdesign.github.io/logo_light.png',
-    'https://1abcdesign.github.io/logo_dark.png',
   ];
 
   images.forEach((src) => {

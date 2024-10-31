@@ -1,8 +1,8 @@
 <template>
   <main class="home">
-    <div class="top-left">
-      <logo3d-view />
+    <logo3d-view />
 
+    <div class="middle-wrapper">
       <section class="middle">
         <ul>
           <li>
@@ -25,7 +25,7 @@
           </li>
         </ul>
 
-        <h1 class="main-header">ABCDΞsign.one</h1>
+        <h1 class="main-header">ABCDΞsign1</h1>
 
         <strong class="moto">
           <em>
@@ -58,67 +58,86 @@ const ServicesSlider = defineAsyncComponent(() =>
   align-items: center;
   justify-content: flex-start;
 
-  .middle {
-    width: 100%;
-    height: calc(11 * var(--usable-vh));
-
+  .middle-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-
-    position: absolute;
-    top: calc(33.5 * var(--usable-vh));
-  }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    display: flex;
-    align-items: center;
     justify-content: center;
-    width: 78vw;
-    font-weight: bold;
-    font-size: 120%;
+    height: calc(13 * var(--usable-vh));
+    border: 1px solid red;
 
-    li {
+    .middle {
+      width: 100vmin;
+      height: calc(13.25 * var(--usable-vh));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      position: absolute;
+      top: calc(33 * var(--usable-vh));
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+      justify-content: center;
+
+      font-weight: bold;
+
+      li {}
+
+      li:hover {
+        background: var(--color);
+        color: var(--background);
+      }
+
+      li::first-letter {
+        background: var(--color);
+        color: var(--background);
+        text-decoration: underline var(--background) !important;
+      }
+
+      li:hover::first-letter {
+        background: var(--background);
+        color: var(--color);
+        text-decoration: underline var(--color) !important;
+      }
+    }
+
+    .main-header {
+      width: 100%;
+      margin: 0;
+      box-shadow: 0 0 1rem 0.5rem var(--shadow);
+      font-size: calc(6 * var(--usable-vh));
+      height: calc(9 * var(--usable-vh));
+
+      color: var(--background);
       position: relative;
+      text-shadow: 0 0 0.5ch var(--color);
+      letter-spacing: calc(3.5ch / 9);
+      padding-left: 0.6ch;
+
+      &::after {
+        position: absolute;
+        content: 'ABCDΞsign1';
+        top: 0;
+        left: 0.3ch;
+        color: var(--background);
+        width: 100%;
+      }
     }
 
-    li:hover {
-      background: var(--color);
-      color: var(--background);
-    }
-
-    li::first-letter {
-      background: var(--color);
-      color: var(--background);
-      text-decoration: underline var(--background) !important;
-    }
-
-    li:hover::first-letter {
-      background: var(--background);
-      color: var(--color);
-      text-decoration: underline var(--color) !important;
+    .moto {
+      text-shadow: 0 0 0.5ch var(--shadow);
+      word-spacing: -0.05ch;
     }
   }
 
-  .main-header {
-    letter-spacing: 1ch;
-    margin: 0;
-    padding: 0 0 0 1ch;
-    box-shadow: 0 0 1rem 0.5rem var(--shadow);
-  }
-
-  .main-header,
-  .moto {
-    text-shadow: 0 0 0.5ch var(--shadow);
-  }
-
-  .moto {
-    word-spacing: 0.5ch;
-  }
 }
 </style>

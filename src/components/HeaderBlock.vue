@@ -2,7 +2,7 @@
   <header>
     <nav>
       <li class="logo_link">
-        <router-link to="/" id="logo_link">
+        <router-link to="/" id="logo_link" style="position: relative;" >
           <svg
             id="logoImage"
             ref="logoImage"
@@ -16,7 +16,7 @@
             <path d="M 200,14 A 93, 93, 0 1 1 200, 200" fill="none" />
             <circle cx="200" cy="200" r="186" fill="none" />
           </svg>
-          <span><b>ABCDΞsign.one</b></span>
+          <span><b>ABCDΞsign1</b></span>
         </router-link>
       </li>
 

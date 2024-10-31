@@ -99,31 +99,31 @@ const slides = ref(
 )
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .vueperslides--fixed-height {
   position: absolute;
-  top: calc(46.25 * var(--usable-vh));
+  top: calc(46.3 * var(--usable-vh));
 }
 
 .vueperslides {
   width: 100vmin;
   height: calc(38 * var(--usable-vh));
 
-  @media (orientation: portrait) {
-  }
-  @media (orientation: landscape) {
-  }
-  .vueperslide__content-wrapper {
-  }
+  @media (orientation: portrait) {}
+  @media (orientation: landscape) {}
+  .vueperslide__content-wrapper {}
 }
 
 .vueperslide__content {
   width: 100%;
+}
 
-  /* These styles are already added in `src\assets\slides.js` */
-  .content {
-  }
-  .image {
-  }
+.vueperslide__title em {
+  display: block !important;
+}
+
+.vueperslide__title em::first-letter {
+  background: var(--color);
+  color: var(--background);
 }
 </style>
