@@ -1,16 +1,45 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk"> <!-- Зміна мови на українську для SEO та локалізації -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="">
+
+    <!-- SEO: Додавання основних ключових слів -->
+    <meta name="description" content="ABCDΞsign1 — Від Ескізу до Дизайну Під Ключ — Все в Одному Місці. Професійний дизайн інтер'єру, екстер'єру та ландшафтний дизайн в Україні." />
+    <meta name="keywords" content="дизайн інтер'єру, екстер'єрний дизайн, ландшафтний дизайн, дизайнерські послуги, ABCDΞsign1, дизайн під ключ, Україна" />
+
+    <!-- Social Media Open Graph Tags -->
+    <meta property="og:title" content="ABCDΞsign1 - Дизайн Під Ключ в Україні" />
+    <meta property="og:description" content="Від Ескізу до Дизайну Під Ключ — Все в Одному Місці. Надаємо комплексні дизайнерські послуги." />
+    <meta property="og:image" content="https://1abcdesign.github.io/logo.png" /> <!-- Замініть на реальне посилання на зображення -->
+    <meta property="og:url" content="https://abcdesign1.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card для соцмереж -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ABCDΞsign1 - Дизайн Під Ключ в Україні" />
+    <meta name="twitter:description" content="Від Ескізу до Дизайну Під Ключ — Все в Одному Місці. Надаємо дизайнерські послуги для вашого простору." />
+    <meta name="twitter:image" content="https://1abcdesign.github.io/logo.png" /> <!-- Замініть на реальне посилання на зображення -->
+
+    <!-- Favicon -->
     <link id="favicon" rel="icon" type="image/x-icon" href="https://1abcdesign.github.io/favicon_light.ico" />
     <link rel="preload" href="https://1abcdesign.github.io/favicon_dark.ico" as="image">
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>ABCDΞsign.one</title>
+
+    <!-- Title -->
+    <title>ABCDΞsign1 — Від Ескізу до Дизайну Під Ключ — Все в Одному Місці</title>
+
+    <!-- Canonical Link для уникнення дублювання -->
+    <link rel="canonical" href="https://abcdesign1.com/" />
+
+    <!-- Robots Meta для індексації -->
+    <meta name="robots" content="index, follow">
+
+    <!-- JavaScript для корекції URL -->
     <script type="text/javascript">
       (function (l) {
         if (l.search[1] === "/") {
@@ -25,27 +54,48 @@
         }
       })(window.location);
     </script>
+
+    <!-- JavaScript для вибору теми -->
     <script type="text/javascript">
       (function() {
         const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
         let savedTheme = localStorage.getItem('theme');
-
-        // Set the default theme based on the system preference if not saved in localStorage
         if (!savedTheme) {
           savedTheme = prefersDarkMode ? 'dark' : 'light';
           localStorage.setItem('theme', savedTheme);
         }
-
-        // Apply the theme to the document root
         document.documentElement.setAttribute('data-theme', savedTheme);
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-uC0OtYhW.js"></script>
+    <script type="module" crossorigin src="/assets/index-BQYi8Svl.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-7ZIIYpuG.js">
     <link rel="modulepreload" crossorigin href="/assets/common-Dz5E8zRs.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-DiFX8h1W.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-BW6m6yHX.css">
   </head>
   <body>
+    <!-- Додавання структурованих даних Schema для організації -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ABCDΞsign1",
+      "url": "https://abcdesign1.com",
+      "logo": "https://1abcdesign.github.io/logo.png",
+      "description": "Компанія з надання дизайнерських послуг для інтер'єру, екстер'єру та ландшафтного дизайну.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+380933789883",
+        "contactType": "Customer Support",
+        "areaServed": "UA",
+        "availableLanguage": ["Ukrainian", "English"]
+      },
+      "sameAs": [
+        "https://github.com/1abcdesign",
+        "https://t.me/abcdesign1"
+      ]
+    }
+    </script>
+
     <div id="app"></div>
   </body>
 </html>
