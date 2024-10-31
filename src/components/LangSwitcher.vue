@@ -93,7 +93,7 @@ onMounted(async () => {
 
   &-option {
     padding: 0;
-    margin: -1px 0 0 -1px;
+    margin: 0 0 0 0;
     width: calc(5 * var(--usable-vh));
 
     &-img {

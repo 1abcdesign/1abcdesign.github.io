@@ -13,10 +13,10 @@
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
+      stroke-width="1.5"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="feather feather-moon"
+      class="icon feather-moon"
     >
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
     </svg>
@@ -30,10 +30,10 @@
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
+      stroke-width="1.5"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="feather feather-sun"
+      class="icon feather-sun"
     >
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -59,19 +59,8 @@ function themeSwitch() {
   console.log(BASE_URL)
   updateThemeColor()
   addTransitionClass()
-  setLogoImage()
   setFavIcon()
   updateIconsStroke()
-}
-
-function setLogoImage() {
-  const theme = localStorage.getItem('theme')
-  const logo = document.getElementById('logoImage')
-  const logoFooter = document.getElementById('logoImageFooter')
-  const logoSrc =
-    theme === 'light' ? BASE_URL + 'logo_light.png' : BASE_URL + 'logo_dark.png'
-  logo.setAttribute('src', logoSrc)
-  logoFooter.setAttribute('src', logoSrc)
 }
 
 function setFavIcon() {
@@ -102,7 +91,7 @@ const updateThemeColor = () => {
 }
 
 const updateIconsStroke = () => {
-  const icons = document.querySelectorAll('.feather') // Отримуємо всі елементи з класом .feather
+  const icons = document.querySelectorAll('.icon') // Отримуємо всі елементи з класом .feather
   const strokeColor = theme.value === 'light' ? '#000' : '#fff' // Вибір кольору для світлої або темної теми
 
   icons.forEach(icon => {
@@ -127,7 +116,6 @@ onMounted(() => {
   const savedTheme = localStorage.getItem('theme') || 'light'
   theme.value = savedTheme
   updateThemeColor()
-  setLogoImage()
   setFavIcon()
   updateIconsStroke()
 })
@@ -160,15 +148,10 @@ watch(theme, newTheme => {
   padding: 0;
 }
 
-.feather {
+.icon {
   width: calc(5 * var(--usable-vh));
   height: calc(5 * var(--usable-vh));
   stroke: var(--theme-color); /* Використовуємо CSS-змінну для кольору */
   fill: none;
-}
-
-/* Додаємо анімацію тільки під час зміни теми */
-.theme-change {
-  transition: stroke 0.5s ease-in-out;
 }
 </style>

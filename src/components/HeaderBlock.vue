@@ -3,13 +3,19 @@
     <nav>
       <li class="logo_link">
         <router-link to="/" id="logo_link">
-          <img
-            src="/logo_light.png"
-            alt="company logo image"
+          <svg
             id="logoImage"
             ref="logoImage"
-          />
-
+            class="icon"
+            viewBox="0 0 400 400"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line x1="200" y1="400" x2="200" y2="0" />
+            <line x1="200" y1="0" x2="0" y2="200" />
+            <line x1="0" y1="200" x2="200" y2="200" />
+            <path d="M 200,14 A 93, 93, 0 1 1 200, 200" fill="none" />
+            <circle cx="200" cy="200" r="186" fill="none" />
+          </svg>
           <span><b>ABCDΞsign.one</b></span>
         </router-link>
       </li>
@@ -26,7 +32,7 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="feather feather-briefcase"
+            class="icon feather-briefcase"
           >
             <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
             <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
@@ -48,7 +54,7 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="feather feather-circle"
+            class="icon feather-circle"
           >
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="12" y1="22" x2="12" y2="2" />
@@ -73,7 +79,7 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="feather feather-at-sign"
+            class="icon feather-at-sign"
           >
             <circle cx="12" cy="12" r="4"></circle>
             <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
@@ -130,20 +136,13 @@ nav {
     display: flex;
     align-items: center;
     text-align: center;
-    border: 1px solid transparent;
-
     a {
       width: 100%;
       height: calc(10 * var(--usable-vh) + 0.5rem);
     }
 
-    a:link,
-    a:visited {
+    a:link {
       text-decoration: none;
-    }
-
-    &:not(:has(#logo_link), .global-view):hover {
-      border: 1px solid var(--grey);
     }
 
     a:hover,
@@ -162,10 +161,6 @@ nav {
     nav {
       font-size: 125%;
     }
-  }
-
-  li:not(.logo_link, .global-view) > .router-link-active {
-    background: var(--background);
   }
 
   .global-view {
@@ -197,16 +192,5 @@ nav {
   .global-view {
     padding: 0;
   }
-}
-
-#logoImage {
-  display: flex;
-  height: calc(5 * var(--usable-vh));
-  width: calc(5 * var(--usable-vh));
-
-  background-image: var(--logo);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
 }
 </style>

@@ -95,7 +95,7 @@ const ServicesSlider = defineAsyncComponent(() =>
     li::first-letter {
       background: var(--color);
       color: var(--background);
-      text-decoration: underline var(--background);
+      text-decoration: underline var(--background) !important;
     }
 
     li:hover::first-letter {

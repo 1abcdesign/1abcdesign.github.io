@@ -125,7 +125,7 @@ try_again: 'Try again',
     flag: './Flag_of_the_United_Kingdom.png',
     toggleLangTip: 'Change language',
     toggleThemeTip: 'Change theme',
-    404: 'No such a route found...',
+    404: 'No such a page found...',
     back404: 'Back to the main',
   },
   uk: {

@@ -147,16 +147,14 @@ a:visited,
 a:hover,
 a:active {
   color: inherit;
-  border: 1px solid transparent;
 }
 
-li:has(a:not(#logo_link).router-link-active),
-a:not(#logo_link).router-link-active {
+a.router-link-active {
   background: var(--color);
   color: var(--background);
 }
 
-a:not(#logo_link).router-link-active svg {
+a.router-link-active svg {
   stroke: var(--background);
 }
 
@@ -176,19 +174,21 @@ footer a {
   flex-direction: column-reverse;
 }
 
-
+header a:hover,
 footer a:hover {
   background: var(--color);
+  color: var(--background);
 }
 
+header a:hover svg,
 footer a:hover svg {
   stroke: var(--background);
 }
 
-header nav li a svg,
-footer svg {
-  width: 2rem !important;
-  height: 2rem !important;
+header nav li a svg:not(#logoImage),
+footer a svg {
+  width: 2rem;
+  height: 2rem;
 }
 
 header,
@@ -200,6 +200,24 @@ footer {
 
 header {
   height: calc((10 * var(--usable-vh)) + 0.5rem);
+}
+
+#logoImage,
+#logoImageFooter {
+  stroke: currentColor;
+  stroke-width: 28px;
+}
+
+#logoImage {
+  height: calc(5 * var(--usable-vh));
+  width: calc(5 * var(--usable-vh));
+}
+
+#logoImageFooter {
+  height: calc(2 * var(--usable-vh));
+  width: calc(2 * var(--usable-vh));
+  position: relative;
+  top: calc(0.5 * var(--usable-vh));
 }
 
 main {
@@ -255,15 +273,4 @@ textarea::-webkit-scrollbar-thumb:hover {
 main::-webkit-scrollbar-track:hover,
 textarea::-webkit-scrollbar-track:hover {
   background-color: var(--shadow);
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
 }

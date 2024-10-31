@@ -1,11 +1,21 @@
 <template>
   <footer>
     <section class="copy-right">
-      &copy;&nbsp;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;<img
-        src="/logo_light.png"
-        alt="company logo image"
+      &copy;&nbsp;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;
+      <svg
         id="logoImageFooter"
-      />&nbsp;ABCDΞsign.one
+        ref="logoImageFooter"
+        class="icon"
+        viewBox="0 0 400 400"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line x1="200" y1="400" x2="200" y2="0" />
+        <line x1="200" y1="0" x2="0" y2="200" />
+        <line x1="0" y1="200" x2="200" y2="200" />
+        <path d="M 200,14 A 93, 93, 0 1 1 200, 200" fill="none" />
+        <circle cx="200" cy="200" r="186" fill="none" />
+      </svg>
+      &nbsp;ABCDΞsign.one
     </section>
 
     <section class="links">
@@ -21,10 +31,10 @@
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
+          stroke-width="1.5"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="feather feather-mail"
+          class="icon feather-mail"
         >
           <path
             d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
@@ -45,17 +55,21 @@
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
+          stroke-width="1.5"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="feather feather-send"
+          class="icon feather-send"
         >
           <line x1="22" y1="2" x2="11" y2="13"></line>
           <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
         </svg>
       </a>
 
-      <a href="tel:+380933789883" aria-label="Call us" :title="$t('phoneUs')">
+      <a
+        href="tel:+380933789883"
+        aria-label="Call us"
+        :title="$t('phoneUs')"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -63,17 +77,16 @@
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
+          stroke-width="1.5"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="feather feather-phone"
+          class="icon feather-phone"
           aria-hidden="true"
         >
           <path
             d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
           ></path>
         </svg>
-        <span class="visually-hidden">Call us at +380933789883</span>
       </a>
     </section>
   </footer>
@@ -125,27 +138,5 @@ footer {
 
     word-spacing: -0.075ch;
   }
-
-  span:last-of-type {
-    text-align: right;
-  }
-
-  .phone-icon {
-    height: 2vh;
-    width: 2vh;
-  }
-}
-
-#logoImageFooter {
-  display: inline-flex;
-  height: calc(2 * var(--usable-vh));
-  width: calc(2 * var(--usable-vh));
-  position: relative;
-  top: calc(0.5 * var(--usable-vh));
-
-  background-image: var(--logo);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
 }
 </style>
