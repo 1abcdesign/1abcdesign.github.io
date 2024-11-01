@@ -79,7 +79,10 @@ main {
   padding: 1rem;
 
   text-align: left;
-  text-indent: 3ch;
+
+  p {
+    text-indent: 3ch;
+  }
 
   max-width: 70ch;
 
@@ -107,21 +110,25 @@ main {
     width: 100%;
 
     .person {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      grid-template-rows: 16vh repeat (2, 1fr);
+      align-content: space-between;
+      justify-items: center;
 
       text-align: center;
 
       height: 25vh;
 
       box-shadow: 0 0 1rem 0.5rem var(--shadow);
-      padding: 0.5rem;
+      padding: 0.5rem 2rem;
 
       img {
         height: 16vh;
         width: auto;
+      }
+
+      h3 {
+        align-self: start;
       }
 
       h3, p {
