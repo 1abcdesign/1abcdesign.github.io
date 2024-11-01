@@ -14,14 +14,22 @@
 
         <h3>{{ $t('lifeStyle1') }}</h3>
 
-        <p>{{ $t('lifeStyle2') }}</p>
+        <p>
+          <em>
+            {{ $t('lifeStyle2') }}
+          </em>
+        </p>
       </div>
       <div class="person a">
         <img src="/photo_a.jpg" alt="A">
 
         <h3>{{ $t('lifeStyle3') }}</h3>
 
-        <p>{{ $t('lifeStyle4') }}</p>
+        <p>
+          <em>
+            {{ $t('lifeStyle4') }}
+          </em>
+        </p>
       </div>
     </section>
 
@@ -32,7 +40,9 @@
     <hr>
 
     <p>
-      {{ $t('aboutUs4') }}
+      <strong>
+        {{ $t('aboutUs4') }}
+      </strong>
     </p>
 
     <router-link to="/contacts">
