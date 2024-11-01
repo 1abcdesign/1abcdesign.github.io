@@ -50,6 +50,8 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   if (to.path === '/services') {
     preloadImages();
+  } else if (to.path === '/company') {
+    preloadPhotos()
   }
   next();
 });
@@ -99,6 +101,21 @@ function preloadImages() {
   ];
 
   images.forEach((src) => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = src;
+    document.head.appendChild(link);
+  });
+}
+
+function preloadPhotos() {
+  const photos = [
+    'https://1abcdesign.github.io/photo_v.jpg',
+    'https://1abcdesign.github.io/photo_a.jpg',
+  ];
+
+  photos.forEach((src) => {
     const link = document.createElement('link');
     link.rel = 'preload';
     link.as = 'image';
