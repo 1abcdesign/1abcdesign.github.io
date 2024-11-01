@@ -1,0 +1,1 @@
+import{a}from"./index-D9jZE578.js";import{a as r,f as n,t,k as s,w as c,i as l,o as i,d as _}from"./vendor-7ZIIYpuG.js";import"./common-Dz5E8zRs.js";const m={};function f(e,p){const o=l("router-link");return i(),r("main",null,[n("h1",null,t(e.$t("404")),1),s(o,{to:"/"},{default:c(()=>[_(t(e.$t("back404")),1)]),_:1})])}const h=a(m,[["render",f]]);export{h as default};
