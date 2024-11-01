@@ -186,6 +186,7 @@ footer a:hover svg {
 
 header nav a span {
   padding-right: 0.1ch; /* as on Home h1*/
+  padding-top: 1px;
   position: relative;
   width: calc(8 * var(--usable-vh));  /* as 33vh on Home h1*/
   font-size: calc(8 * var(--usable-vh) * 5 / 33); /* as 5vh on Home h1*/
