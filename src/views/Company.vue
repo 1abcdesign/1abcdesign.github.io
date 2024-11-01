@@ -10,7 +10,7 @@
 
     <section class="vip">
       <div class="person v">
-        <img src="/photo_v.jpg" alt="V">
+        <img src="/photo_v.webp" alt="V">
 
         <h3>{{ $t('lifeStyle1') }}</h3>
 
@@ -21,7 +21,7 @@
         </p>
       </div>
       <div class="person a">
-        <img src="/photo_a.jpg" alt="A">
+        <img src="/photo_a.webp" alt="A">
 
         <h3>{{ $t('lifeStyle3') }}</h3>
 
