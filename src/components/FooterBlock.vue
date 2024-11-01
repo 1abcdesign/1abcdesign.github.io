@@ -153,19 +153,17 @@ footer {
     word-spacing: -0.075ch;
 
     .logo-span {
-      border: 1.5px solid var(--color);
+      border: 2px solid var(--color);
       padding-left: 0.1ch;
       font-weight: bold;
       height: calc(2 * var(--usable-vh));
       display: inline-flex;
       align-items: center;
       font-size: calc(2 * var(--usable-vh) * 5 / 8);
-
-      margin-right: -1px;
     }
 
     .com {
-      border: 1.5px solid var(--color);
+      border: 2px solid var(--color);
       padding-left: 0.1ch;
       font-weight: bold;
       height: calc(2 * var(--usable-vh));
@@ -180,5 +178,6 @@ footer {
 #logoImageFooter {
   height: calc(2 * var(--usable-vh) + 2px) !important;
   width: calc(2 * var(--usable-vh) +  2px) !important;
+  margin: 0 -1px;
 }
 </style>
