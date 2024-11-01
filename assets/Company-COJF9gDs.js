@@ -1,0 +1,1 @@
+import{a as t}from"./index-BNdXgiq1.js";import{a,t as r,o as e}from"./vendor-7ZIIYpuG.js";import"./common-Dz5E8zRs.js";const n={};function c(o,s){return e(),a("main",null,r(o.$t("about")),1)}const f=t(n,[["render",c]]);export{f as default};
