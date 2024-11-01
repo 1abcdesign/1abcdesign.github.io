@@ -48,7 +48,7 @@
     <router-link to="/contacts">
       {{ $t('contacts') }}
 
-      <svg
+      <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
@@ -64,7 +64,21 @@
         <circle cx="8.5" cy="7" r="4"></circle>
         <line x1="20" y1="8" x2="20" y2="14"></line>
         <line x1="23" y1="11" x2="17" y2="11"></line>
-      </svg>
+      </svg> -->
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon feather-phone-call">
+          <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
     </router-link>
   </main>
 </template>
@@ -103,10 +117,10 @@ main {
   .vip {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1rem;
     padding: 1rem 0;
 
-    height: 27vh;
+    height: 28vh;
     width: 100%;
 
     .person {
@@ -117,13 +131,13 @@ main {
 
       text-align: center;
 
-      height: 25vh;
+      height: 26vh;
 
       box-shadow: 0 0 1rem 0.5rem var(--shadow);
-      padding: 0.5rem 2rem;
+      padding: 0.5rem 1.5rem;
 
       img {
-        height: 16vh;
+        height: 15vh;
         width: auto;
       }
 
@@ -140,9 +154,9 @@ main {
   a {
     display: inline-flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 
-    width: 25ch;
+    width: 22ch;
     gap: 0.5rem;
 
     border: 1px solid var(--color);
