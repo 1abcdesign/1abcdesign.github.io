@@ -4,6 +4,8 @@
 
     <div class="middle-wrapper">
       <section class="middle">
+        <h1 class="main-header">ABCDΞsign1</h1>
+
         <ul>
           <li>
             <router-link to="/services#ambience">{{
@@ -24,8 +26,6 @@
             <router-link to="/services#design">{{ $t('design') }}</router-link>
           </li>
         </ul>
-
-        <h1 class="main-header">ABCDΞsign1</h1>
 
         <strong class="moto">
           <em>
@@ -115,7 +115,6 @@ const ServicesSlider = defineAsyncComponent(() =>
     }
 
     .main-header {
-      width: 100%;
       margin: 0;
       box-shadow: 0 0 1rem 0.5rem var(--shadow);
       font-size: calc(5 * var(--usable-vh));
@@ -124,19 +123,19 @@ const ServicesSlider = defineAsyncComponent(() =>
       color: var(--background);
       position: relative;
       text-shadow: 0 0 0.5ch var(--color);
-      letter-spacing: calc(3.5ch / 9);
 
-      padding-left: 0.6ch;
+      width: calc(33 * var(--usable-vh));
 
       --top-offset: calc(0.5 * var(--usable-vh));
+      padding-right: 0.16ch;
       padding-top: var(--top-offset);
 
       &::after {
+        top: var(--top-offset);
+        right: 0.08ch;
         width: 100%;
         position: absolute;
         content: 'ABCDΞsign1';
-        top: var(--top-offset);
-        left: 0.3ch;
         color: var(--background);
       }
     }

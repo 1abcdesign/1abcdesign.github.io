@@ -91,7 +91,8 @@ export default {
 /* Optional styles for the container */
 .canvas-container {
   position: relative;
-  top: calc(0.25 * var(--usable-vh));
+  /* top: calc(0.25 * var(--usable-vh)); */
+  top: 0;
   overflow: hidden;
   display: flex;
   justify-content: center;

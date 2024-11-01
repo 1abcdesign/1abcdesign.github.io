@@ -2,12 +2,7 @@
   <header>
     <nav>
       <li class="logo_link">
-        <router-link
-          to="/"
-          id="logo_link"
-          style="position: relative;"
-          :title="$t('')"
-        >
+        <router-link to="/" id="logo_link" :title="$t('mainPage')" >
           <svg
             id="logoImage"
             ref="logoImage"
@@ -191,6 +186,12 @@ nav {
   align-items: center;
   padding: 0 1vmin;
   text-decoration: none;
+}
+
+#logoImage {
+  stroke-width: 28px;
+  height: calc(8 * var(--usable-vh));
+  width: calc(8 * var(--usable-vh));
 }
 
 @media (max-width: 400px) {

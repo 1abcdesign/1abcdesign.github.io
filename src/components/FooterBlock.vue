@@ -2,20 +2,30 @@
   <footer>
     <section class="copy-right">
       &copy;&nbsp;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;
+      <span class="logo-span">
+        ABCDΞsign1
+      </span>
       <svg
-        id="logoImageFooter"
-        ref="logoImageFooter"
-        class="icon"
-        viewBox="0 0 400 400"
         xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        id="logoImageFooter"
       >
-        <line x1="200" y1="400" x2="200" y2="0" />
-        <line x1="200" y1="0" x2="0" y2="200" />
-        <line x1="0" y1="200" x2="200" y2="200" />
-        <path d="M 200,14 A 93, 93, 0 1 1 200, 200" fill="none" />
-        <circle cx="200" cy="200" r="186" fill="none" />
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="22" x2="12" y2="2" />
+        <line x1="12" y1="2" x2="2" y2="12" />
+        <line x1="2" y1="12" x2="12" y2="12" />
+        <path d="M 12,2 A 5,5, 0 1 1 12,12" fill="none" />
       </svg>
-      &nbsp;ABCDΞsign1
+      <span class="com">
+        com
+      </span>
     </section>
 
     <section class="links">
@@ -125,7 +135,7 @@ footer {
     height: calc(5 * var(--usable-vh));
   }
 
-  span {
+  span:not(.logo-span) {
     display: inline-block;
     width: 33.33%;
     text-align: center;
@@ -136,7 +146,39 @@ footer {
     left: 1vmax;
     text-align: left;
 
+    display: flex;
+
+    align-items: center;
+
     word-spacing: -0.075ch;
+
+    .logo-span {
+      border: 1.5px solid var(--color);
+      padding-left: 0.1ch;
+      font-weight: bold;
+      height: calc(2 * var(--usable-vh));
+      display: inline-flex;
+      align-items: center;
+      font-size: calc(2 * var(--usable-vh) * 5 / 8);
+
+      margin-right: -1px;
+    }
+
+    .com {
+      border: 1.5px solid var(--color);
+      padding-left: 0.1ch;
+      font-weight: bold;
+      height: calc(2 * var(--usable-vh));
+      display: inline-flex;
+      align-items: center;
+      font-size: calc(2 * var(--usable-vh) * 5 / 8);
+      width: min-content;
+    }
   }
+}
+
+#logoImageFooter {
+  height: calc(2 * var(--usable-vh) + 2px) !important;
+  width: calc(2 * var(--usable-vh) +  2px) !important;
 }
 </style>

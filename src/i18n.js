@@ -2,6 +2,7 @@ import { createI18n } from 'vue-i18n'
 
 const messages = {
   en: {
+    mainPage: 'Main page',
     company: 'About us',
     about: 'About our company',
     services: 'Our services',
@@ -130,6 +131,7 @@ const messages = {
     back404: 'Back to the main',
   },
   uk: {
+    mainPage: 'Головна сторінка',
     company: 'Про нас',
     about: 'Про нашу компанію',
     services: 'Наші послуги',

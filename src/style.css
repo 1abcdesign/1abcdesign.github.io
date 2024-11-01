@@ -184,6 +184,24 @@ footer a:hover svg {
   stroke: var(--background);
 }
 
+header nav a span {
+  padding-right: 0.1ch; /* as on Home h1*/
+  position: relative;
+  width: calc(8 * var(--usable-vh));  /* as 33vh on Home h1*/
+  font-size: calc(8 * var(--usable-vh) * 5 / 33); /* as 5vh on Home h1*/
+  height: calc(8 * var(--usable-vh) * 8 / 33);  /* as 8vh on Home h1*/
+  line-height: calc(8 * var(--usable-vh) * 5 / 33);  /* as 8vh on Home h1*/
+}
+
+a.router-link-active span,
+a:not(.router-link-active):hover span {
+  border: 2px solid var(--background);
+}
+
+a:not(.router-link-active) span{
+  border: 2px solid var(--color);
+}
+
 header nav li a svg:not(#logoImage),
 footer a svg {
   width: 2rem;
@@ -204,19 +222,6 @@ header {
 #logoImage,
 #logoImageFooter {
   stroke: currentColor;
-  stroke-width: 28px;
-}
-
-#logoImage {
-  height: calc(5 * var(--usable-vh));
-  width: calc(5 * var(--usable-vh));
-}
-
-#logoImageFooter {
-  height: calc(2 * var(--usable-vh));
-  width: calc(2 * var(--usable-vh));
-  position: relative;
-  top: calc(0.5 * var(--usable-vh));
 }
 
 main {
