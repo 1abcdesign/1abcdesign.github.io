@@ -119,6 +119,16 @@ footer {
   display: grid;
   grid-template-columns: calc(50% - 0.25rem) calc(50% + 0.25rem);
   align-items: center;
+  
+  &::after {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: calc(5 * var(--usable-vh)) !important;
+    filter: blur(1rem);
+    background: linear-gradient(0deg, var(--background), transparent 100%);
+  }
 
   .links {
     display: grid;
@@ -151,13 +161,13 @@ footer {
 
     word-spacing: -0.075ch;
 
-    .logo-span {
+    /* .logo-span {
       padding-left: 0.1ch;
       height: calc(2 * var(--usable-vh));
       display: inline-flex;
       align-items: center;
       font-size: calc(2 * var(--usable-vh) * 5 / 8);
-    }
+    } */
 
     /* .com {
       padding-left: 0.1ch;
