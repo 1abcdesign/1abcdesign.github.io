@@ -108,7 +108,7 @@ const props = defineProps({
 
   .article-image {
     width: 50%;
-    height: calc(85 * var(--usable-vh) - 0.5rem);
+    height: calc(85 * var(--usable-vh));
   }
 
   .article-info {

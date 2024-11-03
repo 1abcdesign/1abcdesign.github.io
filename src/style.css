@@ -213,6 +213,7 @@ header,
 footer {
   z-index: 1;
   box-shadow: 0 0 1rem 0.5rem var(--shadow);
+  background: var(--background);
 
 }
 
@@ -228,8 +229,8 @@ header {
 main {
   position: fixed;
   width: 100%;
-  height: calc(85 * var(--usable-vh) - 0.5rem);
-  top: calc(10 * var(--usable-vh) + 0.5rem);
+  height: calc(85 * var(--usable-vh));
+  top: calc(10 * var(--usable-vh));
 
   overflow-x: hidden;
   overflow-y: auto;

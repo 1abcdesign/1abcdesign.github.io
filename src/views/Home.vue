@@ -51,6 +51,7 @@ const ServicesSlider = defineAsyncComponent(() =>
 
 <style lang="scss">
 .home {
+  padding-top: 0.5rem;
   text-align: center;
 
   display: flex;
@@ -75,7 +76,7 @@ const ServicesSlider = defineAsyncComponent(() =>
       justify-content: space-between;
 
       position: absolute;
-      top: calc(33 * var(--usable-vh));
+      top: calc(33 * var(--usable-vh) + 0.5rem);
     }
 
     ul {

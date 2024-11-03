@@ -155,6 +155,7 @@ main {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding: 0.25rem;
 
     width: 22ch;
     gap: 0.5rem;

@@ -104,7 +104,7 @@ const slides = ref(
 <style lang="scss">
 .vueperslides--fixed-height {
   position: absolute;
-  top: calc(46.3 * var(--usable-vh));
+  top: calc(46.3 * var(--usable-vh) + 0.5rem);
 }
 
 .vueperslides {
