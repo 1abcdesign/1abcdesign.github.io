@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { ref } from 'vue';
+const navigationHistory = ref([]); // Array to store navigation history
 
 const routes = [
   {
@@ -24,8 +26,79 @@ const routes = [
   {
     path: '/:catchAll(.*)',
     component: () => import('@/views/404.vue'),
+    name: '404',
+    props: {
+      props: () => ({ previousPath: lastValidNamedRoute }), // Use function to get latest value
+    }
   },
 ];
+
+const assets = [
+  'https://1abcdesign.github.io/a01.webp',
+  'https://1abcdesign.github.io/a02.webp',
+  'https://1abcdesign.github.io/a03.webp',
+  'https://1abcdesign.github.io/a04.webp',
+  'https://1abcdesign.github.io/a05.webp',
+  'https://1abcdesign.github.io/a06.webp',
+  'https://1abcdesign.github.io/a07.webp',
+  'https://1abcdesign.github.io/a08.webp',
+  'https://1abcdesign.github.io/a09.webp',
+  'https://1abcdesign.github.io/a10.webp',
+  'https://1abcdesign.github.io/b01.webp',
+  'https://1abcdesign.github.io/b02.webp',
+  'https://1abcdesign.github.io/b03.webp',
+  'https://1abcdesign.github.io/b04.webp',
+  'https://1abcdesign.github.io/b05.webp',
+  'https://1abcdesign.github.io/b06.webp',
+  'https://1abcdesign.github.io/b07.webp',
+  'https://1abcdesign.github.io/b08.webp',
+  'https://1abcdesign.github.io/b09.webp',
+  'https://1abcdesign.github.io/b10.webp',
+  'https://1abcdesign.github.io/c01.webp',
+  'https://1abcdesign.github.io/c02.webp',
+  'https://1abcdesign.github.io/c03.webp',
+  'https://1abcdesign.github.io/c04.webp',
+  'https://1abcdesign.github.io/c05.webp',
+  'https://1abcdesign.github.io/c06.webp',
+  'https://1abcdesign.github.io/c07.webp',
+  'https://1abcdesign.github.io/c08.webp',
+  'https://1abcdesign.github.io/c09.webp',
+  'https://1abcdesign.github.io/c10.webp',
+  'https://1abcdesign.github.io/d01.webp',
+  'https://1abcdesign.github.io/d02.webp',
+  'https://1abcdesign.github.io/d03.webp',
+  'https://1abcdesign.github.io/d04.webp',
+  'https://1abcdesign.github.io/d05.webp',
+  'https://1abcdesign.github.io/d06.webp',
+  'https://1abcdesign.github.io/d07.webp',
+  'https://1abcdesign.github.io/d08.webp',
+  'https://1abcdesign.github.io/d09.webp',
+  'https://1abcdesign.github.io/d10.webp',
+];
+
+const photos = [
+  'https://1abcdesign.github.io/photo_v.webp',
+  'https://1abcdesign.github.io/photo_a.webp',
+];
+
+function preload3D() {
+  const logo3dsrc = 'https://1abcdesign.github.io/logo3d.glb';
+  const link = document.createElement('link');
+  link.rel = 'preload';
+  link.as = 'fetch';
+  link.href = logo3dsrc;
+  document.head.appendChild(link);
+}
+
+function preloadImages(images) {
+  images.forEach((src) => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = src;
+    document.head.appendChild(link);
+  });
+}
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -48,80 +121,26 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.path === '/services') {
-    preloadImages();
-  } else if (to.path === '/company') {
-    preloadPhotos()
+  console.log(to)
+  console.log(from)
+  console.log(this)
+  if (from.name) {
+    navigationHistory.value.push(from.fullPath); // Track only named routes
   }
-  next();
+
+  console.log(navigationHistory)
+
+  if (to.path === '/') {
+    preload3D();
+  } else if (to.path === '/services') {
+    preloadImages(assets);
+  } else if (to.path === '/company') {
+    preloadPhotos(photos);
+  }
+
+  next(vm => {
+    vm.prevRoute = from
+  })
 });
-
-function preloadImages() {
-  const images = [
-    'https://1abcdesign.github.io/a01.webp',
-    'https://1abcdesign.github.io/a02.webp',
-    'https://1abcdesign.github.io/a03.webp',
-    'https://1abcdesign.github.io/a04.webp',
-    'https://1abcdesign.github.io/a05.webp',
-    'https://1abcdesign.github.io/a06.webp',
-    'https://1abcdesign.github.io/a07.webp',
-    'https://1abcdesign.github.io/a08.webp',
-    'https://1abcdesign.github.io/a09.webp',
-    'https://1abcdesign.github.io/a10.webp',
-    'https://1abcdesign.github.io/b01.webp',
-    'https://1abcdesign.github.io/b02.webp',
-    'https://1abcdesign.github.io/b03.webp',
-    'https://1abcdesign.github.io/b04.webp',
-    'https://1abcdesign.github.io/b05.webp',
-    'https://1abcdesign.github.io/b06.webp',
-    'https://1abcdesign.github.io/b07.webp',
-    'https://1abcdesign.github.io/b08.webp',
-    'https://1abcdesign.github.io/b09.webp',
-    'https://1abcdesign.github.io/b10.webp',
-    'https://1abcdesign.github.io/c01.webp',
-    'https://1abcdesign.github.io/c02.webp',
-    'https://1abcdesign.github.io/c03.webp',
-    'https://1abcdesign.github.io/c04.webp',
-    'https://1abcdesign.github.io/c05.webp',
-    'https://1abcdesign.github.io/c06.webp',
-    'https://1abcdesign.github.io/c07.webp',
-    'https://1abcdesign.github.io/c08.webp',
-    'https://1abcdesign.github.io/c09.webp',
-    'https://1abcdesign.github.io/c10.webp',
-    'https://1abcdesign.github.io/d01.webp',
-    'https://1abcdesign.github.io/d02.webp',
-    'https://1abcdesign.github.io/d03.webp',
-    'https://1abcdesign.github.io/d04.webp',
-    'https://1abcdesign.github.io/d05.webp',
-    'https://1abcdesign.github.io/d06.webp',
-    'https://1abcdesign.github.io/d07.webp',
-    'https://1abcdesign.github.io/d08.webp',
-    'https://1abcdesign.github.io/d09.webp',
-    'https://1abcdesign.github.io/d10.webp',
-  ];
-
-  images.forEach((src) => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = src;
-    document.head.appendChild(link);
-  });
-}
-
-function preloadPhotos() {
-  const photos = [
-    'https://1abcdesign.github.io/photo_v.webp',
-    'https://1abcdesign.github.io/photo_a.webp',
-  ];
-
-  photos.forEach((src) => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = src;
-    document.head.appendChild(link);
-  });
-}
 
 export default router;

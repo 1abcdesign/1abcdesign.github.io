@@ -1,30 +1,7 @@
 <template>
   <footer>
     <section class="copy-right">
-      &copy;&nbsp;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;
-      <span class="logo-span">
-        <!-- ABCDΞsign1 -->
-        abcdesign1.com
-      </span>
-      <!-- <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        id="logoImageFooter"
-      >
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="12" y1="22" x2="12" y2="2" />
-        <line x1="12" y1="2" x2="2" y2="12" />
-        <line x1="2" y1="12" x2="12" y2="12" />
-        <path d="M 12,2 A 5,5, 0 1 1 12,12" fill="none" />
-      </svg> -->
-      <!-- <span class="com">com</span> -->
+      &copy;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;abcdesign1.com
     </section>
 
     <section class="links">
@@ -105,30 +82,11 @@
 
 <style lang="scss" scoped>
 footer {
-  width: 100%;
-  height: calc(5 * var(--usable-vh)) !important;
-  display: flex;
-
   line-height: calc(5 * var(--usable-vh));
-
-  background: linear-gradient(0deg, var(--background), transparent 100%);
-
   position: fixed;
   bottom: 0;
-
   display: grid;
   grid-template-columns: calc(50% - 0.25rem) calc(50% + 0.25rem);
-  align-items: center;
-  
-  &::after {
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    height: calc(5 * var(--usable-vh)) !important;
-    filter: blur(1rem);
-    background: linear-gradient(0deg, var(--background), transparent 100%);
-  }
 
   .links {
     display: grid;
@@ -144,7 +102,7 @@ footer {
     height: calc(5 * var(--usable-vh));
   }
 
-  span:not(.logo-span) {
+  span {
     display: inline-block;
     width: 33.33%;
     text-align: center;
@@ -154,36 +112,9 @@ footer {
     position: relative;
     left: 1vmax;
     text-align: left;
-
     display: flex;
-
     align-items: center;
-
     word-spacing: -0.075ch;
-
-    /* .logo-span {
-      padding-left: 0.1ch;
-      height: calc(2 * var(--usable-vh));
-      display: inline-flex;
-      align-items: center;
-      font-size: calc(2 * var(--usable-vh) * 5 / 8);
-    } */
-
-    /* .com {
-      padding-left: 0.1ch;
-      font-weight: bold;
-      height: calc(2 * var(--usable-vh));
-      display: inline-flex;
-      align-items: center;
-      font-size: calc(2 * var(--usable-vh) * 5 / 8);
-      width: min-content;
-    } */
   }
-}
-
-#logoImageFooter {
-  height: calc(2 * var(--usable-vh) + 2px) !important;
-  width: calc(2 * var(--usable-vh) +  2px) !important;
-  margin: 0 -1px;
 }
 </style>

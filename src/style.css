@@ -169,10 +169,6 @@ header a {
   padding: 0.5rem;
 }
 
-footer a {
-  flex-direction: column-reverse;
-}
-
 header a:hover,
 footer a:hover {
   background: var(--color);
@@ -211,6 +207,7 @@ footer a svg {
 
 header,
 footer {
+  width: 100%;
   z-index: 1;
   box-shadow: 0 0 1rem 0.5rem var(--shadow);
   background: var(--background);
@@ -221,8 +218,7 @@ header {
   height: calc((10 * var(--usable-vh)) + 0.5rem);
 }
 
-#logoImage,
-#logoImageFooter {
+#logoImage {
   stroke: currentColor;
 }
 
@@ -247,7 +243,7 @@ footer {
 }
 
 /* main {
-  scrollbar-width: thin;
+  scrollbar-width: 0.5rem;
   scrollbar-color: var(--grey) var(--background);
 }  */
 

@@ -1,10 +1,21 @@
 <template>
   <main>
-    <h1>{{ $t('404') }}</h1>
-
-    <router-link to="/">
-      {{ $t('back404') }}
-    </router-link>
+    <h2>404</h2>
+    <p>
+      Цей маршрут '{{ routePath }}' не має кінцевого призначення, але...<br />
+      ...зворотній шлях продовжує існувати.
+    </p>
+    <!-- Ось він, &mdash;&nbsp; -->
+    <p v-if="$router.back">
+      <a @click="$router.back">
+        {{ $t('backPreviousPage') }}
+      </a>
+    </p>
+    <p v-else>
+      <a @click="$router.back">
+        {{ $t('back404') }}
+      </a>
+    </p>
   </main>
 </template>
 
