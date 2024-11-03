@@ -120,7 +120,7 @@ main {
     gap: 1rem;
     padding: 1rem 0;
 
-    height: 28vh;
+    height: 27vh;
     width: 100%;
 
     .person {
@@ -131,14 +131,14 @@ main {
 
       text-align: center;
 
-      height: 26vh;
+      height: 25vh;
 
       box-shadow: 0 0 1rem 0.5rem var(--shadow);
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem 1rem;
 
       img {
-        height: 15vh;
-        width: auto;
+        max-width: 35vw;
+        max-height: 15vh;
       }
 
       h3 {

@@ -3,9 +3,10 @@
     <section class="copy-right">
       &copy;&nbsp;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;
       <span class="logo-span">
-        ABCDΞsign1
+        <!-- ABCDΞsign1 -->
+        abcdesign1.com
       </span>
-      <svg
+      <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
@@ -22,10 +23,8 @@
         <line x1="12" y1="2" x2="2" y2="12" />
         <line x1="2" y1="12" x2="12" y2="12" />
         <path d="M 12,2 A 5,5, 0 1 1 12,12" fill="none" />
-      </svg>
-      <span class="com">
-        com
-      </span>
+      </svg> -->
+      <!-- <span class="com">com</span> -->
     </section>
 
     <section class="links">
@@ -153,17 +152,14 @@ footer {
     word-spacing: -0.075ch;
 
     .logo-span {
-      border: 2px solid var(--color);
       padding-left: 0.1ch;
-      font-weight: bold;
       height: calc(2 * var(--usable-vh));
       display: inline-flex;
       align-items: center;
       font-size: calc(2 * var(--usable-vh) * 5 / 8);
     }
 
-    .com {
-      border: 2px solid var(--color);
+    /* .com {
       padding-left: 0.1ch;
       font-weight: bold;
       height: calc(2 * var(--usable-vh));
@@ -171,7 +167,7 @@ footer {
       align-items: center;
       font-size: calc(2 * var(--usable-vh) * 5 / 8);
       width: min-content;
-    }
+    } */
   }
 }
 
