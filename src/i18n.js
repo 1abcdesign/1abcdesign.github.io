@@ -2,6 +2,7 @@ import { createI18n } from 'vue-i18n'
 
 const messages = {
   en: {
+    moto: 'Your turnkey choice that’s second to none!',
     mainPage: 'Main page',
     company: 'About us',
     about: 'About our company',
@@ -29,7 +30,6 @@ const messages = {
     building: 'Building',
     crafting: 'Crafting',
     design: 'Design',
-    moto: 'From Sketch to Turnkey Design — All in One Place',
     emailSend: 'Email us',
     chatDirect: 'Message us on Telegram',
     phoneUs: 'Call us',
@@ -144,6 +144,7 @@ const messages = {
     lifeStyle4: 'Living in motion: competing, training, winning.',
   },
   uk: {
+    moto: 'Ваш вибір під ключ, що не має замін!',
     mainPage: 'Головна сторінка',
     company: 'Про нас',
     about: 'Про нашу компанію',
@@ -171,7 +172,6 @@ const messages = {
     building: 'Втілення',
     crafting: 'Створення',
     design: 'Дизайн',
-    moto: 'Від Ескізу до Дизайну Під Ключ — Все в Одному Місці',
     emailSend: 'Написати листа',
     chatDirect: 'Написати в Telegram',
     phoneUs: 'Подзвонити нам',

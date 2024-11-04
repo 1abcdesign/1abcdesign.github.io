@@ -6,6 +6,12 @@
       <section class="middle">
         <h1 class="main-header">ABCDΞsign1</h1>
 
+        <strong class="moto">
+          <em :data-inner-text="$t('moto')">
+            {{ $t('moto') }}
+          </em>
+        </strong>
+
         <ul>
           <li>
             <router-link to="/services#ambience">{{
@@ -26,12 +32,6 @@
             <router-link to="/services#design">{{ $t('design') }}</router-link>
           </li>
         </ul>
-
-        <strong class="moto">
-          <em>
-            {{ $t('moto') }}
-          </em>
-        </strong>
       </section>
     </div>
 
@@ -118,9 +118,9 @@ const ServicesSlider = defineAsyncComponent(() =>
     .main-header {
       margin: 0;
       box-shadow: 0 0 1rem 0.5rem var(--shadow);
+      filter: drop-shadow(0 0 1rem var(--shadow));
       font-size: calc(5 * var(--usable-vh));
       height: calc(8 * var(--usable-vh));
-
       color: var(--background);
       position: relative;
       text-shadow: 0 0 0.5ch var(--color);
@@ -130,6 +130,8 @@ const ServicesSlider = defineAsyncComponent(() =>
       --top-offset: calc(0.5 * var(--usable-vh));
       padding-right: 0.16ch;
       padding-top: var(--top-offset);
+
+      z-index: 10;
 
       &::after {
         top: var(--top-offset);
@@ -149,10 +151,30 @@ const ServicesSlider = defineAsyncComponent(() =>
 
       & em {
         width: 100%;
-        text-shadow: 0 0 0.5ch var(--shadow);
-        --spacing: 0.089ch;
+        display: inline-block;
+        color: var(--background);
+        content: attr(data-inner-text);
+        text-shadow: 0 0 0.75ch var(--color);
+        --spacing: 0.075ch;
         letter-spacing: var(--spacing);
         word-spacing: var(--spacing);
+        position: relative;
+        font-size: 1.25rem;
+        font-weight: 900;
+        z-index: 11;
+
+        filter: drop-shadow(0 0 0.75ch var(--color));
+
+
+        &::after {
+          width: 100%;
+          top: 0;
+          left: 0;
+          position: absolute;
+          content: attr(data-inner-text);
+          text-shadow: 0 0 1px var(--color);
+          z-index: 2;
+        }
       }
     }
   }
