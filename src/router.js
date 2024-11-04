@@ -1,6 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { ref } from 'vue';
-const navigationHistory = ref([]); // Array to store navigation history
 
 const routes = [
   {
@@ -25,11 +23,8 @@ const routes = [
   },
   {
     path: '/:catchAll(.*)',
-    component: () => import('@/views/404.vue'),
     name: '404',
-    props: {
-      props: () => ({ previousPath: lastValidNamedRoute }), // Use function to get latest value
-    }
+    component: () => import('@/views/404.vue'),
   },
 ];
 
@@ -121,15 +116,6 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  console.log(to)
-  console.log(from)
-  console.log(this)
-  if (from.name) {
-    navigationHistory.value.push(from.fullPath); // Track only named routes
-  }
-
-  console.log(navigationHistory)
-
   if (to.path === '/') {
     preload3D();
   } else if (to.path === '/services') {
@@ -138,9 +124,7 @@ router.beforeEach((to, from, next) => {
     preloadPhotos(photos);
   }
 
-  next(vm => {
-    vm.prevRoute = from
-  })
+  next()
 });
 
 export default router;

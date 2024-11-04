@@ -12,9 +12,9 @@
       </a>
     </p>
     <p v-else>
-      <a @click="$router.back">
+      <router-link to="/">
         {{ $t('back404') }}
-      </a>
+      </router-link>>
     </p>
   </main>
 </template>

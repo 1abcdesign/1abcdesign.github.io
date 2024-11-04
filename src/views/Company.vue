@@ -160,7 +160,6 @@ main {
     width: 22ch;
     gap: 0.5rem;
 
-    
     box-shadow: 0 0 1rem 0.5rem var(--shadow);
 
     &:hover {
