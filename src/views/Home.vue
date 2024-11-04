@@ -163,7 +163,7 @@ const ServicesSlider = defineAsyncComponent(() =>
         font-weight: 900;
         z-index: 11;
 
-        filter: drop-shadow(0 0 0.75ch var(--color));
+        filter: drop-shadow(0 0 0.25ch var(--color));
 
 
         &::after {
