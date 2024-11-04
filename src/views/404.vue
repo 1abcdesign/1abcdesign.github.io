@@ -6,19 +6,15 @@
       ...зворотній шлях продовжує існувати.
     </p>
     <!-- Ось він, &mdash;&nbsp; -->
-    <p v-if="$router.back">
-      <a @click="$router.back">
-        {{ $t('backPreviousPage') }}
-      </a>
-    </p>
-    <p v-else>
-      <router-link to="/">
-        {{ $t('back404') }}
-      </router-link>>
-    </p>
+    <router-link to="/">
+      {{ $t('back404') }}
+    </router-link>>
   </main>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRoute } from 'vue-router';
+const routePath = useRoute().fullPath
+</script>
 
 <style lang="scss" scoped></style>

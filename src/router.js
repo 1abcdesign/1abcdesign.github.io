@@ -121,7 +121,7 @@ router.beforeEach((to, from, next) => {
   } else if (to.path === '/services') {
     preloadImages(assets);
   } else if (to.path === '/company') {
-    preloadPhotos(photos);
+    preloadImages(photos);
   }
 
   next()
