@@ -124,6 +124,23 @@ router.beforeEach((to, from, next) => {
     preloadImages(photos);
   }
 
+  // Check if `navigation_history` exists and is a valid JSON string
+  let history;
+  try {
+    history = JSON.parse(sessionStorage.getItem('navigation_history')) || [];
+  } catch (error) {
+    // If parsing fails, initialize history as an empty array
+    history = [];
+  }
+
+  // Add the current route path to history
+  if (from.path) {
+    history.push(to.path);
+  }
+
+  // Store the updated history back in sessionStorage as a JSON string
+  sessionStorage.setItem('navigation_history', JSON.stringify(history));
+
   next()
 });
 
