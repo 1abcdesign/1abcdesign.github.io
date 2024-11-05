@@ -67,21 +67,21 @@ function updateIndexInfo(lang) {
   // Define the content for each language
   const content = {
     uk: {
-      description: "ABCDΞsign1 — Ваш вибір під ключ, що не має замін! Професійний дизайн інтер'єру, екстер'єру та ландшафтний дизайн в Україні.",
-      keywords: "дизайн інтер'єру, екстер'єрний дизайн, ландшафтний дизайн, дизайнерські послуги, ABCDΞsign1, дизайн під ключ, Україна",
+      description: "ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін! Професійний дизайн інтер'єру, екстер'єру та ландшафтний дизайн в Україні.",
+      keywords: "дизайн інтер'єру, екстер'єрний дизайн, ландшафтний дизайн, дизайнерські послуги, ABCDΞSIGN1, дизайн під ключ, Україна",
       title: "ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!",
-      ogTitle: "ABCDΞsign1 — Ваш вибір під ключ, що не має замін!",
+      ogTitle: "ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!",
       ogDescription: "Від Ескізу до Дизайну Під Ключ — Все в Одному Місці. Надаємо комплексні дизайнерські послуги.",
-      twitterTitle: "ABCDΞsign1 — Ваш вибір під ключ, що не має замін!",
+      twitterTitle: "ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!",
       twitterDescription: "Від Ескізу до Дизайну Під Ключ. Надаємо дизайнерські послуги для вашого простору.",
     },
     en: {
-      description: "ABCDΞsign1 — Your turnkey choice that’s second to none! Professional interior, exterior, and landscape design services in Ukraine.",
-      keywords: "interior design, exterior design, landscape design, design services, ABCDΞsign1, turnkey design, Ukraine",
+      description: "ABCDΞSIGN1 — Your turnkey choice that’s second to none! Professional interior, exterior, and landscape design services in Ukraine.",
+      keywords: "interior design, exterior design, landscape design, design services, ABCDΞSIGN1, turnkey design, Ukraine",
       title: "ABCDΞSIGN1 — Your turnkey choice that’s second to none!",
-      ogTitle: "ABCDΞsign1 — Your turnkey choice that’s second to none!",
+      ogTitle: "ABCDΞSIGN1 — Your turnkey choice that’s second to none!",
       ogDescription: "From Sketch to Turnkey Design — All in One Place. We provide comprehensive design services.",
-      twitterTitle: "ABCDΞsign1 — Your turnkey choice that’s second to none!",
+      twitterTitle: "ABCDΞSIGN1 — Your turnkey choice that’s second to none!",
       twitterDescription: "From Sketch to Turnkey Design. Providing design services for your space.",
     }
   };
