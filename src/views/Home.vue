@@ -4,7 +4,7 @@
 
     <div class="middle-wrapper">
       <section class="middle">
-        <h1 class="main-header">ABCDΞsign1</h1>
+        <h1 class="main-header">ABCDΞSIGN1</h1>
 
         <strong class="moto">
           <em :data-inner-text="$t('moto')">
@@ -53,7 +53,6 @@ const ServicesSlider = defineAsyncComponent(() =>
 .home {
   padding-top: 0.5rem;
   text-align: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,7 +64,6 @@ const ServicesSlider = defineAsyncComponent(() =>
     align-items: center;
     justify-content: center;
     height: calc(13 * var(--usable-vh));
-    /* border: 1px solid red; */
 
     .middle {
       width: 100vmin;
@@ -74,27 +72,26 @@ const ServicesSlider = defineAsyncComponent(() =>
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-
       position: absolute;
       top: calc(33 * var(--usable-vh) + 0.5rem);
     }
 
     ul {
       width: calc(43.25 * var(--usable-vh));
-      font-size: calc(2 * var(--usable-vh));
+      font-size: calc(3 * var(--usable-vh));
       list-style: none;
+      height: calc(4 * var(--usable-vh));
       margin: 0;
       padding: 0;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       font-weight: bold;
 
       li {
         display: inline-block;
-        text-align: center;
+        height: calc(4 * var(--usable-vh));
+        padding-top: calc(0.71 * var(--usable-vh));
       }
 
       li:hover {
@@ -106,6 +103,7 @@ const ServicesSlider = defineAsyncComponent(() =>
         background: var(--color);
         color: var(--background);
         text-decoration: underline var(--background) !important;
+        height: calc(3 * var(--usable-vh));
       }
 
       li:hover::first-letter {
@@ -117,28 +115,25 @@ const ServicesSlider = defineAsyncComponent(() =>
 
     .main-header {
       margin: 0;
-      box-shadow: 0 0 1rem 0.5rem var(--shadow);
-      filter: drop-shadow(0 0 1rem var(--shadow));
-      font-size: calc(5 * var(--usable-vh));
-      height: calc(8 * var(--usable-vh));
-      color: var(--background);
       position: relative;
-      text-shadow: 0 0 0.5ch var(--color);
-
       width: calc(33 * var(--usable-vh));
-
-      --top-offset: calc(0.5 * var(--usable-vh));
-      padding-right: 0.16ch;
-      padding-top: var(--top-offset);
-
-      z-index: 10;
+      height: calc(6 * var(--usable-vh)) !important;
+      box-shadow: 0 0 1rem 0.5rem var(--shadow);
+      text-shadow: 0 0 0.5ch var(--color);
+      filter: drop-shadow(0 0 1rem var(--shadow));
+      color: var(--background);
+      font-size: calc(6 * var(--usable-vh));
+      letter-spacing: 0.42ch;
+      padding-left: 0.94ch;
+      padding-top: 0.21ch;
+      z-index: 1;
 
       &::after {
-        top: var(--top-offset);
-        right: 0.08ch;
+        top: 0.21ch;
+        left: 0.56ch;
         width: 100%;
         position: absolute;
-        content: 'ABCDΞsign1';
+        content: 'ABCDΞSIGN1 ';
         color: var(--background);
       }
     }
@@ -150,21 +145,19 @@ const ServicesSlider = defineAsyncComponent(() =>
       bottom: 0.1rem;
 
       & em {
+        position: relative;
         width: 100%;
         display: inline-block;
         color: var(--background);
         content: attr(data-inner-text);
         text-shadow: 0 0 0.75ch var(--color);
-        --spacing: 0.075ch;
+        filter: drop-shadow(0 0 0.25ch var(--color));
+        --spacing: 0.18ch;
         letter-spacing: var(--spacing);
         word-spacing: var(--spacing);
-        position: relative;
         font-size: 1.25rem;
         font-weight: 900;
         z-index: 11;
-
-        filter: drop-shadow(0 0 0.25ch var(--color));
-
 
         &::after {
           width: 100%;
@@ -178,6 +171,5 @@ const ServicesSlider = defineAsyncComponent(() =>
       }
     }
   }
-
 }
 </style>

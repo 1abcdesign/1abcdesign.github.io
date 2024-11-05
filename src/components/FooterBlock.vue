@@ -82,7 +82,7 @@
 
 <style lang="scss" scoped>
 footer {
-  line-height: calc(5 * var(--usable-vh));
+  line-height: calc((5 * var(--usable-vh)) + 0.25rem);
   position: fixed;
   bottom: 0;
   display: grid;
@@ -95,11 +95,11 @@ footer {
     padding: 0;
     margin: 0;
     width: 100%;
-    height: calc(5 * var(--usable-vh));
+    height: calc((5 * var(--usable-vh)) + 0.25rem);
   }
 
   a {
-    height: calc(5 * var(--usable-vh));
+    height: calc((5 * var(--usable-vh)) + 0.25rem);
   }
 
   span {

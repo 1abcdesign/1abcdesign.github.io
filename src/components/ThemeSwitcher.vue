@@ -56,7 +56,6 @@ const theme = ref('light')
 function themeSwitch() {
   theme.value = theme.value === 'light' ? 'dark' : 'light'
   localStorage.setItem('theme', theme.value)
-  console.log(BASE_URL)
   updateThemeColor()
   addTransitionClass()
   setFavIcon()

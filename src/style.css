@@ -58,7 +58,8 @@
 }
 
 * {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Sanserifing";
+
   font-optical-sizing: auto;
   scroll-behavior: smooth;
   transition:
@@ -97,29 +98,30 @@
 
 @media (orientation: portrait) {
   :root {
-    font-size: 1.4vmax;
+    font-size: 2vmax;
   }
 }
 @media (orientation: landscape) {
   :root {
-    font-size: 1.5vmin;
+    font-size: 2vmin;
   }
 }
 
 @media (max-width: 480px) {
   :root {
-    font-size: 1.35vmax;
+    font-size: 1.9vmax;
   }
 }
 
 @media (max-width: 400px) {
   :root {
-    font-size: 1.3vmax;
+    font-size: 1.8vmax;
   }
 }
 
 * {
   box-sizing: border-box;
+  line-height: 100%;
 }
 
 body {
@@ -185,9 +187,11 @@ header nav a span {
   padding-top: 1px;
   position: relative;
   width: calc(8 * var(--usable-vh));  /* as 33vh on Home h1*/
-  font-size: calc(8 * var(--usable-vh) * 5 / 33); /* as 5vh on Home h1*/
+  font-size: calc(8 * var(--usable-vh) * 6 / 33); /* as 5vh on Home h1*/
   height: calc(8 * var(--usable-vh) * 8 / 33);  /* as 8vh on Home h1*/
-  line-height: calc(8 * var(--usable-vh) * 5 / 33);  /* as 8vh on Home h1*/
+  line-height: calc(8 * var(--usable-vh) * 6.5 / 33);  /* as 8vh on Home h1*/
+  letter-spacing: 0.35ch;
+  padding-left: 0.5ch;
 }
 
 a.router-link-active span,
@@ -233,7 +237,7 @@ main {
 }
 
 footer {
-  height: calc((5 * var(--usable-vh)));
+  height: calc((5 * var(--usable-vh)) + 0.25rem);
 }
 
 /* Клас для примусового оновлення стилів */

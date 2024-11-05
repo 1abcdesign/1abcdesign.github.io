@@ -90,12 +90,12 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
 
   text-align: left;
 
   p {
-    text-indent: 3ch;
+    text-indent: 2ch;
   }
 
   max-width: 70ch;
@@ -107,18 +107,19 @@ main {
   p:last-of-type {
     text-align: center;
     text-indent: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   hr {
     width: 100%;
+
   }
 
   .vip {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 
     height: 27vh;
     width: 100%;
@@ -157,7 +158,7 @@ main {
     justify-content: center;
     padding: 0.25rem;
 
-    width: 22ch;
+    width: 25ch;
     gap: 0.5rem;
 
     box-shadow: 0 0 1rem 0.5rem var(--shadow);

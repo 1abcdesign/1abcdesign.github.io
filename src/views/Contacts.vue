@@ -166,10 +166,6 @@ main p {
   padding: 0 0.5rem;
 }
 
-main * {
-  font-size: 115%;
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -177,10 +173,11 @@ main * {
   color: var(--color);
   border: none;
   box-shadow: 0 0 1rem 0.5rem var(--shadow);
-  padding: 2rem;
+  padding: 1rem;
 
   & * {
     width: 66.6vmin;
+    font-size: 105%;
   }
 
   label {
@@ -192,9 +189,9 @@ main * {
       position: absolute;
       content: attr(data-text);
       background: var(--background);
-      left: 0.5ch;
+      left: 1ch;
       padding: 0 0.25ch 0 0.5ch;
-      top: -0.33ch;
+      top: -0.25ch;
       letter-spacing: 0.15ch;
       line-height: 100%;
     }
@@ -203,8 +200,9 @@ main * {
       content: '*';
       color: red;
       position: absolute;
-      left: -1.25ch;
-      top: -0.5ch;
+      left: -1ch;
+      top: 0.5ch;
+      font-size: 150%;
     }
 
     & > * {
@@ -229,7 +227,7 @@ main * {
 }
 
 button {
-  height: 5rem;
+  height: 4rem;
   border: 2px solid var(--color);
   background: var(--background);
   color: var(--color);
