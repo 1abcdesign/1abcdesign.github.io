@@ -58,17 +58,31 @@ const closeMenu = () => {
   showOptions.value = false
 }
 
+// Function to set the title
+const setTitle = () => {
+  const motto = i18n.global.locale === 'en'
+    ? 'Your turnkey choice that’s second to none!'
+    : 'Ваш вибір під ключ, що не має замін!'
+  document.title = `ABCDesign-One — ${motto}`
+}
+
 onMounted(async () => {
   let defaultLang = localStorage.getItem('lang')
 
-  if (!localStorage.getItem('lang')) {
+  if (!defaultLang) {
     const ipInfo = await getIPInfo()
     defaultLang = ipInfo.country.iso_code === 'UA' ? 'uk' : 'en'
+    setLanguage(defaultLang)
+  } else {
     i18n.global.locale = defaultLang
-    localStorage.setItem('lang', defaultLang)
   }
 
-  i18n.global.locale = defaultLang
+  setTitle() // Set the title on mount
+})
+
+// Watch for language changes to update the title
+watch(selectedLanguage, () => {
+  setTitle()
 })
 </script>
 
