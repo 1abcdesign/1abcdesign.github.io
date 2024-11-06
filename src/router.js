@@ -82,6 +82,7 @@ function preload3D() {
   link.rel = 'preload';
   link.as = 'fetch';
   link.href = logo3dsrc;
+  link.crossOrigin = 'anonymous'; // Add crossorigin attribute here
   document.head.appendChild(link);
 }
 
@@ -91,6 +92,7 @@ function preloadImages(images) {
     link.rel = 'preload';
     link.as = 'image';
     link.href = src;
+    link.crossOrigin = 'anonymous'; // Add crossorigin attribute here
     document.head.appendChild(link);
   });
 }
