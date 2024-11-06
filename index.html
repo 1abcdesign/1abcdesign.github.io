@@ -1,43 +1,47 @@
 <!doctype html>
-<html lang="uk"> <!-- Зміна мови на українську для SEO та локалізації -->
+<html lang="uk" xml:lang="uk"> <!-- Language set to Ukrainian for SEO and localization -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO: Додавання основних ключових слів -->
-    <meta name="description" content="ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін! Професійний дизайн інтер'єру, екстер'єру та ландшафтний дизайн в Україні." />
+    <!-- SEO: Adding essential keywords -->
+    <meta name="description" content="ABCDΞSIGN1: Дизайн інтер'єру, екстер'єру та ландшафту під ключ в Україні — Ваш вибір, що не має замін!" />
     <meta name="keywords" content="дизайн інтер'єру, екстер'єрний дизайн, ландшафтний дизайн, дизайнерські послуги, ABCDΞSIGN1, дизайн під ключ, Україна" />
 
     <!-- Social Media Open Graph Tags -->
     <meta property="og:title" content="ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!" />
     <meta property="og:description" content="Від Ескізу до Дизайну Під Ключ — Все в Одному Місці. Надаємо комплексні дизайнерські послуги." />
-    <meta property="og:image" content="https://1abcdesign.github.io/logo.png" /> <!-- Замініть на реальне посилання на зображення -->
+    <meta property="og:image" content="https://1abcdesign.github.io/logo.png" /> <!-- Replace with real image link -->
     <meta property="og:url" content="https://abcdesign1.com" />
     <meta property="og:type" content="website" />
 
-    <!-- Twitter Card для соцмереж -->
+    <!-- Twitter Card for social media -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!" />
     <meta name="twitter:description" content="Від Ескізу до Дизайну Під Ключ. Надаємо дизайнерські послуги для вашого простору." />
-    <meta name="twitter:image" content="https://1abcdesign.github.io/logo.png" /> <!-- Замініть на реальне посилання на зображення -->
+    <meta name="twitter:image" content="https://1abcdesign.github.io/logo.png" /> <!-- Replace with real image link -->
 
     <!-- Favicon -->
     <link id="favicon" rel="icon" type="image/x-icon" href="https://1abcdesign.github.io/favicon_light.ico" />
     <link rel="preload" href="https://1abcdesign.github.io/favicon_dark.ico" as="image">
 
     <!-- Fonts -->
-    <link href="https://db.onlinewebfonts.com/c/1120bd063fd378d88dbeed72f19a8bde?family=Sanserifing" rel="stylesheet">
+    <link
+      href="https://db.onlinewebfonts.com/c/1120bd063fd378d88dbeed72f19a8bde?family=Sanserifing"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    >
 
     <!-- Title -->
-    <title>ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!</title>
+    <title>ABCDΞSIGN1 — Дизайн під ключ, що не має замін!</title>
 
-    <!-- Canonical Link для уникнення дублювання -->
-    <link rel="canonical" href="https://abcdesign1.com/" />
+    <!-- Canonical Link to avoid duplication -->
+    <link rel="canonical" href="https://abcdesign1.com" />
 
-    <!-- Robots Meta для індексації -->
+    <!-- Robots Meta for indexing -->
     <meta name="robots" content="index, follow">
 
-    <!-- JavaScript для корекції URL -->
+    <!-- JavaScript to correct URL | GitHub Pages SPA redirect correction -->
     <script type="text/javascript">
       (function (l) {
         if (l.search[1] === "/") {
@@ -53,7 +57,7 @@
       })(window.location);
     </script>
 
-    <!-- JavaScript для вибору теми -->
+    <!-- JavaScript for theme selection and dynamic favicon -->
     <script type="text/javascript">
       (function() {
         const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -63,15 +67,15 @@
           localStorage.setItem('theme', savedTheme);
         }
         document.documentElement.setAttribute('data-theme', savedTheme);
+
+        const favicon = document.getElementById('favicon');
+        favicon.href = savedTheme === 'dark' ? 'https://1abcdesign.github.io/favicon_dark.ico' : 'https://1abcdesign.github.io/favicon_light.ico';
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-evvZB9Wt.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/vendor-7ZIIYpuG.js">
-    <link rel="modulepreload" crossorigin href="/assets/common-Dz5E8zRs.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-C2YnMXub.css">
+    <script type="module" crossorigin src="/assets/index-B5Qt9EMX.js"></script>
   </head>
   <body>
-    <!-- Додавання структурованих даних Schema для організації -->
+    <!-- Adding structured Schema data for organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -87,6 +91,11 @@
         "areaServed": "UA",
         "availableLanguage": ["Ukrainian", "English"]
       },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kyiv",
+        "addressCountry": "UA"
+      },
       "sameAs": [
         "https://github.com/1abcdesign",
         "https://t.me/abcdesign1"
@@ -95,5 +104,6 @@
     </script>
 
     <div id="app"></div>
+    <script type="module" src="https://1abcdesign.github.io/src/main.js"></script>
   </body>
 </html>
