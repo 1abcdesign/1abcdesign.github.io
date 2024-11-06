@@ -57,7 +57,7 @@ const setTitle = () => {
   const motto = i18n.global.locale === 'en'
     ? 'Your turnkey choice that’s second to none!'
     : 'Ваш вибір під ключ, що не має замін!'
-  document.title = `ABCDesign-One — ${motto}`
+  document.title = `ABCDΞSIGN1 — ${motto}`
 }
 
 function updateIndexInfo(lang) {
