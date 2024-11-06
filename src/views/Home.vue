@@ -79,8 +79,9 @@ const ServicesSlider = defineAsyncComponent(() =>
     ul {
       width: calc(43.25 * var(--usable-vh));
       font-size: calc(3 * var(--usable-vh));
+
       list-style: none;
-      height: calc(4 * var(--usable-vh));
+      height: calc(4 * var(--usable-vh) - 2px);
       margin: 0;
       padding: 0;
       display: flex;
@@ -90,8 +91,8 @@ const ServicesSlider = defineAsyncComponent(() =>
 
       li {
         display: inline-block;
-        height: calc(4 * var(--usable-vh));
-        padding-top: calc(0.71 * var(--usable-vh));
+        height: calc(4 * var(--usable-vh) - 1px);
+        padding-top: calc(0.6 * var(--usable-vh));
       }
 
       li:hover {
