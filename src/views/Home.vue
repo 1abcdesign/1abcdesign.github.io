@@ -94,27 +94,35 @@ const ServicesSlider = defineAsyncComponent(() =>
       overflow: hidden;
       border: 1px solid var(--grey);
       border-bottom: none;
+      line-height: 2rem;
+      height: 2rem;
 
       li {
-        line-height: 125%;
         display: inline-block;
         width: 100%;
+        line-height: 2rem;
 
         a {
           display: block;
           width: 100%;
+          text-decoration: none;
+          line-height: 2rem;
         }
       }
 
       li:hover {
         background: var(--color);
         color: var(--background);
+
+        a {
+          text-decoration: underline;
+        }
       }
 
       li::first-letter {
         background: var(--color);
         color: var(--background);
-        text-decoration: underline var(--background) !important;
+        text-decoration: underline transparent !important;
       }
 
       li:hover::first-letter {
