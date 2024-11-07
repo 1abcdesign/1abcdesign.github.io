@@ -63,36 +63,34 @@ const ServicesSlider = defineAsyncComponent(() =>
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(13 * var(--usable-vh));
+    height: 6.5rem;
 
     .middle {
       width: 100vmin;
-      height: calc(13.25 * var(--usable-vh));
+      height: 6.625rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
       position: absolute;
-      top: calc(33 * var(--usable-vh) + 0.5rem);
+      top: 17rem;
     }
 
     ul {
-      width: calc(43.25 * var(--usable-vh));
-      font-size: calc(3 * var(--usable-vh));
-
+      width: 22.125rem;
+      font-size: 150%;
       list-style: none;
-      height: calc(4 * var(--usable-vh) - 2px);
       margin: 0;
       padding: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
+      overflow: hidden;
 
       li {
+        line-height: 125%;
         display: inline-block;
-        height: calc(4 * var(--usable-vh) - 1px);
-        padding-top: calc(0.6 * var(--usable-vh));
       }
 
       li:hover {
@@ -104,7 +102,7 @@ const ServicesSlider = defineAsyncComponent(() =>
         background: var(--color);
         color: var(--background);
         text-decoration: underline var(--background) !important;
-        height: calc(3 * var(--usable-vh));
+
       }
 
       li:hover::first-letter {
@@ -117,31 +115,21 @@ const ServicesSlider = defineAsyncComponent(() =>
     .main-header {
       margin: 0;
       position: relative;
-      width: calc(33 * var(--usable-vh));
-      height: calc(6 * var(--usable-vh)) !important;
+      height: 3rem;
       box-shadow: 0 0 1rem 0.5rem var(--shadow);
       text-shadow: 0 0 0.5ch var(--color);
-      filter: drop-shadow(0 0 1rem var(--shadow));
+      filter: drop-shadow(0 0 0.1rem var(--color));
       color: var(--background);
-      font-size: calc(6 * var(--usable-vh));
+      font-size: 300%;
       letter-spacing: 0.42ch;
-      padding-left: 0.94ch;
+      padding-left: 1ch;
       padding-top: 0.21ch;
       z-index: 1;
-
-      &::after {
-        top: 0.21ch;
-        left: 0.56ch;
-        width: 100%;
-        position: absolute;
-        content: 'ABCDΞSIGN1 ';
-        color: var(--background);
-      }
     }
 
     .moto {
       display: block;
-      width: calc(43.25 * var(--usable-vh));
+      width: 100%;
       position: relative;
       bottom: 0.1rem;
 
@@ -156,7 +144,7 @@ const ServicesSlider = defineAsyncComponent(() =>
         --spacing: 0.18ch;
         letter-spacing: var(--spacing);
         word-spacing: var(--spacing);
-        font-size: 1.25rem;
+        font-size: 125%;
         font-weight: 900;
         z-index: 11;
 

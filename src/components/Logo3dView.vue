@@ -2,7 +2,7 @@
   <div
     class="canvas-container"
     ref="canvasContainer"
-    style="width: 100%; height: calc(33 * var(--usable-vh))"
+    style="width: 100%; height: 16.5rem"
   ></div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
       const camera = new THREE.PerspectiveCamera(
         75,
         window.innerWidth / window.innerHeight,
-        0.1,
+        1.5,
         1000
       )
 
@@ -55,7 +55,7 @@ export default {
       scene.add(ambientLight)
 
       const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
-      directionalLight.position.set(5, 10, 7.5).normalize()
+      directionalLight.position.set(1, 0, 5).normalize()
       scene.add(directionalLight)
 
       // Animation loop to rotate the model and render the scene
@@ -91,7 +91,6 @@ export default {
 /* Optional styles for the container */
 .canvas-container {
   position: relative;
-  /* top: calc(0.25 * var(--usable-vh)); */
   top: 0;
   overflow: hidden;
   display: flex;

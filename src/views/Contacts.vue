@@ -106,6 +106,15 @@ const restrictPhoneInput = event => {
   phone.value = event.target.value
 }
 
+// Reset form fields
+const resetFields = () => {
+  name.value = ''
+  phone.value = ''
+  project.value = ''
+  budget.value = ''
+  comment.value = ''
+}
+
 const {
   VITE_EMAILER_SERVICE_ID: SERVICE_ID,
   VITE_EMAILER_TEMPLATE_ID: TEMPLATE_ID,
@@ -146,24 +155,18 @@ const submitForm = async () => {
     showError.value = true
   }
 
-  // Reset form fields
-  name.value = ''
-  phone.value = ''
-  project.value = ''
-  budget.value = ''
-  comment.value = ''
-
   // Hide messages after 3 seconds
   setTimeout(() => {
     showSuccess.value = false
     showError.value = false
-  }, 3000)
+    resetFields()
+  }, 5000)
 }
 </script>
 
 <style lang="scss" scoped>
 main p {
-  padding: 0 0.5rem;
+  padding: 0 0.25rem;
 }
 
 .form {
@@ -173,16 +176,16 @@ main p {
   color: var(--color);
   border: none;
   box-shadow: 0 0 1rem 0.5rem var(--shadow);
-  padding: 1rem;
+  padding: 0.5rem;
 
   & * {
-    width: 66.6vmin;
-    font-size: 105%;
+    width: min(50vmin, 50ch);
+    font-size: 1rem;
   }
 
   label {
     position: relative;
-    padding: 0.33rem 0;
+    padding: 0.4rem 0 0.1rem 0;
     border: none;
 
     &::before {
@@ -191,9 +194,8 @@ main p {
       background: var(--background);
       left: 1ch;
       padding: 0 0.25ch 0 0.5ch;
-      top: -0.25ch;
+      top: 0;
       letter-spacing: 0.15ch;
-      line-height: 100%;
     }
 
     &:has(:required)::after {
@@ -202,13 +204,13 @@ main p {
       position: absolute;
       left: -1ch;
       top: 0.5ch;
-      font-size: 150%;
     }
 
     & > * {
-      padding: 1rem;
+      padding: 0.6rem 0.5rem 0.4rem;
       border-width: 2px;
       border-color: var(--color);
+      caret-color: var(--color);
     }
   }
 }
@@ -227,12 +229,13 @@ main p {
 }
 
 button {
-  height: 4rem;
+  height: 2.5rem;
   border: 2px solid var(--color);
   background: var(--background);
   color: var(--color);
   cursor: pointer;
   position: relative;
+  padding: 0.75rem;
 
   &:hover {
     background: var(--color);
@@ -258,6 +261,7 @@ input:-webkit-autofill:active {
 
 textarea {
   resize: none;
+  height: 2.5rem;
 }
 
 /* Add styles for success and error messages */
@@ -266,7 +270,7 @@ textarea {
   position: absolute;
   top: -2px;
   left: -2px;
-  height: 5rem;
+  height: 2.5rem;
   font-size: inherit;
   display: flex;
   align-items: center;

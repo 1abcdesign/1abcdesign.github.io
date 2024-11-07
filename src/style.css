@@ -98,16 +98,16 @@
 
 @media (orientation: portrait) {
   :root {
-    font-size: 2vmax;
+    font-size: calc(2 * var(--usable-vh));
   }
 }
 @media (orientation: landscape) {
   :root {
-    font-size: 2vmin;
+    font-size: calc(2 * var(--usable-vh));
   }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   :root {
     font-size: 1.9vmax;
   }
@@ -117,7 +117,7 @@
   :root {
     font-size: 1.8vmax;
   }
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -183,15 +183,13 @@ footer a:hover svg {
 }
 
 header nav a span {
-  padding-right: 0.1ch; /* as on Home h1*/
-  padding-top: 1px;
   position: relative;
-  width: calc(8 * var(--usable-vh));  /* as 33vh on Home h1*/
-  font-size: calc(8 * var(--usable-vh) * 6 / 33); /* as 5vh on Home h1*/
-  height: calc(8 * var(--usable-vh) * 8 / 33);  /* as 8vh on Home h1*/
-  line-height: calc(8 * var(--usable-vh) * 6.5 / 33);  /* as 8vh on Home h1*/
-  letter-spacing: 0.35ch;
-  padding-left: 0.5ch;
+  text-align: center;
+  font-size: 66%;
+  letter-spacing: 0.42ch;
+  padding-left: 0.94ch;
+  padding-top: 0.21em;
+  top: -0.1em;
 }
 
 a.router-link-active span,
@@ -219,7 +217,7 @@ footer {
 }
 
 header {
-  height: calc((10 * var(--usable-vh)) + 0.5rem);
+  height: 5.5rem;
 }
 
 #logoImage {
@@ -229,15 +227,15 @@ header {
 main {
   position: fixed;
   width: 100%;
-  height: calc(85 * var(--usable-vh));
-  top: calc(10 * var(--usable-vh));
+  height: 42.5rem;
+  top: 5rem;
 
   overflow-x: hidden;
   overflow-y: auto;
 }
 
 footer {
-  height: calc((5 * var(--usable-vh)) + 0.25rem);
+  height: 2.75rem;
 }
 
 /* Клас для примусового оновлення стилів */
