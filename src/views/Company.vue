@@ -81,6 +81,7 @@ main.company {
   }
 
   max-width: 70ch;
+  overflow: visible;
 
   h2, p {
     margin: 0;
@@ -100,7 +101,9 @@ main.company {
   .vip {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    align-content: center;
+    justify-items: center;
+    gap: 0.5rem;
     padding: 0.5rem 0;
 
     height: 27vh;
