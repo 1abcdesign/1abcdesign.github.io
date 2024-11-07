@@ -93,6 +93,7 @@ const ServicesSlider = defineAsyncComponent(() =>
       font-weight: bold;
       overflow: hidden;
       border: 1px solid var(--grey);
+      border-bottom: none;
 
       li {
         line-height: 125%;
