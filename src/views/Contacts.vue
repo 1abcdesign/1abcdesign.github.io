@@ -167,6 +167,10 @@ const submitForm = async () => {
 <style lang="scss" scoped>
 main p {
   padding: 0 0.25rem;
+
+  a {
+    font-weight: bold;
+  }
 }
 
 .form {
@@ -196,6 +200,7 @@ main p {
       padding: 0 0.25ch 0 0.5ch;
       top: 0;
       letter-spacing: 0.15ch;
+      font-weight: bold;
     }
 
     &:has(:required)::after {
@@ -211,6 +216,11 @@ main p {
       border-width: 2px;
       border-color: var(--color);
       caret-color: var(--color);
+      font-weight: bold;
+
+      &:placeholder-shown {
+        font-weight: normal;
+      }
     }
   }
 }
@@ -236,6 +246,7 @@ button {
   cursor: pointer;
   position: relative;
   padding: 0.75rem;
+  font-weight: bold;
 
   &:hover {
     background: var(--color);
@@ -275,6 +286,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
 }
 
 .success {

@@ -244,11 +244,6 @@ footer {
   overflow: hidden;
 }
 
-/* main {
-  scrollbar-width: 0.5rem;
-  scrollbar-color: var(--grey) var(--background);
-}  */
-
 main::-webkit-scrollbar,
 textarea::-webkit-scrollbar {
   width: 0.5rem;

@@ -145,52 +145,40 @@ watch(selectedLanguage, () => {
 <style lang="scss">
 .lang-switcher {
   cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .select {
   padding: 0;
   margin: 0;
   list-style: none;
-  border-radius: calc(2.5 * var(--usable-vh));
+  border-radius: 1.25rem;
 
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   overflow: hidden;
-  background-color: var(--grey);
+  background-color: var(--color);
 
   &-option {
-    padding: 0;
-    margin: 0 0 0 0;
-    width: calc(5 * var(--usable-vh));
+    width: 2.5rem;
+    height: 2.5rem;
 
     &-img {
-      border-radius: calc(2.5 * var(--usable-vh));
+      border-radius: 1.25rem;
       object-fit: cover;
-      width: calc(5 * var(--usable-vh));
-      height: calc(5 * var(--usable-vh));
+      width: 2.5rem;
+      height: 2.5rem;
     }
-  }
-
-  // Огортаємо декларацію transition у блок з &
-  & {
-    transition: all 0.5s;
   }
 }
 
 .close {
   z-index: 5;
-  height: calc(5 * var(--usable-vh));
-}
-
-.selected {
-  font-weight: bold;
+  height: 2.5rem;
 }
 
 .open {
-  display: flex;
-  height: calc(10 * var(--usable-vh));
+  height: 5rem;
 }
 </style>

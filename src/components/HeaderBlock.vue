@@ -132,17 +132,17 @@ nav {
   padding: 0;
   margin: 0;
 
-  height: calc(10 * var(--usable-vh) + 0.5rem);
+  height: 5.5rem;
 
   li {
-    height: calc(10 * var(--usable-vh) + 0.5rem);
+    height: 5.5rem;
     width: 100%;
     display: flex;
     align-items: center;
     text-align: center;
     a {
       width: 100%;
-      height: calc(10 * var(--usable-vh) + 0.5rem);
+      height: 5.5rem;
     }
 
     a:link {
@@ -168,14 +168,15 @@ nav {
   }
 
   .global-view {
-    padding: 0 0.25rem;
+    padding: 0.125rem 0.25rem;
     display: flex;
-    gap: 0.25rem;
     flex-direction: column;
+    justify-content: space-between;
 
     & > * {
-      height: calc(5 * var(--usable-vh));
-      width: calc(5 * var(--usable-vh));
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 1.25rem;
     }
 
     .lang-wrapper {

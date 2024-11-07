@@ -14,22 +14,24 @@
 
         <ul>
           <li>
-            <router-link to="/services#ambience">{{
-              $t('ambience')
-            }}</router-link>
+            <router-link to="/services#ambience" :title="$t('a00')">
+              {{ $t('ambience') }}
+            </router-link>
           </li>
           <li>
-            <router-link to="/services#building">{{
-              $t('building')
-            }}</router-link>
+            <router-link to="/services#building" :title="$t('b00')">
+              {{ $t('building') }}
+            </router-link>
           </li>
           <li>
-            <router-link to="/services#crafting">{{
-              $t('crafting')
-            }}</router-link>
+            <router-link to="/services#crafting" :title="$t('c00')">
+              {{ $t('crafting') }}
+            </router-link>
           </li>
           <li>
-            <router-link to="/services#design">{{ $t('design') }}</router-link>
+            <router-link to="/services#design" :title="$t('d00')">
+              {{ $t('design') }}
+            </router-link>
           </li>
         </ul>
       </section>
@@ -63,11 +65,11 @@ const ServicesSlider = defineAsyncComponent(() =>
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 6.5rem;
+    height: 6.625rem;
 
     .middle {
       width: 100vmin;
-      height: 6.625rem;
+      height: calc(6.625rem + 1px);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -77,7 +79,7 @@ const ServicesSlider = defineAsyncComponent(() =>
     }
 
     ul {
-      width: 22.125rem;
+      width: 100vmin;
       font-size: 150%;
       list-style: none;
       margin: 0;
@@ -85,12 +87,22 @@ const ServicesSlider = defineAsyncComponent(() =>
       display: flex;
       align-items: center;
       justify-content: center;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       font-weight: bold;
       overflow: hidden;
+      border: 1px solid var(--grey);
 
       li {
         line-height: 125%;
         display: inline-block;
+        width: 100%;
+
+        a {
+          display: block;
+          width: 100%;
+        }
       }
 
       li:hover {
@@ -102,7 +114,6 @@ const ServicesSlider = defineAsyncComponent(() =>
         background: var(--color);
         color: var(--background);
         text-decoration: underline var(--background) !important;
-
       }
 
       li:hover::first-letter {

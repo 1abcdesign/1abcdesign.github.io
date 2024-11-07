@@ -85,6 +85,8 @@ const props = defineProps({
 .group::first-letter {
   color: var(--background);
   background: var(--shadow);
+  text-decoration: underline;
+  text-decoration-color: transparent;
 }
 
 .group::selection {
@@ -130,9 +132,6 @@ const props = defineProps({
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-  }
-
-  .photo-article.reverse {
   }
 
   .article-image {

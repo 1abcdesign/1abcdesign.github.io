@@ -66,9 +66,15 @@ import PhotoGallery from '@/components/PhotoGallery.vue'
   box-shadow: 0 0 1rem 0.5rem var(--shadow);
   margin: 2rem 0 3.5rem 0;
 
+  h3:hover {
+    background: transparent;
+  }
+
   h3::first-letter {
     background: var(--color);
     color: var(--background);
+    text-decoration: underline;
+    text-decoration-color: transparent;
   }
 }
 

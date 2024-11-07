@@ -121,6 +121,8 @@ const slides = ref(
 
 .vueperslide__title em {
   display: block !important;
+  line-height: 132%;
+  font-size: 90%;
 }
 
 .vueperslide__title em::first-letter {
