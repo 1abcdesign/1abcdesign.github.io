@@ -46,7 +46,9 @@
     </p>
 
     <router-link to="/contacts">
-      {{ $t('contacts') }}
+      <b>
+        {{ $t('contacts') }}
+      </b>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +74,8 @@ main.company {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5rem;
+  padding: 1rem 0.5rem;
+  font-size: 88%;
 
   text-align: left;
 
@@ -120,7 +123,7 @@ main.company {
       height: 25vh;
 
       box-shadow: 0 0 1rem 0.5rem var(--shadow);
-      padding: 0.5rem 1rem;
+      padding: 0.5rem;
 
       img {
         max-width: 35vw;
