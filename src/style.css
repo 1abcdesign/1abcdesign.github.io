@@ -71,8 +71,8 @@
     /* Object fit */ cursor var(--transition-duration),
     /* Cursor */ transition-delay var(--transition-duration),
     /* Delay of transition */ transition-timing-function
-      var(--transition-duration),
-    /* Timing function */ stroke var(--transition-duration); /* Stroke */
+      var(--transition-duration);
+    /* Timing function */
 
   -moz-transition: background-color var(--transition-duration),
     /* Background color */ border var(--transition-duration),
@@ -107,8 +107,8 @@
     /* Object fit */ cursor var(--transition-duration),
     /* Cursor */ transition-delay var(--transition-duration),
     /* Delay of transition */ transition-timing-function
-      var(--transition-duration),
-    /* Timing function */ stroke var(--transition-duration); /* Stroke */
+      var(--transition-duration);
+    /* Timing function */
 }
 
 @media (orientation: portrait) {
