@@ -78,56 +78,6 @@ const ServicesSlider = defineAsyncComponent(() =>
       top: 17rem;
     }
 
-    ul {
-      width: 100vmin;
-      font-size: 150%;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      font-weight: bold;
-      overflow: hidden;
-      border: 1px solid var(--grey);
-      border-bottom: none;
-      line-height: 2rem;
-      height: 2rem;
-
-      li {
-        display: inline-block;
-        width: 100%;
-        line-height: 2rem;
-
-        a {
-          display: block;
-          width: 100%;
-          text-decoration: none;
-          line-height: 2rem;
-        }
-      }
-
-      li:hover {
-        background: var(--color);
-        color: var(--background);
-
-        a {
-          text-decoration: underline;
-        }
-      }
-
-      li::first-letter {
-        background: var(--color);
-        color: var(--background);
-        text-decoration: underline transparent !important;
-      }
-
-      li:hover::first-letter {
-        background: var(--background);
-        color: var(--color);
-        text-decoration: underline var(--color) !important;
-      }
-    }
-
     .main-header {
       margin: 0;
       position: relative;
@@ -180,6 +130,56 @@ const ServicesSlider = defineAsyncComponent(() =>
           text-shadow: 0 0 1px var(--color);
           z-index: 2;
         }
+      }
+    }
+
+    ul {
+      width: 100vmin;
+      font-size: 150%;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      font-weight: bold;
+      overflow: hidden;
+      border: 1px solid var(--shadow);
+      border-bottom: none;
+      line-height: 2rem;
+      height: 2rem;
+
+      li {
+        display: inline-block;
+        width: 100%;
+        line-height: 2rem;
+
+        a {
+          display: block;
+          width: 100%;
+          text-decoration: none;
+          line-height: 2rem;
+        }
+      }
+
+      li:hover {
+        background: var(--color);
+        color: var(--background);
+
+        a {
+          text-decoration: underline;
+        }
+      }
+
+      li::first-letter {
+        background: var(--color);
+        color: var(--background);
+        text-decoration: underline transparent !important;
+      }
+
+      li:hover::first-letter {
+        background: var(--background);
+        color: var(--color);
+        text-decoration: underline var(--color) !important;
       }
     }
   }

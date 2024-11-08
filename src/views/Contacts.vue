@@ -210,7 +210,7 @@ main p {
       content: attr(data-text);
       background: var(--background);
       left: 1ch;
-      padding: 0 0.25ch 0 0.5ch;
+      padding: 0 0.33ch 0 0.33ch;
       top: 0;
       letter-spacing: 0.15ch;
       font-weight: bold;
@@ -284,7 +284,7 @@ input:-webkit-autofill:active {
 }
 
 textarea {
-  resize: vertical;
+  resize: none;
   height: 5rem;
 }
 
