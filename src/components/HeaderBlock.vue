@@ -226,7 +226,7 @@ nav {
 
 .logo-strong {
   position: relative;
-  padding-top: 0.15rem;
+  padding-top: 0.2rem;
   width: 4rem;
   height: 0.73rem;
   font-size: 0.73rem;
@@ -237,7 +237,9 @@ nav {
   justify-items: center;
   align-content: center;
   align-items: center;
-  box-shadow: 0 0 0.24rem 0.12rem var(--shadow);
+  box-shadow: 0 0 0.25rem 0.1rem var(--shadow);
+  filter: drop-shadow(0 0 0.1rem var(--color));
+  -webkit-filter: drop-shadow(0 0 0.1rem var(--color));
 
   .logo-letter {
     width: 100%;
