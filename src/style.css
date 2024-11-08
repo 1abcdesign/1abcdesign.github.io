@@ -178,7 +178,7 @@ header a:hover svg,
 footer a:hover svg {
   stroke: var(--background);
 }
-
+/*
 header nav a span {
   position: relative;
   text-align: center;
@@ -188,14 +188,15 @@ header nav a span {
   padding-top: 0.21em;
   top: -0.1em;
 }
+*/
 
-a.router-link-active span,
-a:not(.router-link-active):hover span {
-  border: 2px solid var(--background);
+a.router-link-active .logo-strong,
+a:not(.router-link-active):hover .logo-strong {
+  /* border: 2px solid var(--background); */
 }
 
-a:not(.router-link-active) span {
-  border: 2px solid var(--color);
+a:not(.router-link-active) .logo-strong {
+  /* border: 2px solid var(--color); */
 }
 
 header nav li a svg:not(#logoImage),

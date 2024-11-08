@@ -4,7 +4,18 @@
 
     <div class="middle-wrapper">
       <section class="middle">
-        <h1 class="main-header">ABCDΞSIGN1</h1>
+        <h1 class="main-header">
+          <span class="logo-letter">A</span>
+          <span class="logo-letter">B</span>
+          <span class="logo-letter">C</span>
+          <span class="logo-letter">D</span>
+          <span class="logo-letter">Ξ</span>
+          <span class="logo-letter">S</span>
+          <span class="logo-letter">I</span>
+          <span class="logo-letter">G</span>
+          <span class="logo-letter">N</span>
+          <span class="logo-letter">1</span>
+        </h1>
 
         <strong class="moto">
           <em :data-inner-text="$t('moto')">
@@ -82,18 +93,39 @@ const ServicesSlider = defineAsyncComponent(() =>
       margin: 0;
       position: relative;
       height: 3rem;
+      font-size: 3rem;
+      color: var(--background);
       box-shadow: 0 0 1rem 0.5rem var(--shadow);
       text-shadow: 0 0 0.5ch var(--color);
-      color: var(--background);
-      font-size: 300%;
-      letter-spacing: 0.42ch;
-      padding-left: 1ch;
-      padding-top: 0.21ch;
-      z-index: 1;
-
       /* Cross-browser filters */
       filter: drop-shadow(0 0 0.1rem var(--color));
       -webkit-filter: drop-shadow(0 0 0.1rem var(--color));
+
+      /* letter-spacing: 0.42ch;
+      padding-left: 1ch;
+      padding-top: 0.21ch;
+      z-index: 1; */
+
+      padding-top: 0.5rem;
+
+      width: 16.5rem;
+      display: grid;
+      line-height: 1rem;
+      grid-template-columns: repeat(10, 1fr);
+      justify-content: center;
+      justify-items: center;
+      align-content: center;
+      align-items: center;
+
+
+      .logo-letter {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        justify-self: center;
+      }
     }
 
     .moto {
