@@ -4,34 +4,36 @@
       <li class="logo_link">
         <router-link
           to="/"
-          id="logo_link"
+          id="logoLink"
           :class="{ active: $route.path === '/' }"
           :title="$t('mainPage')"
         >
-          <svg
-            id="logoImage"
-            ref="logoImage"
-            class="icon"
-            viewBox="0 0 400 400"
-            xmlns="http://www.w3.org/2000/svg"
-            >
-            <!-- :filter="`url(#${$route.path === '/' ? 'shadowActive' : 'shadowInactive'})`" -->
-            <defs>
-              <!-- Filter для активної лінки -->
-              <filter id="shadowActive" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="var(--background)" flood-opacity="0.75" />
-              </filter>
-              <!-- Filter для неактивної лінки -->
-              <filter id="shadowInactive" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="var(--color)" flood-opacity="0.75" />
-              </filter>
-            </defs>
-            <line x1="200" y1="400" x2="200" y2="0" />
-            <line x1="200" y1="0" x2="0" y2="200" />
-            <line x1="0" y1="200" x2="200" y2="200" />
-            <path d="M 200,14 A 93, 93, 0 1 1 200, 200" fill="none" />
-            <circle cx="200" cy="200" r="186" fill="none" />
-          </svg>
+     
+            <svg
+              id="logoImage"
+              ref="logoImage"
+              class="icon"
+              viewBox="0 0 400 400"
+              xmlns="http://www.w3.org/2000/svg"
+              >
+              <!-- :filter="`url(#${$route.path === '/' ? 'shadowActive' : 'shadowInactive'})`" -->
+              <defs>
+                <!-- Filter для активної лінки -->
+                <filter id="shadowActive" x="-50%" y="-50%" width="200%" height="200%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="var(--background)" flood-opacity="0.75" />
+                </filter>
+                <!-- Filter для неактивної лінки -->
+                <filter id="shadowInactive" x="-50%" y="-50%" width="200%" height="200%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="var(--color)" flood-opacity="0.75" />
+                </filter>
+              </defs>
+              <line x1="200" y1="400" x2="200" y2="0" />
+              <line x1="200" y1="0" x2="7" y2="200" />
+              <line x1="7" y1="200" x2="200" y2="200" />
+              <path d="M 200,14 A 93, 93, 0 1 1 200, 200" fill="none" />
+              <circle cx="200" cy="200" r="186" fill="none" />
+            </svg>
+
 
           <strong class="logo-strong">
             <span class="logo-letter">A</span>
@@ -163,8 +165,8 @@ nav {
       text-decoration: none;
     }
 
-    a:hover,
-    a:active {
+    a:not(#logoLink):hover,
+    a:not(#logoLink):active {
       text-decoration: underline;
     }
   }
@@ -216,15 +218,6 @@ nav {
   -webkit-filter: drop-shadow(0 0 2px var(--background));
 }
 
-#logoLink.active #logoImage,
-#logoLink:hover #logoImage {
-  filter: url(#shadowActive);
-}
-
-#logoLink:not(.active) #logoImage {
-  filter: url(#shadowInactive);
-}
-
 @media (max-width: 400px) {
   .global-view {
     padding: 0.125rem 0;
@@ -233,7 +226,7 @@ nav {
 
 .logo-strong {
   position: relative;
-  padding-top: 0.11rem;
+  padding-top: 0.125rem;
   width: 4rem;
   height: 0.73rem;
   font-size: 0.73rem;
@@ -244,6 +237,7 @@ nav {
   justify-items: center;
   align-content: center;
   align-items: center;
+  box-shadow: 0 0 0.24rem 0.12rem var(--shadow);
 
   .logo-letter {
     width: 100%;
@@ -257,7 +251,6 @@ nav {
 
 a.router-link-active .logo-strong,
 a:not(.router-link-active):hover .logo-strong {
-  box-shadow: 0 0 0.24rem 0.12rem var(--background);
   text-shadow: 0 0 0.12ch var(--background);
   /* Cross-browser filters */
   filter: drop-shadow(0 0 0.024rem var(--background));
@@ -270,7 +263,6 @@ a:not(.router-link-active):hover #logoImage {
 }
 
 a:not(.router-link-active) .logo-strong {
-  box-shadow: 0 0 0.24rem 0.12rem var(--color);
   text-shadow: 0 0 0.12ch var(--color);
   /* Cross-browser filters */
   filter: drop-shadow(0 0 0.024rem var(--color));
@@ -279,5 +271,18 @@ a:not(.router-link-active) .logo-strong {
 
 a:not(.router-link-active) #logoImage {
   filter: url(#shadowInactive);
+}
+
+@keyframes rotateY {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+#logoLink:hover #logoImage {
+  animation: rotateY 5.25s linear infinite;
 }
 </style>

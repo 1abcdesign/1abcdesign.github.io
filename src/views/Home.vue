@@ -106,7 +106,7 @@ const ServicesSlider = defineAsyncComponent(() =>
       padding-top: 0.21ch;
       z-index: 1; */
 
-      padding-top: 0.5rem;
+      padding-top: 0.55rem;
 
       width: 16.5rem;
       display: grid;
