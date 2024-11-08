@@ -51,38 +51,29 @@
 <script setup>
 import { ref, onMounted, watch } from 'vue'
 const BASE_URL = import.meta.env.BASE_URL
-const theme = ref('light')
+const theme = ref(localStorage.getItem('theme') || 'light') // Get saved theme or default to 'light'
 
 function themeSwitch() {
   theme.value = theme.value === 'light' ? 'dark' : 'light'
   localStorage.setItem('theme', theme.value)
   updateThemeColor()
-  addTransitionClass()
   setFavIcon()
   updateIconsStroke()
 }
 
 function setFavIcon() {
-  const theme = localStorage.getItem('theme')
   const favicon = document.getElementById('favicon')
-  if (theme === 'dark') {
-    favicon.href = BASE_URL + 'favicon_dark.ico'
-  } else {
-    favicon.href = BASE_URL + 'favicon_light.ico'
-  }
+  favicon.href =
+    BASE_URL +
+    (theme.value === 'dark' ? 'favicon_dark.ico' : 'favicon_light.ico')
 }
 
 const updateThemeColor = () => {
-  const currentTheme = theme.value
   const rootStyle = document.documentElement.style
-
-  // Примусове оновлення властивостей стилю
   rootStyle.setProperty(
     '--theme-color',
-    currentTheme === 'light' ? '#000' : '#fff'
+    theme.value === 'light' ? '#000' : '#fff'
   )
-
-  // Додаємо і видаляємо клас для оновлення стилю (для iOS)
   document.documentElement.classList.add('force-redraw')
   setTimeout(() => {
     document.documentElement.classList.remove('force-redraw')
@@ -90,30 +81,13 @@ const updateThemeColor = () => {
 }
 
 const updateIconsStroke = () => {
-  const icons = document.querySelectorAll('.icon') // Отримуємо всі елементи з класом .feather
-  const strokeColor = theme.value === 'light' ? '#000' : '#fff' // Вибір кольору для світлої або темної теми
-
-  icons.forEach(icon => {
-    icon.setAttribute('stroke', strokeColor) // Оновлюємо атрибут stroke для кожного іконки
+  const strokeColor = theme.value === 'light' ? '#000' : '#fff'
+  document.querySelectorAll('.icon').forEach(icon => {
+    icon.setAttribute('stroke', strokeColor)
   })
-}
-
-// Додає клас для анімації при зміні теми
-const addTransitionClass = () => {
-  const icons = document.querySelectorAll('.feather')
-  icons.forEach(icon => {
-    icon.classList.add('theme-change')
-  })
-
-  // Видаляємо клас після закінчення анімації
-  setTimeout(() => {
-    icons.forEach(icon => icon.classList.remove('theme-change'))
-  }, 500) // 500 мс — тривалість переходу
 }
 
 onMounted(() => {
-  const savedTheme = localStorage.getItem('theme') || 'light'
-  theme.value = savedTheme
   updateThemeColor()
   setFavIcon()
   updateIconsStroke()
@@ -126,21 +100,20 @@ watch(theme, newTheme => {
 
 <style>
 :root {
-  --theme-color: #000; /* Для світлої теми (чорний) */
+  --theme-color: #000; /* Default color for light theme */
 }
 
 [data-theme='dark'] {
-  --theme-color: #fff; /* Для темної теми (білий) */
+  --theme-color: #fff; /* Color for dark theme */
 }
 
 .theme-switcher {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  border-radius: calc(2.5 * var(--usable-vh));
+  border-radius: 1.25rem;
   position: relative;
   z-index: 5;
-  transition: transform 0.5s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,9 +121,9 @@ watch(theme, newTheme => {
 }
 
 .icon {
-  width: calc(5 * var(--usable-vh));
-  height: calc(5 * var(--usable-vh));
-  stroke: var(--theme-color); /* Використовуємо CSS-змінну для кольору */
+  width: 2.5rem;
+  height: 2.5rem;
+  stroke: var(--theme-color); /* Use CSS variable for stroke color */
   fill: none;
 }
 </style>

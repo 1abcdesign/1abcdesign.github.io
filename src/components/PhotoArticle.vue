@@ -41,7 +41,6 @@ const props = defineProps({
 .photo-article {
   width: 100%;
   display: flex;
-  align-items: center;
   overflow: hidden !important;
   background: var(--background);
   position: sticky;
@@ -57,17 +56,20 @@ const props = defineProps({
 }
 
 .photo-article:not(.last-in-group) {
-  padding-bottom: calc((15 * var(--usable-vh)));
-  height: calc(100 * var(--usable-vh));
+  padding-bottom: 7.5rem;
+  height: 50rem;
 }
 
 .photo-article.last-in-group {
   padding-bottom: 0;
-  height: calc(85 * var(--usable-vh) - 0.5rem);
+  height: 42rem;
 }
 
 .article-image {
   object-fit: cover;
+
+  -webkit-object-fit: cover; /* WebKit-based support for object-fit */
+  -moz-object-fit: cover; /* Mozilla support for object-fit */
 }
 
 .article-info {
@@ -87,17 +89,25 @@ const props = defineProps({
   background: var(--shadow);
   text-decoration: underline;
   text-decoration-color: transparent;
+
+  -webkit-text-decoration: underline; /* Webkit-based underline */
+  -moz-text-decoration: underline; /* Mozilla-based underline */
 }
 
 .group::selection {
   background: var(--shadow) !important;
   color: var(--background) !important;
+
+  -webkit-background: var(
+    --shadow
+  ) !important; /* Webkit-based selection background */
+  -moz-background: var(
+    --shadow
+  ) !important; /* Mozilla-based selection background */
 }
 
 @media (orientation: landscape) {
   .photo-article {
-    position: sticky;
-    top: 0;
     flex-direction: row;
     align-items: center;
     text-align: left;
@@ -110,7 +120,7 @@ const props = defineProps({
 
   .article-image {
     width: 50%;
-    height: calc(85 * var(--usable-vh));
+    height: 42.5rem;
   }
 
   .article-info {
@@ -136,12 +146,12 @@ const props = defineProps({
 
   .article-image {
     width: 100%;
-    height: calc(55 * var(--usable-vh) - 0.25rem);
+    height: 27.25rem;
   }
 
   .article-info {
     width: 100%;
-    height: calc(30 * var(--usable-vh) - 0.25rem);
+    height: 14.75rem;
     padding: 0 2rem;
     font-size: 125%;
   }

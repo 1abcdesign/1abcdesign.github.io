@@ -57,6 +57,45 @@
       })(window.location);
     </script>
 
+    <!-- Polyfill check and load -->
+    <script type="text/javascript">
+      (function() {
+        // Check for modern features
+        const supportsMatchMedia = typeof window.matchMedia !== 'undefined';
+        const supportsLocalStorage = typeof window.localStorage !== 'undefined';
+        const supportsPromise = typeof window.Promise !== 'undefined';
+        const supportsFlexbox = 'flex' in document.documentElement.style;
+        const supportsSVG = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
+
+        // Load polyfills if needed
+        if (!supportsMatchMedia) {
+          const script = document.createElement('script');
+          script.src = 'https://cdn.polyfill.io/v3/polyfill.min.js?features=matchMedia';
+          document.head.appendChild(script);
+        }
+        if (!supportsLocalStorage) {
+          const script = document.createElement('script');
+          script.innerHTML = 'alert("Your browser doesn\'t support local storage. Some features may not work.")';
+          document.head.appendChild(script);
+        }
+        if (!supportsPromise) {
+          const script = document.createElement('script');
+          script.src = 'https://cdnjs.cloudflare.com/ajax/libs/core-js/3.19.0/minified.js';
+          document.head.appendChild(script);
+        }
+        if (!supportsFlexbox) {
+          const script = document.createElement('script');
+          script.src = 'https://cdnjs.cloudflare.com/ajax/libs/flexibility/2.0.1/flexibility.min.js';
+          document.head.appendChild(script);
+        }
+        if (!supportsSVG) {
+          const script = document.createElement('script');
+          script.src = 'https://cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.9/svg4everybody.min.js';
+          document.head.appendChild(script);
+        }
+      })();
+    </script>
+
     <!-- JavaScript for theme selection and dynamic favicon -->
     <script type="text/javascript">
       (function() {

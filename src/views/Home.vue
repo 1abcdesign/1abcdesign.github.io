@@ -84,10 +84,6 @@ const ServicesSlider = defineAsyncComponent(() =>
       list-style: none;
       margin: 0;
       padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       font-weight: bold;
@@ -138,13 +134,16 @@ const ServicesSlider = defineAsyncComponent(() =>
       height: 3rem;
       box-shadow: 0 0 1rem 0.5rem var(--shadow);
       text-shadow: 0 0 0.5ch var(--color);
-      filter: drop-shadow(0 0 0.1rem var(--color));
       color: var(--background);
       font-size: 300%;
       letter-spacing: 0.42ch;
       padding-left: 1ch;
       padding-top: 0.21ch;
       z-index: 1;
+
+      /* Cross-browser filters */
+      filter: drop-shadow(0 0 0.1rem var(--color));
+      -webkit-filter: drop-shadow(0 0 0.1rem var(--color));
     }
 
     .moto {
@@ -160,13 +159,17 @@ const ServicesSlider = defineAsyncComponent(() =>
         color: var(--background);
         content: attr(data-inner-text);
         text-shadow: 0 0 0.75ch var(--color);
-        filter: drop-shadow(0 0 0.25ch var(--color));
-        --spacing: 0.18ch;
-        letter-spacing: var(--spacing);
-        word-spacing: var(--spacing);
         font-size: 125%;
         font-weight: 900;
         z-index: 11;
+
+        /* Cross-browser filters */
+        filter: drop-shadow(0 0 0.25ch var(--color));
+        -webkit-filter: drop-shadow(0 0 0.25ch var(--color));
+
+        --spacing: 0.18ch;
+        letter-spacing: var(--spacing);
+        word-spacing: var(--spacing);
 
         &::after {
           width: 100%;

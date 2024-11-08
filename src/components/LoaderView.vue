@@ -150,6 +150,8 @@ const handleAnimationEnd = () => {
   opacity: 1;
   z-index: 10;
   animation: fade-out 1.2s 2.4s forwards ease-out; // Starts fading out after the animation completes
+  -webkit-animation: fade-out 1.2s 2.4s forwards ease-out; // Webkit version of animation
+  -moz-animation: fade-out 1.2s 2.4s forwards ease-out; // Mozilla version of animation
   pointer-events: none; // Prevents interaction after fading out
 }
 
@@ -171,6 +173,8 @@ const handleAnimationEnd = () => {
   top: 0;
   left: 0;
   stroke-width: 28px;
+  -webkit-stroke-width: 28px; // Webkit-specific stroke-width
+  -moz-stroke-width: 28px; // Mozilla-specific stroke-width
   stroke: #888888;
 }
 
@@ -178,5 +182,7 @@ const handleAnimationEnd = () => {
   position: relative;
   z-index: 1;
   stroke: var(--color0);
+  -webkit-stroke: var(--color0); // Webkit-specific stroke
+  -moz-stroke: var(--color0); // Mozilla-specific stroke
 }
 </style>

@@ -10,7 +10,7 @@
     </p>
     <p >
       {{ $t('404_4') }} &mdash;&nbsp;
-      <router-link v-if="lastValid && lastValid !== '/'" :to="lastValid">
+      <router-link v-if="lastValid !== '/'" :to="lastValid">
         {{ $t('backPreviousPage') }} <b>&laquo;{{ $t(lastValid.slice(1)) }}&raquo;</b> ↺
       </router-link>
       <router-link v-else to="/">
@@ -21,10 +21,13 @@
 </template>
 
 <script setup>
-const history = JSON.parse(sessionStorage.getItem('navigation_history'))
-const invalidRoute = history.pop()
-const lastValid = history.slice(-1)[0]
-sessionStorage.setItem('navigation_history', JSON.stringify(history));
+// Отримуємо історію навігації або встановлюємо значення за замовчуванням
+const history = JSON.parse(sessionStorage.getItem('navigation_history') || '[]')
+const invalidRoute = history.pop() || '/'
+const lastValid = history.length ? history.slice(-1)[0] : '/'
+
+// Оновлюємо історію навігації в sessionStorage
+sessionStorage.setItem('navigation_history', JSON.stringify(history))
 </script>
 
 <style lang="scss" scoped>
@@ -44,6 +47,17 @@ main {
     white-space: nowrap;  // Prevents line breaks within the word
     overflow-wrap: normal; // Fallback in case content needs wrapping
     word-break: keep-all;  // Keeps words unbroken unless necessary
+  }
+
+  p a {
+    line-height: 2rem;
+    border: 1px solid transparent;
+  }
+
+  p a:hover,
+  p a:active {
+    background: var(--color);
+    color: var(--background);
   }
 }
 </style>

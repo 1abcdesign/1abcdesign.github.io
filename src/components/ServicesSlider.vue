@@ -104,15 +104,17 @@ const slides = ref(
 <style lang="scss">
 .vueperslides--fixed-height {
   position: absolute;
-  top: calc(47.3 * var(--usable-vh));
+  top: 23.65rem;
 }
 
 .vueperslides {
   width: 100vmin;
-  height: calc(37.7 * var(--usable-vh));
+  height: 18.85rem;
 
-  @media (orientation: portrait) {}
-  @media (orientation: landscape) {}
+  @media (orientation: portrait) {
+  }
+  @media (orientation: landscape) {
+  }
 }
 
 .vueperslide__content {

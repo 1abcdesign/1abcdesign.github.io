@@ -1,11 +1,11 @@
-[data-theme="light"] {
+[data-theme='light'] {
   --background: #fff;
   --color: #000;
   --theme-color: #000;
   --shadow: #8888;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --background: #000;
   --color: #fff;
   --theme-color: #fff;
@@ -22,78 +22,93 @@
   --transition-duration: 666ms; /* Initialize variable for transition duration */
 }
 
-/* Text Selection Styling */
-::selection {
-  background-color: var(--color);
-  color: var(--background);
-}
-
-[data-theme="light"] ::selection {
-  background-color: var(--color);
-  color: var(--background);
-}
-
-[data-theme="dark"] ::selection {
-  background-color: var(--color);
-  color: var(--background);
-}
-
-*::selection {
-  background: var(--color);
-  color: var(--background);
-}
-
-*::-moz-selection {
-  background: var(--color);
-  color: var(--background);
-}
-
+*::selection,
+*::-moz-selection,
 *::-webkit-selection {
   background: var(--color);
   color: var(--background);
 }
 
-* * {
-  box-sizing: border-box;
-}
-
 * {
-  font-family: "Sanserifing";
-
+  box-sizing: border-box;
+  font-family: 'Sanserifing';
+  line-height: 100%;
   font-optical-sizing: auto;
   scroll-behavior: smooth;
-  transition:
-    background-color var(--transition-duration), /* Background color */
-    border var(--transition-duration),           /* Border */
-    border-color var(--transition-duration),     /* Border color */
-    border-radius var(--transition-duration),    /* Border radius */
-    box-shadow var(--transition-duration),        /* Box shadow */
-    opacity var(--transition-duration),           /* Opacity */
-    transform var(--transition-duration),         /* Transform (scale, rotate, etc.) */
-    width var(--transition-duration),             /* Width */
-    height var(--transition-duration),            /* Height */
-    max-width var(--transition-duration),         /* Max width */
-    max-height var(--transition-duration),        /* Max height */
-    min-width var(--transition-duration),         /* Min width */
-    min-height var(--transition-duration),        /* Min height */
-    margin var(--transition-duration),            /* Margin */
-    padding var(--transition-duration),           /* Padding */
-    left var(--transition-duration),              /* Left position */
-    right var(--transition-duration),             /* Right position */
-    top var(--transition-duration),               /* Top position */
-    bottom var(--transition-duration),            /* Bottom position */
-    z-index var(--transition-duration),           /* Z-index (note: z-index transition might not have visual effect) */
-    filter var(--transition-duration),            /* Filter (blur, brightness, etc.) */
-    visibility var(--transition-duration),        /* Visibility */
-    white-space var(--transition-duration),       /* White space */
-    line-height var(--transition-duration),       /* Line height */
-    font-size var(--transition-duration),         /* Font size */
-    transform-origin var(--transition-duration),  /* Transform origin */
-    clip-path var(--transition-duration),         /* Clip path */
-    object-fit var(--transition-duration),        /* Object fit */
-    cursor var(--transition-duration),            /* Cursor */
-    transition-delay var(--transition-duration),  /* Delay of transition */
-    transition-timing-function var(--transition-duration); /* Timing function */
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  -moz-overflow-scrolling: touch; /* Mozilla-specific smooth scrolling */
+
+  transition: background-color var(--transition-duration),
+    /* Background color */ border var(--transition-duration),
+    /* Border */ border-color var(--transition-duration),
+    /* Border color */ border-radius var(--transition-duration),
+    /* Border radius */ box-shadow var(--transition-duration),
+    /* Box shadow */ opacity var(--transition-duration),
+    /* Opacity */ transform var(--transition-duration),
+    /* Transform (scale, rotate, etc.) */ width var(--transition-duration),
+    /* Width */ height var(--transition-duration),
+    /* Height */ max-width var(--transition-duration),
+    /* Max width */ max-height var(--transition-duration),
+    /* Max height */ min-width var(--transition-duration),
+    /* Min width */ min-height var(--transition-duration),
+    /* Min height */ margin var(--transition-duration),
+    /* Margin */ padding var(--transition-duration),
+    /* Padding */ left var(--transition-duration),
+    /* Left position */ right var(--transition-duration),
+    /* Right position */ top var(--transition-duration),
+    /* Top position */ bottom var(--transition-duration),
+    /* Bottom position */ z-index var(--transition-duration),
+    /* Z-index (note: z-index transition might not have visual effect) */ filter
+      var(--transition-duration),
+    /* Filter (blur, brightness, etc.) */ -webkit-filter var(--transition-duration),
+    /* Webkit Filter */ visibility var(--transition-duration),
+    /* Visibility */ white-space var(--transition-duration),
+    /* White space */ line-height var(--transition-duration),
+    /* Line height */ font-size var(--transition-duration),
+    /* Font size */ transform-origin var(--transition-duration),
+    /* Transform origin */ clip-path var(--transition-duration),
+    /* Clip path */ object-fit var(--transition-duration),
+    /* Object fit */ cursor var(--transition-duration),
+    /* Cursor */ transition-delay var(--transition-duration),
+    /* Delay of transition */ transition-timing-function
+      var(--transition-duration),
+    /* Timing function */ stroke var(--transition-duration); /* Stroke */
+
+  -moz-transition: background-color var(--transition-duration),
+    /* Background color */ border var(--transition-duration),
+    /* Border */ border-color var(--transition-duration),
+    /* Border color */ border-radius var(--transition-duration),
+    /* Border radius */ box-shadow var(--transition-duration),
+    /* Box shadow */ opacity var(--transition-duration),
+    /* Opacity */ transform var(--transition-duration),
+    /* Transform (scale, rotate, etc.) */ width var(--transition-duration),
+    /* Width */ height var(--transition-duration),
+    /* Height */ max-width var(--transition-duration),
+    /* Max width */ max-height var(--transition-duration),
+    /* Max height */ min-width var(--transition-duration),
+    /* Min width */ min-height var(--transition-duration),
+    /* Min height */ margin var(--transition-duration),
+    /* Margin */ padding var(--transition-duration),
+    /* Padding */ left var(--transition-duration),
+    /* Left position */ right var(--transition-duration),
+    /* Right position */ top var(--transition-duration),
+    /* Top position */ bottom var(--transition-duration),
+    /* Bottom position */ z-index var(--transition-duration),
+    /* Z-index (note: z-index transition might not have visual effect) */ filter
+      var(--transition-duration),
+    /* Filter (blur, brightness, etc.) */ -moz-filter var(--transition-duration),
+    /* Moz Filter */ visibility var(--transition-duration),
+    /* Visibility */ white-space var(--transition-duration),
+    /* White space */ line-height var(--transition-duration),
+    /* Line height */ font-size var(--transition-duration),
+    /* Font size */ transform-origin var(--transition-duration),
+    /* Transform origin */ clip-path var(--transition-duration),
+    /* Clip path */ object-fit var(--transition-duration),
+    /* Object fit */ cursor var(--transition-duration),
+    /* Cursor */ transition-delay var(--transition-duration),
+    /* Delay of transition */ transition-timing-function
+      var(--transition-duration),
+    /* Timing function */ stroke var(--transition-duration); /* Stroke */
 }
 
 @media (orientation: portrait) {
@@ -105,23 +120,6 @@
   :root {
     font-size: calc(2 * var(--usable-vh));
   }
-}
-
-/* @media (max-width: 480px) {
-  :root {
-    font-size: 1.9vmax;
-  }
-}
-
-@media (max-width: 400px) {
-  :root {
-    font-size: 1.8vmax;
-  }
-} */
-
-* {
-  box-sizing: border-box;
-  line-height: 100%;
 }
 
 body {
@@ -141,7 +139,6 @@ body {
   height: 100vh;
   text-align: center;
 }
-
 
 a:link,
 a:visited,
@@ -197,7 +194,7 @@ a:not(.router-link-active):hover span {
   border: 2px solid var(--background);
 }
 
-a:not(.router-link-active) span{
+a:not(.router-link-active) span {
   border: 2px solid var(--color);
 }
 
@@ -213,7 +210,6 @@ footer {
   z-index: 1;
   box-shadow: 0 0 1rem 0.5rem var(--shadow);
   background: var(--background);
-
 }
 
 header {
@@ -224,12 +220,16 @@ header {
   stroke: currentColor;
 }
 
-main {
+header,
+main,
+footer {
   position: fixed;
+}
+
+main {
   width: 100%;
   height: 42.5rem;
   top: 5rem;
-
   overflow-x: hidden;
   overflow-y: auto;
 }

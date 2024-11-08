@@ -2,7 +2,7 @@
   <header>
     <nav>
       <li class="logo_link">
-        <router-link to="/" id="logo_link" :title="$t('mainPage')" >
+        <router-link to="/" id="logo_link" :title="$t('mainPage')">
           <svg
             id="logoImage"
             ref="logoImage"
@@ -17,9 +17,7 @@
             <circle cx="200" cy="200" r="186" fill="none" />
           </svg>
           <span>
-            <strong>
-              ABCDΞSIGN1
-            </strong>
+            <strong> ABCDΞSIGN1 </strong>
           </span>
         </router-link>
       </li>
@@ -47,7 +45,7 @@
       </li>
 
       <li>
-        <router-link to="/company" :title="$t('about')" >
+        <router-link to="/company" :title="$t('about')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -72,7 +70,7 @@
       </li>
 
       <li>
-        <router-link to="/contacts" :title="$t('contactTip')" >
+        <router-link to="/contacts" :title="$t('contactTip')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -112,26 +110,16 @@ import LangSwitcher from './LangSwitcher.vue'
 <style lang="scss">
 header {
   width: 100%;
-  background: linear-gradient(180deg, var(--background), transparent 100%);
-  position: fixed;
   top: 0;
 }
 
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-
   font-weight: bold;
-
   list-style: none;
-
   padding: 0;
   margin: 0;
-
   height: 5.5rem;
 
   li {
@@ -195,13 +183,13 @@ nav {
 
 #logoImage {
   stroke-width: 28px;
-  height: calc(8 * var(--usable-vh));
-  width: calc(8 * var(--usable-vh));
+  height: 4rem;
+  width: 4rem;
 }
 
 @media (max-width: 400px) {
   .global-view {
-    padding: 0;
+    padding: 0.125rem 0;
   }
 }
 </style>

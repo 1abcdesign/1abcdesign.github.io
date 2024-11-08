@@ -76,7 +76,6 @@ main.company {
   align-items: center;
   padding: 1rem 0.5rem;
   font-size: 88%;
-
   text-align: left;
 
   p {
@@ -108,20 +107,16 @@ main.company {
     justify-items: center;
     gap: 0.5rem;
     padding: 0.5rem 0;
-
     height: 27vh;
     width: 100%;
 
     .person {
       display: grid;
-      grid-template-rows: 16vh repeat (2, 1fr);
+      grid-template-rows: auto auto auto;
       align-content: space-between;
       justify-items: center;
-
       text-align: center;
-
       height: 25vh;
-
       box-shadow: 0 0 1rem 0.5rem var(--shadow);
       padding: 0.5rem;
 
@@ -145,10 +140,8 @@ main.company {
     align-items: center;
     justify-content: center;
     padding: 0.25rem;
-
     width: 25ch;
     gap: 0.5rem;
-
     box-shadow: 0 0 1rem 0.5rem var(--shadow);
 
     &:hover {

@@ -73,8 +73,21 @@
 
       <button type="submit">
         {{ $t('form_send') }}
-        <span class="success" v-if="showSuccess">{{ $t('success') }}</span>
-        <span class="error" v-if="showError">{{ $t('try_again') }}</span>
+        <span
+          class="success"
+          v-if="showSuccess"
+          aria-live="polite"
+        >
+          {{ $t('success') }}
+        </span>
+
+        <span
+          class="error"
+          v-if="showError"
+          aria-live="polite"
+        >
+          {{ $t('try_again') }}
+        </span>
       </button>
     </form>
   </main>
@@ -271,8 +284,8 @@ input:-webkit-autofill:active {
 }
 
 textarea {
-  resize: none;
-  height: 2.5rem;
+  resize: vertical;
+  height: 5rem;
 }
 
 /* Add styles for success and error messages */

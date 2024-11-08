@@ -51,11 +51,7 @@
         </svg>
       </a>
 
-      <a
-        href="tel:+380933789883"
-        aria-label="Call us"
-        :title="$t('phoneUs')"
-      >
+      <a href="tel:+380933789883" aria-label="Call us" :title="$t('phoneUs')">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -82,11 +78,10 @@
 
 <style lang="scss" scoped>
 footer {
-  line-height: calc((5 * var(--usable-vh)) + 0.25rem);
-  position: fixed;
+  line-height: 2.75rem;
   bottom: 0;
   display: grid;
-  grid-template-columns: calc(50% - 0.25rem) calc(50% + 0.25rem);
+  grid-template-columns: calc(50% - 0.25rem + 1px) calc(50% + 0.25rem - 1px);
 
   .links {
     display: grid;

@@ -54,62 +54,85 @@ const closeMenu = () => {
 
 // Function to set the title
 const setTitle = () => {
-  const motto = i18n.global.locale === 'en'
-    ? 'Your turnkey choice that’s second to none!'
-    : 'Ваш вибір під ключ, що не має замін!'
+  const motto =
+    i18n.global.locale === 'en'
+      ? 'Your turnkey choice that’s second to none!'
+      : 'Ваш вибір під ключ, що не має замін!'
   document.title = `ABCDΞSIGN1 — ${motto}`
 }
 
 function updateIndexInfo(lang) {
   // Update the lang attribute on the <html> tag
-  document.documentElement.lang = lang;
+  document.documentElement.lang = lang
 
   // Define the content for each language
   const content = {
     uk: {
-      description: "ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін! Професійний дизайн інтер'єру, екстер'єру та ландшафтний дизайн в Україні.",
-      keywords: "дизайн інтер'єру, екстер'єрний дизайн, ландшафтний дизайн, дизайнерські послуги, ABCDΞSIGN1, дизайн під ключ, Україна",
-      title: "ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!",
-      ogTitle: "ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!",
-      ogDescription: "Від Ескізу до Дизайну Під Ключ — Все в Одному Місці. Надаємо комплексні дизайнерські послуги.",
-      twitterTitle: "ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!",
-      twitterDescription: "Від Ескізу до Дизайну Під Ключ. Надаємо дизайнерські послуги для вашого простору.",
+      description:
+        "ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін! Професійний дизайн інтер'єру, екстер'єру та ландшафтний дизайн в Україні.",
+      keywords:
+        "дизайн інтер'єру, екстер'єрний дизайн, ландшафтний дизайн, дизайнерські послуги, ABCDΞSIGN1, дизайн під ключ, Україна",
+      title: 'ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!',
+      ogTitle: 'ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!',
+      ogDescription:
+        'Від Ескізу до Дизайну Під Ключ — Все в Одному Місці. Надаємо комплексні дизайнерські послуги.',
+      twitterTitle: 'ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!',
+      twitterDescription:
+        'Від Ескізу до Дизайну Під Ключ. Надаємо дизайнерські послуги для вашого простору.',
     },
     en: {
-      description: "ABCDΞSIGN1 — Your turnkey choice that’s second to none! Professional interior, exterior, and landscape design services in Ukraine.",
-      keywords: "interior design, exterior design, landscape design, design services, ABCDΞSIGN1, turnkey design, Ukraine",
-      title: "ABCDΞSIGN1 — Your turnkey choice that’s second to none!",
-      ogTitle: "ABCDΞSIGN1 — Your turnkey choice that’s second to none!",
-      ogDescription: "From Sketch to Turnkey Design — All in One Place. We provide comprehensive design services.",
-      twitterTitle: "ABCDΞSIGN1 — Your turnkey choice that’s second to none!",
-      twitterDescription: "From Sketch to Turnkey Design. Providing design services for your space.",
-    }
-  };
+      description:
+        'ABCDΞSIGN1 — Your turnkey choice that’s second to none! Professional interior, exterior, and landscape design services in Ukraine.',
+      keywords:
+        'interior design, exterior design, landscape design, design services, ABCDΞSIGN1, turnkey design, Ukraine',
+      title: 'ABCDΞSIGN1 — Your turnkey choice that’s second to none!',
+      ogTitle: 'ABCDΞSIGN1 — Your turnkey choice that’s second to none!',
+      ogDescription:
+        'From Sketch to Turnkey Design — All in One Place. We provide comprehensive design services.',
+      twitterTitle: 'ABCDΞSIGN1 — Your turnkey choice that’s second to none!',
+      twitterDescription:
+        'From Sketch to Turnkey Design. Providing design services for your space.',
+    },
+  }
 
   // Get the correct language content
-  const langContent = content[lang];
+  const langContent = content[lang]
 
   // Update meta description and keywords
-  document.querySelector("meta[name='description']").setAttribute("content", langContent.description);
-  document.querySelector("meta[name='keywords']").setAttribute("content", langContent.keywords);
+  document
+    .querySelector("meta[name='description']")
+    .setAttribute('content', langContent.description)
+  document
+    .querySelector("meta[name='keywords']")
+    .setAttribute('content', langContent.keywords)
 
   // Update Open Graph tags
-  document.querySelector("meta[property='og:title']").setAttribute("content", langContent.ogTitle);
-  document.querySelector("meta[property='og:description']").setAttribute("content", langContent.ogDescription);
+  document
+    .querySelector("meta[property='og:title']")
+    .setAttribute('content', langContent.ogTitle)
+  document
+    .querySelector("meta[property='og:description']")
+    .setAttribute('content', langContent.ogDescription)
 
   // Update Twitter card tags
-  document.querySelector("meta[name='twitter:title']").setAttribute("content", langContent.twitterTitle);
-  document.querySelector("meta[name='twitter:description']").setAttribute("content", langContent.twitterDescription);
+  document
+    .querySelector("meta[name='twitter:title']")
+    .setAttribute('content', langContent.twitterTitle)
+  document
+    .querySelector("meta[name='twitter:description']")
+    .setAttribute('content', langContent.twitterDescription)
 
   // Update the title tag
-  document.title = langContent.title;
+  document.title = langContent.title
 
   // Update structured data for organization schema
-  const organizationSchema = document.querySelector('script[type="application/ld+json"]');
+  const organizationSchema = document.querySelector(
+    'script[type="application/ld+json"]'
+  )
   if (organizationSchema) {
-    const schemaData = JSON.parse(organizationSchema.textContent);
-    schemaData.description = langContent.description;
-    organizationSchema.textContent = JSON.stringify(schemaData, null, 2);
+    const schemaData = JSON.parse(organizationSchema.textContent)
+    schemaData.description = langContent.description
+    organizationSchema.textContent = JSON.stringify(schemaData, null, 2)
   }
 }
 
@@ -120,7 +143,6 @@ const setLanguage = lang => {
 
   updateIndexInfo(lang)
 }
-
 
 onMounted(async () => {
   let defaultLang = localStorage.getItem('lang')
@@ -152,7 +174,6 @@ watch(selectedLanguage, () => {
   margin: 0;
   list-style: none;
   border-radius: 1.25rem;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -166,9 +187,12 @@ watch(selectedLanguage, () => {
 
     &-img {
       border-radius: 1.25rem;
-      object-fit: cover;
       width: 2.5rem;
       height: 2.5rem;
+      object-fit: cover;
+      /* Add the prefixes for older browsers */
+      -webkit-object-fit: cover; /* Safari */
+      -moz-object-fit: cover; /* Firefox */
     }
   }
 }
