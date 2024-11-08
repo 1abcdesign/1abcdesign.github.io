@@ -226,7 +226,7 @@ nav {
 
 .logo-strong {
   position: relative;
-  padding-top: 0.125rem;
+  padding-top: 0.15rem;
   width: 4rem;
   height: 0.73rem;
   font-size: 0.73rem;
@@ -283,6 +283,6 @@ a:not(.router-link-active) #logoImage {
 }
 
 #logoLink:hover #logoImage {
-  animation: rotateY 5.25s linear infinite;
+  animation: rotateY 5.25s linear;
 }
 </style>
