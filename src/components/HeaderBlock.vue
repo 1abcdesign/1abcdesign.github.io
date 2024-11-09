@@ -8,32 +8,30 @@
           :class="{ active: $route.path === '/' }"
           :title="$t('mainPage')"
         >
-     
-            <svg
-              id="logoImage"
-              ref="logoImage"
-              class="icon"
-              viewBox="0 0 400 400"
-              xmlns="http://www.w3.org/2000/svg"
-              >
-              <!-- :filter="`url(#${$route.path === '/' ? 'shadowActive' : 'shadowInactive'})`" -->
-              <defs>
-                <!-- Filter для активної лінки -->
-                <filter id="shadowActive" x="-50%" y="-50%" width="200%" height="200%">
-                  <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="var(--background)" flood-opacity="0.75" />
-                </filter>
-                <!-- Filter для неактивної лінки -->
-                <filter id="shadowInactive" x="-50%" y="-50%" width="200%" height="200%">
-                  <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="var(--color)" flood-opacity="0.75" />
-                </filter>
-              </defs>
-              <line x1="200" y1="400" x2="200" y2="0" />
-              <line x1="200" y1="0" x2="7" y2="200" />
-              <line x1="7" y1="200" x2="200" y2="200" />
-              <path d="M 200,14 A 93, 93, 0 1 1 200, 200" fill="none" />
-              <circle cx="200" cy="200" r="186" fill="none" />
-            </svg>
-
+          <svg
+            id="logoImage"
+            ref="logoImage"
+            class="icon"
+            viewBox="0 0 400 400"
+            xmlns="http://www.w3.org/2000/svg"
+            >
+            <!-- :filter="`url(#${$route.path === '/' ? 'shadowActive' : 'shadowInactive'})`" -->
+            <defs>
+              <!-- Filter для активної лінки -->
+              <filter id="shadowActive" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="var(--background)" flood-opacity="1" />
+              </filter>
+              <!-- Filter для неактивної лінки -->
+              <filter id="shadowInactive" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="var(--color)" flood-opacity="1" />
+              </filter>
+            </defs>
+            <line x1="200" y1="400" x2="200" y2="0" />
+            <line x1="200" y1="0" x2="7" y2="200" />
+            <line x1="7" y1="200" x2="200" y2="200" />
+            <path d="M 200,14 A 93, 93, 0 1 1 200, 200" fill="none" />
+            <circle cx="200" cy="200" r="186" fill="none" />
+          </svg>
 
           <strong class="logo-strong">
             <span class="logo-letter">A</span>
@@ -237,7 +235,7 @@ nav {
   justify-items: center;
   align-content: center;
   align-items: center;
-  box-shadow: 0 0 0.25rem 0.1rem var(--shadow);
+  box-shadow: 0 0 0.25rem 0.125rem var(--shadow);
   filter: drop-shadow(0 0 0.1rem var(--color));
   -webkit-filter: drop-shadow(0 0 0.1rem var(--color));
 
