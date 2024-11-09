@@ -45,7 +45,7 @@
       </strong>
     </p>
 
-    <router-link to="/contacts">
+    <router-link to="/contacts" :title="$t('contactTip')" >
       <b>
         {{ $t('contacts') }}
       </b>
