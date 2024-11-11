@@ -94,11 +94,11 @@ footer {
     padding: 0;
     margin: 0;
     width: 100%;
-    height: calc((5 * var(--usable-vh)) + 0.25rem);
+    height: 2.75rem;
   }
 
   a {
-    height: calc((5 * var(--usable-vh)) + 0.25rem);
+    height: 2.75rem;
   }
 
   span {

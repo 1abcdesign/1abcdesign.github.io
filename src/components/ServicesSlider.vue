@@ -96,7 +96,7 @@ const slides = ref(
   interleavedPhotos.map(photo => ({
     group: `${photo.charAt(0) + '00'}`,
     title: `${photo.slice(0, 3) + '_title'}`,
-    content: `<div style="background-image: url('${BASE_URL}${photo}'); width: 100vmin; height: calc(35 * var(--usable-vh)); background-size: cover; background-position: center;"></div>`,
+    content: `<div style="background-image: url('${BASE_URL}${photo}'); width: 100vmin; height: 17.5rem; background-size: cover; background-position: center;"></div>`,
   }))
 )
 </script>
@@ -110,11 +110,6 @@ const slides = ref(
 .vueperslides {
   width: 100vmin;
   height: 18.85rem;
-
-  @media (orientation: portrait) {
-  }
-  @media (orientation: landscape) {
-  }
 }
 
 .vueperslide__content {
