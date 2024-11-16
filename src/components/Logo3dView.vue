@@ -20,7 +20,7 @@ export default {
       // Initialize the Three.js scene
       const scene = new THREE.Scene()
       const camera = new THREE.PerspectiveCamera(
-        75,
+        72,
         window.innerWidth / window.innerHeight,
         1.5,
         1000
@@ -38,7 +38,7 @@ export default {
       // Load the GLB model using GLTFLoader
       const loader = new GLTFLoader()
       loader.load(
-        '/logo3d.glb',
+        '/logo.glb',
         gltf => {
           model = gltf.scene // Store the model in a variable to rotate it
           scene.add(model) // Add the loaded model to the scene

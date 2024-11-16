@@ -26,10 +26,19 @@
                 <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="var(--color)" flood-opacity="1" />
               </filter>
             </defs>
-            <line x1="200" y1="400" x2="200" y2="0" />
-            <line x1="200" y1="0" x2="7" y2="200" />
-            <line x1="7" y1="200" x2="200" y2="200" />
+            <!-- Vertical line -->
+            <line x1="200" y1="386" x2="200" y2="14" />
+
+            <!-- Diagonal line from center to top-left -->
+            <line x1="200" y1="14" x2="14" y2="200" />
+
+            <!-- Horizontal line from left to center -->
+            <line x1="14" y1="200" x2="200" y2="200" />
+
+            <!-- Arc from top-center to center -->
             <path d="M 200,14 A 93, 93, 0 1 1 200, 200" fill="none" />
+
+            <!-- Outer circle -->
             <circle cx="200" cy="200" r="186" fill="none" />
           </svg>
 

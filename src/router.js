@@ -77,11 +77,11 @@ const photos = [
 ]
 
 function preload3D() {
-  const logo3dsrc = 'https://1abcdesign.github.io/logo3d.glb'
+  const logoSrc = 'https://1abcdesign.github.io/logo.glb'
   const link = document.createElement('link')
   link.rel = 'preload'
   link.as = 'fetch'
-  link.href = logo3dsrc
+  link.href = logoSrc
   link.crossOrigin = 'anonymous' // Add crossorigin attribute here
   document.head.appendChild(link)
 }
