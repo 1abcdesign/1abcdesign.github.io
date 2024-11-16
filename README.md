@@ -77,7 +77,6 @@ npm install
 To start a local development server with hot-reloading:
 
 ```bash
-Copy code
 npm run dev
 Production Build
 ```
@@ -85,7 +84,6 @@ Production Build
 To build the application for production:
 
 ```bash
-Copy code
 npm run build
 Preview Production Build
 ```
@@ -93,7 +91,6 @@ Preview Production Build
 To preview the production build locally:
 
 ```bash
-Copy code
 npm run preview
 ```
 
@@ -102,7 +99,6 @@ npm run preview
 To deploy the site to GitHub Pages, use the following command (ensure the gh-pages branch is set up):
 
 ```bash
-Copy code
 npm run deploy
 ```
 
