@@ -18,7 +18,6 @@ This project is a modern web application built with Vue 3 and Vite, featuring a 
 The main files and directories are organized as follows:
 ```arduino
 1abcdesign.github.io/
-├── dist/ # Production build output
 ├── public/ # Static public assets
 ├── src/ # Main source code directory
 │ ├── App.vue # Main app component
