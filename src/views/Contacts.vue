@@ -19,7 +19,7 @@
         stroke-linejoin="round"
         class="icon feather-phone"
         aria-hidden="true"
-        style="width: 1rem; height: 1rem; position: relative; top: 0.15rem;"
+        style="width: 1rem; height: 1rem; position: relative; top: 0.15rem"
       >
         <path
           d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
@@ -28,12 +28,7 @@
 
       {{ $t('contact_phone') }}:
 
-      <a
-        href="tel:+380933789883"
-        :title="$t('phoneUs')"
-      >
-        +380 93 378 9883
-      </a>
+      <a href="tel:+380933789883" :title="$t('phoneUs')"> +380 93 378 9883 </a>
     </p>
 
     <p>
@@ -48,7 +43,7 @@
         stroke-linecap="round"
         stroke-linejoin="round"
         class="icon feather-send"
-                style="width: 1rem; height: 1rem; position: relative; top: 0.15rem;"
+        style="width: 1rem; height: 1rem; position: relative; top: 0.15rem"
       >
         <line x1="22" y1="2" x2="11" y2="13"></line>
         <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
@@ -56,10 +51,7 @@
 
       {{ $t('contact_tg') }}:
 
-      <a
-        href="http://t.me/abcdesign1"
-        :title="$t('chatDirect')"
-      >
+      <a href="http://t.me/abcdesign1" :title="$t('chatDirect')">
         @abcdesign1
       </a>
     </p>
@@ -76,7 +68,7 @@
         stroke-linecap="round"
         stroke-linejoin="round"
         class="icon feather-mail"
-        style="width: 1rem; height: 1rem; position: relative; top: 0.15rem;"
+        style="width: 1rem; height: 1rem; position: relative; top: 0.15rem"
       >
         <path
           d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
@@ -86,10 +78,7 @@
 
       {{ $t('contact_mail') }}:
 
-      <a
-        href="mailto:one.abcdesign@gmail.com"
-        :title="$t('emailSend')"
-      >
+      <a href="mailto:one.abcdesign@gmail.com" :title="$t('emailSend')">
         one.abcdesign@gmail.com
       </a>
     </p>
@@ -113,10 +102,11 @@
           placeholder="+380 99 999 9999"
           @focus="prependCountryCode"
           @input="restrictPhoneInput"
+          @blur="clearIfOnlyPrepender"
           v-model="phone"
           required
           aria-label="phone-input"
-          pattern="^\+380[0-9]{9}$"
+          pattern="^\+380 \d{2} \d{3} \d{4}$"
           :title="$t('form_phone_tip')"
         />
       </label>
@@ -128,6 +118,15 @@
           v-model="project"
           required
           aria-label="project-input"
+        />
+      </label>
+
+      <label :data-text="$t('form_location')">
+        <GoogleAutocomplete
+          :api-key="API_KEY"
+          @set="setPlace"
+          :placeholder="$t('form_location_ph')"
+          required
         />
       </label>
 
@@ -148,21 +147,18 @@
         ></textarea>
       </label>
 
-      <button type="submit">
+      <button
+        type="submit"
+        :title="
+          isFormValid ? $t('form_send_valid_tip') : $t('form_send_invalid_tip')
+        "
+      >
         {{ $t('form_send') }}
-        <span
-          class="success"
-          v-if="showSuccess"
-          aria-live="polite"
-        >
+        <span class="success" v-if="showSuccess" aria-live="polite">
           {{ $t('success') }}
         </span>
 
-        <span
-          class="error"
-          v-if="showError"
-          aria-live="polite"
-        >
+        <span class="error" v-if="showError" aria-live="polite">
           {{ $t('try_again') }}
         </span>
       </button>
@@ -171,16 +167,25 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import emailjs from 'emailjs-com'
+import { GoogleAutocomplete } from 'vue3-google-autocomplete'
+
+const API_KEY = computed(() => import.meta.env.VITE_GMAPS_API_KEY)
 
 const name = ref('')
 const phone = ref('')
 const project = ref('')
+const place = ref('')
 const budget = ref('')
 const comment = ref('')
 const showSuccess = ref(false)
 const showError = ref(false)
+
+// Computed property to determine if the form is valid
+const isFormValid = computed(() => {
+  return name.value && phone.value && project.value && place.value
+})
 
 const prependCountryCode = event => {
   if (!event.target.value.startsWith('+380')) {
@@ -188,12 +193,35 @@ const prependCountryCode = event => {
   }
 }
 
-const restrictPhoneInput = event => {
-  const input = event.target.value.replace(/[^0-9+]/g, '').slice(0, 13)
-  event.target.value = input.startsWith('+380')
-    ? input
-    : '+380' + input.slice(4)
-  phone.value = event.target.value
+const restrictPhoneInput = (event) => {
+  // Remove all non-numeric characters except the plus sign
+  let input = event.target.value.replace(/[^0-9+]/g, '').slice(0, 13);
+
+  // Ensure the input starts with "+380" (or adds it if missing)
+  if (!input.startsWith('+380')) {
+    input = '+380' + input.replace('+380', '');
+  }
+
+  // Format the input as +380 99 999 9999
+  input = input
+    .replace(/^(\+380)(\d{0,2})$/, '$1 $2')
+    .replace(/^(\+380)(\d{0,2})(\d{0,3})$/, '$1 $2 $3')
+    .replace(/^(\+380)(\d{0,2})(\d{0,3})(\d{0,4})$/, '$1 $2 $3 $4')
+
+  event.target.value = input;
+  phone.value = input;
+}
+
+const clearIfOnlyPrepender = (event) => {
+  const input = event.target.value;
+  if (input === '+380' || input === '+380 ') {
+    event.target.value = ''
+    phone.value = ''
+  }
+}
+
+const setPlace = ({ name, state, country }) => {
+  place.value = [name, state, country].join(', ')
 }
 
 // Reset form fields
@@ -201,6 +229,7 @@ const resetFields = () => {
   name.value = ''
   phone.value = ''
   project.value = ''
+  place.value = ''
   budget.value = ''
   comment.value = ''
 }
@@ -220,6 +249,7 @@ const submitForm = async () => {
       Name: ${name.value}
       Phone: ${phone.value}
       Project: ${project.value}
+      Place: ${place.value}
       Budget: ${budget.value}
       Comment: ${comment.value}
     `.trim(),
@@ -257,9 +287,19 @@ const submitForm = async () => {
 <style lang="scss" scoped>
 main p {
   padding: 0 0.25rem;
+  letter-spacing: 0.1ch;
 
   a {
     font-weight: bold;
+    text-decoration: none;
+    padding: 0 0.5ch;
+    margin-left: -0.5ch;
+
+    &:hover,
+    &:active {
+      background-color: var(--color);
+      color: var(--background);
+    }
   }
 }
 
@@ -273,8 +313,9 @@ main p {
   padding: 0.5rem;
 
   & * {
-    width: min(50vmin, 50ch);
-    font-size: 1rem;
+    width: 33ch;
+    font-size: 1.1rem;
+    letter-spacing: 0.1ch;
   }
 
   label {
@@ -289,7 +330,6 @@ main p {
       left: 1ch;
       padding: 0 0.33ch 0 0.33ch;
       top: 0;
-      letter-spacing: 0.15ch;
       font-weight: bold;
     }
 
@@ -309,7 +349,7 @@ main p {
       font-weight: bold;
 
       &:placeholder-shown {
-        font-weight: normal;
+        font-weight: bold;
       }
     }
   }
@@ -349,6 +389,11 @@ button {
   background: var(--background); /* Set your invalid background color */
   color: var(--shadow); /* Set your invalid text color */
   border: 2px solid var(--shadow);
+
+  &:hover {
+    background: var(--shadow); /* Set your invalid background color */
+    color: var(--background); /* Set your invalid text color */
+  }
 }
 
 input:-webkit-autofill,
@@ -358,6 +403,10 @@ input:-webkit-autofill:active {
   -webkit-background-clip: text;
   -webkit-text-fill-color: var(--color);
   box-shadow: inset 0 0 3rem 3rem var(--background);
+
+  &::selection {
+    -webkit-text-fill-color: var(--background);
+  }
 }
 
 textarea {
