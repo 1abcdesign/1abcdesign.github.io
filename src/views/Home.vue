@@ -101,14 +101,9 @@ const ServicesSlider = defineAsyncComponent(() =>
       filter: drop-shadow(0 0 0.1rem var(--color));
       -webkit-filter: drop-shadow(0 0 0.1rem var(--color));
 
-      /* letter-spacing: 0.42ch;
-      padding-left: 1ch;
-      padding-top: 0.21ch;
-      z-index: 1; */
-
       padding-top: 0.6rem;
-
       width: 16.5rem;
+
       display: grid;
       line-height: 1rem;
       grid-template-columns: repeat(10, 1fr);
@@ -145,6 +140,7 @@ const ServicesSlider = defineAsyncComponent(() =>
         font-weight: 900;
         z-index: 11;
 
+        text-shadow: 0 0 0.5ch var(--color);
         /* Cross-browser filters */
         filter: drop-shadow(0 0 0.25ch var(--color));
         -webkit-filter: drop-shadow(0 0 0.25ch var(--color));
