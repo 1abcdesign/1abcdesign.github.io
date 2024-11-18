@@ -153,6 +153,7 @@ const handleAnimationEnd = () => {
   -webkit-animation: fade-out 1.2s 2.4s forwards ease-out; // Webkit version of animation
   -moz-animation: fade-out 1.2s 2.4s forwards ease-out; // Mozilla version of animation
   pointer-events: none; // Prevents interaction after fading out
+  overflow: hidden;
 }
 
 #logo_2d_wrapper {
