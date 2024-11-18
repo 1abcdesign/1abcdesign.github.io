@@ -260,10 +260,13 @@ nav {
 
 a.router-link-active .logo-strong,
 a:not(.router-link-active):hover .logo-strong {
-  text-shadow: 0 0 0.12ch var(--background);
+  text-shadow: 0 0 0.12ch var(--color);
   /* Cross-browser filters */
   filter: drop-shadow(0 0 0.024rem var(--background));
   -webkit-filter: drop-shadow(0 0 0.024rem var(--background));
+
+  background: var(--background);
+  color: var(--color);
 }
 
 a.router-link-active #logoImage,
@@ -272,10 +275,13 @@ a:not(.router-link-active):hover #logoImage {
 }
 
 a:not(.router-link-active) .logo-strong {
-  text-shadow: 0 0 0.12ch var(--color);
+  text-shadow: 0 0 0.12ch var(--background);
   /* Cross-browser filters */
   filter: drop-shadow(0 0 0.024rem var(--color));
   -webkit-filter: drop-shadow(0 0 0.024rem var(--color));
+
+  background: var(--color);
+  color: var(--background);
 }
 
 a:not(.router-link-active) #logoImage {

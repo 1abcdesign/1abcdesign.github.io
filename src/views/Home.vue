@@ -96,10 +96,10 @@ const ServicesSlider = defineAsyncComponent(() =>
       font-size: 3rem;
       color: var(--background);
       box-shadow: 0 0 0.5rem 0.25rem var(--shadow);
-      text-shadow: 0 0 0.5ch var(--color);
+      text-shadow: 0 0 0.33ch var(--color);
       /* Cross-browser filters */
-      filter: drop-shadow(0 0 0.1rem var(--color));
-      -webkit-filter: drop-shadow(0 0 0.1rem var(--color));
+      filter: drop-shadow(0 0 0.1ch var(--color));
+      -webkit-filter: drop-shadow(0 0 0.1ch var(--color));
 
       padding-top: 0.6rem;
       width: 16.5rem;
@@ -135,15 +135,14 @@ const ServicesSlider = defineAsyncComponent(() =>
         display: inline-block;
         color: var(--background);
         content: attr(data-inner-text);
-        text-shadow: 0 0 0.75ch var(--color);
         font-size: 125%;
-        font-weight: 900;
-        z-index: 11;
+        font-weight: bold;
+        z-index: 5;
 
-        text-shadow: 0 0 0.5ch var(--color);
+        text-shadow: 0 0 1ch var(--color);
         /* Cross-browser filters */
-        filter: drop-shadow(0 0 0.25ch var(--color));
-        -webkit-filter: drop-shadow(0 0 0.25ch var(--color));
+        filter: drop-shadow(0 0 0.33ch var(--color));
+        -webkit-filter: drop-shadow(0 0 0.33ch var(--color));
 
         --spacing: 0.18ch;
         letter-spacing: var(--spacing);
@@ -155,8 +154,7 @@ const ServicesSlider = defineAsyncComponent(() =>
           left: 0;
           position: absolute;
           content: attr(data-inner-text);
-          text-shadow: 0 0 1px var(--color);
-          z-index: 2;
+          z-index: 1;
         }
       }
     }
