@@ -1,6 +1,6 @@
 <template>
   <div
-    class="canvas-container"
+    class="canvas-container flex-center"
     ref="canvasContainer"
     style="width: 100%; height: 16.5rem"
   ></div>
@@ -8,7 +8,13 @@
 
 <script>
 import { ref, onMounted } from 'vue'
-import * as THREE from 'three'
+import {
+  Scene,
+  PerspectiveCamera,
+  WebGLRenderer,
+  AmbientLight,
+  DirectionalLight
+} from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 export default {
@@ -18,8 +24,8 @@ export default {
 
     onMounted(() => {
       // Initialize the Three.js scene
-      const scene = new THREE.Scene()
-      const camera = new THREE.PerspectiveCamera(
+      const scene = new Scene()
+      const camera = new PerspectiveCamera(
         72,
         window.innerWidth / window.innerHeight,
         1.5,
@@ -27,7 +33,7 @@ export default {
       )
 
       // Set renderer with alpha for transparency
-      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
+      const renderer = new WebGLRenderer({ antialias: true, alpha: true })
       renderer.setSize(window.innerWidth, window.innerHeight)
       renderer.setClearColor(0x000000, 0) // Transparent background
       canvasContainer.value.appendChild(renderer.domElement) // Append renderer to the DOM
@@ -51,10 +57,10 @@ export default {
       )
 
       // Lighting for better visibility of the model
-      const ambientLight = new THREE.AmbientLight(0x404040, 2) // soft white light
+      const ambientLight = new AmbientLight(0x404040, 2) // soft white light
       scene.add(ambientLight)
 
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
+      const directionalLight = new DirectionalLight(0xffffff, 1)
       directionalLight.position.set(1, 0, 5).normalize()
       scene.add(directionalLight)
 
@@ -93,9 +99,6 @@ export default {
   position: relative;
   top: 0;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: transparent; /* Ensure the background is transparent */
 }
 </style>

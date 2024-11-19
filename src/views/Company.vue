@@ -45,7 +45,7 @@
       </strong>
     </p>
 
-    <router-link to="/contacts" :title="$t('contactTip')" >
+    <router-link to="/contacts" :title="$t('contactTip')" class="flex-center">
       <b>
         {{ $t('contacts') }}
       </b>
@@ -70,7 +70,7 @@
 <script setup></script>
 
 <style lang="scss">
-main.company {
+.company {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,9 +136,6 @@ main.company {
   }
 
   a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     padding: 0.25rem;
     width: 25ch;
     gap: 0.5rem;

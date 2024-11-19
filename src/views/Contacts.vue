@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="contacts">
     <p>
       <strong>
         <em>{{ $t('contact_intro') }}</em>
@@ -154,11 +154,11 @@
         "
       >
         {{ $t('form_send') }}
-        <span class="success" v-if="showSuccess" aria-live="polite">
+        <span class="success flex-center" v-if="showSuccess" aria-live="polite">
           {{ $t('success') }}
         </span>
 
-        <span class="error" v-if="showError" aria-live="polite">
+        <span class="error flex-center" v-if="showError" aria-live="polite">
           {{ $t('try_again') }}
         </span>
       </button>
@@ -285,7 +285,7 @@ const submitForm = async () => {
 </script>
 
 <style lang="scss" scoped>
-main p {
+.contacts p {
   padding: 0 0.25rem;
   letter-spacing: 0.1ch;
 
@@ -422,9 +422,6 @@ textarea {
   left: -2px;
   height: 2.5rem;
   font-size: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-weight: bold;
 }
 

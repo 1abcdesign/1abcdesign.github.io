@@ -19,10 +19,7 @@ const FooterBlock = defineAsyncComponent(() =>
   import('@/components/FooterBlock.vue')
 )
 
-// const router = useRouter()
 const showLoader = ref(true)
 
-function handleLoaderEnded() {
-  showLoader.value = false // Hide loader once animation ends
-}
+const handleLoaderEnded = () => showLoader.value = false // Hide loader once animation ends
 </script>

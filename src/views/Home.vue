@@ -2,19 +2,19 @@
   <main class="home">
     <logo3d-view />
 
-    <div class="middle-wrapper">
+    <div class="middle-wrapper flex-center">
       <section class="middle">
         <h1 class="main-header">
-          <span class="logo-letter">A</span>
-          <span class="logo-letter">B</span>
-          <span class="logo-letter">C</span>
-          <span class="logo-letter">D</span>
-          <span class="logo-letter">Ξ</span>
-          <span class="logo-letter">S</span>
-          <span class="logo-letter">I</span>
-          <span class="logo-letter">G</span>
-          <span class="logo-letter">N</span>
-          <span class="logo-letter">1</span>
+          <span class="logo-letter flex-center">A</span>
+          <span class="logo-letter flex-center">B</span>
+          <span class="logo-letter flex-center">C</span>
+          <span class="logo-letter flex-center">D</span>
+          <span class="logo-letter flex-center">Ξ</span>
+          <span class="logo-letter flex-center">S</span>
+          <span class="logo-letter flex-center">I</span>
+          <span class="logo-letter flex-center">G</span>
+          <span class="logo-letter flex-center">N</span>
+          <span class="logo-letter flex-center">1</span>
         </h1>
 
         <router-link to="/contacts" :title="$t('moto_CTA')">
@@ -55,14 +55,6 @@
 </template>
 
 <script setup>
-// import { defineAsyncComponent } from 'vue'
-// const Logo3dView = defineAsyncComponent(() =>
-//   import('@/components/Logo3dView.vue')
-// )
-// const ServicesSlider = defineAsyncComponent(() =>
-//   import('@/components/ServicesSlider.vue')
-// )
-
 import Logo3dView from '@/components/Logo3dView.vue'
 import ServicesSlider from '@/components/ServicesSlider.vue'
 </script>
@@ -77,10 +69,7 @@ import ServicesSlider from '@/components/ServicesSlider.vue'
   justify-content: flex-start;
 
   .middle-wrapper {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 6.625rem;
 
     .middle {
@@ -125,9 +114,6 @@ import ServicesSlider from '@/components/ServicesSlider.vue'
 
       .logo-letter {
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         align-self: center;
         justify-self: center;
       }

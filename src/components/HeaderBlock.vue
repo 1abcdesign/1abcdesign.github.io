@@ -5,6 +5,7 @@
         <router-link
           to="/"
           id="logoLink"
+          class="flex-center"
           :class="{ active: $route.path === '/' }"
           :title="$t('mainPage')"
         >
@@ -43,16 +44,16 @@
           </svg>
 
           <strong class="logo-strong">
-            <span class="logo-letter">A</span>
-            <span class="logo-letter">B</span>
-            <span class="logo-letter">C</span>
-            <span class="logo-letter">D</span>
-            <span class="logo-letter">Ξ</span>
-            <span class="logo-letter">S</span>
-            <span class="logo-letter">I</span>
-            <span class="logo-letter">G</span>
-            <span class="logo-letter">N</span>
-            <span class="logo-letter">1</span>
+            <span class="logo-letter flex-center">A</span>
+            <span class="logo-letter flex-center">B</span>
+            <span class="logo-letter flex-center">C</span>
+            <span class="logo-letter flex-center">D</span>
+            <span class="logo-letter flex-center">Ξ</span>
+            <span class="logo-letter flex-center">S</span>
+            <span class="logo-letter flex-center">I</span>
+            <span class="logo-letter flex-center">G</span>
+            <span class="logo-letter flex-center">N</span>
+            <span class="logo-letter flex-center">1</span>
           </strong>
         </router-link>
       </li>
@@ -209,9 +210,7 @@ menu {
 }
 
 #logo_link {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 0 1vmin;
   text-decoration: none;
 }
@@ -250,9 +249,6 @@ menu {
 
   .logo-letter {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     align-self: center;
     justify-self: center;
   }

@@ -1,5 +1,5 @@
 <template>
-  <main class="main">
+  <main class="services">
     <h2>
       {{ $t('design_description_full') }}
     </h2>
@@ -59,27 +59,29 @@ import PhotoGallery from '@/components/PhotoGallery.vue'
 </script>
 
 <style lang="scss" scoped>
-.head {
-  border: solid var(--shadow);
-  border-width: 1px 0;
-  font-size: 150%;
-  box-shadow: 0 0 1rem 0.5rem var(--shadow);
-  margin: 3.5rem 0 3.5rem 0;
+.services {
+  .head {
+    border: solid var(--shadow);
+    border-width: 1px 0;
+    font-size: 150%;
+    box-shadow: 0 0 1rem 0.5rem var(--shadow);
+    margin: 3.5rem 0 3.5rem 0;
 
-  h3:hover {
-    background: transparent;
+    h3:hover {
+      background: transparent;
+    }
+
+    h3::first-letter {
+      background: var(--color);
+      color: var(--background);
+      text-decoration: underline;
+      text-decoration-color: transparent;
+    }
   }
 
-  h3::first-letter {
-    background: var(--color);
-    color: var(--background);
-    text-decoration: underline;
-    text-decoration-color: transparent;
+  h2,
+  .head {
+    padding: 1rem;
   }
-}
-
-h2,
-.head {
-  padding: 1rem;
 }
 </style>

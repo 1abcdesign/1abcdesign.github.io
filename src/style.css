@@ -1,3 +1,5 @@
+@import url(https://db.onlinewebfonts.com/c/1120bd063fd378d88dbeed72f19a8bde?family=Sanserifing);
+
 [data-theme='light'] {
   --background: #fff;
   --color: #000;
@@ -178,10 +180,10 @@ footer a:hover svg {
   stroke: var(--background);
 }
 
-header nav li a svg:not(#logoImage),
-footer a svg {
-  width: 2rem;
-  height: 2rem;
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  stroke: var(--color); /* Use CSS variable for stroke color */
 }
 
 header,
@@ -252,6 +254,12 @@ textarea::-webkit-scrollbar-thumb:hover {
 main::-webkit-scrollbar-track:hover,
 textarea::-webkit-scrollbar-track:hover {
   background-color: var(--shadow);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pac-container * {

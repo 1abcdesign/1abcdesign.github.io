@@ -1,7 +1,7 @@
 <template>
   <button
     @click="themeSwitch"
-    class="theme-switcher"
+    class="theme-switcher flex-center"
     :title="$t('toggleThemeTip')"
   >
     <!-- Місяць на світлій темі -->
@@ -93,20 +93,10 @@ onMounted(() => {
   updateIconsStroke()
 })
 
-watch(theme, newTheme => {
-  document.documentElement.setAttribute('data-theme', newTheme)
-})
+watch(theme, newTheme => document.documentElement.setAttribute('data-theme', newTheme))
 </script>
 
 <style>
-:root {
-  --theme-color: #000; /* Default color for light theme */
-}
-
-[data-theme='dark'] {
-  --theme-color: #fff; /* Color for dark theme */
-}
-
 .theme-switcher {
   cursor: pointer;
   background-color: transparent;
@@ -114,16 +104,6 @@ watch(theme, newTheme => {
   border-radius: 1.25rem;
   position: relative;
   z-index: 5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 0;
-}
-
-.icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  stroke: var(--theme-color); /* Use CSS variable for stroke color */
-  fill: none;
 }
 </style>

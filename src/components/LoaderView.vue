@@ -1,5 +1,5 @@
 <template>
-  <div id="logo_overlay" v-if="isVisible" @animationend="handleAnimationEnd">
+  <div id="logo_overlay" class="flex-center" v-if="isVisible" @animationend="handleAnimationEnd">
     <div id="logo_2d_wrapper">
       <canvas
         id="logo_2d"
@@ -143,9 +143,6 @@ const handleAnimationEnd = () => {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: var(--background);
   opacity: 1;
   z-index: 10;

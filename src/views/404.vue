@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="not-found flex-center">
     <h2>
       ⛔ 404
       <br>
@@ -31,11 +31,8 @@ sessionStorage.setItem('navigation_history', JSON.stringify(history))
 </script>
 
 <style lang="scss" scoped>
-main {
-  display: flex;
+.not-found {
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: 150%;
   padding: 3rem;
 
