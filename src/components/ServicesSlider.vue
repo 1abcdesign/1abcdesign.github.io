@@ -10,7 +10,7 @@
     <vueper-slide
       v-for="(slide, i) in slides"
       :key="i"
-      :title="'<em>' + $t(slide.group) + ' : ' + $t(slide.title) + '</em>'"
+      :title="`<em><span class='first-letter'>${$t(slide.group)[0]}</span>${$t(slide.group).slice(1)} : ${$t(slide.title)}</em>`"
       :content="slide.content"
     >
     </vueper-slide>
@@ -117,13 +117,23 @@ const slides = ref(
 }
 
 .vueperslide__title em {
-  display: block !important;
-  line-height: 132%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.3rem;
   font-size: 90%;
 }
 
-.vueperslide__title em::first-letter {
+.vueperslide__title em .first-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.3rem;
+  font-size: inherit;
+
   background: var(--color);
   color: var(--background);
+  width: 1.75ch;
+  margin-right: -0.1ch;
 }
 </style>

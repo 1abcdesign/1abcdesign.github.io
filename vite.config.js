@@ -27,16 +27,14 @@ export default defineConfig(({ command, mode }) => {
       rollupOptions: {
         output: {
           manualChunks: {
-            'vendor': ['vue', 'vue-router', 'vue-i18n'],
-            'three': ['three'],
-            'common': ['axios', 'emailjs-com', 'vueperslides']
+            'three': ['three']
           }
         }
       },
       chunkSizeWarningLimit: 600,
     },
     optimizeDeps: {
-      include: ['axios', 'emailjs-com']
+      include: ['three']
     }
   }
 })

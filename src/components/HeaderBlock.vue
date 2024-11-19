@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav>
+    <menu>
       <li class="logo_link">
         <router-link
           to="/"
@@ -133,7 +133,7 @@
           <lang-switcher />
         </span>
       </li>
-    </nav>
+    </menu>
   </header>
 </template>
 
@@ -148,7 +148,7 @@ header {
   top: 0;
 }
 
-nav {
+menu {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   font-weight: bold;
@@ -179,13 +179,13 @@ nav {
   }
 
   @media (min-width: 1000px) {
-    nav {
+    menu {
       font-size: 133%;
     }
   }
 
   @media (min-width: 401px) and (max-width: 999px) {
-    nav {
+    menu {
       font-size: 125%;
     }
   }
@@ -233,7 +233,7 @@ nav {
 
 .logo-strong {
   position: relative;
-  padding-top: 0.2rem;
+  padding-top: 0.15rem;
   width: 4rem;
   height: 0.73rem;
   font-size: 0.73rem;

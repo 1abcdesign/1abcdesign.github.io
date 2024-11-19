@@ -64,6 +64,7 @@ const setTitle = () => {
 function updateIndexInfo(lang) {
   // Update the lang attribute on the <html> tag
   document.documentElement.lang = lang
+  document.documentElement.setAttribute('xml:lang', lang)
 
   // Define the content for each language
   const content = {

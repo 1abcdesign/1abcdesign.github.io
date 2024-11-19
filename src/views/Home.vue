@@ -23,7 +23,7 @@
           </em>
         </strong>
 
-        <ul>
+        <ol>
           <li>
             <router-link to="/services#ambience" :title="$t('a00')">
               {{ $t('ambience') }}
@@ -44,7 +44,7 @@
               {{ $t('design') }}
             </router-link>
           </li>
-        </ul>
+        </ol>
       </section>
     </div>
 
@@ -53,13 +53,16 @@
 </template>
 
 <script setup>
-import { defineAsyncComponent } from 'vue'
-const Logo3dView = defineAsyncComponent(() =>
-  import('@/components/Logo3dView.vue')
-)
-const ServicesSlider = defineAsyncComponent(() =>
-  import('@/components/ServicesSlider.vue')
-)
+// import { defineAsyncComponent } from 'vue'
+// const Logo3dView = defineAsyncComponent(() =>
+//   import('@/components/Logo3dView.vue')
+// )
+// const ServicesSlider = defineAsyncComponent(() =>
+//   import('@/components/ServicesSlider.vue')
+// )
+
+import Logo3dView from '@/components/Logo3dView.vue'
+import ServicesSlider from '@/components/ServicesSlider.vue'
 </script>
 
 <style lang="scss">
@@ -125,8 +128,8 @@ const ServicesSlider = defineAsyncComponent(() =>
 
     .moto {
       display: block;
-      width: 100%;
       position: relative;
+      width: 100%;
       bottom: 0.1rem;
 
       & em {
@@ -135,11 +138,10 @@ const ServicesSlider = defineAsyncComponent(() =>
         display: inline-block;
         color: var(--background);
         content: attr(data-inner-text);
-        font-size: 125%;
-        font-weight: bold;
-        z-index: 5;
+        font-size: 133%;
+        font-weight: 900;
 
-        text-shadow: 0 0 1ch var(--color);
+        text-shadow: 0 0 0.5ch var(--color);
         /* Cross-browser filters */
         filter: drop-shadow(0 0 0.33ch var(--color));
         -webkit-filter: drop-shadow(0 0 0.33ch var(--color));
@@ -159,7 +161,9 @@ const ServicesSlider = defineAsyncComponent(() =>
       }
     }
 
-    ul {
+    ol {
+      position: relative;
+      z-index: 5;
       width: 100vmin;
       font-size: 150%;
       list-style: none;
@@ -176,6 +180,7 @@ const ServicesSlider = defineAsyncComponent(() =>
 
       li {
         display: inline-block;
+        background: var(--background);
         width: 100%;
         line-height: 2rem;
 
