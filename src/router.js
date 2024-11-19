@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
+
 const routes = [
   {
     path: '/',
@@ -29,55 +31,60 @@ const routes = [
 ]
 
 const assets = [
-  'https://1abcdesign.github.io/a01.webp',
-  'https://1abcdesign.github.io/a02.webp',
-  'https://1abcdesign.github.io/a03.webp',
-  'https://1abcdesign.github.io/a04.webp',
-  'https://1abcdesign.github.io/a05.webp',
-  'https://1abcdesign.github.io/a06.webp',
-  'https://1abcdesign.github.io/a07.webp',
-  'https://1abcdesign.github.io/a08.webp',
-  'https://1abcdesign.github.io/a09.webp',
-  'https://1abcdesign.github.io/a10.webp',
-  'https://1abcdesign.github.io/b01.webp',
-  'https://1abcdesign.github.io/b02.webp',
-  'https://1abcdesign.github.io/b03.webp',
-  'https://1abcdesign.github.io/b04.webp',
-  'https://1abcdesign.github.io/b05.webp',
-  'https://1abcdesign.github.io/b06.webp',
-  'https://1abcdesign.github.io/b07.webp',
-  'https://1abcdesign.github.io/b08.webp',
-  'https://1abcdesign.github.io/b09.webp',
-  'https://1abcdesign.github.io/b10.webp',
-  'https://1abcdesign.github.io/c01.webp',
-  'https://1abcdesign.github.io/c02.webp',
-  'https://1abcdesign.github.io/c03.webp',
-  'https://1abcdesign.github.io/c04.webp',
-  'https://1abcdesign.github.io/c05.webp',
-  'https://1abcdesign.github.io/c06.webp',
-  'https://1abcdesign.github.io/c07.webp',
-  'https://1abcdesign.github.io/c08.webp',
-  'https://1abcdesign.github.io/c09.webp',
-  'https://1abcdesign.github.io/c10.webp',
-  'https://1abcdesign.github.io/d01.webp',
-  'https://1abcdesign.github.io/d02.webp',
-  'https://1abcdesign.github.io/d03.webp',
-  'https://1abcdesign.github.io/d04.webp',
-  'https://1abcdesign.github.io/d05.webp',
-  'https://1abcdesign.github.io/d06.webp',
-  'https://1abcdesign.github.io/d07.webp',
-  'https://1abcdesign.github.io/d08.webp',
-  'https://1abcdesign.github.io/d09.webp',
-  'https://1abcdesign.github.io/d10.webp',
+  `${ASSETS_DIR}/a01.webp`,
+  `${ASSETS_DIR}/a02.webp`,
+  `${ASSETS_DIR}/a03.webp`,
+  `${ASSETS_DIR}/a04.webp`,
+  `${ASSETS_DIR}/a05.webp`,
+  `${ASSETS_DIR}/a06.webp`,
+  `${ASSETS_DIR}/a07.webp`,
+  `${ASSETS_DIR}/a08.webp`,
+  `${ASSETS_DIR}/a09.webp`,
+  `${ASSETS_DIR}/a10.webp`,
+  `${ASSETS_DIR}/b01.webp`,
+  `${ASSETS_DIR}/b02.webp`,
+  `${ASSETS_DIR}/b03.webp`,
+  `${ASSETS_DIR}/b04.webp`,
+  `${ASSETS_DIR}/b05.webp`,
+  `${ASSETS_DIR}/b06.webp`,
+  `${ASSETS_DIR}/b07.webp`,
+  `${ASSETS_DIR}/b08.webp`,
+  `${ASSETS_DIR}/b09.webp`,
+  `${ASSETS_DIR}/b10.webp`,
+  `${ASSETS_DIR}/c01.webp`,
+  `${ASSETS_DIR}/c02.webp`,
+  `${ASSETS_DIR}/c03.webp`,
+  `${ASSETS_DIR}/c04.webp`,
+  `${ASSETS_DIR}/c05.webp`,
+  `${ASSETS_DIR}/c06.webp`,
+  `${ASSETS_DIR}/c07.webp`,
+  `${ASSETS_DIR}/c08.webp`,
+  `${ASSETS_DIR}/c09.webp`,
+  `${ASSETS_DIR}/c10.webp`,
+  `${ASSETS_DIR}/d01.webp`,
+  `${ASSETS_DIR}/d02.webp`,
+  `${ASSETS_DIR}/d03.webp`,
+  `${ASSETS_DIR}/d04.webp`,
+  `${ASSETS_DIR}/d05.webp`,
+  `${ASSETS_DIR}/d06.webp`,
+  `${ASSETS_DIR}/d07.webp`,
+  `${ASSETS_DIR}/d08.webp`,
+  `${ASSETS_DIR}/d09.webp`,
+  `${ASSETS_DIR}/d10.webp`,
+]
+
+const cursors = [
+  `${ASSETS_DIR}/scissors-black.cur`,
+  `${ASSETS_DIR}/scissors-white.cur`,
 ]
 
 const photos = [
-  'https://1abcdesign.github.io/photo_v.webp',
-  'https://1abcdesign.github.io/photo_a.webp',
+  `${ASSETS_DIR}/photo_v.webp`,
+  `${ASSETS_DIR}/photo_a.webp`,
 ]
 
 function preload3D() {
-  const logoSrc = 'https://1abcdesign.github.io/logo.glb'
+  const logoSrc = `${ASSETS_DIR}/logo.glb`
   const link = document.createElement('link')
   link.rel = 'preload'
   link.as = 'fetch'
@@ -120,6 +127,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   if (to.path === '/') {
     preload3D()
+    preloadImages(cursors)
   } else if (to.path === '/services') {
     preloadImages(assets)
   } else if (to.path === '/company') {
