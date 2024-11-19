@@ -17,11 +17,13 @@
           <span class="logo-letter">1</span>
         </h1>
 
-        <strong class="moto">
-          <em :data-inner-text="$t('moto')">
-            {{ $t('moto') }}
-          </em>
-        </strong>
+        <router-link to="/contacts" :title="$t('moto_CTA')">
+            <strong class="moto">
+            <em :data-inner-text="$t('moto')">
+              {{ $t('moto') }}
+            </em>
+          </strong>
+        </router-link>
 
         <ol>
           <li>
@@ -83,13 +85,17 @@ import ServicesSlider from '@/components/ServicesSlider.vue'
 
     .middle {
       width: 100vmin;
-      height: calc(6.625rem + 1px);
+      height: 6.625rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
       position: absolute;
-      top: 17rem;
+      top: calc(17rem + 1px);
+
+      & > * {
+        /* border: 1px solid red; */
+      }
     }
 
     .main-header {
@@ -114,6 +120,7 @@ import ServicesSlider from '@/components/ServicesSlider.vue'
       justify-items: center;
       align-content: center;
       align-items: center;
+      z-index: 0;
 
 
       .logo-letter {
@@ -129,16 +136,18 @@ import ServicesSlider from '@/components/ServicesSlider.vue'
     .moto {
       display: block;
       position: relative;
-      width: 100%;
-      bottom: 0.1rem;
+      width: 100vw;
+      height: 1.875rem;
+      padding: 0.2rem;
+      background: linear-gradient(45deg, var(--color), transparent, var(--color));
+      cursor: var(--cursor);
 
       & em {
         position: relative;
-        width: 100%;
+        width: 100vw;
         display: inline-block;
         color: var(--background);
-        content: attr(data-inner-text);
-        font-size: 133%;
+        font-size: 1.33rem;
         font-weight: 900;
 
         text-shadow: 0 0 0.5ch var(--color);
@@ -165,7 +174,7 @@ import ServicesSlider from '@/components/ServicesSlider.vue'
       position: relative;
       z-index: 5;
       width: 100vmin;
-      font-size: 150%;
+      font-size: 1.33rem;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -173,22 +182,22 @@ import ServicesSlider from '@/components/ServicesSlider.vue'
       grid-template-columns: repeat(4, 1fr);
       font-weight: bold;
       overflow: hidden;
-      border: 1px solid var(--shadow);
-      border-bottom: none;
-      line-height: 2rem;
-      height: 2rem;
+      border-left: 1px solid var(--shadow);
+      border-right: 1px solid var(--shadow);
+      line-height: 1.75rem;
+      height: 1.75rem;
 
       li {
         display: inline-block;
         background: var(--background);
         width: 100%;
-        line-height: 2rem;
+        line-height: 1.75rem;
 
         a {
           display: block;
           width: 100%;
           text-decoration: none;
-          line-height: 2rem;
+          line-height: 1.75rem;
         }
       }
 

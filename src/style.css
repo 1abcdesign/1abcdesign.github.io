@@ -4,6 +4,7 @@
   --theme-color: #000;
   --shadow: #8888;
   --invert: 0;
+  --cursor: url('scissors-black.cur') 0 9, url('scissors-black.ico') 0 9, url('scissors-black.png') 0 9, default;
 }
 
 [data-theme='dark'] {
@@ -12,6 +13,7 @@
   --theme-color: #fff;
   --shadow: #8888;
   --invert: 1;
+  --cursor: url('scissors-white.cur') 0 9, url('scissors--white.ico') 0 9, url('scissors--white.png') 0 9, default;
 }
 
 :root {

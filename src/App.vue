@@ -10,7 +10,6 @@
 
 <script setup>
 import { ref, defineAsyncComponent } from 'vue'
-// import { useRouter } from 'vue-router'
 import LoaderView from '@/components/LoaderView.vue'
 
 const HeaderBlock = defineAsyncComponent(() =>
@@ -22,12 +21,6 @@ const FooterBlock = defineAsyncComponent(() =>
 
 // const router = useRouter()
 const showLoader = ref(true)
-
-// onMounted(() => {
-//   router.afterEach(() => {
-//     showLoader.value = true // Show loader on route change
-//   })
-// })
 
 function handleLoaderEnded() {
   showLoader.value = false // Hide loader once animation ends
