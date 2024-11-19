@@ -23,18 +23,5 @@ export default defineConfig(({ command, mode }) => {
         },
       },
     },
-    build: {
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            'three': ['three']
-          }
-        }
-      },
-      chunkSizeWarningLimit: 600,
-    },
-    optimizeDeps: {
-      include: ['three']
-    }
   }
 })

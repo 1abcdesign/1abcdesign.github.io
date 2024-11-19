@@ -1,5 +1,5 @@
 <template>
-  <main class="company">
+  <main class="company flex-align">
     <p>
       {{ $t('aboutUs1') }}
     </p>
@@ -67,13 +67,9 @@
   </main>
 </template>
 
-<script setup></script>
-
-<style lang="scss">
+<style lang="scss" scoped>
 .company {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 1rem 0.5rem;
   font-size: 88%;
   text-align: left;

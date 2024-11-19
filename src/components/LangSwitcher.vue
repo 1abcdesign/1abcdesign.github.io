@@ -2,7 +2,7 @@
   <section class="lang-switcher" :title="$t('toggleLangTip')">
     <menu
       v-click-outside="closeMenu"
-      class="select"
+      class="select flex-align"
       :class="{ open: showOptions, close: !showOptions }"
     >
       <li
@@ -175,9 +175,7 @@ watch(selectedLanguage, () => {
   margin: 0;
   list-style: none;
   border-radius: 1.25rem;
-  display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   overflow: hidden;
   background-color: var(--color);

@@ -83,7 +83,7 @@
       </a>
     </p>
 
-    <form @submit.prevent="submitForm" class="form" autocomplete="on">
+    <form @submit.prevent="submitForm" class="form flex-align" autocomplete="on">
       <label :data-text="$t('form_name')">
         <input
           autocomplete="name"
@@ -304,9 +304,7 @@ const submitForm = async () => {
 }
 
 .form {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   color: var(--color);
   border: none;
   box-shadow: 0 0 1rem 0.5rem var(--shadow);

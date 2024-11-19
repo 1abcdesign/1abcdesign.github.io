@@ -1,9 +1,9 @@
 <template>
-  <main class="home">
+  <main class="home flex-align">
     <logo3d-view />
 
     <div class="middle-wrapper flex-center">
-      <section class="middle">
+      <section class="middle flex-align">
         <h1 class="main-header">
           <span class="logo-letter flex-center">A</span>
           <span class="logo-letter flex-center">B</span>
@@ -55,17 +55,17 @@
 </template>
 
 <script setup>
-import Logo3dView from '@/components/Logo3dView.vue'
+import { defineAsyncComponent } from 'vue'
 import ServicesSlider from '@/components/ServicesSlider.vue'
+
+const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vue'))
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .home {
   padding-top: 0.5rem;
   text-align: center;
-  display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
 
   .middle-wrapper {
@@ -75,16 +75,11 @@ import ServicesSlider from '@/components/ServicesSlider.vue'
     .middle {
       width: 100vmin;
       height: 6.625rem;
-      display: flex;
+
       flex-direction: column;
-      align-items: center;
       justify-content: space-between;
       position: absolute;
       top: calc(17rem + 1px);
-
-      & > * {
-        /* border: 1px solid red; */
-      }
     }
 
     .main-header {

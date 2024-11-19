@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <section class="copy-right">
+    <section class="copy-right flex-align">
       &copy;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;abcdesign1.com
     </section>
 
@@ -111,8 +111,6 @@ footer {
     position: relative;
     left: 1vmax;
     text-align: left;
-    display: flex;
-    align-items: center;
     word-spacing: -0.075ch;
   }
 }

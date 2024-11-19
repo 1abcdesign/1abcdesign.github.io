@@ -256,6 +256,11 @@ textarea::-webkit-scrollbar-track:hover {
   background-color: var(--shadow);
 }
 
+.flex-align {
+  display: flex;
+  align-items: center;
+}
+
 .flex-center {
   display: flex;
   align-items: center;

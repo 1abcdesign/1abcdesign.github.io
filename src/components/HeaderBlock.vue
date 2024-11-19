@@ -1,7 +1,7 @@
 <template>
   <header>
     <menu>
-      <li class="logo_link">
+      <li class="logo_link flex-align">
         <router-link
           to="/"
           id="logoLink"
@@ -44,21 +44,21 @@
           </svg>
 
           <strong class="logo-strong">
-            <span class="logo-letter flex-center">A</span>
-            <span class="logo-letter flex-center">B</span>
-            <span class="logo-letter flex-center">C</span>
-            <span class="logo-letter flex-center">D</span>
-            <span class="logo-letter flex-center">Ξ</span>
-            <span class="logo-letter flex-center">S</span>
-            <span class="logo-letter flex-center">I</span>
-            <span class="logo-letter flex-center">G</span>
-            <span class="logo-letter flex-center">N</span>
-            <span class="logo-letter flex-center">1</span>
+            <span class="logo-letter flex-center flex-align">A</span>
+            <span class="logo-letter flex-center flex-align">B</span>
+            <span class="logo-letter flex-center flex-align">C</span>
+            <span class="logo-letter flex-center flex-align">D</span>
+            <span class="logo-letter flex-center flex-align">Ξ</span>
+            <span class="logo-letter flex-center flex-align">S</span>
+            <span class="logo-letter flex-center flex-align">I</span>
+            <span class="logo-letter flex-center flex-align">G</span>
+            <span class="logo-letter flex-center flex-align">N</span>
+            <span class="logo-letter flex-center flex-align">1</span>
           </strong>
         </router-link>
       </li>
 
-      <li>
+      <li class="flex-align">
         <router-link to="/services" :title="$t('showcases')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@
         </router-link>
       </li>
 
-      <li>
+      <li class="flex-align">
         <router-link to="/company" :title="$t('about')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@
         </router-link>
       </li>
 
-      <li>
+      <li class="flex-align">
         <router-link to="/contacts" :title="$t('contactTip')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +127,7 @@
         </router-link>
       </li>
 
-      <li class="global-view">
+      <li class="global-view flex-align">
         <theme-switcher />
 
         <span class="lang-wrapper">
@@ -161,8 +161,6 @@ menu {
   li {
     height: 5.5rem;
     width: 100%;
-    display: flex;
-    align-items: center;
     text-align: center;
     a {
       width: 100%;
@@ -193,7 +191,6 @@ menu {
 
   .global-view {
     padding: 0.125rem 0.25rem;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
 

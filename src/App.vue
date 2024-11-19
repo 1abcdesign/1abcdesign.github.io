@@ -9,17 +9,14 @@
 </template>
 
 <script setup>
-import { ref, defineAsyncComponent } from 'vue'
+import { ref } from 'vue'
 import LoaderView from '@/components/LoaderView.vue'
-
-const HeaderBlock = defineAsyncComponent(() =>
-  import('@/components/HeaderBlock.vue')
-)
-const FooterBlock = defineAsyncComponent(() =>
-  import('@/components/FooterBlock.vue')
-)
+import HeaderBlock from '@/components/HeaderBlock.vue'
+import FooterBlock from '@/components/FooterBlock.vue'
 
 const showLoader = ref(true)
 
-const handleLoaderEnded = () => showLoader.value = false // Hide loader once animation ends
+function handleLoaderEnded() {
+  showLoader.value = false // Hide loader once animation ends
+}
 </script>
