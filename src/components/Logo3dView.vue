@@ -26,7 +26,7 @@ export default {
       // Initialize the Three.js scene
       const scene = new Scene()
       const camera = new PerspectiveCamera(
-        75,
+        76.5,
         window.innerWidth / window.innerHeight,
         1.5,
         1000
