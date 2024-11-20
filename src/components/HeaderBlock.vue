@@ -229,7 +229,7 @@ menu {
 
 .logo-strong {
   position: relative;
-  padding-top: 0.15rem;
+  padding-top: 0.2rem;
   width: 4rem;
   height: 0.73rem;
   font-size: 0.73rem;
