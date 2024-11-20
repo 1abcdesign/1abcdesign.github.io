@@ -26,11 +26,11 @@
     <link rel="preload" href="https://1abcdesign.github.io/favicon_dark.ico" as="image">
 
     <!-- Fonts -->
-    <!-- <link
+    <link
       href="https://db.onlinewebfonts.com/c/1120bd063fd378d88dbeed72f19a8bde?family=Sanserifing"
       rel="stylesheet"
       crossorigin="anonymous"
-    > -->
+    >
 
     <!-- Title -->
     <title>ABCDΞSIGN1 — Дизайн під ключ, що не має замін!</title>
@@ -40,6 +40,22 @@
 
     <!-- Robots Meta for indexing -->
     <meta name="robots" content="index, follow">
+
+    <style>
+      [data-theme='light'] {
+        --cursor: url('scissors-black.cur') 0 9, pointer;
+      }
+
+      [data-theme='dark'] {
+        --cursor: url('scissors-white.cur') 0 9, pointer;
+      }
+
+      .moto {
+        cursor: var(--cursor);
+      }
+    </style>
+
+
 
     <!-- JavaScript to correct URL | GitHub Pages SPA redirect correction -->
     <script type="text/javascript">
@@ -111,8 +127,16 @@
         favicon.href = savedTheme === 'dark' ? 'https://1abcdesign.github.io/favicon_dark.ico' : 'https://1abcdesign.github.io/favicon_light.ico';
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-0VM8sSIW.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Dc8EAJoW.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.157.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-C5TLxBdR.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CHGlvXXg.css">
   </head>
   <body>
     <!-- Adding structured Schema data for organization -->
