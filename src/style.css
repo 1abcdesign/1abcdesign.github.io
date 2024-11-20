@@ -1,20 +1,14 @@
-@import url(https://db.onlinewebfonts.com/c/1120bd063fd378d88dbeed72f19a8bde?family=Sanserifing);
-
 [data-theme='light'] {
   --background: #fff;
   --color: #000;
-  --theme-color: #000;
   --shadow: #8888;
-  --invert: 0;
   --cursor: url('scissors-black.cur') 0 9, pointer;
 }
 
 [data-theme='dark'] {
   --background: #000;
   --color: #fff;
-  --theme-color: #fff;
   --shadow: #8888;
-  --invert: 1;
   --cursor: url('scissors-white.cur') 0 9, pointer;
 }
 

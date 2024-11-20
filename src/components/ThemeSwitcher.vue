@@ -70,10 +70,7 @@ function setFavIcon() {
 
 const updateThemeColor = () => {
   const rootStyle = document.documentElement.style
-  rootStyle.setProperty(
-    '--theme-color',
-    theme.value === 'light' ? '#000' : '#fff'
-  )
+
   document.documentElement.classList.add('force-redraw')
   setTimeout(() => {
     document.documentElement.classList.remove('force-redraw')
