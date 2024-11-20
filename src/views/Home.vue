@@ -121,7 +121,6 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
       height: 1.875rem;
       padding: 0.2rem;
       background: linear-gradient(45deg, var(--color), transparent, var(--color));
-      cursor: var(--cursor);
 
       & em {
         position: relative;
