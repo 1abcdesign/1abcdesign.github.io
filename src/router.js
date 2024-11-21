@@ -109,19 +109,18 @@ const router = createRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
-      const element = document.querySelector(to.hash)
+      const element = document.querySelector(to.hash);
       if (element) {
-        // Scroll to the specific section within the .main block
-        const mainBlock = document.querySelector('.main')
-        mainBlock.scrollTo({
+        const container = document.querySelector('.main') || window;
+        container.scrollTo({
           top: element.offsetTop,
           behavior: 'smooth',
-        })
-        return // Prevent default behavior
+        });
+        return;
       }
     }
-    return savedPosition || { top: 0 }
-  },
+    return savedPosition || { top: 0 };
+  }
 })
 
 router.beforeEach((to, from, next) => {

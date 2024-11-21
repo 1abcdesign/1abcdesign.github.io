@@ -139,6 +139,7 @@ watch(theme, newTheme => document.documentElement.setAttribute('data-theme', new
   svg {
     width: 2rem;
     height: 2rem;
+    opacity: 0.85;
   }
 }
 </style>

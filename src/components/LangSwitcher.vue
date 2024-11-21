@@ -7,8 +7,8 @@
     >
       <li
         v-for="(option, index) in sortedLanguageOptions"
-        :key="index"
         @click="handleClick(option.value)"
+        :key="index"
         :class="{ selected: selectedLanguage === option.value }"
         class="select-option"
       >
@@ -191,23 +191,25 @@ watch(selectedLanguage, () => {
     height: inherit;
     border-radius: inherit;
     box-shadow: 0 0 0.25rem var(--color);
-    z-index: -1;
   }
 
   &-option {
     width: 2.5rem;
     height: 2.5rem;
+    position: relative;
+    z-index: 1;
 
     &-img {
       box-shadow: inset 0 0 0.5rem 0.25rem var(--shadow);
       width: 2rem;
       height: 2rem;
-      filter: blur(var(--blur));
+      filter: blur(var(--blur)) contrast(1.1);
       border-radius: 1rem;
       object-fit: cover;
       /* Add the prefixes for older browsers */
       -webkit-object-fit: cover; /* Safari */
       -moz-object-fit: cover; /* Firefox */
+      opacity: 0.85;
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <main class="services">
+  <main class="main services">
     <h2>
       {{ $t('design_description_full') }}
     </h2>

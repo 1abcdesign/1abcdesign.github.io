@@ -419,6 +419,11 @@ textarea {
   height: 5rem;
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: var(--grey);
+}
+
 /* Add styles for success and error messages */
 .success,
 .error {
