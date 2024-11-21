@@ -203,13 +203,13 @@ watch(selectedLanguage, () => {
       box-shadow: inset 0 0 0.5rem 0.25rem var(--shadow);
       width: 2rem;
       height: 2rem;
-      filter: blur(var(--blur)) contrast(1.1);
+      filter: blur(var(--blur)) brightness(1.05) contrast(1.05);
       border-radius: 1rem;
       object-fit: cover;
       /* Add the prefixes for older browsers */
       -webkit-object-fit: cover; /* Safari */
       -moz-object-fit: cover; /* Firefox */
-      opacity: 0.85;
+      opacity: 0.8;
     }
   }
 }
