@@ -4,6 +4,7 @@ const messages = {
   en: {
     moto: 'Your turnkey choice that’s second to none!',
     moto_CTA: 'Let’s start and finish your project together – cut the ribbon to success with us!',
+    email_subject: 'Let’s Design the Perfect Space Together',
     mainPage: 'Main page',
     company: 'About us',
     about: 'About our company',
@@ -152,6 +153,7 @@ const messages = {
   uk: {
     moto: 'Ваш вибір під ключ, що не має замін!',
     moto_CTA: 'Розпочнемо та завершимо ваш проєкт разом – переріжемо стрічку успіху!',
+    email_subject: 'Створимо ідеальний простір разом',
     mainPage: 'Головна сторінка',
     company: 'Про нас',
     about: 'Про нашу компанію',

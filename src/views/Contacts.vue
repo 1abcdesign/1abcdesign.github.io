@@ -78,7 +78,11 @@
 
       {{ $t('contact_mail') }}:
 
-      <a href="mailto:one.abcdesign@gmail.com" :title="$t('emailSend')" target="_blank">
+      <a
+        :href="`mailto:one.abcdesign@gmail.com?subject=${$t('email_subject')}`"
+        :title="$t('emailSend')"
+        target="_blank"
+      >
         one.abcdesign@gmail.com
       </a>
     </p>

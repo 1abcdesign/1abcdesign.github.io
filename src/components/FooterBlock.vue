@@ -6,7 +6,7 @@
 
     <section class="links">
       <a
-        href="mailto:one.abcdesign@gmail.com"
+        :href="`mailto:one.abcdesign@gmail.com?subject=${$t('email_subject')}`"
         target="_blank"
         aria-label="e-mail"
         :title="$t('emailSend')"
