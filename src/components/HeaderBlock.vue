@@ -102,7 +102,7 @@
             stroke-linejoin="round"
             class="icon feather-circle"
           >
-            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="10.5"></circle>
             <line x1="12" y1="22" x2="12" y2="2" />
             <line x1="12" y1="2" x2="2" y2="12" />
             <line x1="2" y1="12" x2="12" y2="12" />
