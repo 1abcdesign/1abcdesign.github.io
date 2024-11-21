@@ -34,7 +34,7 @@
         d="
           M         23 12
           A 11 11   0 1 1       12 1
-          A 6 6     0 0 0       23 12
+          A 5 5     0 0 0       23 12
           z
         "
       ></path>
@@ -54,7 +54,7 @@
       stroke-linejoin="round"
       class="icon feather-sun"
     >
-      <circle cx="12" cy="12" r="5" fill="var(--color)"></circle>
+      <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
       <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
