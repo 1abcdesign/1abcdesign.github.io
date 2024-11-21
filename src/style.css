@@ -14,7 +14,7 @@
 
 :root {
   --grey: #888;
-  --blur: 0.5px;
+  --blur: 0.25px;
   background: var(--background);
   color: var(--color);
   --safe-top: env(safe-area-inset-top);

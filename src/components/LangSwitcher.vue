@@ -209,7 +209,7 @@ watch(selectedLanguage, () => {
       /* Add the prefixes for older browsers */
       -webkit-object-fit: cover; /* Safari */
       -moz-object-fit: cover; /* Firefox */
-      opacity: 0.8;
+      opacity: 0.85;
     }
   }
 }
