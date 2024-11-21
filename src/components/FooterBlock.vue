@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="box-shadow-1-05">
     <section class="copy-right flex-align">
       &copy;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;abcdesign1.com
     </section>
@@ -7,8 +7,10 @@
     <section class="links">
       <a
         href="mailto:one.abcdesign@gmail.com"
+        target="_blank"
         aria-label="e-mail"
         :title="$t('emailSend')"
+        class="flex-center"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -31,8 +33,10 @@
 
       <a
         href="http://t.me/abcdesign1"
+        target="_blank"
         aria-label="telegram"
         :title="$t('chatDirect')"
+        class="flex-center"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -53,8 +57,10 @@
 
       <a
         href="tel:+380933789883"
+        target="_blank"
         aria-label="Call us"
         :title="$t('phoneUs')"
+        class="flex-center"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +110,6 @@ footer {
   span {
     display: inline-block;
     width: 33.33%;
-    text-align: center;
   }
 
   .copy-right {

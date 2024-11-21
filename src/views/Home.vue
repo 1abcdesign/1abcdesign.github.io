@@ -4,7 +4,7 @@
 
     <div class="middle-wrapper flex-center">
       <section class="middle flex-align">
-        <h1 class="main-header">
+        <h1 class="main-header grid-10">
           <span class="logo-letter flex-center">A</span>
           <span class="logo-letter flex-center">B</span>
           <span class="logo-letter flex-center">C</span>
@@ -64,7 +64,6 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
 <style lang="scss" scoped>
 .home {
   padding-top: 0.5rem;
-  text-align: center;
   flex-direction: column;
   justify-content: flex-start;
 
@@ -75,7 +74,6 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
     .middle {
       width: 100vmin;
       height: 6.625rem;
-
       flex-direction: column;
       justify-content: space-between;
       position: absolute;
@@ -93,19 +91,9 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
       /* Cross-browser filters */
       filter: drop-shadow(0 0 0.1ch var(--color));
       -webkit-filter: drop-shadow(0 0 0.1ch var(--color));
-
       padding-top: 0.6rem;
       width: 16.5rem;
-
-      display: grid;
       line-height: 1rem;
-      grid-template-columns: repeat(10, 1fr);
-      justify-content: center;
-      justify-items: center;
-      align-content: center;
-      align-items: center;
-      z-index: 0;
-
 
       .logo-letter {
         width: 100%;
@@ -162,10 +150,13 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
       grid-template-columns: repeat(4, 1fr);
       font-weight: bold;
       overflow: hidden;
-      border-left: 1px solid var(--shadow);
-      border-right: 1px solid var(--shadow);
       line-height: 1.75rem;
       height: 1.75rem;
+
+      @media (orientation: landscape) {
+        border-left: 1px solid var(--shadow);
+        border-right: 1px solid var(--shadow);
+      }
 
       li {
         display: inline-block;

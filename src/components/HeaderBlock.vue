@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="box-shadow-1-05">
     <menu>
       <li class="logo_link flex-align">
         <router-link
@@ -43,23 +43,27 @@
             <circle cx="200" cy="200" r="186" fill="none" />
           </svg>
 
-          <strong class="logo-strong">
-            <span class="logo-letter flex-center flex-align">A</span>
-            <span class="logo-letter flex-center flex-align">B</span>
-            <span class="logo-letter flex-center flex-align">C</span>
-            <span class="logo-letter flex-center flex-align">D</span>
-            <span class="logo-letter flex-center flex-align">Ξ</span>
-            <span class="logo-letter flex-center flex-align">S</span>
-            <span class="logo-letter flex-center flex-align">I</span>
-            <span class="logo-letter flex-center flex-align">G</span>
-            <span class="logo-letter flex-center flex-align">N</span>
-            <span class="logo-letter flex-center flex-align">1</span>
+          <strong class="logo-strong grid-10">
+            <span class="logo-letter flex-center">A</span>
+            <span class="logo-letter flex-center">B</span>
+            <span class="logo-letter flex-center">C</span>
+            <span class="logo-letter flex-center">D</span>
+            <span class="logo-letter flex-center">Ξ</span>
+            <span class="logo-letter flex-center">S</span>
+            <span class="logo-letter flex-center">I</span>
+            <span class="logo-letter flex-center">G</span>
+            <span class="logo-letter flex-center">N</span>
+            <span class="logo-letter flex-center">1</span>
           </strong>
         </router-link>
       </li>
 
       <li class="flex-align">
-        <router-link to="/services" :title="$t('showcases')">
+        <router-link
+          to="/services"
+          :title="$t('showcases')"
+          class="flex-center"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -67,7 +71,7 @@
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
+            stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
             class="icon feather-briefcase"
@@ -81,7 +85,11 @@
       </li>
 
       <li class="flex-align">
-        <router-link to="/company" :title="$t('about')">
+        <router-link
+          to="/company"
+          :title="$t('about')"
+          class="flex-center"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -89,7 +97,7 @@
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
+            stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
             class="icon feather-circle"
@@ -106,7 +114,11 @@
       </li>
 
       <li class="flex-align">
-        <router-link to="/contacts" :title="$t('contactTip')">
+        <router-link
+          to="/contacts"
+          :title="$t('contactTip')"
+          class="flex-center"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -114,7 +126,7 @@
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
+            stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
             class="icon feather-at-sign"
@@ -161,7 +173,7 @@ menu {
   li {
     height: 5.5rem;
     width: 100%;
-    text-align: center;
+
     a {
       width: 100%;
       height: 5.5rem;
@@ -229,17 +241,11 @@ menu {
 
 .logo-strong {
   position: relative;
-  padding-top: 0.2rem;
+  padding-top: 0.18rem;
   width: 4rem;
   height: 0.73rem;
   font-size: 0.73rem;
-  display: grid;
   line-height: 0.73rem;
-  grid-template-columns: repeat(10, 1fr);
-  justify-content: center;
-  justify-items: center;
-  align-content: center;
-  align-items: center;
   box-shadow: 0 0 0.25rem 0.125rem var(--shadow);
   filter: drop-shadow(0 0 0.1rem var(--color));
   -webkit-filter: drop-shadow(0 0 0.1rem var(--color));

@@ -171,7 +171,7 @@ watch(selectedLanguage, () => {
 }
 
 .select {
-  padding: 0;
+  padding: .25rem 0 0 0;
   margin: 0;
   list-style: none;
   border-radius: 1.25rem;
@@ -180,14 +180,30 @@ watch(selectedLanguage, () => {
   overflow: hidden;
   background-color: var(--color);
 
+  box-shadow: inset 0 0 0.5rem 0.25rem var(--shadow);
+  background: linear-gradient(45deg, var(--background) 0%, var(--shadow) 10%, transparent 66%, var(--color) 100%);
+
+  &::after {
+    position: absolute;
+    top: 0;
+    content: '';
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    box-shadow: 0 0 0.25rem var(--color);
+    z-index: -1;
+  }
+
   &-option {
     width: 2.5rem;
     height: 2.5rem;
 
     &-img {
-      border-radius: 1.25rem;
-      width: 2.5rem;
-      height: 2.5rem;
+      box-shadow: inset 0 0 0.5rem 0.25rem var(--shadow);
+      width: 2rem;
+      height: 2rem;
+      filter: blur(var(--blur));
+      border-radius: 1rem;
       object-fit: cover;
       /* Add the prefixes for older browsers */
       -webkit-object-fit: cover; /* Safari */
@@ -197,7 +213,6 @@ watch(selectedLanguage, () => {
 }
 
 .close {
-  z-index: 5;
   height: 2.5rem;
 }
 

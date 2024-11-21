@@ -141,8 +141,8 @@ const handleAnimationEnd = () => {
 
 #logo_overlay {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 50rem;
   background: var(--background);
   opacity: 1;
   z-index: 10;
@@ -150,7 +150,7 @@ const handleAnimationEnd = () => {
   -webkit-animation: fade-out 1.2s 2.4s forwards ease-out; // Webkit version of animation
   -moz-animation: fade-out 1.2s 2.4s forwards ease-out; // Mozilla version of animation
   pointer-events: none; // Prevents interaction after fading out
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 #logo_2d_wrapper {

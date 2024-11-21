@@ -9,7 +9,7 @@
     </p>
 
     <section class="vip">
-      <div class="person v">
+      <div class="person v box-shadow-1-05">
         <img src="/photo_v.webp" alt="V">
 
         <h3>{{ $t('lifeStyle1') }}</h3>
@@ -20,7 +20,7 @@
           </em>
         </p>
       </div>
-      <div class="person a">
+      <div class="person a box-shadow-1-05">
         <img src="/photo_a.webp" alt="A">
 
         <h3>{{ $t('lifeStyle3') }}</h3>
@@ -45,7 +45,11 @@
       </strong>
     </p>
 
-    <router-link to="/contacts" :title="$t('contactTip')" class="flex-center">
+    <router-link
+      to="/contacts"
+      :title="$t('contactTip')"
+      class="flex-center box-shadow-1-05"
+    >
       <b>
         {{ $t('contacts') }}
       </b>
@@ -66,6 +70,8 @@
     </router-link>
   </main>
 </template>
+
+<script setup></script>
 
 <style lang="scss" scoped>
 .company {
@@ -111,9 +117,7 @@
       grid-template-rows: auto auto auto;
       align-content: space-between;
       justify-items: center;
-      text-align: center;
       height: 25vh;
-      box-shadow: 0 0 1rem 0.5rem var(--shadow);
       padding: 0.5rem;
 
       img {
@@ -135,15 +139,9 @@
     padding: 0.25rem;
     width: 25ch;
     gap: 0.5rem;
-    box-shadow: 0 0 1rem 0.5rem var(--shadow);
 
-    &:hover {
-      background: var(--color);
-      color: var(--background);
-
-      & svg {
-        stroke: var(--background);
-      }
+    &:hover svg {
+      stroke: var(--background);
     }
   }
 
@@ -155,5 +153,15 @@
 
 .heart {
   color: red !important;
+
+  &::selection {
+    color: red !important;
+  }
+  &::-moz-selection {
+    color: red !important;
+  }
+  &::-webkit-selection {
+    color: red !important;
+  }
 }
 </style>

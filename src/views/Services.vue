@@ -5,7 +5,7 @@
     </h2>
 
     <section id="ambience">
-      <div class="head">
+      <div class="head box-shadow-1-05">
         <h3>
           {{ $t('a00') }}
         </h3>
@@ -17,7 +17,7 @@
     </section>
 
     <section id="building">
-      <div class="head">
+      <div class="head box-shadow-1-05">
         <h3>
           {{ $t('b00') }}
         </h3>
@@ -29,7 +29,7 @@
     </section>
 
     <section id="crafting">
-      <div class="head">
+      <div class="head box-shadow-1-05">
         <h3>
           {{ $t('c00') }}
         </h3>
@@ -41,7 +41,7 @@
     </section>
 
     <section id="design">
-      <div class="head">
+      <div class="head box-shadow-1-05">
         <h3>
           {{ $t('d00') }}
         </h3>
@@ -64,7 +64,6 @@ import PhotoGallery from '@/components/PhotoGallery.vue'
     border: solid var(--shadow);
     border-width: 1px 0;
     font-size: 150%;
-    box-shadow: 0 0 1rem 0.5rem var(--shadow);
     margin: 3.5rem 0 3.5rem 0;
 
     h3:hover {
