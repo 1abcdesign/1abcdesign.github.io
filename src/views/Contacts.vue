@@ -28,7 +28,7 @@
 
       {{ $t('contact_phone') }}:
 
-      <a href="tel:+380933789883" :title="$t('phoneUs')"> +380 93 378 9883 </a>
+      <a href="tel:+380933789883" :title="$t('phoneUs')" target="_blank"> +380 93 378 9883 </a>
     </p>
 
     <p>
@@ -51,7 +51,7 @@
 
       {{ $t('contact_tg') }}:
 
-      <a href="http://t.me/abcdesign1" :title="$t('chatDirect')">
+      <a href="http://t.me/abcdesign1" :title="$t('chatDirect')" target="_blank">
         @abcdesign1
       </a>
     </p>
@@ -78,7 +78,7 @@
 
       {{ $t('contact_mail') }}:
 
-      <a href="mailto:one.abcdesign@gmail.com" :title="$t('emailSend')">
+      <a href="mailto:one.abcdesign@gmail.com" :title="$t('emailSend')" target="_blank">
         one.abcdesign@gmail.com
       </a>
     </p>
