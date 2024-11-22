@@ -55,12 +55,10 @@
 </template>
 
 <script setup>
-import { defineAsyncComponent, onMounted } from 'vue'
+import { defineAsyncComponent } from 'vue'
 import ServicesSlider from '@/components/ServicesSlider.vue'
-import { loaderState } from '@/store.js'
-const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vue'))
 
-onMounted(() => loaderState.setShowLoader(false))
+const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vue'))
 </script>
 
 <style lang="scss" scoped>

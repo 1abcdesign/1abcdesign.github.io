@@ -74,7 +74,8 @@ const photos = [
 ]
 
 // Base directory where your photos are stored
-const BASE_URL = import.meta.env.BASE_URL
+// const BASE_URL = import.meta.env.BASE_URL
+const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
 
 // Shuffle each sub-array
 photos.forEach(arr => arr.sort(() => Math.random() - 0.5))
@@ -96,7 +97,7 @@ const slides = ref(
   interleavedPhotos.map(photo => ({
     group: `${photo.charAt(0) + '00'}`,
     title: `${photo.slice(0, 3) + '_title'}`,
-    content: `<div style="background-image: url('${BASE_URL}${photo}'); width: 100vmin; height: 17.5rem; background-size: cover; background-position: center;"></div>`,
+    content: `<div style="background-image: url('${ASSETS_DIR}${photo}'); width: 100vmin; height: 17.5rem; background-size: cover; background-position: center;"></div>`,
   }))
 )
 </script>

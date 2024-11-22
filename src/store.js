@@ -1,6 +1,6 @@
 import { reactive } from 'vue'
 
-export const loaderState = reactive({
+export const state = reactive({
   showLoader: true,
   setShowLoader(value) {
     this.showLoader = value
