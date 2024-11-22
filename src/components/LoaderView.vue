@@ -108,7 +108,6 @@ onMounted(() => {
   let startTime = null
 
   function animate(timestamp) {
-    console.log('timestamp:', timestamp)
     if (!startTime) startTime = timestamp
     const elapsed = timestamp - startTime
 

@@ -86,25 +86,12 @@ const photos = [
 
 const logo3dSrc = `${ASSETS_DIR}/logo3d.glb`
 
-// function preload3D(logo3dSrc) {
-//   const link = document.createElement('link')
-//   link.rel = 'preload'
-//   link.as = 'fetch'
-//   link.href = logoSrc
-//   link.crossOrigin = 'anonymous' // Add crossorigin attribute here
-//   document.head.appendChild(link)
-// }
-
-// function preloadImages(images) {
-//   images.forEach(src => {
-//     const link = document.createElement('link')
-//     link.rel = 'preload'
-//     link.as = 'image'
-//     link.href = src
-//     link.crossOrigin = 'anonymous' // Add crossorigin attribute here
-//     document.head.appendChild(link)
-//   })
-// }
+const assetChunks = [
+  assets.slice(0, 10),
+  assets.slice(10, 20),
+  assets.slice(20, 30),
+  assets.slice(30, 40),
+]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -125,35 +112,41 @@ const router = createRouter({
   }
 })
 
-// // Initialize the preload worker
-// const preloadWorker = new Worker(new URL('@/worker.js', import.meta.url), { type: 'module' })
-
 import PreloadWorker from '@/worker.js?worker';
 
 // Create the worker instance
 const preloadWorker1 = new PreloadWorker();
 const preloadWorker2 = new PreloadWorker();
 const preloadWorker3 = new PreloadWorker();
+const preloadWorker4 = new PreloadWorker();
+const preloadWorker5 = new PreloadWorker();
+const preloadWorker6 = new PreloadWorker();
 
 router.beforeEach((to, from, next) => {
   // Show the loader when preloading starts
   loaderState.setShowLoader(true)
 
-    // Keep track of workers' completion states
+    // // Keep track of workers' completion states
     let workerCompletion
 
     const checkAllWorkersDone = () => {
       if (workerCompletion.every((status) => status)) {
         // All workers are done, hide the loader
         loaderState.setShowLoader(false);
+
+        console.log(window.preloadedAssetsMap)
       }
     };
 
     // Listen for worker completion messages
     const handleWorkerMessage = (workerIndex) => {
       return (e) => {
-        if (e.data === 'done') {
+        if (e.data.preloaded) {
+          console.log(e.data.preloaded)
           workerCompletion[workerIndex] = true;
+
+          window.preloadedAssetsMap = { ...window.preloadedAssetsMap, ...e.data.preloaded };
+
           checkAllWorkersDone();
         }
       };
@@ -162,18 +155,24 @@ router.beforeEach((to, from, next) => {
     preloadWorker1.onmessage = handleWorkerMessage(0);
     preloadWorker2.onmessage = handleWorkerMessage(1);
     preloadWorker3.onmessage = handleWorkerMessage(2);
+    preloadWorker4.onmessage = handleWorkerMessage(3);
+    preloadWorker5.onmessage = handleWorkerMessage(4);
+    preloadWorker6.onmessage = handleWorkerMessage(5);
 
     if (to.path === '/') {
-      workerCompletion = [false, false, false]
-      preloadWorker1.postMessage({ action: 'preloadImages', assets: assets })
-      preloadWorker2.postMessage({ action: 'preload3D' , assets: logo3dSrc })
-      preloadWorker3.postMessage({ action: 'preloadImages', assets: cursors })
+      workerCompletion = [false, false, false, false, false, false]
+      preloadWorker1.postMessage({ assets: [logo3dSrc] })
+      preloadWorker2.postMessage({ assets: assetChunks[0] })
+      preloadWorker3.postMessage({ assets: assetChunks[1] })
+      preloadWorker4.postMessage({ assets: assetChunks[2] })
+      preloadWorker5.postMessage({ assets: assetChunks[3] })
+      preloadWorker6.postMessage({ assets: cursors })
     } else if (to.path === '/services') {
       workerCompletion = [false]
-      preloadWorker1.postMessage({ action: 'preloadImages', assets: assets })
+      preloadWorker1.postMessage({ assets: assets })
     } else if (to.path === '/company') {
       workerCompletion = [false]
-      preloadWorker1.postMessage({ action: 'preloadImages', assets: photos })
+      preloadWorker1.postMessage({ assets: photos })
     }
 
   // Check if `navigation_history` exists and is a valid JSON string

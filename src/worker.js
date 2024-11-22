@@ -1,40 +1,30 @@
 self.onmessage = async (event) => {
-  const { action, assets } = event.data;
+  const { assets } = event.data;
 
-  async function preload3D(logoSrc) {
+  async function fetchAsset(src) {
     try {
-      const response = await fetch(logoSrc, { method: 'HEAD' });
-      console.log(response)
-      if (!response.ok) throw new Error(`Failed to preload 3D asset: ${logoSrc}`);
+      const response = await fetch(src);
+      if (!response.ok) throw new Error(`Failed to fetch: ${src}`);
+      console.log(response, Date.now())
+      const blob = await response.blob();
+      return { src, blob };
     } catch (err) {
       console.error(err);
+      return { src, blob: null };
     }
   }
 
-  async function preloadImages(images) {
-    for (const src of images) {
-      try {
-        const response = await fetch(src, { method: 'HEAD' });
-        console.log(response)
-        if (!response.ok) throw new Error(`Failed to preload image: ${src}`);
-      } catch (err) {
-        console.error(err);
-      }
+  async function preloadAssets(assetList) {
+    const loadedAssets = {};
+    for (const src of assetList) {
+      const { src: key, blob } = await fetchAsset(src);
+      loadedAssets[key] = blob;
     }
+    return loadedAssets;
   }
 
-  // Handle different actions
-  switch (action) {
-    case 'preload3D':
-      await preload3D(assets);
-      break;
-    case 'preloadImages':
-      await preloadImages(assets);
-      break;
-    default:
-      break;
-  }
+  const preloaded = await preloadAssets(assets);
 
   // Send a message back to the main thread when done
-  self.postMessage('done');
+  self.postMessage({ preloaded });
 };
