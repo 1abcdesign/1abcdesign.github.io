@@ -1,8 +1,17 @@
 <template>
-  <div id="logo_overlay" class="flex-center" v-if="isVisible" @animationend="handleAnimationEnd">
+  <div
+    id="logo_overlay"
+    ref="logo_overlay"
+    class="flex-center"
+    v-if="isVisible"
+    @animationend="handleAnimationEnd"
+  >
+    <!-- @animationend="loaderState.setLoaderState(0)" -->
+    <!-- @animationend="() => isVisible = 0" -->
     <div id="logo_2d_wrapper">
       <canvas
         id="logo_2d"
+        ref="logo_2d"
         width="400"
         height="400"
         style="stroke: var(--color0)"
@@ -24,16 +33,20 @@
 
 <script setup>
 import { onMounted, ref } from 'vue'
-
+// const { showLoader } = defineProps(['showLoader'])
+import { loaderState } from '@/store.js';
 const getTheme = () =>
   document.documentElement.getAttribute('data-theme') === 'dark'
     ? '#fff'
     : '#000'
-const totalDuration = ref(2340) // Загальна тривалість анімації в мілісекундах
-const isVisible = ref(true)
+// const totalDuration = ref(2340) // Duration for 30fps GPU load
+const totalDuration = ref(1170) // Загальна тривалість анімації в мілісекундах
+const isVisible = ref(loaderState.showLoader)
+const logo_overlay = ref(null)
+const logo_2d = ref(null)
 
 onMounted(() => {
-  const canvas = document.getElementById('logo_2d')
+  const canvas = logo_2d.value || document.getElementById('logo_2d')
   const ctx = canvas.getContext('2d')
   ctx.lineWidth = 28
   ctx.strokeStyle = getTheme()
@@ -95,6 +108,7 @@ onMounted(() => {
   let startTime = null
 
   function animate(timestamp) {
+    console.log('timestamp:', timestamp)
     if (!startTime) startTime = timestamp
     const elapsed = timestamp - startTime
 
@@ -117,6 +131,13 @@ onMounted(() => {
 
     if (elapsed < totalDuration.value) {
       requestAnimationFrame(animate)
+    } else if (loaderState.showLoader) {
+        startTime = null // Reset the start time
+        ctx.clearRect(0, 0, canvas.width, canvas.height) // Clear the canvas
+        requestAnimationFrame(animate) // Restart the animation
+    } else {
+      // add animation class to emit animationend event
+      logo_overlay.value.classList.add('fade-out')
     }
   }
 
@@ -125,9 +146,17 @@ onMounted(() => {
 
 const handleAnimationEnd = () => {
   // This method will be triggered after the fade-out animation completes
-  isVisible.value = false
+  // isVisible.value = false
+  isVisible.value = loaderState.showLoader
+  console.log('animationend', new Date().getTime())
 }
 </script>
+
+<!-- .fade-out {
+  animation: fade-out 1.2s 2.4s forwards ease-out; // Starts fading out after the animation completes
+  -webkit-animation: fade-out 1.2s 2.4s forwards ease-out; // Webkit version of animation
+  -moz-animation: fade-out 1.2s 2.4s forwards ease-out; // Mozilla version of animation
+} -->
 
 <style lang="scss">
 @keyframes fade-out {
@@ -139,18 +168,21 @@ const handleAnimationEnd = () => {
   }
 }
 
+.fade-out {
+  animation: fade-out 1.2s forwards ease-out; // Starts fading out after the animation completes
+  -webkit-animation: fade-out 1.2s forwards ease-out; // Webkit version of animation
+  -moz-animation: fade-out 1.2s forwards ease-out; // Mozilla version of animation
+}
+
 #logo_overlay {
   position: fixed;
   width: 100%;
   height: 50rem;
   background: var(--background);
-  opacity: 1;
   z-index: 10;
-  animation: fade-out 1.2s 2.4s forwards ease-out; // Starts fading out after the animation completes
-  -webkit-animation: fade-out 1.2s 2.4s forwards ease-out; // Webkit version of animation
-  -moz-animation: fade-out 1.2s 2.4s forwards ease-out; // Mozilla version of animation
-  pointer-events: none; // Prevents interaction after fading out
   overflow: hidden !important;
+  opacity: 1;
+  pointer-events: none; // Prevents interaction after fading out
 }
 
 #logo_2d_wrapper {

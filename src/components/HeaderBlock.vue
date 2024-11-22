@@ -159,6 +159,7 @@ import LangSwitcher from './LangSwitcher.vue'
 header {
   width: 100%;
   top: 0;
+  font-size: 1.1rem;
 }
 
 menu {
@@ -168,7 +169,7 @@ menu {
   list-style: none;
   padding: 0;
   margin: 0;
-  height: 5.5rem;
+  height: 5.5rem99;
 
   li {
     height: 5.5rem;

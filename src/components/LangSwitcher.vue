@@ -171,27 +171,15 @@ watch(selectedLanguage, () => {
 }
 
 .select {
-  padding: .25rem 0 0 0;
+  padding: 0;
   margin: 0;
   list-style: none;
   border-radius: 1.25rem;
   flex-direction: column;
   justify-content: space-between;
+  gap: 0.25rem;
   overflow: hidden;
-  background-color: var(--color);
-
-  box-shadow: inset 0 0 0.5rem 0.25rem var(--shadow);
-  background: linear-gradient(45deg, var(--background) 0%, var(--shadow) 10%, transparent 66%, var(--color) 100%);
-
-  &::after {
-    position: absolute;
-    top: 0;
-    content: '';
-    width: 100%;
-    height: inherit;
-    border-radius: inherit;
-    box-shadow: 0 0 0.25rem var(--color);
-  }
+  background: var(--shadow);
 
   &-option {
     width: 2.5rem;
@@ -200,16 +188,14 @@ watch(selectedLanguage, () => {
     z-index: 1;
 
     &-img {
-      box-shadow: inset 0 0 0.5rem 0.25rem var(--shadow);
-      width: 2rem;
-      height: 2rem;
-      filter: blur(var(--blur)) brightness(1.05) contrast(1.05);
+      width: 2.5rem;
+      height: 2.5rem;
+      filter: blur(var(--blur));
       border-radius: 1rem;
       object-fit: cover;
       /* Add the prefixes for older browsers */
       -webkit-object-fit: cover; /* Safari */
       -moz-object-fit: cover; /* Firefox */
-      opacity: 0.85;
     }
   }
 }
@@ -219,6 +205,6 @@ watch(selectedLanguage, () => {
 }
 
 .open {
-  height: 5rem;
+  height: 5.25rem;
 }
 </style>

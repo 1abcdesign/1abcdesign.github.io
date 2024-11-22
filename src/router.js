@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { loaderState } from '@/store.js'
 
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
 
@@ -83,26 +84,27 @@ const photos = [
   `${ASSETS_DIR}/photo_a.webp`,
 ]
 
-function preload3D() {
-  const logoSrc = `${ASSETS_DIR}/logo.glb`
-  const link = document.createElement('link')
-  link.rel = 'preload'
-  link.as = 'fetch'
-  link.href = logoSrc
-  link.crossOrigin = 'anonymous' // Add crossorigin attribute here
-  document.head.appendChild(link)
-}
+const logo3dSrc = `${ASSETS_DIR}/logo3d.glb`
 
-function preloadImages(images) {
-  images.forEach(src => {
-    const link = document.createElement('link')
-    link.rel = 'preload'
-    link.as = 'image'
-    link.href = src
-    link.crossOrigin = 'anonymous' // Add crossorigin attribute here
-    document.head.appendChild(link)
-  })
-}
+// function preload3D(logo3dSrc) {
+//   const link = document.createElement('link')
+//   link.rel = 'preload'
+//   link.as = 'fetch'
+//   link.href = logoSrc
+//   link.crossOrigin = 'anonymous' // Add crossorigin attribute here
+//   document.head.appendChild(link)
+// }
+
+// function preloadImages(images) {
+//   images.forEach(src => {
+//     const link = document.createElement('link')
+//     link.rel = 'preload'
+//     link.as = 'image'
+//     link.href = src
+//     link.crossOrigin = 'anonymous' // Add crossorigin attribute here
+//     document.head.appendChild(link)
+//   })
+// }
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -123,15 +125,56 @@ const router = createRouter({
   }
 })
 
+// // Initialize the preload worker
+// const preloadWorker = new Worker(new URL('@/worker.js', import.meta.url), { type: 'module' })
+
+import PreloadWorker from '@/worker.js?worker';
+
+// Create the worker instance
+const preloadWorker1 = new PreloadWorker();
+const preloadWorker2 = new PreloadWorker();
+const preloadWorker3 = new PreloadWorker();
+
 router.beforeEach((to, from, next) => {
-  if (to.path === '/') {
-    preload3D()
-    preloadImages(cursors)
-  } else if (to.path === '/services') {
-    preloadImages(assets)
-  } else if (to.path === '/company') {
-    preloadImages(photos)
-  }
+  // Show the loader when preloading starts
+  loaderState.setShowLoader(true)
+
+    // Keep track of workers' completion states
+    let workerCompletion
+
+    const checkAllWorkersDone = () => {
+      if (workerCompletion.every((status) => status)) {
+        // All workers are done, hide the loader
+        loaderState.setShowLoader(false);
+      }
+    };
+
+    // Listen for worker completion messages
+    const handleWorkerMessage = (workerIndex) => {
+      return (e) => {
+        if (e.data === 'done') {
+          workerCompletion[workerIndex] = true;
+          checkAllWorkersDone();
+        }
+      };
+    };
+
+    preloadWorker1.onmessage = handleWorkerMessage(0);
+    preloadWorker2.onmessage = handleWorkerMessage(1);
+    preloadWorker3.onmessage = handleWorkerMessage(2);
+
+    if (to.path === '/') {
+      workerCompletion = [false, false, false]
+      preloadWorker1.postMessage({ action: 'preloadImages', assets: assets })
+      preloadWorker2.postMessage({ action: 'preload3D' , assets: logo3dSrc })
+      preloadWorker3.postMessage({ action: 'preloadImages', assets: cursors })
+    } else if (to.path === '/services') {
+      workerCompletion = [false]
+      preloadWorker1.postMessage({ action: 'preloadImages', assets: assets })
+    } else if (to.path === '/company') {
+      workerCompletion = [false]
+      preloadWorker1.postMessage({ action: 'preloadImages', assets: photos })
+    }
 
   // Check if `navigation_history` exists and is a valid JSON string
   let history

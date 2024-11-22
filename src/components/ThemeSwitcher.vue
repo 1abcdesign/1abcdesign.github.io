@@ -32,9 +32,9 @@
       ></path> -->
       <path
         d="
-          M         23 12
-          A 11 11   0 1 1       12 1
-          A 5 5     0 0 0       23 12
+          M         22 12
+          A 10 10   0 1 1       12 2
+          A 6 6     0 0 0       22 12
           z
         "
       ></path>
@@ -120,26 +120,11 @@ watch(theme, newTheme => document.documentElement.setAttribute('data-theme', new
   border-radius: 1.25rem;
   z-index: 5;
   padding: 0;
-
   position: relative;
-  box-shadow: inset 0 0 0.5rem 0.25rem var(--shadow);
-  background: linear-gradient(45deg, var(--background) 0%, var(--shadow) 12.5%, transparent 75%, var(--color) 100%);
-
-  &::after {
-    position: absolute;
-    top: 0;
-    content: '';
-    width: 100%;
-    height: inherit;
-    border-radius: inherit;
-    box-shadow: 0 0 0.25rem var(--color);
-    z-index: -1;
-  }
 
   svg {
-    width: 2rem;
-    height: 2rem;
-    opacity: 0.85;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
 </style>
