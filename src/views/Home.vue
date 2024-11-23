@@ -27,22 +27,38 @@
 
         <ol>
           <li>
-            <router-link to="/services#ambience" :title="$t('a00')">
+            <router-link
+              to="/services#ambience"
+              :title="$t('a00')"
+              class="services-link"
+            >
               {{ $t('ambience') }}
             </router-link>
           </li>
           <li>
-            <router-link to="/services#building" :title="$t('b00')">
+            <router-link
+              to="/services#building"
+              :title="$t('b00')"
+              class="services-link"
+            >
               {{ $t('building') }}
             </router-link>
           </li>
           <li>
-            <router-link to="/services#crafting" :title="$t('c00')">
+            <router-link
+              to="/services#crafting"
+              :title="$t('c00')"
+              class="services-link"
+            >
               {{ $t('crafting') }}
             </router-link>
           </li>
           <li>
-            <router-link to="/services#design" :title="$t('d00')">
+            <router-link
+              to="/services#design"
+              :title="$t('d00')"
+              class="services-link"
+            >
               {{ $t('design') }}
             </router-link>
           </li>
@@ -85,7 +101,7 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
       position: relative;
       height: 3rem;
       font-size: 3rem;
-      color: var(--background);
+      color: var(--bg);
       box-shadow: 0 0 0.5rem 0.25rem var(--shadow);
       text-shadow: 0 0 0.33ch var(--color);
       /* Cross-browser filters */
@@ -114,7 +130,7 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
         position: relative;
         width: 100vw;
         display: inline-block;
-        color: var(--background);
+        color: var(--bg);
         font-size: 1.33rem;
         font-weight: 900;
 
@@ -160,7 +176,7 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
 
       li {
         display: inline-block;
-        background: var(--background);
+        background: var(--bg);
         width: 100%;
         line-height: 1.75rem;
 
@@ -174,7 +190,7 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
 
       li:hover {
         background: var(--color);
-        color: var(--background);
+        color: var(--bg);
 
         a {
           text-decoration: underline;
@@ -183,12 +199,12 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
 
       li::first-letter {
         background: var(--color);
-        color: var(--background);
+        color: var(--bg);
         text-decoration: underline transparent !important;
       }
 
       li:hover::first-letter {
-        background: var(--background);
+        background: var(--bg);
         color: var(--color);
         text-decoration: underline var(--color) !important;
       }

@@ -42,7 +42,7 @@ const props = defineProps({
   width: 100%;
   display: flex;
   overflow: hidden !important;
-  background: var(--background);
+  background: var(--bg);
   position: sticky;
   top: 0;
 
@@ -85,7 +85,7 @@ const props = defineProps({
 }
 
 .group::first-letter {
-  color: var(--background);
+  color: var(--bg);
   background: var(--shadow);
   text-decoration: underline;
   text-decoration-color: transparent;
@@ -96,7 +96,7 @@ const props = defineProps({
 
 .group::selection {
   background: var(--shadow) !important;
-  color: var(--background) !important;
+  color: var(--bg) !important;
 
   -webkit-background: var(
     --shadow

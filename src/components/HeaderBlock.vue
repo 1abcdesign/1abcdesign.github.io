@@ -20,7 +20,7 @@
             <defs>
               <!-- Filter для активної лінки -->
               <filter id="shadowActive" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="var(--background)" flood-opacity="1" />
+                <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="var(--bg)" flood-opacity="1" />
               </filter>
               <!-- Filter для неактивної лінки -->
               <filter id="shadowInactive" x="-50%" y="-50%" width="200%" height="200%">
@@ -230,8 +230,8 @@ menu {
   height: 4rem;
   width: 4rem;
 
-  filter: drop-shadow(0 0 2px var(--background));
-  -webkit-filter: drop-shadow(0 0 2px var(--background));
+  filter: drop-shadow(0 0 2px var(--bg));
+  -webkit-filter: drop-shadow(0 0 2px var(--bg));
 }
 
 @media (max-width: 400px) {
@@ -258,33 +258,35 @@ menu {
   }
 }
 
-a.router-link-active .logo-strong,
+/* a.router-link-active .logo-strong,
 a:not(.router-link-active):hover .logo-strong {
   text-shadow: 0 0 0.12ch var(--color);
-  /* Cross-browser filters */
-  filter: drop-shadow(0 0 0.024rem var(--background));
-  -webkit-filter: drop-shadow(0 0 0.024rem var(--background));
+  filter: drop-shadow(0 0 0.024rem var(--bg));
+  -webkit-filter: drop-shadow(0 0 0.024rem var(--bg));
 
-  background: var(--background);
+  background: var(--bg);
   color: var(--color);
+} */
+
+a .logo-strong {
+  text-shadow: 0 0 0.12ch var(--bg);
+  filter: drop-shadow(0 0 0.024rem var(--color));
+  -webkit-filter: drop-shadow(0 0 0.024rem var(--color));
+
+  background: var(--color);
+  color: var(--bg);
+}
+
+/* a:not(.router-link-active) #logoImage {
+  filter: url(#shadowInactive);
 }
 
 a.router-link-active #logoImage,
 a:not(.router-link-active):hover #logoImage {
   filter: url(#shadowActive);
-}
+} */
 
-a:not(.router-link-active) .logo-strong {
-  text-shadow: 0 0 0.12ch var(--background);
-  /* Cross-browser filters */
-  filter: drop-shadow(0 0 0.024rem var(--color));
-  -webkit-filter: drop-shadow(0 0 0.024rem var(--color));
-
-  background: var(--color);
-  color: var(--background);
-}
-
-a:not(.router-link-active) #logoImage {
+#logoImage {
   filter: url(#shadowInactive);
 }
 

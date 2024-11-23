@@ -126,7 +126,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   state.setShowLoader(true)
-
+  setTimeout(() => state.setShowLoader(false) , 2400)
   // if (to.path === '/') {
   //   preload3D()
   //   preloadImages(cursors)
@@ -158,7 +158,6 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach(() => {
-  state.setShowLoader(false)
 })
 
 export default router

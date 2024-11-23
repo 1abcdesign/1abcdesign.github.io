@@ -1,13 +1,17 @@
 [data-theme='light'] {
-  --background: #fff;
+  --bg: #fff;
+  --bg-alt: #ddd;
   --color: #000;
+  --color-alt: #222;
   --shadow: #8888;
   --half-shadow: #8882;
 }
 
 [data-theme='dark'] {
-  --background: #000;
+  --bg: #000;
+  --bg-alt: #222;
   --color: #fff;
+  --color-alt: #ddd;
   --shadow: #8888;
   --half-shadow: #8882;
 }
@@ -15,7 +19,7 @@
 :root {
   --grey: #888;
   --blur: 0.5px;
-  background: var(--background);
+  background: var(--bg);
   color: var(--color);
   --safe-top: env(safe-area-inset-top);
   --safe-bottom: env(safe-area-inset-bottom);
@@ -26,17 +30,17 @@
 
 * ::selection {
   background-color: var(--color) !important;
-  color: var(--background) !important;
+  color: var(--bg) !important;
 }
 
 * ::-moz-selection {
   background-color: var(--color) !important;
-  color: var(--background) !important;
+  color: var(--bg) !important;
 }
 
 * ::-webkit-selection {
   background-color: var(--color) !important;
-  color: var(--background) !important;
+  color: var(--bg) !important;
 }
 
 * {
@@ -120,7 +124,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: var(--background);
+  background: var(--bg);
   color: var(--color);
 }
 
@@ -146,25 +150,97 @@ a:active {
   position: relative;
 }
 
+/* #region ExperimentalBubbleLinks */
+
+/* background: linear-gradient(45deg, var(--bg) 0%, var(--shadow) 12.5%, var(--color) 75%, var(--color) 100%); */
 a.router-link-active,
+a:hover,
+.select,
+.theme-switcher {
+  box-shadow: 0 0 .66rem .25rem var(--shadow);
+}
+
+a.router-link-active,
+a:not(.services-link):hover,
+.select,
+.theme-switcher {
+  background: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, transparent 75%, var(--color-alt) 100%);
+}
+
+a.services-link:hover {
+  background: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, var(--color) 75%, var(--color) 100%);
+}
+
+header a.router-link-active,
+header a:hover {
+  border-radius: 2.75rem;
+  -webkit-border-radius: 2.75rem;
+  -moz-border-radius: 2.75rem;
+  -ms-border-radius: 2.75rem;
+  -o-border-radius: 2.75rem;
+}
+
+.company a:hover,
+.company a:active {
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.contacts a:hover,
+.contacts a:active {
+  border-radius: 0.66rem;
+  -webkit-border-radius: 0.66rem;
+  -moz-border-radius: 0.66rem;
+  -ms-border-radius: 0.66rem;
+  -o-border-radius: 0.66rem;
+}
+
+footer a:hover,
+footer a:active {
+  border-radius: 1.375rem;
+  -webkit-border-radius: 1.375rem;
+  -moz-border-radius: 1.375rem;
+  -ms-border-radius: 1.375rem;
+  -o-border-radius: 1.375rem;
+}
+
+a.router-link-active:after,
+a:hover:after,
+.select::after,
+.theme-switcher:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  min-width: fit-content;
+  height: 100%;
+  box-shadow: inset 0 0 .66rem .25rem var(--shadow);
+  border-radius: inherit;
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  -ms-border-radius: inherit;
+  -o-border-radius: inherit;
+  z-index: -1;
+}
+/*#endregion*/
+
+/* a.router-link-active,
 a:not(:has(.moto)):hover {
-  color: var(--background);
-  background: var(--color);
+  color: var(--bg);
 }
 
 a.router-link-active svg {
-  stroke: var(--background);
-}
-
-header a {
-  flex-direction: column;
-  padding: 0.5rem;
+  stroke: var(--bg);
 }
 
 header a:hover svg,
 footer a:hover svg {
-  stroke: var(--background);
-}
+  stroke: var(--bg);
+} */
 
 .icon {
   width: 2.5rem;
@@ -174,11 +250,16 @@ footer a:hover svg {
   -webkit-filter: blur(var(--blur));
 }
 
+header a {
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
 header,
 footer {
   width: 100%;
   z-index: 1;
-  background: var(--background);
+  background: var(--bg);
 }
 
 header {
@@ -224,7 +305,7 @@ textarea::-webkit-scrollbar-thumb {
 
 main::-webkit-scrollbar-track,
 textarea::-webkit-scrollbar-track {
-  background-color: var(--background);
+  background-color: var(--bg);
 }
 
 main::-webkit-scrollbar-thumb:hover,
@@ -260,9 +341,9 @@ textarea::-webkit-scrollbar-track:hover {
 }
 
 .pac-container * {
-  background-color: var(--background);
+  background-color: var(--bg);
   color: var(--color);
-  border-color: var(--background);
+  border-color: var(--bg);
   border: none;
 }
 
@@ -283,7 +364,7 @@ textarea::-webkit-scrollbar-track:hover {
 .pac-item:hover,
 .pac-item:hover * {
   background-color: var(--color) !important;
-  color: var(--background) !important;
+  color: var(--bg) !important;
 }
 
 .hdpi.pac-logo:after {

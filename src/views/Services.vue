@@ -72,7 +72,7 @@ import PhotoGallery from '@/components/PhotoGallery.vue'
 
     h3::first-letter {
       background: var(--color);
-      color: var(--background);
+      color: var(--bg);
       text-decoration: underline;
       text-decoration-color: transparent;
     }

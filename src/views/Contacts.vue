@@ -294,20 +294,19 @@ const submitForm = async () => {
 
 <style lang="scss" scoped>
 .contacts p {
-  padding: 0 0.25rem;
   letter-spacing: 0.1ch;
 
   a {
     font-weight: bold;
     text-decoration: none;
-    padding: 0 0.5ch;
-    margin-left: -0.5ch;
+    padding: 0.25rem 1ch;
+    margin-left: -1ch;
 
-    &:hover,
+    /* &:hover,
     &:active {
       background-color: var(--color);
-      color: var(--background);
-    }
+      color: var(--bg);
+    } */
   }
 }
 
@@ -331,7 +330,7 @@ const submitForm = async () => {
     &::before {
       position: absolute;
       content: attr(data-text);
-      background: var(--background);
+      background: var(--bg);
       left: 1ch;
       padding: 0 0.33ch 0 0.33ch;
       top: 0;
@@ -361,7 +360,7 @@ const submitForm = async () => {
 }
 
 *:focus {
-  outline: var(--background);
+  outline: var(--bg);
 }
 
 .form *:not([type='submit']) {
@@ -376,7 +375,7 @@ const submitForm = async () => {
 button {
   height: 2.5rem;
   border: 2px solid var(--color);
-  background: var(--background);
+  background: var(--bg);
   color: var(--color);
   cursor: pointer;
   position: relative;
@@ -385,19 +384,19 @@ button {
 
   &:hover {
     background: var(--color);
-    color: var(--background);
+    color: var(--bg);
   }
 }
 
 /* Change color of submit till form is valid */
 :invalid button {
-  background: var(--background); /* Set your invalid background color */
+  background: var(--bg); /* Set your invalid background color */
   color: var(--shadow); /* Set your invalid text color */
   border: 2px solid var(--shadow);
 
   &:hover {
     background: var(--shadow); /* Set your invalid background color */
-    color: var(--background); /* Set your invalid text color */
+    color: var(--bg); /* Set your invalid text color */
   }
 }
 
@@ -407,10 +406,10 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-background-clip: text;
   -webkit-text-fill-color: var(--color);
-  box-shadow: inset 0 0 3rem 3rem var(--background);
+  box-shadow: inset 0 0 3rem 3rem var(--bg);
 
   &::selection {
-    -webkit-text-fill-color: var(--background);
+    -webkit-text-fill-color: var(--bg);
   }
 }
 
@@ -438,20 +437,20 @@ textarea::placeholder {
 .success {
   border: 2px solid green;
   color: green !important;
-  background: var(--background) !important;
+  background: var(--bg) !important;
 
   &:hover {
-    color: var(--background) !important;
+    color: var(--bg) !important;
     background: green !important;
   }
 }
 .error {
   border: 2px solid red;
   color: red !important;
-  background: var(--background) !important;
+  background: var(--bg) !important;
 
   &:hover {
-    color: var(--background) !important;
+    color: var(--bg) !important;
     background: red !important;
   }
 }

@@ -3,7 +3,7 @@
     id="logo_overlay"
     ref="logo_overlay"
     class="flex-center"
-    v-if="isVisible"
+    v-show="isVisible"
     @animationend="handleAnimationEnd"
   >
     <div id="logo_2d_wrapper">
@@ -30,21 +30,40 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { state } from '@/store.js'
+
 const getTheme = () =>
   document.documentElement.getAttribute('data-theme') === 'dark'
     ? '#fff'
     : '#000'
 
-const totalDuration = ref(2340) // Загальна тривалість анімації в мілісекундах
+const totalDuration = ref(1170) // Загальна тривалість анімації в мілісекундах (2340ms for 30fps)
 const isVisible = ref(state.showLoader)
 const logo_overlay = ref(null)
 const logo_2d = ref(null)
 
+// Watch for changes in the state.showLoader value
+watch(
+  () => state.showLoader,
+  (newValue) => {
+    isVisible.value = newValue
+    if (newValue) {
+      // Restart animation when loader becomes visible
+      startAnimation()
+    }
+  }
+)
+
 onMounted(() => {
+  startAnimation()
+})
+
+let startTime = null
+function startAnimation() {
   const canvas = logo_2d.value || document.getElementById('logo_2d')
   const ctx = canvas.getContext('2d')
+  ctx.clearRect(0, 0, canvas.width, canvas.height) // Clear the canvas
   ctx.lineWidth = 28
   ctx.strokeStyle = getTheme()
 
@@ -102,8 +121,6 @@ onMounted(() => {
   )
   const segmentMaxValues = [400, 200, 200, 180, 360]
 
-  let startTime = null
-
   function animate(timestamp) {
     if (!startTime) startTime = timestamp
     const elapsed = timestamp - startTime
@@ -128,20 +145,19 @@ onMounted(() => {
     if (elapsed < totalDuration.value) {
       requestAnimationFrame(animate)
     } else if (state.showLoader) {
-        startTime = null // Reset the start time
-        ctx.clearRect(0, 0, canvas.width, canvas.height) // Clear the canvas
-        requestAnimationFrame(animate) // Restart the animation
+      startTime = null // Reset the start time
+      ctx.clearRect(0, 0, canvas.width, canvas.height) // Clear the canvas
+      requestAnimationFrame(animate) // Restart the animation
     } else {
-      // add animation class to emit animationend event
+      // Add fade-out animation class
       logo_overlay.value.classList.add('fade-out')
     }
   }
 
   requestAnimationFrame(animate)
-})
+}
 
 const handleAnimationEnd = () => {
-  // This method will be triggered after the fade-out animation completes
   isVisible.value = state.showLoader
   console.log('animationend', new Date().getTime())
 }
@@ -167,7 +183,7 @@ const handleAnimationEnd = () => {
   position: fixed;
   width: 100%;
   height: 50rem;
-  background: var(--background);
+  background: var(--bg);
   z-index: 10;
   overflow: hidden !important;
   opacity: 1;

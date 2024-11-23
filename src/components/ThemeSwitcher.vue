@@ -47,7 +47,7 @@
       width="24"
       height="24"
       viewBox="0 0 24 24"
-      fill="none"
+      fill="var(--color)"
       stroke="currentColor"
       stroke-width="2"
       stroke-linecap="round"
@@ -123,8 +123,8 @@ watch(theme, newTheme => document.documentElement.setAttribute('data-theme', new
   position: relative;
 
   svg {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
   }
 }
 </style>

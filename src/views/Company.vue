@@ -140,9 +140,9 @@
     width: 25ch;
     gap: 0.5rem;
 
-    &:hover svg {
-      stroke: var(--background);
-    }
+    /* &:hover svg {
+      stroke: var(--bg);
+    } */
   }
 
   .icon {

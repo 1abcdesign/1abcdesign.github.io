@@ -54,7 +54,7 @@ sessionStorage.setItem('navigation_history', JSON.stringify(history))
   p a:hover,
   p a:active {
     background: var(--color);
-    color: var(--background);
+    color: var(--bg);
   }
 }
 </style>

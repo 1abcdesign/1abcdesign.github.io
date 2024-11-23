@@ -133,7 +133,7 @@ const slides = ref(
   font-size: inherit;
 
   background: var(--color);
-  color: var(--background);
+  color: var(--bg);
   width: 1.75ch;
   margin-right: -0.1ch;
 }
