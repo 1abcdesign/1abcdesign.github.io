@@ -191,11 +191,11 @@ header a:hover {
 
 .contacts a:hover,
 .contacts a:active {
-  border-radius: 0.66rem;
-  -webkit-border-radius: 0.66rem;
-  -moz-border-radius: 0.66rem;
-  -ms-border-radius: 0.66rem;
-  -o-border-radius: 0.66rem;
+  border-radius: 1.16rem;
+  -webkit-border-radius: 1.16rem;
+  -moz-border-radius: 1.16rem;
+  -ms-border-radius: 1.16rem;
+  -o-border-radius: 1.16rem;
 }
 
 footer a:hover,
