@@ -1,13 +1,13 @@
 export default {
   beforeMount(el, binding) {
-    const ourClickEventHandler = (event) => {
+    const clickOutsideHandler = (event) => {
       if (!el.contains(event.target) && el !== event.target) {
         binding.value();
       }
     }
 
-    document.addEventListener('click', ourClickEventHandler)
-    el._clickOutsideHandler = ourClickEventHandler
+    document.addEventListener('click', clickOutsideHandler)
+    el._clickOutsideHandler = clickOutsideHandler
   },
   unmounted(el) {
     document.removeEventListener('click', el._clickOutsideHandler)

@@ -20,7 +20,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
 
 const canvasContainer = ref(null) // Reference to the div for rendering the 3D scene
-let model = null; // Store the loaded model to rotate it later
+let model = null // Store the loaded model to rotate it later
 
 onMounted(() => {
   // Initialize the Three.js scene
@@ -34,7 +34,7 @@ onMounted(() => {
 
   // Set renderer with alpha for transparency
   const renderer = new WebGLRenderer({ antialias: true, alpha: true })
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(window.innerWidth, window.innerHeight)
   renderer.setClearColor(0x000000, 0) // Transparent background
 
   canvasContainer.value.appendChild(renderer.domElement) // Append renderer to the DOM
@@ -46,16 +46,16 @@ onMounted(() => {
   const loader = new GLTFLoader()
   loader.load(
     `${ASSETS_DIR}logo3d.glb`,
-    (gltf) => {
+    gltf => {
       model = gltf.scene // Store the model in a variable to rotate it
       scene.add(model) // Add the loaded model to the scene
       renderer.render(scene, camera) // Initial render
     },
     undefined,
-    (error) => {
+    error => {
       console.error('An error occurred while loading the model:', error)
     }
-  );
+  )
 
   // Lighting for better visibility of the model
   const ambientLight = new AmbientLight(0x404040, 2) // soft white light
@@ -81,16 +81,16 @@ onMounted(() => {
 
   // Adjust canvas size on window resize
   const onResize = () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight
+    camera.updateProjectionMatrix()
+    renderer.setSize(window.innerWidth, window.innerHeight)
   }
 
-  window.addEventListener('resize', onResize);
+  window.addEventListener('resize', onResize)
 
   // Cleanup listener on unmount
   onUnmounted(() => {
-    window.removeEventListener('resize', onResize);
+    window.removeEventListener('resize', onResize)
   })
 })
 </script>

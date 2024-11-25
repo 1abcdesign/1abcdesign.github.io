@@ -10,7 +10,7 @@
         reverse: index % 2 === 1,
         'last-in-group': index === 9,
       }"
-      :group="group"
+      :group
     />
   </div>
 </template>
@@ -19,12 +19,7 @@
 import { computed } from 'vue'
 import PhotoArticle from './PhotoArticle.vue'
 
-const props = defineProps({
-  group: {
-    type: String,
-    required: true,
-  },
-})
+const { group } = defineProps(['group'])
 
 const photos = [
   'a01.webp',
@@ -72,17 +67,15 @@ const photos = [
 const BASE_URL = import.meta.env.BASE_URL
 
 const articles = photos.map(photo => ({
-  group: props.group,
+  group,
   title: `${photo.slice(0, 3) + '_title'}`,
   image: `${BASE_URL}${photo}`,
   description: `${photo.slice(0, 3) + '_description'}`,
 }))
 
-// const shuffledArticles = articles.sort(() => Math.random() - 0.5)
-
-const filteredArticles = computed(() => {
-  return articles.filter(article => article.title.startsWith(props.group))
-})
+const filteredArticles = computed(
+  () => articles.filter(article => article.title.startsWith(group))
+)
 </script>
 
 <style>

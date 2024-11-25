@@ -21,12 +21,9 @@
 </template>
 
 <script setup>
-// Отримуємо історію навігації або встановлюємо значення за замовчуванням
 const history = JSON.parse(sessionStorage.getItem('navigation_history') || '[]')
 const invalidRoute = history.pop() || '/'
 const lastValid = history.length ? history.slice(-1)[0] : '/'
-
-// Оновлюємо історію навігації в sessionStorage
 sessionStorage.setItem('navigation_history', JSON.stringify(history))
 </script>
 
@@ -41,9 +38,9 @@ sessionStorage.setItem('navigation_history', JSON.stringify(history))
   }
 
   p:nth-of-type(2) b {
-    white-space: nowrap;  // Prevents line breaks within the word
-    overflow-wrap: normal; // Fallback in case content needs wrapping
-    word-break: keep-all;  // Keeps words unbroken unless necessary
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
   }
 
   p a {

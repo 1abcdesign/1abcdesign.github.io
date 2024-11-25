@@ -6,8 +6,6 @@ import router from './router'
 import i18n from './i18n'
 import clickOutside from './clickOutside'
 
-window.preloadedAssetsMap = {}
-
 createApp(App)
   .use(router)
   .use(i18n)

@@ -13,28 +13,13 @@
 </template>
 
 <script setup>
-const props = defineProps({
-  image: {
-    type: String,
-    required: true,
-  },
-  title: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  isReverse: {
-    type: Boolean,
-    default: false,
-  },
-  group: {
-    type: String,
-    required: true,
-  },
-})
+const { image, title, description, isReverse, group } = defineProps([
+  'image',
+  'title',
+  'description',
+  'isReverse',
+  'group',
+])
 </script>
 
 <style lang="scss">
@@ -152,7 +137,7 @@ const props = defineProps({
   .article-info {
     width: 100%;
     height: 14.75rem;
-    padding: 0 2rem;
+    padding: 0 1rem;
     font-size: 125%;
   }
 }

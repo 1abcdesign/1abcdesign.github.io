@@ -16,29 +16,22 @@
             viewBox="0 0 400 400"
             xmlns="http://www.w3.org/2000/svg"
             >
-            <!-- :filter="`url(#${$route.path === '/' ? 'shadowActive' : 'shadowInactive'})`" -->
             <defs>
-              <!-- Filter для активної лінки -->
-              <filter id="shadowActive" x="-50%" y="-50%" width="200%" height="200%">
+              <!-- <filter id="shadowActive" x="-50%" y="-50%" width="200%" height="200%">
                 <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="var(--bg)" flood-opacity="1" />
-              </filter>
-              <!-- Filter для неактивної лінки -->
+              </filter> -->
               <filter id="shadowInactive" x="-50%" y="-50%" width="200%" height="200%">
                 <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="var(--color)" flood-opacity="1" />
               </filter>
             </defs>
             <!-- Vertical line -->
             <line x1="200" y1="386" x2="200" y2="14" />
-
             <!-- Diagonal line from center to top-left -->
             <line x1="200" y1="14" x2="14" y2="200" />
-
             <!-- Horizontal line from left to center -->
             <line x1="14" y1="200" x2="200" y2="200" />
-
             <!-- Arc from top-center to center -->
             <path d="M 200,14 A 93, 93, 0 1 1 200, 200" fill="none" />
-
             <!-- Outer circle -->
             <circle cx="200" cy="200" r="186" fill="none" />
           </svg>
@@ -258,16 +251,6 @@ menu {
   }
 }
 
-/* a.router-link-active .logo-strong,
-a:not(.router-link-active):hover .logo-strong {
-  text-shadow: 0 0 0.12ch var(--color);
-  filter: drop-shadow(0 0 0.024rem var(--bg));
-  -webkit-filter: drop-shadow(0 0 0.024rem var(--bg));
-
-  background: var(--bg);
-  color: var(--color);
-} */
-
 a .logo-strong {
   text-shadow: 0 0 0.12ch var(--bg);
   filter: drop-shadow(0 0 0.024rem var(--color));
@@ -276,15 +259,6 @@ a .logo-strong {
   background: var(--color);
   color: var(--bg);
 }
-
-/* a:not(.router-link-active) #logoImage {
-  filter: url(#shadowInactive);
-}
-
-a.router-link-active #logoImage,
-a:not(.router-link-active):hover #logoImage {
-  filter: url(#shadowActive);
-} */
 
 #logoImage {
   filter: url(#shadowInactive);

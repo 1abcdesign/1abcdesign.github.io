@@ -10,7 +10,7 @@
 
     <section class="vip">
       <div class="person v box-shadow-1-05">
-        <img src="/photo_v.webp" alt="V">
+        <img :src="photos[0]" alt="V">
 
         <h3>{{ $t('lifeStyle1') }}</h3>
 
@@ -21,7 +21,7 @@
         </p>
       </div>
       <div class="person a box-shadow-1-05">
-        <img src="/photo_a.webp" alt="A">
+        <img :src="photos[1]" alt="A">
 
         <h3>{{ $t('lifeStyle3') }}</h3>
 
@@ -71,7 +71,13 @@
   </main>
 </template>
 
-<script setup></script>
+<script setup>
+const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
+const photos = [
+  `${ASSETS_DIR}photo_v.webp`,
+  `${ASSETS_DIR}photo_a.webp`,
+]
+</script>
 
 <style lang="scss" scoped>
 .company {
@@ -139,10 +145,6 @@
     padding: 0.25rem;
     width: 25ch;
     gap: 0.5rem;
-
-    /* &:hover svg {
-      stroke: var(--bg);
-    } */
   }
 
   .icon {

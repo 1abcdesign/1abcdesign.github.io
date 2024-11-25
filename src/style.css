@@ -150,9 +150,6 @@ a:active {
   position: relative;
 }
 
-/* #region ExperimentalBubbleLinks */
-
-/* background: linear-gradient(45deg, var(--bg) 0%, var(--shadow) 12.5%, var(--color) 75%, var(--color) 100%); */
 a.router-link-active,
 a:hover,
 .select,
@@ -226,21 +223,6 @@ a:hover:after,
   -o-border-radius: inherit;
   z-index: -1;
 }
-/*#endregion*/
-
-/* a.router-link-active,
-a:not(:has(.moto)):hover {
-  color: var(--bg);
-}
-
-a.router-link-active svg {
-  stroke: var(--bg);
-}
-
-header a:hover svg,
-footer a:hover svg {
-  stroke: var(--bg);
-} */
 
 .icon {
   width: 2.5rem;

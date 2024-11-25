@@ -232,7 +232,6 @@ const setPlace = ({ name, state, country }) => {
   place.value = [name, state, country].join(', ')
 }
 
-// Reset form fields
 const resetFields = () => {
   name.value = ''
   phone.value = ''
@@ -271,19 +270,14 @@ const submitForm = async () => {
       USER_KEY
     )
     console.log('Email sent successfully!', response)
-
-    // Show success message
     showSuccess.value = true
     showError.value = false
   } catch (error) {
     console.error('Error sending email:', error)
-
-    // Show error message
     showSuccess.value = false
     showError.value = true
   }
 
-  // Hide messages after 3 seconds
   setTimeout(() => {
     showSuccess.value = false
     showError.value = false
@@ -301,12 +295,6 @@ const submitForm = async () => {
     text-decoration: none;
     padding: 0.25rem 1ch;
     margin-left: -1ch;
-
-    /* &:hover,
-    &:active {
-      background-color: var(--color);
-      color: var(--bg);
-    } */
   }
 }
 
@@ -388,15 +376,14 @@ button {
   }
 }
 
-/* Change color of submit till form is valid */
 :invalid button {
-  background: var(--bg); /* Set your invalid background color */
-  color: var(--shadow); /* Set your invalid text color */
+  background: var(--bg);
+  color: var(--shadow);
   border: 2px solid var(--shadow);
 
   &:hover {
-    background: var(--shadow); /* Set your invalid background color */
-    color: var(--bg); /* Set your invalid text color */
+    background: var(--shadow);
+    color: var(--bg);
   }
 }
 
@@ -423,7 +410,6 @@ textarea::placeholder {
   color: var(--grey);
 }
 
-/* Add styles for success and error messages */
 .success,
 .error {
   position: absolute;
@@ -444,6 +430,7 @@ textarea::placeholder {
     background: green !important;
   }
 }
+
 .error {
   border: 2px solid red;
   color: red !important;

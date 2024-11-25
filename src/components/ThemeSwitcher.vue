@@ -4,7 +4,6 @@
     class="theme-switcher flex-center"
     :title="$t('toggleThemeTip')"
   >
-    <!-- Місяць на світлій темі -->
     <svg
       v-if="theme === 'light'"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,29 +17,16 @@
       stroke-linejoin="round"
       class="icon feather-moon"
     >
-      <!-- M21 12.79  Move to the starting point (21, 12.79) -->
-      <!-- A9 9 0 1 1 11.21 3 Draw a large arc with radius 9 from (21, 12.79) to (11.21, 3) -->
-      <!-- A7 7 0 0 0 21 12.79 Draw a smaller arc with radius 7 back to (21, 12.79) -->
-      <!-- z Close the path by connecting the last point to the starting point -->
-      <!-- <path
-        d="
-          M       21 12.79
-          A 9 9   0 1 1       11.21 3
-          A 7 7   0 0 0       21 12.79
-          z
-        "
-      ></path> -->
       <path
         d="
           M         22 12
-          A 10 10   0 1 1       12 2
-          A 6 6     0 0 0       22 12
+          A 10 10   0 1 1   12 2
+          A 6 6     0 0 0   22 12
           z
         "
       ></path>
     </svg>
 
-    <!-- Сонце на темній темі -->
     <svg
       v-else
       xmlns="http://www.w3.org/2000/svg"
@@ -68,48 +54,47 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
-const BASE_URL = import.meta.env.BASE_URL
-const theme = ref(localStorage.getItem('theme') || 'light') // Get saved theme or default to 'light'
+import { ref, onMounted, watch } from "vue";
+const BASE_URL = import.meta.env.BASE_URL;
+const theme = ref(localStorage.getItem("theme") || "light"); // Get saved theme or default to 'light'
 
 function themeSwitch() {
-  theme.value = theme.value === 'light' ? 'dark' : 'light'
-  localStorage.setItem('theme', theme.value)
-  updateThemeColor()
-  setFavIcon()
-  updateIconsStroke()
+  theme.value = theme.value === "light" ? "dark" : "light";
+  localStorage.setItem("theme", theme.value);
+  updateThemeColor();
+  setFavIcon();
+  updateIconsStroke();
 }
 
 function setFavIcon() {
-  const favicon = document.getElementById('favicon')
+  const favicon = document.getElementById("favicon");
   favicon.href =
-    BASE_URL +
-    (theme.value === 'dark' ? 'favicon_dark.ico' : 'favicon_light.ico')
+    BASE_URL + (theme.value === "dark" ? "favicon_dark.ico" : "favicon_light.ico");
 }
 
 const updateThemeColor = () => {
-  const rootStyle = document.documentElement.style
+  const rootStyle = document.documentElement.style;
 
-  document.documentElement.classList.add('force-redraw')
+  document.documentElement.classList.add("force-redraw");
   setTimeout(() => {
-    document.documentElement.classList.remove('force-redraw')
-  }, 50)
-}
+    document.documentElement.classList.remove("force-redraw");
+  }, 50);
+};
 
 const updateIconsStroke = () => {
-  const strokeColor = theme.value === 'light' ? '#000' : '#fff'
-  document.querySelectorAll('.icon').forEach(icon => {
-    icon.setAttribute('stroke', strokeColor)
-  })
-}
+  const strokeColor = theme.value === "light" ? "#000" : "#fff";
+  document.querySelectorAll(".icon").forEach((icon) => {
+    icon.setAttribute("stroke", strokeColor);
+  });
+};
 
 onMounted(() => {
-  updateThemeColor()
-  setFavIcon()
-  updateIconsStroke()
-})
+  updateThemeColor();
+  setFavIcon();
+  updateIconsStroke();
+});
 
-watch(theme, newTheme => document.documentElement.setAttribute('data-theme', newTheme))
+watch(theme, (newTheme) => document.documentElement.setAttribute("data-theme", newTheme));
 </script>
 
 <style lang="scss">

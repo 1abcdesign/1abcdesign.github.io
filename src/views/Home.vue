@@ -104,7 +104,6 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
       color: var(--bg);
       box-shadow: 0 0 0.5rem 0.25rem var(--shadow);
       text-shadow: 0 0 0.33ch var(--color);
-      /* Cross-browser filters */
       filter: drop-shadow(0 0 0.1ch var(--color));
       -webkit-filter: drop-shadow(0 0 0.1ch var(--color));
       padding-top: 0.6rem;
@@ -133,9 +132,7 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
         color: var(--bg);
         font-size: 1.33rem;
         font-weight: 900;
-
         text-shadow: 0 0 0.5ch var(--color);
-        /* Cross-browser filters */
         filter: drop-shadow(0 0 0.33ch var(--color));
         -webkit-filter: drop-shadow(0 0 0.33ch var(--color));
 

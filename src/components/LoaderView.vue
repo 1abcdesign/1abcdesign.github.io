@@ -3,7 +3,7 @@
     id="logo_overlay"
     ref="logo_overlay"
     class="flex-center"
-    v-show="isVisible"
+    :style="{ zIndex: isVisible ? 100 : -100, opacity: isVisible ? 'inherit' : 0 }"
     @animationend="handleAnimationEnd"
   >
     <div id="logo_2d_wrapper">
@@ -39,7 +39,7 @@ const getTheme = () =>
     : '#000'
 
 const totalDuration = ref(1170) // Загальна тривалість анімації в мілісекундах (2340ms for 30fps)
-const isVisible = ref(state.showLoader)
+const isVisible = ref(true)
 const logo_overlay = ref(null)
 const logo_2d = ref(null)
 
@@ -47,10 +47,12 @@ const logo_2d = ref(null)
 watch(
   () => state.showLoader,
   (newValue) => {
-    isVisible.value = newValue
     if (newValue) {
+      isVisible.value = newValue
       // Restart animation when loader becomes visible
       startAnimation()
+    } else {
+      setTimeout(() => isVisible.value = newValue, 1200)
     }
   }
 )
@@ -60,7 +62,9 @@ onMounted(() => {
 })
 
 let startTime = null
+
 function startAnimation() {
+  document.getElementById('logo_overlay').classList.remove('fade-out')
   const canvas = logo_2d.value || document.getElementById('logo_2d')
   const ctx = canvas.getContext('2d')
   ctx.clearRect(0, 0, canvas.width, canvas.height) // Clear the canvas
@@ -157,9 +161,13 @@ function startAnimation() {
   requestAnimationFrame(animate)
 }
 
-const handleAnimationEnd = () => {
-  isVisible.value = state.showLoader
+const handleAnimationEnd = (event) => {
+  setTimeout(() => {
+    isVisible.value = false
+  }, 1200)
   console.log('animationend', new Date().getTime())
+  logo_overlay.value.classList.remove('fade-out')
+  document.getElementById('logo_overlay').classList.remove('fade-out')
 }
 </script>
 
@@ -174,9 +182,9 @@ const handleAnimationEnd = () => {
 }
 
 .fade-out {
-  animation: fade-out 1.2s forwards ease-out; // Starts fading out after the animation completes
-  -webkit-animation: fade-out 1.2s forwards ease-out; // Webkit version of animation
-  -moz-animation: fade-out 1.2s forwards ease-out; // Mozilla version of animation
+  animation: fade-out 1.2s forwards linear; // Starts fading out after the animation completes
+  -webkit-animation: fade-out 1.2s forwards linear; // Webkit version of animation
+  -moz-animation: fade-out 1.2s forwards linear; // Mozilla version of animation
 }
 
 #logo_overlay {
@@ -184,10 +192,9 @@ const handleAnimationEnd = () => {
   width: 100%;
   height: 50rem;
   background: var(--bg);
-  z-index: 10;
   overflow: hidden !important;
-  opacity: 1;
   pointer-events: none; // Prevents interaction after fading out
+  opacity: 0;
 }
 
 #logo_2d_wrapper {
