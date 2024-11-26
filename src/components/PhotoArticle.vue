@@ -30,6 +30,7 @@ const { image, title, description, isReverse, group } = defineProps([
   background: var(--bg);
   position: sticky;
   top: 0;
+  border: 1px solid red;
 
   h3 {
     margin-bottom: 0.2075em;
@@ -137,7 +138,7 @@ const { image, title, description, isReverse, group } = defineProps([
   .article-info {
     width: 100%;
     height: 14.75rem;
-    padding: 0 1rem;
+    padding: 0 2rem;
     font-size: 125%;
   }
 }
