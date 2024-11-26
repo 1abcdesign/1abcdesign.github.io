@@ -65,6 +65,8 @@ import PhotoGallery from '@/components/PhotoGallery.vue'
     border-width: 1px 0;
     font-size: 150%;
     margin: 3.5rem 0 3.5rem 0;
+    position: sticky;
+    top: 0;
 
     h3:hover {
       background: transparent;

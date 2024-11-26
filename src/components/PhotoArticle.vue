@@ -1,5 +1,5 @@
 <template>
-  <div class="photo-article" :class="{ reverse: isReverse }">
+  <div class="photo-article" :class="{ reverse: isReverse, [`group-${group}`]: true }">
     <img :src="image" alt="Article Image" class="article-image" />
     <div class="article-info">
       <h3>
@@ -48,7 +48,11 @@ const { image, title, description, isReverse, group } = defineProps([
 
 .photo-article.last-in-group {
   padding-bottom: 0;
-  height: 42rem;
+  height: 42.5rem;
+
+  &.group-d {
+    padding-bottom: 7.5rem;
+  }
 }
 
 .article-image {
