@@ -44,21 +44,60 @@
 
     <style>
       [data-theme='light'] {
+        --bg: #fff;
+        --bg-05: #fff2;
+        --bg-alt: #ddd;
+        --color: #000;
+        --color-alt: #222;
+        --shadow: #8888;
+        --half-shadow: #8882;
         --cursor: url('https://1abcdesign.github.io/scissors-white.cur') 0 9,
                   url('https://1abcdesign.github.io/scissors-white.ico') 0 9,
                   url('https://1abcdesign.github.io/scissors-white.png') 0 9,
                   pointer;
+        background: #fff;
+        color: #000;
       }
 
       [data-theme='dark'] {
+        --bg: #000;
+        --bg-05: #0002;
+        --bg-alt: #222;
+        --color: #fff;
+        --color-alt: #ddd;
+        --shadow: #8888;
+        --half-shadow: #8882;
         --cursor: url('https://1abcdesign.github.io/scissors-white.cur') 0 9,
                   url('https://1abcdesign.github.io/scissors-white.ico') 0 9,
                   url('https://1abcdesign.github.io/scissors-white.png') 0 9,
-                  pointer;
+        pointer;
         --cursor: url('https://1abcdesign.github.io/scissors-black.cur') 0 9,
                   url('https://1abcdesign.github.io/scissors-black.ico') 0 9,
                   url('https://1abcdesign.github.io/scissors-black.png') 0 9,
                   pointer;
+        background: #000;
+        color: #fff;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100dvw;
+        height: 100%;
+        background-image: url('logo.png');
+        background-repeat: repeat;
+        background-position: center;
+        opacity: 0.142857;
+        z-index: -1;
+        filter: blur(var(--blur-img));
+        -webkit-filter: blur(var(--blur-img));
       }
 
       .moto {
@@ -136,10 +175,10 @@
         favicon.href = savedTheme === 'dark' ? 'https://1abcdesign.github.io/favicon_dark.ico' : 'https://1abcdesign.github.io/favicon_light.ico';
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-BgL2cT9X.js"></script>
+    <script type="module" crossorigin src="/assets/index-CRrQgkop.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vue-m0v5TED9.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-BcxX2YnB.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-DNovJdgj.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-D5SKQ0rH.css">
   </head>
   <body>
     <!-- Adding structured Schema data for organization -->
