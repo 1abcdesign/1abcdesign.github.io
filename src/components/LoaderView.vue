@@ -3,6 +3,7 @@
     id="logo_overlay"
     ref="logo_overlay"
     class="flex-center"
+    :class="{ fadeOut: fadeOutClass }"
     :style="{ zIndex: isVisible ? 100 : -100, opacity: isVisible ? 'inherit' : 0 }"
     @animationend="handleAnimationEnd"
   >
@@ -40,6 +41,7 @@ const getTheme = () =>
 
 const totalDuration = ref(1170) // Загальна тривалість анімації в мілісекундах (2340ms for 30fps)
 const isVisible = ref(true)
+const fadeOutClass = ref(false)
 const logo_overlay = ref(null)
 const logo_2d = ref(null)
 
@@ -52,7 +54,7 @@ watch(
       // Restart animation when loader becomes visible
       startAnimation()
     } else {
-      setTimeout(() => isVisible.value = newValue, 1200)
+      // setTimeout(() => isVisible.value = newValue, 1170)
     }
   }
 )
@@ -154,20 +156,18 @@ function startAnimation() {
       requestAnimationFrame(animate) // Restart the animation
     } else {
       // Add fade-out animation class
-      logo_overlay.value.classList.add('fade-out')
+      fadeOutClass.value = true
     }
   }
 
   requestAnimationFrame(animate)
 }
 
-const handleAnimationEnd = (event) => {
+const handleAnimationEnd = () => {
   setTimeout(() => {
     isVisible.value = false
-  }, 1200)
-  console.log('animationend', new Date().getTime())
-  logo_overlay.value.classList.remove('fade-out')
-  document.getElementById('logo_overlay').classList.remove('fade-out')
+    fadeOutClass.value = false
+  }, 1170)
 }
 </script>
 
@@ -181,16 +181,17 @@ const handleAnimationEnd = (event) => {
   }
 }
 
-.fade-out {
-  animation: fade-out 1.2s forwards linear; // Starts fading out after the animation completes
-  -webkit-animation: fade-out 1.2s forwards linear; // Webkit version of animation
-  -moz-animation: fade-out 1.2s forwards linear; // Mozilla version of animation
+.fadeOut {
+  animation: fade-out 1170ms forwards ease-out; // Starts fading out after the animation completes
+  -webkit-animation: fade-out 1170ms forwards ease-out; // Webkit version of animation
+  -moz-animation: fade-out 1170ms forwards ease-out; // Mozilla version of animation
 }
 
 #logo_overlay {
   position: fixed;
+  z-index: 1000;
   width: 100%;
-  height: 50rem;
+  height: 100svh;
   background: var(--bg);
   overflow: hidden !important;
   pointer-events: none; // Prevents interaction after fading out

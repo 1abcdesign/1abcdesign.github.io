@@ -4,7 +4,7 @@
     :arrows="false"
     :bullets="false"
     :fixed-height="true"
-    class="no-shadow"
+    class="no-shadow bg-texture"
     :style="'box-shadow: inset 0 0 1rem 0.5rem var(--shadow)'"
   >
     <vueper-slide
@@ -97,7 +97,7 @@ const slides = ref(
   interleavedPhotos.map(photo => ({
     group: `${photo.charAt(0) + '00'}`,
     title: `${photo.slice(0, 3) + '_title'}`,
-    content: `<div style="background-image: url('${ASSETS_DIR}${photo}'); width: 100vmin; height: 17.5rem; background-size: cover; background-position: center;"></div>`,
+    content: `<div style="background-image: url('${ASSETS_DIR}${photo}'); width: 100vmin; height: calc(17.5 * var(--main-em)); background-size: cover; background-position: center;"></div>`,
   }))
 )
 </script>
@@ -105,12 +105,14 @@ const slides = ref(
 <style lang="scss">
 .vueperslides--fixed-height {
   position: absolute;
-  top: 23.65rem;
+
+  top: calc(23.125 * var(--main-em) + 1px);
 }
 
 .vueperslides {
   width: 100vmin;
-  height: 18.85rem;
+
+  height: calc(18.55 * var(--main-em));
 }
 
 .vueperslide__content {
@@ -118,18 +120,20 @@ const slides = ref(
 }
 
 .vueperslide__title em {
+  line-height: calc(1.33 * var(--main-em));
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  line-height: 1.3rem;
   font-size: 90%;
 }
 
 .vueperslide__title em .first-letter {
+  line-height: calc(1.33 * var(--main-em));
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  line-height: 1.3rem;
   font-size: inherit;
 
   background: var(--color);

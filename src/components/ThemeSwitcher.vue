@@ -61,6 +61,7 @@ const theme = ref(localStorage.getItem("theme") || "light"); // Get saved theme 
 function themeSwitch() {
   theme.value = theme.value === "light" ? "dark" : "light";
   localStorage.setItem("theme", theme.value);
+  document.documentElement.setAttribute("data-theme", theme.value)
   updateThemeColor();
   setFavIcon();
   updateIconsStroke();
@@ -73,8 +74,6 @@ function setFavIcon() {
 }
 
 const updateThemeColor = () => {
-  const rootStyle = document.documentElement.style;
-
   document.documentElement.classList.add("force-redraw");
   setTimeout(() => {
     document.documentElement.classList.remove("force-redraw");
@@ -93,8 +92,6 @@ onMounted(() => {
   setFavIcon();
   updateIconsStroke();
 });
-
-watch(theme, (newTheme) => document.documentElement.setAttribute("data-theme", newTheme));
 </script>
 
 <style lang="scss">

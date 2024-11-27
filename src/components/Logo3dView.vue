@@ -2,7 +2,7 @@
   <div
     class="canvas-container flex-center"
     ref="canvasContainer"
-    style="width: 100%; height: 16.5rem"
+    style="width: 100%; height: calc(16.5 * var(--main-em));"
   ></div>
 </template>
 
@@ -100,7 +100,7 @@ onMounted(() => {
 .canvas-container {
   position: relative;
   top: 0;
-  overflow: hidden;
+  z-index: -1;
   background-color: transparent; /* Ensure the background is transparent */
 }
 </style>

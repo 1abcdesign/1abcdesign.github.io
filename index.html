@@ -24,6 +24,7 @@
     <!-- Favicon -->
     <link id="favicon" rel="shortcut icon" type="image/x-icon" href="https://1abcdesign.github.io/favicon_light.ico" />
     <link rel="preload" href="https://1abcdesign.github.io/favicon_dark.ico" as="image">
+    <link rel="preload" href="https://1abcdesign.github.io/logo.png" as="image">
 
     <!-- Fonts -->
     <link
@@ -43,13 +44,35 @@
 
     <style>
       [data-theme='light'] {
+        --bg: #fff;
+        --bg-05: #fff2;
+        --bg-alt: #ddd;
+        --bg-img-op: 0.15;
+        --color: #000;
+        --color-alt: #222;
+        --shadow: #8888;
+        --half-shadow: #8882;
+        --cursor: url('https://1abcdesign.github.io/scissors-black.cur') 0 9,
+                  url('https://1abcdesign.github.io/scissors-black.ico') 0 9,
+                  url('https://1abcdesign.github.io/scissors-black.png') 0 9,
+                  pointer;
         --cursor: url('https://1abcdesign.github.io/scissors-white.cur') 0 9,
                   url('https://1abcdesign.github.io/scissors-white.ico') 0 9,
                   url('https://1abcdesign.github.io/scissors-white.png') 0 9,
                   pointer;
+        background: #fff;
+        color: #000;
       }
 
       [data-theme='dark'] {
+        --bg: #000;
+        --bg-05: #0002;
+        --bg-alt: #222;
+        --bg-img-op: 0.2;
+        --color: #fff;
+        --color-alt: #ddd;
+        --shadow: #8888;
+        --half-shadow: #8882;
         --cursor: url('https://1abcdesign.github.io/scissors-white.cur') 0 9,
                   url('https://1abcdesign.github.io/scissors-white.ico') 0 9,
                   url('https://1abcdesign.github.io/scissors-white.png') 0 9,
@@ -58,6 +81,29 @@
                   url('https://1abcdesign.github.io/scissors-black.ico') 0 9,
                   url('https://1abcdesign.github.io/scissors-black.png') 0 9,
                   pointer;
+        background: #000;
+        color: #fff;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100dvw;
+        height: 100%;
+        background-image: url('https://1abcdesign.github.io/logo.png');
+        background-repeat: repeat;
+        background-position: center;
+        opacity: var(--bg-img-op);
+        z-index: -1;
+        filter: blur(var(--blur-img));
+        -webkit-filter: blur(var(--blur-img));
       }
 
       .moto {

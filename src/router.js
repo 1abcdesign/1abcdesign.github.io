@@ -77,11 +77,11 @@ router.afterEach(() => {
     setTimeout(() => {
       sessionStorage.setItem('once_loaded', true)
       state.setShowLoader(false)
-    }, 3600)
+    }, 3510)
   } else {
     setTimeout(() => {
       state.setShowLoader(false)
-    }, 1200)
+    }, 1170)
   }
 })
 

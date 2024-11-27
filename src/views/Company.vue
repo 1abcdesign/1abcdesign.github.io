@@ -9,7 +9,7 @@
     </p>
 
     <section class="vip">
-      <div class="person v box-shadow-1-05">
+      <div class="person v box-shadow-1-05 bg-texture">
         <img :src="photos[0]" alt="V">
 
         <h3>{{ $t('lifeStyle1') }}</h3>
@@ -20,7 +20,7 @@
           </em>
         </p>
       </div>
-      <div class="person a box-shadow-1-05">
+      <div class="person a box-shadow-1-05 bg-texture">
         <img :src="photos[1]" alt="A">
 
         <h3>{{ $t('lifeStyle3') }}</h3>
@@ -48,7 +48,7 @@
     <router-link
       to="/contacts"
       :title="$t('contactTip')"
-      class="flex-center box-shadow-1-05"
+      class="flex-center box-shadow-1-05 bg-texture"
     >
       <b>
         {{ $t('contacts') }}
@@ -88,6 +88,10 @@ const photos = [
 
   p {
     text-indent: 2ch;
+
+    &:not(.person p)::first-letter {
+      font-weight: bold;
+    }
   }
 
   max-width: 70ch;
@@ -117,6 +121,7 @@ const photos = [
     padding: 0.5rem 0;
     height: 27vh;
     width: 100%;
+    text-align: center;
 
     .person {
       display: grid;

@@ -1,5 +1,5 @@
 <template>
-  <footer class="box-shadow-1-05">
+  <footer class="box-shadow-1-05 bg-texture">
     <section class="copy-right flex-align">
       &copy;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;abcdesign1.com
     </section>

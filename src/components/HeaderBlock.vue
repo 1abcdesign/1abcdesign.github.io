@@ -1,5 +1,5 @@
 <template>
-  <header class="box-shadow-1-05">
+  <header class="box-shadow-1-05 bg-texture">
     <menu>
       <li class="logo_link flex-align">
         <router-link
@@ -17,9 +17,6 @@
             xmlns="http://www.w3.org/2000/svg"
             >
             <defs>
-              <!-- <filter id="shadowActive" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="var(--bg)" flood-opacity="1" />
-              </filter> -->
               <filter id="shadowInactive" x="-50%" y="-50%" width="200%" height="200%">
                 <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="var(--color)" flood-opacity="1" />
               </filter>
@@ -148,7 +145,7 @@ import ThemeSwitcher from './ThemeSwitcher.vue'
 import LangSwitcher from './LangSwitcher.vue'
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 header {
   width: 100%;
   top: 0;
@@ -212,21 +209,6 @@ menu {
   }
 }
 
-#logo_link {
-  flex-direction: column;
-  padding: 0 1vmin;
-  text-decoration: none;
-}
-
-#logoImage {
-  stroke-width: 28px;
-  height: 4rem;
-  width: 4rem;
-
-  filter: drop-shadow(0 0 2px var(--bg));
-  -webkit-filter: drop-shadow(0 0 2px var(--bg));
-}
-
 @media (max-width: 400px) {
   .global-view {
     padding: 0.125rem 0;
@@ -235,33 +217,21 @@ menu {
 
 .logo-strong {
   position: relative;
+  z-index: 100 !important;
   padding-top: 0.18rem;
   width: 4rem;
   height: 0.73rem;
   font-size: 0.73rem;
   line-height: 0.73rem;
   box-shadow: 0 0 0.25rem 0.125rem var(--shadow);
-  filter: drop-shadow(0 0 0.1rem var(--color));
-  -webkit-filter: drop-shadow(0 0 0.1rem var(--color));
+  text-shadow: 0 0 1px var(--color);
+
 
   .logo-letter {
     width: 100%;
     align-self: center;
     justify-self: center;
   }
-}
-
-a .logo-strong {
-  text-shadow: 0 0 0.12ch var(--bg);
-  filter: drop-shadow(0 0 0.024rem var(--color));
-  -webkit-filter: drop-shadow(0 0 0.024rem var(--color));
-
-  background: var(--color);
-  color: var(--bg);
-}
-
-#logoImage {
-  filter: url(#shadowInactive);
 }
 
 @keyframes rotateY {
@@ -271,6 +241,22 @@ a .logo-strong {
   to {
     transform: rotateY(360deg);
   }
+}
+
+#logo_link {
+  flex-direction: column;
+  padding: 0 1vmin;
+  text-decoration: none;
+}
+
+#logoImage {
+  position: relative;
+  z-index: -10 !important;
+  stroke: currentColor;
+  stroke-width: 28px;
+  height: 4rem;
+  width: 4rem;
+  filter: url(#shadowInactive);
 }
 
 #logoLink:hover #logoImage {

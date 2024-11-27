@@ -30,7 +30,6 @@ const { image, title, description, isReverse, group } = defineProps([
   background: var(--bg);
   position: sticky;
   top: 0;
-  border: 1px solid red;
 
   h3 {
     margin-bottom: 0.2075em;
@@ -42,17 +41,13 @@ const { image, title, description, isReverse, group } = defineProps([
 }
 
 .photo-article:not(.last-in-group) {
-  padding-bottom: 7.5rem;
-  height: 50rem;
+  padding-bottom: calc(7.5 * var(--main-em));
+  height: 100svh;
 }
 
 .photo-article.last-in-group {
   padding-bottom: 0;
-  height: 42.5rem;
-
-  &.group-d {
-    padding-bottom: 7.5rem;
-  }
+  height: calc(var(--main-h) + 1px);
 }
 
 .article-image {
@@ -70,7 +65,8 @@ const { image, title, description, isReverse, group } = defineProps([
 
 .group {
   display: inline-block;
-  height: 1rem;
+  height: var(--main-em);
+  line-height: var(--main-em);
   color: var(--shadow);
 }
 
@@ -110,7 +106,7 @@ const { image, title, description, isReverse, group } = defineProps([
 
   .article-image {
     width: 50%;
-    height: 42.5rem;
+    height: calc(42.5 * var(--main-em));
   }
 
   .article-info {
@@ -134,14 +130,19 @@ const { image, title, description, isReverse, group } = defineProps([
     justify-content: flex-start;
   }
 
+  .photo-article.last-in-group.group-d {
+    padding-bottom: calc(7.5 * var(--main-em));
+    height: calc(43.5 * var(--main-em));
+  }
+
   .article-image {
     width: 100%;
-    height: 27.25rem;
+    height: calc(27.25 * var(--main-em));
   }
 
   .article-info {
     width: 100%;
-    height: 14.75rem;
+    height: calc(14.75 * var(--main-em));
     padding: 0 2rem;
     font-size: 125%;
   }

@@ -79,36 +79,40 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
 
 <style lang="scss" scoped>
 .home {
-  padding-top: 0.5rem;
   flex-direction: column;
   justify-content: flex-start;
+  overflow: hidden;
 
   .middle-wrapper {
+    height: calc(6.625 * var(--main-em));
+
     flex-direction: column;
-    height: 6.625rem;
 
     .middle {
+      height: calc(6.625 * var(--main-em));
+      top: calc(16.5 * var(--main-em) + 1px);
+
       width: 100vmin;
-      height: 6.625rem;
       flex-direction: column;
       justify-content: space-between;
       position: absolute;
-      top: calc(17rem + 1px);
     }
 
     .main-header {
+      height: calc(3 * var(--main-em));
+      font-size: calc(3 * var(--main-em));
+      padding-top: calc(0.6 * var(--main-em));
+      width: calc(16.5 * var(--main-em));
+      line-height: var(--main-em);
+
       margin: 0;
       position: relative;
-      height: 3rem;
-      font-size: 3rem;
-      color: var(--bg);
+
       box-shadow: 0 0 0.5rem 0.25rem var(--shadow);
-      text-shadow: 0 0 0.33ch var(--color);
-      filter: drop-shadow(0 0 0.1ch var(--color));
-      -webkit-filter: drop-shadow(0 0 0.1ch var(--color));
-      padding-top: 0.6rem;
-      width: 16.5rem;
-      line-height: 1rem;
+      text-shadow: 0 0 1px var(--color);
+      filter: drop-shadow(0 0 0.1ch var(--color-alt));
+      -webkit-filter: drop-shadow(0 0 0.1ch var(--color-alt));
+      backdrop-filter: blur(var(--blur-img));
 
       .logo-letter {
         width: 100%;
@@ -118,53 +122,55 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
     }
 
     .moto {
+      height: 1.875rem;
+      height: calc(1.875 * var(--main-em));
+      padding: calc(0.2 * var(--main-em));
+      font-size: calc(1.33 * var(--main-em));
+
+      --spacing: 0.18ch;
+      letter-spacing: var(--spacing);
+      word-spacing: var(--spacing);
+
       display: block;
       position: relative;
       width: 100vw;
-      height: 1.875rem;
-      padding: 0.2rem;
+
       background: linear-gradient(45deg, var(--color), transparent, var(--color));
 
       & em {
         position: relative;
         width: 100vw;
         display: inline-block;
-        color: var(--bg);
-        font-size: 1.33rem;
-        font-weight: 900;
-        text-shadow: 0 0 0.5ch var(--color);
-        filter: drop-shadow(0 0 0.33ch var(--color));
-        -webkit-filter: drop-shadow(0 0 0.33ch var(--color));
 
-        --spacing: 0.18ch;
-        letter-spacing: var(--spacing);
-        word-spacing: var(--spacing);
+        font-weight: 900;
+        text-shadow: 0 0 0.5ch var(--bg);
+        filter: drop-shadow(0 0 0.33ch var(--bg));
+        -webkit-filter: drop-shadow(0 0 0.33ch var(--bg));
 
         &::after {
-          width: 100%;
+          position: absolute;
           top: 0;
           left: 0;
-          position: absolute;
-          content: attr(data-inner-text);
           z-index: 1;
+          width: 100%;
+          content: attr(data-inner-text);
         }
       }
     }
 
     ol {
-      position: relative;
-      z-index: 5;
+      height: calc(1.75 * var(--main-em));
+
+      font-weight: bold;
       width: 100vmin;
-      font-size: 1.33rem;
-      list-style: none;
       margin: 0;
       padding: 0;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      font-weight: bold;
+      list-style: none;
       overflow: hidden;
-      line-height: 1.75rem;
-      height: 1.75rem;
+      position: relative;
+      z-index: 5;
 
       @media (orientation: landscape) {
         border-left: 1px solid var(--shadow);
@@ -172,16 +178,18 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
       }
 
       li {
+        width: 100%;
         display: inline-block;
         background: var(--bg);
-        width: 100%;
-        line-height: 1.75rem;
 
         a {
-          display: block;
+          line-height: calc(1.75 * var(--main-em));
+          font-size: calc(1.35 * var(--main-em));
+          padding: 1px 0 0 0;
+
           width: 100%;
+          display: block;
           text-decoration: none;
-          line-height: 1.75rem;
         }
       }
 

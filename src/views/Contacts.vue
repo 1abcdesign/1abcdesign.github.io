@@ -89,7 +89,7 @@
 
     <form
       @submit.prevent="submitForm"
-      class="form flex-align box-shadow-1-05"
+      class="form flex-align box-shadow-1-05 bg-texture"
       autocomplete="on"
     >
       <label :data-text="$t('form_name')">
@@ -305,6 +305,7 @@ const submitForm = async () => {
   padding: 0.5rem;
 
   & * {
+    background: var(--bg);
     width: 33ch;
     font-size: 1.1rem;
     letter-spacing: 0.1ch;
@@ -316,12 +317,14 @@ const submitForm = async () => {
     border: none;
 
     &::before {
+      background: var(--bg);
+      line-height: 4px;
+      display: inline-flex;
       position: absolute;
       content: attr(data-text);
-      background: var(--bg);
       left: 1ch;
       padding: 0 0.33ch 0 0.33ch;
-      top: 0;
+      top: 0.33rem;
       font-weight: bold;
     }
 
@@ -352,7 +355,6 @@ const submitForm = async () => {
 }
 
 .form *:not([type='submit']) {
-  background: transparent;
   color: var(--color);
 
   &:focus {

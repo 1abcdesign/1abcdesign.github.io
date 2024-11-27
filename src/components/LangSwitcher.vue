@@ -177,9 +177,7 @@ watch(selectedLanguage, () => {
   border-radius: 1.25rem;
   flex-direction: column;
   justify-content: space-between;
-  /* gap: 0.25rem; */
   overflow: hidden;
-  /* background: var(--shadow); */
 
   &::after {
     transition: all var(--transition-duration);
@@ -190,12 +188,11 @@ watch(selectedLanguage, () => {
     height: 2.5rem;
     position: relative;
     z-index: 1;
-    /* opacity: 0.85; */
 
     &-img {
       width: 2rem;
       height: 2rem;
-      filter: blur(var(--blur)) contrast(1.05) brightness(1.05);
+      filter: blur(var(--blur-img)) contrast(1.05) brightness(1.05);
       border-radius: 1rem;
       object-fit: cover;
       /* Add the prefixes for older browsers */

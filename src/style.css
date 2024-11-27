@@ -1,31 +1,40 @@
 [data-theme='light'] {
   --bg: #fff;
+  --bg-05: #fff2;
   --bg-alt: #ddd;
+  --bg-img-op: 0.15;
   --color: #000;
   --color-alt: #222;
   --shadow: #8888;
   --half-shadow: #8882;
+  background: #fff;
+  color: #000;
 }
 
 [data-theme='dark'] {
   --bg: #000;
+  --bg-05: #0002;
   --bg-alt: #222;
+  --bg-img-op: 0.2;
   --color: #fff;
   --color-alt: #ddd;
   --shadow: #8888;
   --half-shadow: #8882;
+  background: #000;
+  color: #fff;
 }
 
 :root {
   --grey: #888;
-  --blur: 0.5px;
-  background: var(--bg);
-  color: var(--color);
+  --blur-img: 0.5px;
+  --blur-drop: 0.15rem;
+  --transition-duration: 666ms; /* Initialize variable for transition duration */
+
   --safe-top: env(safe-area-inset-top);
   --safe-bottom: env(safe-area-inset-bottom);
   --vh: calc((100svh - var(--safe-top) - var(--safe-bottom)) / 100);
-  font-size: calc(2 * var(--vh));
-  --transition-duration: 666ms; /* Initialize variable for transition duration */
+
+  font-size: min(calc(2 * var(--vh)), calc(20 / 5.5 * 1vmin));
 }
 
 * ::selection {
@@ -124,26 +133,46 @@
 body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
-  color: var(--color);
+}
+
+body::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100dvw;
+  height: 100%;
+  background-image: url('https://1abcdesign.github.io/logo.png');
+  background-repeat: repeat;
+  background-position: center;
+  opacity: var(--bg-img-op);
+  z-index: -1;
+  filter: blur(var(--blur-img));
+  -webkit-filter: blur(var(--blur-img));
+}
+
+@media (orientation: portrait) {
+  body::after {
+    background-size: 14.2857%;
+  }
+}
+@media (orientation: landscape) {
+  body::after {
+    background-size:  7.14285%;
+  }
 }
 
 #app {
   flex-direction: column;
   text-align: center;
-  overflow: hidden;
-}
-
-html,
-body,
-#app {
   width: 100%;
-  /* height: 50rem; */
   min-height: fit-content;
   min-height: -moz-available;
   min-height: -webkit-available;
   overflow: hidden;
 }
+
+
 
 a:link,
 a:visited,
@@ -153,18 +182,12 @@ a:active {
   position: relative;
 }
 
-a.router-link-active,
-a:hover,
-.select,
-.theme-switcher {
-  box-shadow: 0 0 .66rem .25rem var(--shadow);
-}
-
-a.router-link-active,
-a:not(.services-link):hover,
+a:not(#logoLink).router-link-active,
+a:not(.services-link, #logoLink):hover,
 .select,
 .theme-switcher {
   background: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, transparent 75%, var(--color-alt) 100%);
+  backdrop-filter: blur(var(--blur-drop));
 }
 
 a.services-link:hover {
@@ -207,6 +230,13 @@ footer a:active {
   -o-border-radius: 1.375rem;
 }
 
+a.router-link-active,
+a:hover,
+.select,
+.theme-switcher {
+  box-shadow: 0 0 0.33rem 0.15rem var(--shadow);
+}
+
 a.router-link-active:after,
 a:hover:after,
 .select::after,
@@ -218,7 +248,7 @@ a:hover:after,
   width: 100%;
   min-width: fit-content;
   height: 100%;
-  box-shadow: inset 0 0 .66rem .25rem var(--shadow);
+  box-shadow: inset 0 0 0.33rem 0.15rem var(--shadow);
   border-radius: inherit;
   -webkit-border-radius: inherit;
   -moz-border-radius: inherit;
@@ -231,12 +261,8 @@ a:hover:after,
   width: 2.5rem;
   height: 2.5rem;
   stroke: var(--color);
-  filter: blur(var(--blur));
-  -webkit-filter: blur(var(--blur));
-}
-
-#logoImage {
-  stroke: currentColor;
+  filter: blur(var(--blur-img));
+  -webkit-filter: blur(var(--blur-img));
 }
 
 header a {
@@ -248,11 +274,15 @@ header,
 footer {
   width: 100%;
   z-index: 1;
-  background: var(--bg);
+}
+
+.bg-texture {
+  backdrop-filter: blur(var(--blur-drop));
+  background: var(--bg-05);
 }
 
 header {
-  height: min(5.5rem, 20vmin);
+  height: 5.5rem;
 }
 
 header,
@@ -263,15 +293,17 @@ footer {
 
 main {
   width: 100%;
-  height: 42.5rem;
-  top: 5rem;
+  --main-h: calc(100svh - 2.75rem - 5.5rem);
+  height: var(--main-h);
+  --main-cent: calc(var(--main-h) / 100);
+  --main-em: calc(var(--main-h) / 41.75);
+  top: 5.5rem;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
 footer {
   height: 2.75rem;
-  height: min(2.75rem, 10vmin);
 }
 
 main::-webkit-scrollbar,
@@ -353,12 +385,14 @@ textarea::-webkit-scrollbar-track:hover {
   color: var(--bg) !important;
 }
 
-.hdpi.pac-logo:after {
+
+.hdpi:after,
+.pac-container:after,
+.pac-logo:after {
   display: none !important;
 }
 
 /* Клас для примусового оновлення стилів */
 .force-redraw {
   transform: scale(1); /* Будь-яка зміна для примусового рендерінгу */
-  overflow: hidden;
 }
