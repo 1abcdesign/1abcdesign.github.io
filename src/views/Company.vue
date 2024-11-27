@@ -79,11 +79,11 @@ const photos = [
 ]
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .company {
   flex-direction: column;
   padding: 1rem 0.5rem;
-  font-size: 88%;
+  font-size: calc(var(--main-cent) * 2.2);
   text-align: left;
 
   p {

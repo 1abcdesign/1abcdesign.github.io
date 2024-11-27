@@ -122,7 +122,7 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
 
     .moto {
       height: 1.875rem;
-      height: calc(1.875 * var(--main-em));
+      height: calc(1.875 * var(--main-em) + 1px);
       padding: calc(0.2 * var(--main-em));
       font-size: calc(1.33 * var(--main-em));
 

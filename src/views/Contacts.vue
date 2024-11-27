@@ -287,8 +287,11 @@ const submitForm = async () => {
 </script>
 
 <style lang="scss" scoped>
-.contacts p {
-  letter-spacing: 0.1ch;
+.contacts {
+  font-size: calc(var(--main-cent) * 2.5);
+
+  &p {
+  letter-spacing: 0.1ch;}
 
   a {
     font-weight: bold;
@@ -303,11 +306,12 @@ const submitForm = async () => {
   color: var(--color);
   border: none;
   padding: 0.5rem;
+  gap: 0.1rem;
 
   & * {
     background: var(--bg);
     width: 33ch;
-    font-size: 1.1rem;
+    font-size: calc(var(--main-cent) * 2.5);
     letter-spacing: 0.1ch;
   }
 

@@ -298,7 +298,7 @@ footer {
 
 main {
   width: 100%;
-  --main-h: calc(100svh - 2.75rem - 5.5rem);
+  --main-h: calc(100svh - 2.75rem - 5.5rem + 2px);
   --main-cent: calc(var(--main-h) / 100);
   --main-em: calc(var(--main-h) / 41.75);
   height: var(--main-h);
