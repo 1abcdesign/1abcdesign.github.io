@@ -109,7 +109,7 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
       position: relative;
 
       box-shadow: 0 0 0.5rem 0.25rem var(--shadow);
-      text-shadow: 0 0 0.25ch var(--color-alt);
+      text-shadow: 0 0 0.142857ch var(--color-alt);
       filter: drop-shadow(0 0 0.125ch var(--color-alt));
       -webkit-filter: drop-shadow(0 0 0.125ch var(--color-alt));
 
