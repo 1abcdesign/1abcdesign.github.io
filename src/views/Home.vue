@@ -109,10 +109,9 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
       position: relative;
 
       box-shadow: 0 0 0.5rem 0.25rem var(--shadow);
-      text-shadow: 0 0 1px var(--color);
-      filter: drop-shadow(0 0 0.1ch var(--color-alt));
-      -webkit-filter: drop-shadow(0 0 0.1ch var(--color-alt));
-      backdrop-filter: blur(var(--blur-img));
+      text-shadow: 0 0 0.25ch var(--color-alt);
+      filter: drop-shadow(0 0 0.125ch var(--color-alt));
+      -webkit-filter: drop-shadow(0 0 0.125ch var(--color-alt));
 
       .logo-letter {
         width: 100%;

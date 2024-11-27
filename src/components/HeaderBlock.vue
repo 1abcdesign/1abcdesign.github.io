@@ -223,9 +223,11 @@ menu {
   height: 0.73rem;
   font-size: 0.73rem;
   line-height: 0.73rem;
-  box-shadow: 0 0 0.25rem 0.125rem var(--shadow);
-  text-shadow: 0 0 1px var(--color);
 
+  box-shadow: 0 0 0.125rem 0.0625rem var(--shadow);
+  text-shadow: 0 0 0.25ch var(--color-alt);
+  filter: drop-shadow(0 0 0.125ch var(--color-alt));
+  -webkit-filter: drop-shadow(0 0 0.125ch var(--color-alt));
 
   .logo-letter {
     width: 100%;
