@@ -145,7 +145,7 @@ import ThemeSwitcher from './ThemeSwitcher.vue'
 import LangSwitcher from './LangSwitcher.vue'
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 header {
   width: 100%;
   top: 0;
@@ -218,11 +218,11 @@ menu {
 .logo-strong {
   position: relative;
   z-index: 100 !important;
-  padding-top: 0.18rem;
-  width: 4rem;
-  height: 0.73rem;
-  font-size: 0.73rem;
-  line-height: 0.73rem;
+  padding: 0.1rem 0.1rem 0;
+  width: 3.8rem;
+  height: max(calc((var(--main-em) * 0.8)), 0.8rem);
+  font-size: 0.666rem;
+  line-height: 1rem;
 
   box-shadow: 0 0 0.125rem 0.0625rem var(--shadow);
   text-shadow: 0 0 0.25ch var(--color-alt);

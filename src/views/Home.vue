@@ -100,9 +100,9 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
 
     .main-header {
       height: calc(3 * var(--main-em));
-      font-size: calc(3 * var(--main-em));
-      padding-top: calc(0.6 * var(--main-em));
-      width: calc(16.5 * var(--main-em));
+      font-size: calc(2.5 * var(--main-em));
+      padding: calc(0.5 * var(--main-em)) calc(0.5 * var(--main-em)) 0;
+      width: calc(15 * var(--main-em));
       line-height: var(--main-em);
 
       margin: 0;

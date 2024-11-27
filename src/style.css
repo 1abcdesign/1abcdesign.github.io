@@ -35,6 +35,10 @@
   --vh: calc((100svh - var(--safe-top) - var(--safe-bottom)) / 100);
 
   font-size: min(calc(2 * var(--vh)), calc(20 / 5.5 * 1vmin));
+
+  --main-h: calc(100svh - 2.75rem - 5.5rem);
+  --main-cent: calc(var(--main-h) / 100);
+  --main-em: calc(var(--main-h) / 41.75);
 }
 
 * ::selection {
@@ -294,9 +298,9 @@ footer {
 main {
   width: 100%;
   --main-h: calc(100svh - 2.75rem - 5.5rem);
-  height: var(--main-h);
   --main-cent: calc(var(--main-h) / 100);
   --main-em: calc(var(--main-h) / 41.75);
+  height: var(--main-h);
   top: 5.5rem;
   overflow-x: hidden;
   overflow-y: auto;
