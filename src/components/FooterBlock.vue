@@ -1,8 +1,10 @@
 <template>
-  <footer class="box-shadow-1-05 bg-texture">
+  <footer class="footer box-shadow-1-05 bg-texture">
     <section class="copy-right flex-align">
       &copy;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;abcdesign1.com
     </section>
+
+    <!-- <route-scroller /> -->
 
     <section class="links">
       <a
@@ -84,14 +86,17 @@
   </footer>
 </template>
 
-<script setup></script>
+<script setup>
+// import RouteScroller from '@/components/RouteScroller.vue'
+</script>
 
-<style lang="scss" scoped>
-footer {
+<style lang="scss">
+.footer {
+  width: 100%;
   line-height: 2.75rem;
   bottom: 0;
   display: grid;
-  grid-template-columns: calc(50% - 0.25rem + 1px) calc(50% + 0.25rem - 1px);
+  grid-template-columns: calc(50% + 0.25rem + 1px) calc(50% + 0.25rem - 1px);
 
   .links {
     display: grid;
@@ -104,6 +109,7 @@ footer {
   }
 
   a {
+    width: 100%;
     height: 2.75rem;
   }
 
@@ -114,6 +120,7 @@ footer {
 
   .copy-right {
     position: relative;
+    width: 100%;
     left: 1vmax;
     text-align: left;
     word-spacing: -0.075ch;

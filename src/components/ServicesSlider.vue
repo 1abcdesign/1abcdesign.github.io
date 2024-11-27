@@ -4,7 +4,7 @@
     :arrows="false"
     :bullets="false"
     :fixed-height="true"
-    class="no-shadow bg-texture"
+    class="no-shadow bg-texture main"
     :style="'box-shadow: inset 0 0 1rem 0.5rem var(--shadow)'"
   >
     <vueper-slide
@@ -103,23 +103,23 @@ const slides = ref(
 </script>
 
 <style lang="scss">
-.vueperslides--fixed-height {
+.main.vueperslides--fixed-height {
   position: absolute;
 
   top: calc(23.125 * var(--main-em) + 1px);
 }
 
-.vueperslides {
+.main.vueperslides {
   width: 100vmin;
 
   height: calc(18.55 * var(--main-em));
 }
 
-.vueperslide__content {
+.main.vueperslide__content {
   width: 100%;
 }
 
-.vueperslide__title em {
+.main.vueperslide__title em {
   line-height: calc(1.33 * var(--main-em));
 
   display: inline-flex;
@@ -128,7 +128,7 @@ const slides = ref(
   font-size: 90%;
 }
 
-.vueperslide__title em .first-letter {
+.main.vueperslide__title em .first-letter {
   line-height: calc(1.33 * var(--main-em));
 
   display: inline-flex;

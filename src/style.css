@@ -9,9 +9,11 @@
   --half-shadow: #8882;
   background: #fff;
   color: #000;
+  --link-gradient: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, transparent 75%, var(--color-alt) 100%);
 }
 
 [data-theme='dark'] {
+  --link-gradient: linear-gradient(45deg, var(--color) 0%, transparent 20%, transparent 66%, var(--color-alt) 100%);
   --bg: #000;
   --bg-05: #0002;
   --bg-alt: #222;
@@ -27,7 +29,8 @@
 :root {
   --grey: #888;
   --blur-img: 0.5px;
-  --blur-drop: 0.15rem;
+  --blur-drop: 0.125rem;
+  --blur-drop-gained: 0.5rem;
   --transition-duration: 666ms; /* Initialize variable for transition duration */
 
   --safe-top: env(safe-area-inset-top);
@@ -186,16 +189,15 @@ a:active {
   position: relative;
 }
 
-a:not(#logoLink).router-link-active,
-a:not(.services-link, #logoLink):hover,
+a.router-link-active,
+a:not(.services-link):hover,
 .select,
 .theme-switcher {
-  background: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, transparent 75%, var(--color-alt) 100%);
-  backdrop-filter: blur(var(--blur-drop));
+  background: var(--link-gradient);
 }
 
 a.services-link:hover {
-  background: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, var(--color) 75%, var(--color) 100%);
+  background: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, transparent 75%, var(--color) 100%);
 }
 
 header a.router-link-active,

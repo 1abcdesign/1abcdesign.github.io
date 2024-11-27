@@ -5,4 +5,8 @@ export const state = reactive({
   setShowLoader(value) {
     this.showLoader = value
   },
+  activeTitle: '',
+  setActiveTitle(value) {
+    this.activeTitle = value
+  },
 })

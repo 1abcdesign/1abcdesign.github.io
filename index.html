@@ -62,9 +62,11 @@
                   pointer;
         background: #fff;
         color: #000;
-      }
+        --link-gradient: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, transparent 75%, var(--color-alt) 100%);
+}
 
-      [data-theme='dark'] {
+[data-theme='dark'] {
+      --link-gradient: linear-gradient(45deg, var(--color) 0%, transparent 20%, transparent 66%, var(--color-alt) 100%);
         --bg: #000;
         --bg-05: #0002;
         --bg-alt: #222;

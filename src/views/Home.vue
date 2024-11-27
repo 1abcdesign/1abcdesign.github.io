@@ -1,5 +1,5 @@
 <template>
-  <main class="home flex-align">
+  <main class="home flex-align main">
     <logo3d-view />
 
     <div class="middle-wrapper flex-center">
