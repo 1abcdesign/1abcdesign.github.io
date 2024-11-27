@@ -62,9 +62,11 @@
                   pointer;
         background: #fff;
         color: #000;
-      }
+        --link-gradient: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, transparent 75%, var(--color-alt) 100%);
+}
 
-      [data-theme='dark'] {
+[data-theme='dark'] {
+      --link-gradient: linear-gradient(45deg, var(--color) 0%, transparent 20%, transparent 66%, var(--color-alt) 100%);
         --bg: #000;
         --bg-05: #0002;
         --bg-alt: #222;
@@ -83,6 +85,23 @@
                   pointer;
         background: #000;
         color: #fff;
+      }
+
+      :root {
+        --grey: #888;
+        --blur-img: 0.5px;
+        --blur-drop: 0.142857rem;
+        --transition-duration: 666ms; /* Initialize variable for transition duration */
+
+        --safe-top: env(safe-area-inset-top);
+        --safe-bottom: env(safe-area-inset-bottom);
+        --vh: calc((100svh - var(--safe-top) - var(--safe-bottom)) / 100);
+
+        font-size: min(calc(2 * var(--vh)), calc(20 / 5.5 * 1vmin));
+
+        --main-h: calc(100svh - 2.75rem - 5.5rem);
+        --main-cent: calc(var(--main-h) / 100);
+        --main-em: calc(var(--main-h) / 41.75);
       }
 
       body {
@@ -181,10 +200,10 @@
         favicon.href = savedTheme === 'dark' ? 'https://1abcdesign.github.io/favicon_dark.ico' : 'https://1abcdesign.github.io/favicon_light.ico';
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-DBnKO_JG.js"></script>
+    <script type="module" crossorigin src="/assets/index-BUYG7Ssh.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vue-m0v5TED9.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-BcxX2YnB.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-B1iu3KMA.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-CneJFJlk.css">
   </head>
   <body>
     <!-- Adding structured Schema data for organization -->
