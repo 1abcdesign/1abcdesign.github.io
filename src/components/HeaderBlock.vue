@@ -18,7 +18,7 @@
             >
             <defs>
               <filter id="shadowInactive" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="var(--color)" flood-opacity="1" />
+                <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="var(--color)" flood-opacity="0.5" />
               </filter>
             </defs>
             <!-- Vertical line -->
@@ -224,7 +224,7 @@ menu {
   font-size: 0.714285rem;
 
   box-shadow: 0 0 0.125rem 0.0625rem var(--shadow);
-  text-shadow: 0 0 0.25ch var(--color-alt);
+
   filter: drop-shadow(0 0 0.125ch var(--color-alt));
   -webkit-filter: drop-shadow(0 0 0.125ch var(--color-alt));
 
@@ -245,6 +245,8 @@ menu {
 }
 
 #logo_link {
+  position: relative;
+  z-index: 10;
   flex-direction: column;
   padding: 0 1vmin;
   text-decoration: none;
@@ -252,7 +254,7 @@ menu {
 
 #logoImage {
   position: relative;
-  z-index: -10 !important;
+  z-index: 1 !important;
   stroke: currentColor;
   stroke-width: 28px;
   height: 4rem;

@@ -29,8 +29,8 @@
 :root {
   --grey: #888;
   --blur-img: 0.5px;
-  --blur-drop: 0.142857rem;
-  --transition-duration: 666ms; /* Initialize variable for transition duration */
+  --blur-drop: 0.15rem;
+  --tr-dur: 666ms; /* Initialize variable for transition duration */
 
   --safe-top: env(safe-area-inset-top);
   --safe-bottom: env(safe-area-inset-bottom);
@@ -68,72 +68,72 @@
   -moz-overflow-scrolling: touch; /* Mozilla-specific smooth scrolling */
 
   transition: 
-    background-color var(--transition-duration), /* Background color */
-    border var(--transition-duration), /* Border */
-    border-color var(--transition-duration), /* Border color */
-    border-radius var(--transition-duration), /* Border radius */
-    box-shadow var(--transition-duration), /* Box shadow */
-    opacity var(--transition-duration), /* Opacity */
-    transform var(--transition-duration), /* Transform (scale, rotate, etc.) */
-    width var(--transition-duration), /* Width */
-    height var(--transition-duration), /* Height */
-    max-width var(--transition-duration), /* Max width */
-    max-height var(--transition-duration), /* Max height */
-    min-width var(--transition-duration), /* Min width */
-    min-height var(--transition-duration), /* Min height */
-    margin var(--transition-duration), /* Margin */
-    padding var(--transition-duration), /* Padding */
-    left var(--transition-duration), /* Left position */
-    right var(--transition-duration), /* Right position */
-    top var(--transition-duration), /* Top position */
-    bottom var(--transition-duration), /* Bottom position */
-    z-index var(--transition-duration), /* Z-index (may not have visual effect) */
-    filter var(--transition-duration), /* Filter (blur, brightness, etc.) */
-    -webkit-filter var(--transition-duration), /* Webkit Filter */
-    visibility var(--transition-duration), /* Visibility */
-    white-space var(--transition-duration), /* White space */
-    line-height var(--transition-duration), /* Line height */
-    font-size var(--transition-duration), /* Font size */
-    transform-origin var(--transition-duration), /* Transform origin */
-    clip-path var(--transition-duration), /* Clip path */
-    object-fit var(--transition-duration), /* Object fit */
-    cursor var(--transition-duration), /* Cursor */
-    transition-delay var(--transition-duration), /* Delay of transition */
-    transition-timing-function var(--transition-duration); /* Timing function */
+    background-color var(--tr-dur), /* Background color */
+    border var(--tr-dur), /* Border */
+    border-color var(--tr-dur), /* Border color */
+    border-radius var(--tr-dur), /* Border radius */
+    box-shadow var(--tr-dur), /* Box shadow */
+    opacity var(--tr-dur), /* Opacity */
+    transform var(--tr-dur), /* Transform (scale, rotate, etc.) */
+    width var(--tr-dur), /* Width */
+    height var(--tr-dur), /* Height */
+    max-width var(--tr-dur), /* Max width */
+    max-height var(--tr-dur), /* Max height */
+    min-width var(--tr-dur), /* Min width */
+    min-height var(--tr-dur), /* Min height */
+    margin var(--tr-dur), /* Margin */
+    padding var(--tr-dur), /* Padding */
+    left var(--tr-dur), /* Left position */
+    right var(--tr-dur), /* Right position */
+    top var(--tr-dur), /* Top position */
+    bottom var(--tr-dur), /* Bottom position */
+    z-index var(--tr-dur), /* Z-index (may not have visual effect) */
+    filter var(--tr-dur), /* Filter (blur, brightness, etc.) */
+    -webkit-filter var(--tr-dur), /* Webkit Filter */
+    visibility var(--tr-dur), /* Visibility */
+    white-space var(--tr-dur), /* White space */
+    line-height var(--tr-dur), /* Line height */
+    font-size var(--tr-dur), /* Font size */
+    transform-origin var(--tr-dur), /* Transform origin */
+    clip-path var(--tr-dur), /* Clip path */
+    object-fit var(--tr-dur), /* Object fit */
+    cursor var(--tr-dur), /* Cursor */
+    transition-delay var(--tr-dur), /* Delay of transition */
+    transition-timing-function var(--tr-dur); /* Timing function */
 
   -moz-transition: 
-    background-color var(--transition-duration), /* Background color */
-    border var(--transition-duration), /* Border */
-    border-color var(--transition-duration), /* Border color */
-    border-radius var(--transition-duration), /* Border radius */
-    box-shadow var(--transition-duration), /* Box shadow */
-    opacity var(--transition-duration), /* Opacity */
-    transform var(--transition-duration), /* Transform (scale, rotate, etc.) */
-    width var(--transition-duration), /* Width */
-    height var(--transition-duration), /* Height */
-    max-width var(--transition-duration), /* Max width */
-    max-height var(--transition-duration), /* Max height */
-    min-width var(--transition-duration), /* Min width */
-    min-height var(--transition-duration), /* Min height */
-    margin var(--transition-duration), /* Margin */
-    padding var(--transition-duration), /* Padding */
-    left var(--transition-duration), /* Left position */
-    right var(--transition-duration), /* Right position */
-    top var(--transition-duration), /* Top position */
-    bottom var(--transition-duration), /* Bottom position */
-    z-index var(--transition-duration), /* Z-index (may not have visual effect) */
-    filter var(--transition-duration), /* Filter (blur, brightness, etc.) */
-    -moz-filter var(--transition-duration), /* Moz Filter */
-    visibility var(--transition-duration), /* Visibility */
-    white-space var(--transition-duration), /* White space */
-    line-height var(--transition-duration), /* Line height */
-    font-size var(--transition-duration), /* Font size */
-    transform-origin var(--transition-duration), /* Transform origin */
-    clip-path var(--transition-duration), /* Clip path */
-    object-fit var(--transition-duration), /* Object fit */
-    cursor var(--transition-duration), /* Cursor */
-    transition-delay var(--transition-duration), /* Delay of transition */
-    transition-timing-function var(--transition-duration); /* Timing function */
+    background-color var(--tr-dur), /* Background color */
+    border var(--tr-dur), /* Border */
+    border-color var(--tr-dur), /* Border color */
+    border-radius var(--tr-dur), /* Border radius */
+    box-shadow var(--tr-dur), /* Box shadow */
+    opacity var(--tr-dur), /* Opacity */
+    transform var(--tr-dur), /* Transform (scale, rotate, etc.) */
+    width var(--tr-dur), /* Width */
+    height var(--tr-dur), /* Height */
+    max-width var(--tr-dur), /* Max width */
+    max-height var(--tr-dur), /* Max height */
+    min-width var(--tr-dur), /* Min width */
+    min-height var(--tr-dur), /* Min height */
+    margin var(--tr-dur), /* Margin */
+    padding var(--tr-dur), /* Padding */
+    left var(--tr-dur), /* Left position */
+    right var(--tr-dur), /* Right position */
+    top var(--tr-dur), /* Top position */
+    bottom var(--tr-dur), /* Bottom position */
+    z-index var(--tr-dur), /* Z-index (may not have visual effect) */
+    filter var(--tr-dur), /* Filter (blur, brightness, etc.) */
+    -moz-filter var(--tr-dur), /* Moz Filter */
+    visibility var(--tr-dur), /* Visibility */
+    white-space var(--tr-dur), /* White space */
+    line-height var(--tr-dur), /* Line height */
+    font-size var(--tr-dur), /* Font size */
+    transform-origin var(--tr-dur), /* Transform origin */
+    clip-path var(--tr-dur), /* Clip path */
+    object-fit var(--tr-dur), /* Object fit */
+    cursor var(--tr-dur), /* Cursor */
+    transition-delay var(--tr-dur), /* Delay of transition */
+    transition-timing-function var(--tr-dur); /* Timing function */
 }
 
 body {
@@ -259,7 +259,7 @@ a:hover:after,
   -moz-border-radius: inherit;
   -ms-border-radius: inherit;
   -o-border-radius: inherit;
-  z-index: -1;
+  z-index: -10;
 }
 
 .icon {
@@ -283,7 +283,6 @@ footer {
 
 .bg-texture {
   backdrop-filter: blur(var(--blur-drop));
-  background: var(--bg-05);
 }
 
 header {

@@ -180,7 +180,7 @@ watch(selectedLanguage, () => {
   overflow: hidden;
 
   &::after {
-    transition: all var(--transition-duration);
+    transition: all var(--tr-dur);
   }
 
   &-option {
