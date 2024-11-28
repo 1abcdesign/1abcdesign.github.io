@@ -141,8 +141,10 @@
 </template>
 
 <script setup>
-import ThemeSwitcher from './ThemeSwitcher.vue'
-import LangSwitcher from './LangSwitcher.vue'
+import { defineAsyncComponent } from 'vue';
+
+const ThemeSwitcher = defineAsyncComponent(() => import('./ThemeSwitcher.vue'))
+const LangSwitcher = defineAsyncComponent(() => import('./LangSwitcher.vue'))
 </script>
 
 <style lang="scss">
