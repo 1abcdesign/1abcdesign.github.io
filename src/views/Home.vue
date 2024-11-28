@@ -99,11 +99,15 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
     }
 
     .main-header {
+      padding: max(0.25rem, 0.42svh) 0.15rem 0.12rem;
+      width: 3.7rem;
+      height: 0.857142rem;
+      font-size: 0.714285rem;
+
       height: calc(3 * var(--main-em));
-      font-size: calc(2.5 * var(--main-em));
-      padding: calc(0.5 * var(--main-em)) calc(0.5 * var(--main-em)) 0;
-      width: calc(15 * var(--main-em));
-      line-height: var(--main-em);
+      font-size: calc(3 * var(--main-em));
+      padding: max(calc(0.55 * var(--main-em)), 0.55rem) max(calc(0.5 * var(--main-em)), 0.5rem) 0;
+      width: calc(16 * var(--main-em));
 
       margin: 0;
       position: relative;
@@ -123,10 +127,10 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
     .moto {
       height: 1.875rem;
       height: calc(1.875 * var(--main-em) + 1px);
-      padding: calc(0.2 * var(--main-em));
-      font-size: calc(1.33 * var(--main-em));
+      padding: max(calc(0.25 * var(--main-em)), 0.25rem) max(calc(0.25 * var(--main-em)), 0.25rem) 0;
+      font-size: calc(1.25 * var(--main-em));
 
-      --spacing: 0.18ch;
+      --spacing: 0.125ch;
       letter-spacing: var(--spacing);
       word-spacing: var(--spacing);
 

@@ -103,23 +103,23 @@ const slides = ref(
 </script>
 
 <style lang="scss">
-.main.vueperslides--fixed-height {
+.vueperslides--fixed-height {
   position: absolute;
 
   top: calc(23.125 * var(--main-em) + 1px);
 }
 
-.main.vueperslides {
+.vueperslides {
   width: 100vmin;
 
-  height: calc(18.55 * var(--main-em));
+  height: calc(18.8 * var(--main-em));
 }
 
-.main.vueperslide__content {
+.vueperslide__content {
   width: 100%;
 }
 
-.main.vueperslide__title em {
+.vueperslide__title em {
   line-height: calc(1.33 * var(--main-em));
 
   display: inline-flex;
@@ -128,7 +128,7 @@ const slides = ref(
   font-size: 90%;
 }
 
-.main.vueperslide__title em .first-letter {
+.vueperslide__title em .first-letter {
   line-height: calc(1.33 * var(--main-em));
 
   display: inline-flex;

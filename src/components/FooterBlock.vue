@@ -4,8 +4,6 @@
       &copy;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;abcdesign1.com
     </section>
 
-    <!-- <route-scroller /> -->
-
     <section class="links">
       <a
         :href="`mailto:one.abcdesign@gmail.com?subject=${$t('email_subject')}`"
@@ -86,9 +84,7 @@
   </footer>
 </template>
 
-<script setup>
-// import RouteScroller from '@/components/RouteScroller.vue'
-</script>
+<script setup></script>
 
 <style lang="scss">
 .footer {
@@ -119,6 +115,8 @@
   }
 
   .copy-right {
+    font-size: 1.25rem;
+    padding-top: max(0.066svh, 0.066rem);
     position: relative;
     width: 100%;
     left: 1vmax;

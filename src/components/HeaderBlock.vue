@@ -218,11 +218,10 @@ menu {
 .logo-strong {
   position: relative;
   z-index: 100 !important;
-  padding: 0.1rem 0.1rem 0;
-  width: 3.8rem;
-  height: max(calc((var(--main-em) * 0.8)), 0.8rem);
-  font-size: 0.666rem;
-  line-height: 1rem;
+  padding: max(0.25rem, 0.42svh) 0.15rem 0.12rem;
+  width: 3.7rem;
+  height: 0.857142rem;
+  font-size: 0.714285rem;
 
   box-shadow: 0 0 0.125rem 0.0625rem var(--shadow);
   text-shadow: 0 0 0.25ch var(--color-alt);
