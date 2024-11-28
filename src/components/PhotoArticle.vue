@@ -52,15 +52,12 @@ const { image, title, description, isReverse, group } = defineProps([
 
 .article-image {
   object-fit: cover;
-
-  -webkit-object-fit: cover; /* WebKit-based support for object-fit */
-  -moz-object-fit: cover; /* Mozilla support for object-fit */
+  -webkit-object-fit: cover;
+  -moz-object-fit: cover;
 }
 
 .article-info {
   font-size: 125%;
-  display: flex;
-  flex-direction: column;
 }
 
 .group {
@@ -73,23 +70,17 @@ const { image, title, description, isReverse, group } = defineProps([
 .group::first-letter {
   color: var(--bg);
   background: var(--shadow);
-  text-decoration: underline;
   text-decoration-color: transparent;
-
-  -webkit-text-decoration: underline; /* Webkit-based underline */
-  -moz-text-decoration: underline; /* Mozilla-based underline */
+  text-decoration: underline;
+  -webkit-text-decoration: underline;
+  -moz-text-decoration: underline;
 }
 
 .group::selection {
   background: var(--shadow) !important;
   color: var(--bg) !important;
-
-  -webkit-background: var(
-    --shadow
-  ) !important; /* Webkit-based selection background */
-  -moz-background: var(
-    --shadow
-  ) !important; /* Mozilla-based selection background */
+  -webkit-background: var(--shadow) !important;
+  -moz-background: var(--shadow) !important;
 }
 
 @media (orientation: landscape) {

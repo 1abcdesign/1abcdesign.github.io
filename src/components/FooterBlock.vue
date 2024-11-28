@@ -1,7 +1,7 @@
 <template>
   <footer class="footer box-shadow-1-05 bg-texture">
     <section class="copy-right flex-align">
-      &copy;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;abcdesign1.com
+      &nbsp;&nbsp;&nbsp;&nbsp;&copy;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;abcdesign1.com
     </section>
 
     <section class="links">
@@ -84,44 +84,25 @@
   </footer>
 </template>
 
-<script setup></script>
-
 <style lang="scss">
 .footer {
-  width: 100%;
-  line-height: 2.75rem;
   bottom: 0;
+  line-height: 2.75rem;
   display: grid;
   grid-template-columns: calc(50% + 0.25rem + 1px) calc(50% + 0.25rem - 1px);
 
   .links {
+    height: 2.75rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 2.75rem;
-  }
-
-  a {
-    width: 100%;
-    height: 2.75rem;
-  }
-
-  span {
-    display: inline-block;
-    width: 33.33%;
   }
 
   .copy-right {
-    font-size: 1.25rem;
     padding-top: max(0.066svh, 0.066rem);
-    position: relative;
-    width: 100%;
-    left: 1vmax;
-    text-align: left;
+    margin-left: 1vmax;
+    font-size: 1.25rem;
     word-spacing: -0.075ch;
+    text-align: left;
   }
 }
 </style>

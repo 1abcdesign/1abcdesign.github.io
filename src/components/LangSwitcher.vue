@@ -2,7 +2,7 @@
   <section class="lang-switcher" :title="$t('toggleLangTip')">
     <menu
       v-click-outside="closeMenu"
-      class="select flex-align"
+      class="select flex-align flex-col"
       :class="{ open: showOptions, close: !showOptions }"
     >
       <li
@@ -34,14 +34,14 @@ const languageOptions = Object.keys(i18n.global.messages).map(locale => ({
   image: BASE_URL + i18n.global.messages[locale].flag,
 }))
 
-const selectedLanguage = ref(i18n.global.locale)
-const showOptions = ref(false)
-
 const sortedLanguageOptions = computed(() => {
   return [...languageOptions].sort(o1 =>
-    i18n.global.locale === o1.value ? -1 : 1
-  )
+                                i18n.global.locale === o1.value ? -1 : 1
+                              )
 })
+
+const selectedLanguage = ref(i18n.global.locale)
+const showOptions = ref(false)
 
 const handleClick = lang => {
   setLanguage(lang)
@@ -61,7 +61,7 @@ const setTitle = () => {
   document.title = `ABCDΞSIGN1 — ${motto}`
 }
 
-function updateIndexInfo(lang) {
+const updateIndexInfo = lang => {
   // Update the lang attribute on the <html> tag
   document.documentElement.lang = lang
   document.documentElement.setAttribute('xml:lang', lang)
@@ -141,7 +141,7 @@ const setLanguage = lang => {
   i18n.global.locale = lang
   localStorage.setItem('lang', lang)
   selectedLanguage.value = lang
-
+  setTitle()
   updateIndexInfo(lang)
 }
 
@@ -158,11 +158,6 @@ onMounted(async () => {
 
   setTitle() // Set the title on mount
 })
-
-// Watch for language changes to update the title
-watch(selectedLanguage, () => {
-  setTitle()
-})
 </script>
 
 <style lang="scss">
@@ -172,10 +167,7 @@ watch(selectedLanguage, () => {
 
 .select {
   padding: 0.25rem 0 0 0;
-  margin: 0;
-  list-style: none;
   border-radius: 1.25rem;
-  flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
 
@@ -186,8 +178,6 @@ watch(selectedLanguage, () => {
   &-option {
     width: 2.5rem;
     height: 2.5rem;
-    position: relative;
-    z-index: 1;
 
     &-img {
       width: 2rem;
@@ -195,25 +185,18 @@ watch(selectedLanguage, () => {
       filter: blur(var(--blur-img)) contrast(1.05) brightness(1.05);
       border-radius: 1rem;
       object-fit: cover;
-      /* Add the prefixes for older browsers */
-      -webkit-object-fit: cover; /* Safari */
-      -moz-object-fit: cover; /* Firefox */
+      -webkit-object-fit: cover;
+      -moz-object-fit: cover;
     }
   }
 }
 
-.close {
-  height: 2.5rem;
-}
-
-.open {
-  height: 5rem;
-}
-
+.close,
 .close::after {
   height: 2.5rem !important;
 }
 
+.open,
 .open::after {
   height: 5rem !important;
 }

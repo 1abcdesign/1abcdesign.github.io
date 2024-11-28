@@ -54,55 +54,57 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from "vue";
-const BASE_URL = import.meta.env.BASE_URL;
-const theme = ref(localStorage.getItem("theme") || "light"); // Get saved theme or default to 'light'
+import { ref, onMounted } from 'vue'
 
-function themeSwitch() {
-  theme.value = theme.value === "light" ? "dark" : "light";
-  localStorage.setItem("theme", theme.value);
-  document.documentElement.setAttribute("data-theme", theme.value)
-  updateThemeColor();
-  setFavIcon();
-  updateIconsStroke();
-}
+const BASE_URL = import.meta.env.BASE_URL
 
-function setFavIcon() {
-  const favicon = document.getElementById("favicon");
-  favicon.href =
-    BASE_URL + (theme.value === "dark" ? "favicon_dark.ico" : "favicon_light.ico");
-}
+const theme = ref(localStorage.getItem('theme') || 'light')
 
 const updateThemeColor = () => {
-  document.documentElement.classList.add("force-redraw");
+  document.documentElement.classList.add('force-redraw')
   setTimeout(() => {
-    document.documentElement.classList.remove("force-redraw");
-  }, 50);
-};
+    document.documentElement.classList.remove('force-redraw')
+  }, 50)
+}
 
 const updateIconsStroke = () => {
-  const strokeColor = theme.value === "light" ? "#000" : "#fff";
-  document.querySelectorAll(".icon").forEach((icon) => {
-    icon.setAttribute("stroke", strokeColor);
-  });
-};
+  const strokeColor = theme.value === 'light' ? '#000' : '#fff'
+  document.querySelectorAll('.icon').forEach(icon => {
+    icon.setAttribute('stroke', strokeColor)
+  })
+}
+
+const setFavIcon = () => {
+  const favicon = document.getElementById('favicon')
+  favicon.href =
+    BASE_URL +
+    (theme.value === 'dark' ? 'favicon_dark.ico' : 'favicon_light.ico')
+}
+
+const themeSwitch = () => {
+  theme.value = theme.value === 'light' ? 'dark' : 'light'
+  localStorage.setItem('theme', theme.value)
+  document.documentElement.setAttribute('data-theme', theme.value)
+  updateThemeColor()
+  updateIconsStroke()
+  setFavIcon()
+}
 
 onMounted(() => {
-  updateThemeColor();
-  setFavIcon();
-  updateIconsStroke();
-});
+  updateThemeColor()
+  updateIconsStroke()
+  setFavIcon()
+})
 </script>
 
 <style lang="scss">
 .theme-switcher {
-  cursor: pointer;
+  position: relative;
+  padding: 0;
+  border-radius: 1.25rem;
   background-color: transparent;
   border: none;
-  border-radius: 1.25rem;
-  z-index: 5;
-  padding: 0;
-  position: relative;
+  cursor: pointer;
 
   svg {
     width: 2rem;

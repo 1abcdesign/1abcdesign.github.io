@@ -55,7 +55,8 @@
 </template>
 
 <script setup>
-import PhotoGallery from '@/components/PhotoGallery.vue'
+import { defineAsyncComponent } from 'vue';
+const PhotoGallery = defineAsyncComponent(() =>  import('@/components/PhotoGallery.vue'))
 </script>
 
 <style lang="scss" scoped>

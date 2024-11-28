@@ -6,13 +6,16 @@
   --color: #000;
   --color-alt: #222;
   --shadow: #8888;
+  --link-gradient: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, transparent 75%, var(--color-alt) 100%);
+  --cursor: url('https://1abcdesign.github.io/scissors-white.cur') 0 9,
+            url('https://1abcdesign.github.io/scissors-white.ico') 0 9,
+            url('https://1abcdesign.github.io/scissors-white.png') 0 9,
+            pointer;
   background: #fff;
   color: #000;
-  --link-gradient: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, transparent 75%, var(--color-alt) 100%);
 }
 
 [data-theme='dark'] {
-  --link-gradient: linear-gradient(45deg, var(--color) 0%, transparent 20%, transparent 66%, var(--color-alt) 100%);
   --bg: #000;
   --bg-05: #0002;
   --bg-alt: #222;
@@ -20,6 +23,11 @@
   --color: #fff;
   --color-alt: #ddd;
   --shadow: #8888;
+  --link-gradient: linear-gradient(45deg, var(--color) 0%, transparent 20%, transparent 66%, var(--color-alt) 100%);
+  --cursor: url('https://1abcdesign.github.io/scissors-black.cur') 0 9,
+                  url('https://1abcdesign.github.io/scissors-black.ico') 0 9,
+                  url('https://1abcdesign.github.io/scissors-black.png') 0 9,
+                  pointer;
   background: #000;
   color: #fff;
 }
@@ -27,7 +35,7 @@
 :root {
   --grey: #888;
   --blur-img: 0.5px;
-  --blur-drop: 0.15rem;
+  --blur-drop: 0.142857rem;
   --tr-dur: 666ms; /* Initialize variable for transition duration */
 
   --safe-top: env(safe-area-inset-top);
@@ -135,8 +143,9 @@
 }
 
 body {
-  margin: 0;
   padding: 0;
+  margin: 0;
+  overflow: hidden !important;
 }
 
 body::after {
@@ -170,13 +179,84 @@ body::after {
   flex-direction: column;
   text-align: center;
   width: 100%;
+}
+
+#app:has(:focus) {
+  height: 100dvh;
+}
+
+#app:not(:has(:focus)) {
   min-height: fit-content;
   min-height: -moz-available;
   min-height: -webkit-available;
-  overflow: hidden;
 }
 
+header,
+main,
+footer {
+  position: fixed;
+}
 
+header,
+footer {
+  width: 100%;
+  z-index: 1;
+}
+
+header {
+  height: 5.5rem;
+}
+
+main {
+  top: 5.5rem;
+  width: 100%;
+  --main-h: calc(100svh - 2.75rem - 5.5rem);
+  --main-cent: calc(var(--main-h) / 100);
+  --main-em: calc(var(--main-h) / 41.75);
+  height: var(--main-h);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+footer {
+  height: 2.75rem;
+}
+
+main::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+main::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb {
+  background-color: var(--grey);
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+main::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track {
+  background-color: var(--bg);
+}
+
+main::-webkit-scrollbar-thumb:hover,
+textarea::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color);
+}
+
+main::-webkit-scrollbar-track:hover,
+textarea::-webkit-scrollbar-track:hover {
+  background-color: var(--shadow);
+}
+
+menu, ol, ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 a:link,
 a:visited,
@@ -240,10 +320,10 @@ a:hover,
   box-shadow: 0 0 0.33rem 0.15rem var(--shadow);
 }
 
-a.router-link-active:after,
-a:hover:after,
+a.router-link-active::after,
+a:hover::after,
 .select::after,
-.theme-switcher:after {
+.theme-switcher::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -257,7 +337,11 @@ a:hover:after,
   -moz-border-radius: inherit;
   -ms-border-radius: inherit;
   -o-border-radius: inherit;
-  z-index: -10;
+  z-index: -1;
+}
+
+.moto {
+  cursor: var(--cursor);
 }
 
 .icon {
@@ -268,74 +352,14 @@ a:hover:after,
   -webkit-filter: blur(var(--blur-img));
 }
 
-header a {
-  flex-direction: column;
-  padding: 0.5rem;
-}
-
-header,
-footer {
+.logo-letter {
   width: 100%;
-  z-index: 1;
+  align-self: center;
+  justify-self: center;
 }
 
 .bg-texture {
   backdrop-filter: blur(var(--blur-drop));
-}
-
-header {
-  height: 5.5rem;
-}
-
-header,
-main,
-footer {
-  position: fixed;
-}
-
-main {
-  width: 100%;
-  --main-h: calc(100svh - 2.75rem - 5.5rem);
-  --main-cent: calc(var(--main-h) / 100);
-  --main-em: calc(var(--main-h) / 41.75);
-  height: var(--main-h);
-  top: 5.5rem;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-footer {
-  height: 2.75rem;
-}
-
-main::-webkit-scrollbar,
-textarea::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-main::-webkit-scrollbar-thumb,
-textarea::-webkit-scrollbar-thumb {
-  background-color: var(--grey);
-  border-radius: 0.25rem;
-  -webkit-border-radius: 0.25rem;
-  -moz-border-radius: 0.25rem;
-  -ms-border-radius: 0.25rem;
-  -o-border-radius: 0.25rem;
-}
-
-main::-webkit-scrollbar-track,
-textarea::-webkit-scrollbar-track {
-  background-color: var(--bg);
-}
-
-main::-webkit-scrollbar-thumb:hover,
-textarea::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color);
-}
-
-main::-webkit-scrollbar-track:hover,
-textarea::-webkit-scrollbar-track:hover {
-  background-color: var(--shadow);
 }
 
 .box-shadow-1-05 {
@@ -345,6 +369,11 @@ textarea::-webkit-scrollbar-track:hover {
 .flex-align {
   display: flex;
   align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .flex-center {
@@ -387,10 +416,9 @@ textarea::-webkit-scrollbar-track:hover {
   color: var(--bg) !important;
 }
 
-
-.hdpi:after,
-.pac-container:after,
-.pac-logo:after {
+.hdpi::after,
+.pac-container::after,
+.pac-logo::after {
   display: none !important;
 }
 

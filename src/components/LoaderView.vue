@@ -1,22 +1,22 @@
 <template>
   <div
-    id="logo_overlay"
-    ref="logo_overlay"
+    id="logoOverlay"
+    ref="logoOverlay"
     class="flex-center"
     :class="{ fadeOut: fadeOutClass }"
     :style="{ zIndex: isVisible ? 100 : -100, opacity: isVisible ? 'inherit' : 0 }"
     @animationend="handleAnimationEnd"
   >
-    <div id="logo_2d_wrapper">
+    <div id="logo2dWrapper">
       <canvas
-        id="logo_2d"
-        ref="logo_2d"
+        id="logo2dCanvas"
+        ref="logo2dCanvas"
         width="400"
         height="400"
         style="stroke: var(--color0)"
       ></canvas>
       <svg
-        id="svg_placeholder"
+        id="svgPlaceholder"
         viewBox="0 0 400 400"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -34,40 +34,23 @@
 import { onMounted, ref, watch } from 'vue'
 import { state } from '@/store.js'
 
+const totalDuration = ref(1170) // Загальна тривалість анімації в мс (2340ms for 30fps)
+const isVisible = ref(true)
+const fadeOutClass = ref(false)
+const logoOverlay = ref(null)
+const logo2dCanvas = ref(null)
+
 const getTheme = () =>
   document.documentElement.getAttribute('data-theme') === 'dark'
     ? '#fff'
     : '#000'
 
-const totalDuration = ref(1170) // Загальна тривалість анімації в мілісекундах (2340ms for 30fps)
-const isVisible = ref(true)
-const fadeOutClass = ref(false)
-const logo_overlay = ref(null)
-const logo_2d = ref(null)
-
-// Watch for changes in the state.showLoader value
-watch(
-  () => state.showLoader,
-  (newValue) => {
-    if (newValue) {
-      isVisible.value = newValue
-      // Restart animation when loader becomes visible
-      startAnimation()
-    } else {
-      // setTimeout(() => isVisible.value = newValue, 1170)
-    }
-  }
-)
-
-onMounted(() => {
-  startAnimation()
-})
-
 let startTime = null
 
 function startAnimation() {
-  document.getElementById('logo_overlay').classList.remove('fade-out')
-  const canvas = logo_2d.value || document.getElementById('logo_2d')
+  const overlay = logoOverlay.value || document.getElementById('logoOverlay')
+  overlay.classList.remove('fade-out')
+  const canvas = logo2dCanvas.value || document.getElementById('logo2dCanvas')
   const ctx = canvas.getContext('2d')
   ctx.clearRect(0, 0, canvas.width, canvas.height) // Clear the canvas
   ctx.lineWidth = 28
@@ -169,6 +152,22 @@ const handleAnimationEnd = () => {
     fadeOutClass.value = false
   }, 1170)
 }
+
+onMounted(() => {
+  startAnimation()
+})
+
+// Watch for changes in the state.showLoader value
+watch(
+  () => state.showLoader,
+  (newValue) => {
+    if (newValue) {
+      isVisible.value = newValue
+      // Restart animation when loader becomes visible
+      startAnimation()
+    }
+  }
+)
 </script>
 
 <style lang="scss">
@@ -182,50 +181,50 @@ const handleAnimationEnd = () => {
 }
 
 .fadeOut {
-  animation: fade-out 1170ms forwards ease-out; // Starts fading out after the animation completes
-  -webkit-animation: fade-out 1170ms forwards ease-out; // Webkit version of animation
-  -moz-animation: fade-out 1170ms forwards ease-out; // Mozilla version of animation
+  animation: fade-out 1170ms forwards ease-out;
+  -webkit-animation: fade-out 1170ms forwards ease-out;
+  -moz-animation: fade-out 1170ms forwards ease-out;
 }
 
-#logo_overlay {
+#logoOverlay {
   position: fixed;
-  z-index: 1000;
+  z-index: 5;
   width: 100%;
   height: 100svh;
-  background: var(--bg);
   overflow: hidden !important;
-  pointer-events: none; // Prevents interaction after fading out
+  background: var(--bg);
+  pointer-events: none;
   opacity: 0;
 }
 
-#logo_2d_wrapper {
-  width: 50vmin;
-  height: 50vmin;
+#logo2dWrapper {
   position: relative;
   top: 2vmin;
-}
-
-#logo_2d,
-#svg_placeholder {
   width: 50vmin;
   height: 50vmin;
 }
 
-#svg_placeholder {
+#logo2dCanvas,
+#svgPlaceholder {
+  width: 50vmin;
+  height: 50vmin;
+}
+
+#svgPlaceholder {
   position: absolute;
   top: 0;
   left: 0;
   stroke-width: 28px;
-  -webkit-stroke-width: 28px; // Webkit-specific stroke-width
-  -moz-stroke-width: 28px; // Mozilla-specific stroke-width
+  -webkit-stroke-width: 28px;
+  -moz-stroke-width: 28px;
   stroke: #888888;
 }
 
-#logo_2d {
+#logo2dCanvas {
   position: relative;
   z-index: 1;
   stroke: var(--color0);
-  -webkit-stroke: var(--color0); // Webkit-specific stroke
-  -moz-stroke: var(--color0); // Mozilla-specific stroke
+  -webkit-stroke: var(--color0);
+  -moz-stroke: var(--color0);
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <main class="company flex-align">
+  <main class="company flex-align flex-col">
     <p>
       {{ $t('aboutUs1') }}
     </p>
@@ -79,9 +79,8 @@ const photos = [
 ]
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .company {
-  flex-direction: column;
   padding: 1rem 0.5rem;
   font-size: calc(var(--main-cent) * 2.2);
   text-align: left;
@@ -113,22 +112,22 @@ const photos = [
   }
 
   .vip {
+    width: 100%;
+    height: 27vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-content: center;
     justify-items: center;
     gap: 0.5rem;
     padding: 0.5rem 0;
-    height: 27vh;
-    width: 100%;
     text-align: center;
 
     .person {
+      height: 25vh;
       display: grid;
       grid-template-rows: auto auto auto;
       align-content: space-between;
       justify-items: center;
-      height: 25vh;
       padding: 0.5rem;
 
       img {

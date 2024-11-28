@@ -1,5 +1,5 @@
 <template>
-  <main class="contacts">
+  <main class="main contacts">
     <p>
       <strong>
         <em>{{ $t('contact_intro') }}</em>
@@ -89,7 +89,7 @@
 
     <form
       @submit.prevent="submitForm"
-      class="form flex-align box-shadow-1-05 bg-texture"
+      class="form flex-align flex-col box-shadow-1-05 bg-texture"
       autocomplete="on"
     >
       <label :data-text="$t('form_name')">
@@ -176,8 +176,8 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import emailjs from 'emailjs-com'
 import { GoogleAutocomplete } from 'vue3-google-autocomplete'
+import emailjs from 'emailjs-com'
 
 const API_KEY = computed(() => import.meta.env.VITE_GMAPS_API_KEY)
 
@@ -187,6 +187,7 @@ const project = ref('')
 const place = ref('')
 const budget = ref('')
 const comment = ref('')
+
 const showSuccess = ref(false)
 const showError = ref(false)
 
@@ -290,27 +291,27 @@ const submitForm = async () => {
 .contacts {
   font-size: calc(var(--main-cent) * 2.5);
 
-  &p {
-  letter-spacing: 0.1ch;}
+  p {
+    letter-spacing: 0.1ch;
+  }
 
   a {
-    font-weight: bold;
-    text-decoration: none;
     padding: 0.25rem 1ch;
     margin-left: -1ch;
+    font-weight: bold;
+    text-decoration: none;
   }
 }
 
 .form {
-  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.5rem;
   color: var(--color);
   border: none;
-  padding: 0.5rem;
-  gap: 0.1rem;
 
   & * {
-    background: var(--bg);
     width: 33ch;
+    background: var(--bg);
     font-size: calc(var(--main-cent) * 2.5);
     letter-spacing: 0.1ch;
   }
@@ -321,15 +322,15 @@ const submitForm = async () => {
     border: none;
 
     &::before {
-      background: var(--bg);
-      line-height: 4px;
-      display: inline-flex;
-      position: absolute;
       content: attr(data-text);
-      left: 1ch;
-      padding: 0 0.33ch 0 0.33ch;
+      position: absolute;
       top: 0.33rem;
+      left: 1ch;
+      display: inline-flex;
+      padding: 0 0.33ch 0 0.33ch;
+      background: var(--bg);
       font-weight: bold;
+      line-height: 4px;
     }
 
     &:has(:required)::after {
@@ -367,14 +368,14 @@ const submitForm = async () => {
 }
 
 button {
+  position: relative;
   height: 2.5rem;
-  border: 2px solid var(--color);
+  padding: 0.75rem;
   background: var(--bg);
   color: var(--color);
-  cursor: pointer;
-  position: relative;
-  padding: 0.75rem;
+  border: 2px solid var(--color);
   font-weight: bold;
+  cursor: pointer;
 
   &:hover {
     background: var(--color);
@@ -407,8 +408,8 @@ input:-webkit-autofill:active {
 }
 
 textarea {
-  resize: none;
   height: 5rem;
+  resize: none;
 }
 
 input::placeholder,
@@ -427,24 +428,24 @@ textarea::placeholder {
 }
 
 .success {
-  border: 2px solid green;
-  color: green !important;
   background: var(--bg) !important;
+  color: green !important;
+  border: 2px solid green;
 
   &:hover {
-    color: var(--bg) !important;
     background: green !important;
+    color: var(--bg) !important;
   }
 }
 
 .error {
-  border: 2px solid red;
-  color: red !important;
   background: var(--bg) !important;
+  color: red !important;
+  border: 2px solid red;
 
   &:hover {
-    color: var(--bg) !important;
     background: red !important;
+    color: var(--bg) !important;
   }
 }
 </style>

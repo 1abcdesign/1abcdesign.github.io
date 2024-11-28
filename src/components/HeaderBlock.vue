@@ -1,11 +1,11 @@
 <template>
   <header class="box-shadow-1-05 bg-texture">
     <menu>
-      <li class="logo_link flex-align">
+      <li class="logo_li flex-align">
         <router-link
           to="/"
           id="logoLink"
-          class="flex-center"
+          class="flex-center flex-col"
           :class="{ active: $route.path === '/' }"
           :title="$t('mainPage')"
         >
@@ -52,7 +52,7 @@
         <router-link
           to="/services"
           :title="$t('showcases')"
-          class="flex-center"
+          class="flex-center flex-col"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@
         <router-link
           to="/company"
           :title="$t('about')"
-          class="flex-center"
+          class="flex-center flex-col"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +107,7 @@
         <router-link
           to="/contacts"
           :title="$t('contactTip')"
-          class="flex-center"
+          class="flex-center flex-col"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@
         </router-link>
       </li>
 
-      <li class="global-view flex-align">
+      <li class="global-view flex-align flex-col">
         <theme-switcher />
 
         <span class="lang-wrapper">
@@ -146,55 +146,72 @@ import LangSwitcher from './LangSwitcher.vue'
 </script>
 
 <style lang="scss">
+@keyframes rotateY {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
 header {
   width: 100%;
   top: 0;
   font-size: 1.1rem;
+  font-weight: bold;
+}
+
+#logoImage {
+  stroke: currentColor;
+  stroke-width: 28px;
+  height: 4rem;
+  width: 4rem;
+  filter: url(#shadowInactive);
+}
+
+#logoLink:hover #logoImage {
+  animation: rotateY 5.25s linear;
+}
+
+.logo-strong {
+  padding: max(0.21rem, 0.4svh) 0.15rem 0.12rem;
+  width: 3.7rem;
+  height: 0.857142rem;
+  font-size: 0.714285rem;
+  box-shadow: 0 0 0.125rem 0.0625rem var(--shadow);
+  filter: drop-shadow(0 0 0.125ch var(--color-alt));
+  -webkit-filter: drop-shadow(0 0 0.125ch var(--color-alt));
 }
 
 menu {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  font-weight: bold;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  height: 5.5rem99;
 
-  li {
-    height: 5.5rem;
+  #logo_li {
+    padding: 0 1vmin;
+  }
+
+  a {
     width: 100%;
-
-    a {
-      width: 100%;
-      height: 5.5rem;
-    }
-
-    a:link {
-      text-decoration: none;
-    }
-
-    a:not(#logoLink):hover,
-    a:not(#logoLink):active {
-      text-decoration: underline;
-    }
+    height: 5.5rem;
   }
 
-  @media (min-width: 1000px) {
-    menu {
-      font-size: 133%;
-    }
+  a:not(#logoLink) {
+    padding: 0.5rem;
   }
 
-  @media (min-width: 401px) and (max-width: 999px) {
-    menu {
-      font-size: 125%;
-    }
+  a:link {
+    text-decoration: none;
+  }
+
+  a:not(#logoLink):hover,
+  a:not(#logoLink):active {
+    text-decoration: underline;
   }
 
   .global-view {
     padding: 0.125rem 0.25rem;
-    flex-direction: column;
     justify-content: space-between;
 
     & > * {
@@ -213,56 +230,5 @@ menu {
   .global-view {
     padding: 0.125rem 0;
   }
-}
-
-.logo-strong {
-  position: relative;
-  z-index: 100 !important;
-  padding: max(0.25rem, 0.42svh) 0.15rem 0.12rem;
-  width: 3.7rem;
-  height: 0.857142rem;
-  font-size: 0.714285rem;
-
-  box-shadow: 0 0 0.125rem 0.0625rem var(--shadow);
-
-  filter: drop-shadow(0 0 0.125ch var(--color-alt));
-  -webkit-filter: drop-shadow(0 0 0.125ch var(--color-alt));
-
-  .logo-letter {
-    width: 100%;
-    align-self: center;
-    justify-self: center;
-  }
-}
-
-@keyframes rotateY {
-  from {
-    transform: rotateY(0);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-}
-
-#logo_link {
-  position: relative;
-  z-index: 10;
-  flex-direction: column;
-  padding: 0 1vmin;
-  text-decoration: none;
-}
-
-#logoImage {
-  position: relative;
-  z-index: 1 !important;
-  stroke: currentColor;
-  stroke-width: 28px;
-  height: 4rem;
-  width: 4rem;
-  filter: url(#shadowInactive);
-}
-
-#logoLink:hover #logoImage {
-  animation: rotateY 5.25s linear;
 }
 </style>
