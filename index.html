@@ -109,10 +109,10 @@
       }
     </style>
 
-    <!-- <script>
+    <script>
       function setVhProperty() {
         // Calculate the viewport height in pixels
-        const vh = window.innerHeight * 0.01;
+        const vh = window.visualViewport.height * 0.01;
 
         // Get computed safe area insets from CSS
         const computedStyle = getComputedStyle(document.documentElement);
@@ -120,7 +120,7 @@
         const safeBottom = parseFloat(computedStyle.getPropertyValue('--safe-bottom') || 0);
 
         // Calculate adjusted --vh value considering safe areas
-        const adjustedVh = (window.innerHeight - safeTop - safeBottom) * 0.01;
+        const adjustedVh = (window.visualViewport.height - safeTop - safeBottom) * 0.01;
 
         // Set custom properties on the root element
         document.documentElement.style.setProperty('--vh', `${adjustedVh}px`);
@@ -130,10 +130,11 @@
         // Set the property initially
         setVhProperty();
 
-        // Update the property on window resize
+        // Update the property on window resize or change orientation
         window.addEventListener('resize', setVhProperty);
+        window.addEventListener('orientationchange', setVhVariable);
       });
-    </script> -->
+    </script>
 
     <!-- JavaScript to correct URL | GitHub Pages SPA redirect correction -->
     <script type="text/javascript">
@@ -214,9 +215,9 @@
         favicon.href = savedTheme === 'dark' ? 'https://1abcdesign.github.io/favicon_dark.ico' : 'https://1abcdesign.github.io/favicon_light.ico';
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-DoPG7LHz.js"></script>
+    <script type="module" crossorigin src="/assets/index-CRJDH5F2.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vue-Be0O9ZuW.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-DbKg3G_9.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-BE6A3qKm.css">
   </head>
   <body>
     <!-- Adding structured Schema data for organization -->
