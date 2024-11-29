@@ -56,7 +56,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-const BASE_URL = import.meta.env.BASE_URL
+const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR
 
 const theme = ref(localStorage.getItem('theme') || 'light')
 
@@ -77,7 +77,7 @@ const updateIconsStroke = () => {
 const setFavIcon = () => {
   const favicon = document.getElementById('favicon')
   favicon.href =
-    BASE_URL +
+  ASSETS_DIR +
     (theme.value === 'dark' ? 'favicon_dark.ico' : 'favicon_light.ico')
 }
 

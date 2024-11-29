@@ -28,7 +28,9 @@
 
       {{ $t('contact_phone') }}:
 
-      <a href="tel:+380933789883" :title="$t('phoneUs')" target="_blank"> +380 93 378 9883 </a>
+      <a href="tel:+380933789883" :title="$t('phoneUs')" target="_blank">
+        +380 93 378 9883
+      </a>
     </p>
 
     <p>
@@ -51,7 +53,11 @@
 
       {{ $t('contact_tg') }}:
 
-      <a href="http://t.me/abcdesign1" :title="$t('chatDirect')" target="_blank">
+      <a
+        href="http://t.me/abcdesign1"
+        :title="$t('chatDirect')"
+        target="_blank"
+      >
         @abcdesign1
       </a>
     </p>
@@ -202,13 +208,13 @@ const prependCountryCode = event => {
   }
 }
 
-const restrictPhoneInput = (event) => {
+const restrictPhoneInput = event => {
   // Remove all non-numeric characters except the plus sign
-  let input = event.target.value.replace(/[^0-9+]/g, '').slice(0, 13);
+  let input = event.target.value.replace(/[^0-9+]/g, '').slice(0, 13)
 
   // Ensure the input starts with "+380" (or adds it if missing)
   if (!input.startsWith('+380')) {
-    input = '+380' + input.replace('+380', '');
+    input = '+380' + input.replace('+380', '')
   }
 
   // Format the input as +380 99 999 9999
@@ -217,12 +223,12 @@ const restrictPhoneInput = (event) => {
     .replace(/^(\+380)(\d{0,2})(\d{0,3})$/, '$1 $2 $3')
     .replace(/^(\+380)(\d{0,2})(\d{0,3})(\d{0,4})$/, '$1 $2 $3 $4')
 
-  event.target.value = input;
-  phone.value = input;
+  event.target.value = input
+  phone.value = input
 }
 
-const clearIfOnlyPrepender = (event) => {
-  const input = event.target.value;
+const clearIfOnlyPrepender = event => {
+  const input = event.target.value
   if (input === '+380' || input === '+380 ') {
     event.target.value = ''
     phone.value = ''

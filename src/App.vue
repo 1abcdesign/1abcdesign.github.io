@@ -1,7 +1,7 @@
 <template>
   <loader-view />
   <header-block />
-  <router-view />
+  <router-view ref="mainRef" />
   <footer-block />
 </template>
 

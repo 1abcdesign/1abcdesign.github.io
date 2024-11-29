@@ -1,7 +1,7 @@
 <template>
   <footer class="footer box-shadow-1-05 bg-texture">
     <section class="copy-right flex-align">
-      &nbsp;&nbsp;&nbsp;&nbsp;&copy;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;abcdesign1.com
+      &copy;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;abcdesign1.com
     </section>
 
     <section class="links">
@@ -99,8 +99,8 @@
 
   .copy-right {
     padding-top: max(0.066svh, 0.066rem);
-    margin-left: 1vmax;
-    font-size: 1.25rem;
+    margin-left: 1.5vmax;
+    font-size: 1rem;
     word-spacing: -0.075ch;
     text-align: left;
   }
