@@ -184,10 +184,6 @@ body,
 #app {
   flex-direction: column;
   text-align: center;
-  /* min-height: fit-content;
-  min-height: -moz-available;
-  min-height: -webkit-available;
-  min-height: -webkit-fill-available; */
 }
 
 header,
