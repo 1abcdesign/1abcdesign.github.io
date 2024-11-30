@@ -2,11 +2,11 @@
   --bg: #fff;
   --bg-05: #fff2;
   --bg-alt: #ddd;
-  --bg-img-op: 0.15;
+  --bg-img-op: 0.16;
   --color: #000;
   --color-alt: #222;
   --shadow: #8888;
-  --link-gradient: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, transparent 75%, var(--color-alt) 100%);
+  --link-gradient: linear-gradient(45deg, var(--grey) 0%, transparent 25%, transparent 75%, var(--color-alt) 100%);
   --cursor: url('https://1abcdesign.github.io/scissors-white.cur') 0 9,
             url('https://1abcdesign.github.io/scissors-white.ico') 0 9,
             url('https://1abcdesign.github.io/scissors-white.png') 0 9,
@@ -23,7 +23,7 @@
   --color: #fff;
   --color-alt: #ddd;
   --shadow: #8888;
-  --link-gradient: linear-gradient(45deg, var(--color) 0%, transparent 20%, transparent 66%, var(--color-alt) 100%);
+  --link-gradient: linear-gradient(45deg, var(--color-alt) 0%, transparent 25%, transparent 66%, var(--color-alt) 100%);
   --cursor: url('https://1abcdesign.github.io/scissors-black.cur') 0 9,
                   url('https://1abcdesign.github.io/scissors-black.ico') 0 9,
                   url('https://1abcdesign.github.io/scissors-black.png') 0 9,
