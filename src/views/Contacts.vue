@@ -330,13 +330,11 @@ const submitForm = async () => {
     &::before {
       content: attr(data-text);
       position: absolute;
-      top: 0.33rem;
-      left: 1ch;
-      display: inline-flex;
-      padding: 0 0.33ch 0 0.33ch;
+      top: 0;
+      left: 0.5ch;
+      padding: 0 0.15ch 0 0.35ch;
       background: var(--bg);
       font-weight: bold;
-      line-height: 4px;
     }
 
     &:has(:required)::after {
