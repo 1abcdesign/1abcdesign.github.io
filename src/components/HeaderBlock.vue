@@ -177,13 +177,17 @@ header {
 }
 
 .logo-strong {
-  padding: max(0.15rem, 0.3dvh) 0.15rem 0;
-  width: 3.7rem;
+  width: 4.2rem;
   height: 0.75rem;
   font-size: 0.75rem;
   box-shadow: 0 0 0.125rem 0.0625rem var(--shadow);
   filter: drop-shadow(0 0 0.125ch var(--color-alt));
   -webkit-filter: drop-shadow(0 0 0.125ch var(--color-alt));
+  border: 0.125rem solid transparent;
+
+  .logo-letter {
+    top: 0.3ch;
+  }
 }
 
 menu {

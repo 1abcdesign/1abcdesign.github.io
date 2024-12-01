@@ -71,7 +71,7 @@ onMounted(() => {
 
     // Rotate the model on Y-axis if it's loaded
     if (model) {
-      model.rotation.y += 0.01 // Rotate model by 0.01 on each frame
+      model.rotation.y += 0.00 // Rotate model by 0.01 on each frame
     }
 
     // Render the scene and camera

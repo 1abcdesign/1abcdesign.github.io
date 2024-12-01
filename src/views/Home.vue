@@ -74,7 +74,7 @@ const ServicesSlider = defineAsyncComponent(() => import('@/components/ServicesS
 const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vue'))
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .home {
   justify-content: flex-start;
   overflow: hidden;
@@ -91,13 +91,17 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
     position: relative;
     width: calc(16 * var(--main-em));
     height: calc(3 * var(--main-em));
-    padding: max(calc(0.55 * var(--main-em)), 0.55rem) max(calc(0.5 * var(--main-em)), 0.5rem) 0;
+    border: calc(0.5 * var(--main-em)) solid transparent;
     margin: 0;
     font-size: calc(3 * var(--main-em));
     box-shadow: 0 0 0.5rem 0.25rem var(--shadow);
     backdrop-filter: blur(1px);
     filter: drop-shadow(0 0 0.125ch var(--color-alt));
     -webkit-filter: drop-shadow(0 0 0.125ch var(--color-alt));
+
+    .logo-letter {
+      top: 0.25ch;
+    }
   }
 
   .moto {

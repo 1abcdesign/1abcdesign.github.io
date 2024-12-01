@@ -349,6 +349,7 @@ a:hover::after,
   width: 100%;
   align-self: center;
   justify-self: center;
+  position: relative;
 }
 
 .bg-texture {
