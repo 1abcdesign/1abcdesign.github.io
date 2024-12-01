@@ -74,7 +74,7 @@ const ServicesSlider = defineAsyncComponent(() => import('@/components/ServicesS
 const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vue'))
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .home {
   justify-content: flex-start;
   overflow: hidden;

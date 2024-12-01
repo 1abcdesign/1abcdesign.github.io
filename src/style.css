@@ -2,7 +2,6 @@
   --bg: #fff;
   --bg-05: #fff2;
   --bg-alt: #ddd;
-  --bg-img-op: 0.16;
   --color: #000;
   --color-alt: #222;
   --shadow: #8888;
@@ -19,7 +18,6 @@
   --bg: #000;
   --bg-05: #0002;
   --bg-alt: #222;
-  --bg-img-op: 0.175;
   --color: #fff;
   --color-alt: #ddd;
   --shadow: #8888;
@@ -33,9 +31,10 @@
 }
 
 :root {
-  --grey: #888;
+  --grey: #808080;
   --blur-img: 0.5px;
   --blur-drop: 0.142857rem;
+  --bg-img-op: 0.15;
   --tr-dur: 666ms; /* Initialize variable for transition duration */
   --safe-top: env(safe-area-inset-top);
   --safe-bottom: env(safe-area-inset-bottom);
