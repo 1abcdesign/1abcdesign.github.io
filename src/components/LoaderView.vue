@@ -13,7 +13,7 @@
         ref="logo2dCanvas"
         width="400"
         height="400"
-        style="stroke: var(--color0)"
+        style="stroke: var(--color)"
       ></canvas>
       <svg
         id="svgPlaceholder"
@@ -105,7 +105,7 @@ function startAnimation() {
     },
   ]
 
-  const segmentDurations = [0.17, 0.12, 0.08, 0.13, 0.5].map(
+  const segmentDurations = [0.15, 0.11, 0.08, 0.22, 0.44].map(
     percentage => totalDuration.value * percentage
   )
   const segmentMaxValues = [400, 200, 200, 180, 360]
@@ -170,7 +170,7 @@ watch(
 )
 </script>
 
-<style lang="scss">
+<style scoped>
 @keyframes fade-out {
   0% {
     opacity: 1;
@@ -191,7 +191,6 @@ watch(
   z-index: 5;
   width: 100%;
   height: 100dvh;
-  overflow: hidden !important;
   background: var(--bg);
   pointer-events: none;
   opacity: 0;
@@ -217,14 +216,16 @@ watch(
   stroke-width: 28px;
   -webkit-stroke-width: 28px;
   -moz-stroke-width: 28px;
-  stroke: #888888;
+  stroke: var(--grey);
+  -webkit-stroke: var(--grey);
+  -moz-stroke: var(--grey);
 }
 
 #logo2dCanvas {
   position: relative;
   z-index: 1;
-  stroke: var(--color0);
-  -webkit-stroke: var(--color0);
-  -moz-stroke: var(--color0);
+  stroke: var(--color);
+  -webkit-stroke: var(--color);
+  -moz-stroke: var(--color);
 }
 </style>

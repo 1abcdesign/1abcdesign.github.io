@@ -32,7 +32,16 @@
       href="https://db.onlinewebfonts.com/c/1120bd063fd378d88dbeed72f19a8bde?family=Sanserifing"
       rel="stylesheet"
       crossorigin="anonymous"
-    >
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://db.onlinewebfonts.com/c/1120bd063fd378d88dbeed72f19a8bde?family=Sanserifing"
+        rel="stylesheet"
+        crossorigin="anonymous"
+      />
+    </noscript>
 
     <!-- Title -->
     <title>ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!</title>
@@ -83,13 +92,14 @@
         --safe-bottom: env(safe-area-inset-bottom, 0px);
       }
 
-      body {
+      body, #logoOverlay {
         padding: 0;
         margin: 0;
         overflow: hidden !important;
       }
 
-      body::after {
+      body::after,
+      #logoOverlay::after {
         position: absolute;
         top: 0;
         left: 0;
@@ -103,6 +113,19 @@
         z-index: -1;
         filter: blur(var(--blur-img));
         -webkit-filter: blur(var(--blur-img));
+      }
+
+      @media (orientation: portrait) {
+        body::after,
+        #logoOverlay::after {
+          background-size: 14.2857%;
+        }
+      }
+      @media (orientation: landscape) {
+        body::after,
+        #logoOverlay::after {
+          background-size:  7.14285%;
+        }
       }
 
       .moto {

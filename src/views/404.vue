@@ -2,20 +2,30 @@
   <main class="not-found flex-center flex-col">
     <h2>
       ⛔ 404
-      <br>
-      {{ $t('404') }}</h2>
+      <br />
+      {{ $t('404') }}
+    </h2>
+
     <p>
-      {{ $t('404_1') }} <b><i>'{{ invalidRoute }}'</i></b> {{ $t('404_2') }}<br />
+      {{ $t('404_1') }}
+
+      <b><i>'{{ invalidRoute }}'</i></b>
+
+      {{ $t('404_2') }}
+      <br />
       {{ $t('404_3') }}
     </p>
-    <p >
+
+    <p>
       {{ $t('404_4') }} &mdash;&nbsp;
+
       <router-link v-if="lastValid !== '/'" :to="lastValid">
-        {{ $t('backPreviousPage') }} <b>&laquo;{{ $t(lastValid.slice(1)) }}&raquo;</b> ↺
+        {{ $t('backPreviousPage') }}
+
+        <b>&laquo;{{ $t(lastValid.slice(1)) }}&raquo;</b> ↺
       </router-link>
-      <router-link v-else to="/">
-        {{ $t('back404') }} ↺
-      </router-link>
+
+      <router-link v-else to="/"> {{ $t('back404') }} ↺ </router-link>
     </p>
   </main>
 </template>
@@ -29,12 +39,8 @@ sessionStorage.setItem('navigation_history', JSON.stringify(history))
 
 <style lang="scss" scoped>
 .not-found {
-  font-size: 150%;
+  font-size: 1.5rem;
   padding: 3rem;
-
-  h2 {
-    font-size: 150%;
-  }
 
   p:nth-of-type(2) b {
     white-space: nowrap;
@@ -43,7 +49,7 @@ sessionStorage.setItem('navigation_history', JSON.stringify(history))
   }
 
   p a {
-    line-height: 2rem;
+    line-height: 2.15rem;
     border: 1px solid transparent;
   }
 

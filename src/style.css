@@ -30,6 +30,18 @@
   color: #fff;
 }
 
+/* @font-face {
+  font-family: "Sanserifing";
+  src: url("https://db.onlinewebfonts.com/t/1120bd063fd378d88dbeed72f19a8bde.eot");
+  src: url("https://db.onlinewebfonts.com/t/1120bd063fd378d88dbeed72f19a8bde.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/1120bd063fd378d88dbeed72f19a8bde.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/1120bd063fd378d88dbeed72f19a8bde.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/1120bd063fd378d88dbeed72f19a8bde.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/1120bd063fd378d88dbeed72f19a8bde.svg#Sanserifing")format("svg");
+
+  font-display: swap;
+} */
+
 :root {
   --grey: #808080;
   --blur-img: 0.5px;
@@ -38,6 +50,8 @@
   --tr-dur: 666ms; /* Initialize variable for transition duration */
   --safe-top: env(safe-area-inset-top);
   --safe-bottom: env(safe-area-inset-bottom);
+  --moto-gradient: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, transparent 75%, var(--color) 100%);
+  --s-t-gradient: linear-gradient(45deg, transparent 0%, var(--bg-alt) 33%, var(--bg) 66%, transparent 100%);
   --vh: calc((100svh - var(--safe-top) - var(--safe-bottom)) / 100);
   font-size: min(calc(2 * var(--vh)), calc(20 / 5.5 * 1vmin));
   --main-h: calc(100svh - 2.75rem - 5.5rem);
@@ -138,38 +152,6 @@
     transition-timing-function var(--tr-dur); /* Timing function */
 }
 
-body {
-  padding: 0;
-  margin: 0;
-}
-
-body::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: '';
-  width: 100dvw;
-  height: 100%;
-  background-image: url('https://1abcdesign.github.io/logo.png');
-  background-repeat: repeat;
-  background-position: center;
-  opacity: var(--bg-img-op);
-  z-index: -1;
-  filter: blur(var(--blur-img));
-  -webkit-filter: blur(var(--blur-img));
-}
-
-@media (orientation: portrait) {
-  body::after {
-    background-size: 14.2857%;
-  }
-}
-@media (orientation: landscape) {
-  body::after {
-    background-size:  7.14285%;
-  }
-}
-
 body,
 #app {
   width: 100%;
@@ -263,7 +245,7 @@ a:not(.services-link):hover,
 }
 
 a.services-link:hover {
-  background: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, transparent 75%, var(--color) 100%);
+  background: var(--moto-gradient);
 }
 
 header a.router-link-active,

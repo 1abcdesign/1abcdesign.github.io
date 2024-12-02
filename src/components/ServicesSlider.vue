@@ -1,23 +1,30 @@
 <template>
   <vueper-slides
+    lazy
+    lazy-load-on-drag
+    :visible-slides="1"
     :autoplay="true"
     :arrows="false"
     :bullets="false"
     :fixed-height="true"
     class="no-shadow bg-texture main"
-    :style="'box-shadow: inset 0 0 1rem 0.5rem var(--shadow)'"
+    style="box-shadow: inset 0 0 1rem 0.5rem var(--shadow); border: none;"
   >
     <vueper-slide
       v-for="(slide, i) in slides"
       :key="i"
-      :title="`<em>
-                <span class='first-letter'>
-                  ${$t(slide.group)[0]}
-                </span>
-                  ${$t(slide.group).slice(1)} : ${$t(slide.title)}
-              </em>`"
-      :content="slide.content"
+      :title="`
+        <em>
+          <span class='first-letter'>
+            ${$t(slide.group)[0]}
+          </span>
+            ${$t(slide.group).slice(1)} : ${$t(slide.title)}
+        </em>`"
+      :image="slide.image"
     >
+      <template #loader>
+        <logo-spinner />
+      </template>
     </vueper-slide>
   </vueper-slides>
 </template>
@@ -27,6 +34,7 @@ import { ref } from 'vue'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 import { groupedPhotos } from '@/assets/groupedPhotos'
+import LogoSpinner from './LogoSpinner.vue'
 
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
 
@@ -50,15 +58,12 @@ const slides = ref(
   interleavedPhotos.map(photo => ({
     group: `${photo.charAt(0) + '00'}`,
     title: `${photo.slice(0, 3) + '_title'}`,
-    content: `<div style="background-image: url('${ASSETS_DIR}${photo}');
-                          width: 100vmin; height: calc(17.5 * var(--main-em));
-                          background-size: cover; background-position: center;"
-              ></div>`,
+    image: `${ASSETS_DIR}${photo}`
   }))
 )
 </script>
 
-<style lang="scss" scoped>
+<style>
 .vueperslides--fixed-height {
   position: absolute;
   top: calc(23.125 * var(--main-em) + 1px);
@@ -69,8 +74,12 @@ const slides = ref(
   height: calc(18.8 * var(--main-em));
 }
 
-.vueperslide__content {
+.vueperslide__title {
+  position: absolute;
+  top: 0;
   width: 100%;
+  background: var(--s-t-gradient);
+  backdrop-filter: blur(var(--blur-drop));
 }
 
 .vueperslide__title em {
@@ -79,9 +88,11 @@ const slides = ref(
   align-items: center;
   justify-content: center;
   font-size: 90%;
+  text-shadow: 0 0 1px var(--bg);
 }
 
 .vueperslide__title em .first-letter {
+  text-shadow: none;
   width: 1.75ch;
   line-height: calc(1.33 * var(--main-em));
   margin-right: -0.1ch;

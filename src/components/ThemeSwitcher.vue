@@ -55,6 +55,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { state } from '@/store.js'
 
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR
 
@@ -69,6 +70,9 @@ const updateThemeColor = () => {
 
 const updateIconsStroke = () => {
   const strokeColor = theme.value === 'light' ? '#000' : '#fff'
+
+  state.setThemeColor(strokeColor)
+
   document.querySelectorAll('.icon').forEach(icon => {
     icon.setAttribute('stroke', strokeColor)
   })
