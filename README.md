@@ -22,11 +22,14 @@ The main files and directories are organized as follows:
 ├── src/ # Main source code directory
 │ ├── App.vue # Main app component
 │ ├── assets/ # Static assets for the app
+│ │ ├── flatPhotos.js
+│ │ └── groupedPhotos.js
 │ ├── components/ # Reusable Vue components
 │ │ ├── FooterBlock.vue
 │ │ ├── HeaderBlock.vue
 │ │ ├── LangSwitcher.vue
 │ │ ├── LoaderView.vue
+│ │ ├── LogoSpinner.vue
 │ │ ├── Logo3dView.vue
 │ │ ├── PhotoArticle.vue
 │ │ ├── PhotoGallery.vue
@@ -45,6 +48,7 @@ The main files and directories are organized as follows:
 │ ├── i18n.js # Internationalization configuration
 │ ├── main.js # App entry point
 │ ├── router.js # Router configuration
+│ ├── store.js # Reactive global store
 │ └── style.css # Global styles
 ├── index.html # Main HTML template
 ├── vite.config.js # Vite configuration file
