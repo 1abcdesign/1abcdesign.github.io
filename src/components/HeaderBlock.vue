@@ -141,8 +141,7 @@
 </template>
 
 <script setup>
-import { defineAsyncComponent } from 'vue';
-
+import { defineAsyncComponent } from 'vue'
 const ThemeSwitcher = defineAsyncComponent(() => import('./ThemeSwitcher.vue'))
 const LangSwitcher = defineAsyncComponent(() => import('./LangSwitcher.vue'))
 </script>
@@ -170,6 +169,7 @@ header {
   height: 4rem;
   width: 4rem;
   filter: url(#shadowInactive);
+  overflow: visible;
 }
 
 #logoLink:hover #logoImage {

@@ -97,7 +97,7 @@ onMounted(() => {
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .theme-switcher {
   position: relative;
   padding: 0;

@@ -293,7 +293,7 @@ const submitForm = async () => {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .contacts {
   font-size: calc(var(--main-cent) * 2.5);
 
@@ -318,20 +318,19 @@ const submitForm = async () => {
 
   & * {
     width: 33ch;
-    background: var(--bg);
     font-size: calc(var(--main-cent) * 2.5);
     letter-spacing: 0.1ch;
   }
 
   label {
     position: relative;
-    padding: 0.4rem 0 0.1rem 0;
+    margin: 0.4rem 0 0.1rem 0;
     border: none;
 
     &::before {
       content: attr(data-text);
       position: absolute;
-      top: 0;
+      top: -1ch;
       left: 0.5ch;
       display: inline-flex;
       padding: 0 0.15ch 0 0.35ch;
@@ -344,7 +343,7 @@ const submitForm = async () => {
       color: red;
       position: absolute;
       left: -1ch;
-      top: 0.5ch;
+      top: -0.5ch;
     }
 
     & > * {
@@ -353,6 +352,8 @@ const submitForm = async () => {
       border-color: var(--color);
       caret-color: var(--color);
       font-weight: bold;
+
+      background: var(--bg);
 
       &:placeholder-shown {
         font-weight: bold;

@@ -34,38 +34,14 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    if (to.hash) {
-      return new Promise((resolve) => {
-        // Затримка для рендерингу елементів, якщо вони створюються асинхронно
-        setTimeout(() => {
-          const element = document.querySelector(to.hash)
-          if (element) {
-            // Знаходимо найближчий контейнер, якщо `.services` існує
-            const container = document.querySelector('.services') || window
-            
-            // Визначаємо коректний offset для прокрутки
-            const offset = element.getBoundingClientRect().top + window.scrollY
-              || element.offsetTop
-  
-            // Виконуємо плавну прокрутку
-            container.scrollTo({
-              top: offset,
-              behavior: 'smooth',
-            })
-            resolve()
-          } else {
-            resolve(savedPosition || { top: 0 })
-          }
-        }, 100) // Невелика затримка для рендерингу
-      })
-    }
-    return savedPosition || { top: 0 }
-  }
+    // Зберігаємо стандартну поведінку для збереження позиції
+    return savedPosition || { top: 0 };
+  },
 })
 
 router.beforeEach((to, from, next) => {
 
-  if (!to.hash) state.setShowLoader(true)
+  state.setShowLoader(true)
 
   // Check if `navigation_history` exists and is a valid JSON string
   let history
@@ -92,7 +68,7 @@ router.afterEach(() => {
     setTimeout(() => {
       sessionStorage.setItem('once_loaded', true)
       state.setShowLoader(false)
-    }, 3510)
+    }, 3310)
   } else {
     setTimeout(() => {
       state.setShowLoader(false)

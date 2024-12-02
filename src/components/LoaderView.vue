@@ -4,7 +4,7 @@
     ref="logoOverlay"
     class="flex-center"
     :class="{ fadeOut: fadeOutClass }"
-    :style="{ zIndex: isVisible ? 100 : -100, opacity: isVisible ? 'inherit' : 0 }"
+    :style="{ opacity: isVisible ? 'inherit' : 0 }"
     @animationend="handleAnimationEnd"
   >
     <div id="logo2dWrapper">
@@ -190,7 +190,7 @@ watch(
   position: fixed;
   z-index: 5;
   width: 100%;
-  height: 100svh;
+  height: 100dvh;
   overflow: hidden !important;
   background: var(--bg);
   pointer-events: none;

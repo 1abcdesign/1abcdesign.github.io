@@ -22,7 +22,7 @@ const { image, title, description, isReverse, group } = defineProps([
 ])
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .photo-article {
   width: 100%;
   display: flex;
@@ -61,7 +61,7 @@ const { image, title, description, isReverse, group } = defineProps([
 }
 
 .group {
-  display: inline-block;
+  display: block;
   height: var(--main-em);
   line-height: var(--main-em);
   color: var(--shadow);
@@ -70,10 +70,10 @@ const { image, title, description, isReverse, group } = defineProps([
 .group::first-letter {
   color: var(--bg);
   background: var(--shadow);
-  text-decoration-color: transparent;
   text-decoration: underline;
   -webkit-text-decoration: underline;
   -moz-text-decoration: underline;
+  text-decoration-color: transparent;
 }
 
 .group::selection {

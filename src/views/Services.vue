@@ -55,11 +55,39 @@
 </template>
 
 <script setup>
-import { defineAsyncComponent } from 'vue';
+import { defineAsyncComponent, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 const PhotoGallery = defineAsyncComponent(() =>  import('@/components/PhotoGallery.vue'))
+
+onMounted(() => {
+  const router = useRouter()
+
+  if (router.currentRoute.value.hash) {
+    const hash = router.currentRoute.value.hash
+
+    setTimeout(() => {
+      const element = document.querySelector(hash);
+      if (element) {
+        const container = document.querySelector('.services') || window;
+
+        const offset = Math.max(
+          container === window
+            ? element.getBoundingClientRect().top + window.scrollY
+            : element.offsetTop,
+          element.offsetTop
+        )
+
+        container.scrollTo({
+          top: offset,
+          behavior: 'smooth',
+        })
+      }
+    }, 1170) // Додаткова затримка для асинхронного контенту
+  }
+})
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .services {
   .head {
     font-size: 150%;

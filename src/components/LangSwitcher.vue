@@ -160,7 +160,7 @@ onMounted(async () => {
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .lang-switcher {
   cursor: pointer;
 }

@@ -174,13 +174,12 @@ body,
 #app {
   width: 100%;
   height: calc(var(--vh) * 100);
-  min-height: calc(var(--vh) * 100);
-  overflow: hidden;
 }
 
 #app {
   flex-direction: column;
   text-align: center;
+  position: relative;
 }
 
 header,
@@ -193,7 +192,6 @@ header,
 footer {
   width: 100%;
   z-index: 1;
-  overflow: hidden;
 }
 
 header {
@@ -259,7 +257,8 @@ a:active {
 a.router-link-active,
 a:not(.services-link):hover,
 .select,
-.theme-switcher {
+.theme-switcher,
+.theme-switcher:hover {
   background: var(--link-gradient);
 }
 

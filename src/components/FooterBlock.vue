@@ -89,7 +89,7 @@
   bottom: 0;
   line-height: 2.75rem;
   display: grid;
-  grid-template-columns: calc(50% + 0.25rem + 1px) calc(50% + 0.25rem - 1px);
+  grid-template-columns: calc(50% - 0.25rem + 1px) calc(50% + 0.25rem - 1px);
 
   .links {
     height: 2.75rem;
@@ -99,7 +99,8 @@
 
   .copy-right {
     padding-top: max(0.066svh, 0.066rem);
-    margin-left: 1.5vmax;
+    position: relative;
+    left: 1.5vmax;
     font-size: 1rem;
     word-spacing: -0.075ch;
     text-align: left;
