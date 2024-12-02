@@ -10,7 +10,6 @@ This project is a modern web application built with Vue 3 and Vite, featuring a 
 - [Usage](#usage)
 - [Scripts](#scripts)
 - [Technologies](#technologies)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Project Structure
@@ -57,11 +56,14 @@ The main files and directories are organized as follows:
 
 ## Features
 
-- **Responsive Design**: Optimized for both desktop and mobile devices.
-- **3D Logo Rendering**: Renders a 3D logo with Three.js.
-- **Internationalization**: Supports multiple languages (configured in `i18n.js`).
-- **Theming**: Customizable themes with a theme switcher.
-- **Dynamic Content**: Photo galleries and service slides showcasing design services.
+- **3D Logo Rendering**: An animated 3D logo created with Three.js for an eye-catching header.
+- **Responsive Design**: Fully optimized for both desktop and mobile viewing.
+- **Internationalization**: Multilingual support with Vue I18n, easily switchable via the language switcher.
+- **Customizable Themes**: Light and dark modes available via the theme switcher.
+- **Photo Galleries**: Dynamic photo and service galleries for showcasing design projects.
+- **Contact Integration**: Contact forms with email support powered by EmailJS and real-time location data using Google Autocomplete.
+- **Error Handling**: A dedicated 404 page with custom navigation options.
+- **Optimized Performance**: Built with Vite for fast builds and efficient production-ready output.
 
 ## Installation
 
@@ -81,15 +83,17 @@ To start a local development server with hot-reloading:
 
 ```bash
 npm run dev
-Production Build
 ```
+
+### Production Build
 
 To build the application for production:
 
 ```bash
 npm run build
-Preview Production Build
 ```
+
+### Preview Production Build
 
 To preview the production build locally:
 
@@ -111,19 +115,17 @@ npm run deploy
 - **build**: Compiles the app for production.
 - **preview**: Serves the built app locally for preview.
 - **deploy**: Deploys the app to GitHub Pages after building.
+- **check:env**: Validates required environment variables in .env.
 
 ## Technologies
 
-- **Vue 3**: JavaScript framework for building user interfaces.
-- **Vite**: Development server and build tool.
-- **Three.js**: 3D graphics library for rendering the logo in 3D.
-- **Vue Router**: Router for handling navigation.
-- **Vue i18n**: Internationalization plugin for multi-language support.
-- **Sass**: Preprocessor for CSS.
-
-## Contributing
-
-If you’d like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
+- **Vue 3**: Framework for building the UI.
+- **Three.js**: Library for 3D rendering.
+- **Vite**: Build tool and development server.
+- **Vue Router**: For managing application navigation.
+- **Vue I18n**: For internationalization and multilingual support.
+- **EmailJS**: For contact form functionality.
+- **Sass**: CSS preprocessor for styling.
 
 ## License
 
