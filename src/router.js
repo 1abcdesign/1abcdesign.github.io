@@ -35,15 +35,29 @@ const router = createRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
-      const element = document.querySelector(to.hash)
-      if (element) {
-        const container = document.querySelector('.main') || window
-        container.scrollTo({
-          top: element.offsetTop,
-          behavior: 'smooth',
-        })
-        return
-      }
+      return new Promise((resolve) => {
+        // Затримка для рендерингу елементів, якщо вони створюються асинхронно
+        setTimeout(() => {
+          const element = document.querySelector(to.hash)
+          if (element) {
+            // Знаходимо найближчий контейнер, якщо `.services` існує
+            const container = document.querySelector('.services') || window
+            
+            // Визначаємо коректний offset для прокрутки
+            const offset = element.getBoundingClientRect().top + window.scrollY
+              || element.offsetTop
+  
+            // Виконуємо плавну прокрутку
+            container.scrollTo({
+              top: offset,
+              behavior: 'smooth',
+            })
+            resolve()
+          } else {
+            resolve(savedPosition || { top: 0 })
+          }
+        }, 100) // Невелика затримка для рендерингу
+      })
     }
     return savedPosition || { top: 0 }
   }

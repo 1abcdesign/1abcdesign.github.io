@@ -59,11 +59,9 @@ import { defineAsyncComponent } from 'vue';
 const PhotoGallery = defineAsyncComponent(() =>  import('@/components/PhotoGallery.vue'))
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .services {
   .head {
-    border: solid var(--shadow);
-    border-width: 1px 0;
     font-size: 150%;
     margin: 3.5rem 0 3.5rem 0;
     position: sticky;

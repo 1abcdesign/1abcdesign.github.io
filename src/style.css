@@ -141,7 +141,6 @@
 body {
   padding: 0;
   margin: 0;
-  overflow: hidden !important;
 }
 
 body::after {
@@ -177,7 +176,6 @@ body,
   height: calc(var(--vh) * 100);
   min-height: calc(var(--vh) * 100);
   overflow: hidden;
-  overscroll-behavior: none;
 }
 
 #app {
@@ -195,6 +193,7 @@ header,
 footer {
   width: 100%;
   z-index: 1;
+  overflow: hidden;
 }
 
 header {
@@ -205,7 +204,6 @@ main {
   top: 5.5rem;
   width: 100%;
   height: var(--main-h);
-  min-height: var(--main-h);
   overflow-x: hidden;
   overflow-y: auto;
 }
