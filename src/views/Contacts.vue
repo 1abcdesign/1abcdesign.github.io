@@ -293,7 +293,7 @@ const submitForm = async () => {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .contacts {
   font-size: calc(var(--main-cent) * 2.5);
 
