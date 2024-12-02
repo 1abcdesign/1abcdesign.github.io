@@ -92,13 +92,14 @@
         --safe-bottom: env(safe-area-inset-bottom, 0px);
       }
 
-      body {
+      body, #logoOverlay {
         padding: 0;
         margin: 0;
         overflow: hidden !important;
       }
 
-      body::after {
+      body::after,
+      #logoOverlay::after {
         position: absolute;
         top: 0;
         left: 0;
@@ -112,6 +113,19 @@
         z-index: -1;
         filter: blur(var(--blur-img));
         -webkit-filter: blur(var(--blur-img));
+      }
+
+      @media (orientation: portrait) {
+        body::after,
+        #logoOverlay::after {
+          background-size: 14.2857%;
+        }
+      }
+      @media (orientation: landscape) {
+        body::after,
+        #logoOverlay::after {
+          background-size:  7.14285%;
+        }
       }
 
       .moto {
@@ -195,9 +209,9 @@
         favicon.href = savedTheme === 'dark' ? 'https://1abcdesign.github.io/favicon_dark.ico' : 'https://1abcdesign.github.io/favicon_light.ico';
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-C2nf8rAF.js"></script>
+    <script type="module" crossorigin src="/assets/index-Dpm0WYiV.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vue-CSzecv1Y.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-Bf0J1Rjb.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-tr9cnsV0.css">
   </head>
   <body>
     <!-- Adding structured Schema data for organization -->
