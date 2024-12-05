@@ -1,7 +1,7 @@
 <template>
   <main class="main home flex-align flex-col">
     <logo3d-view />
-    
+
     <section class="middle flex-align flex-col">
       <h1 class="main-header grid-10">
         <span class="logo-letter flex-center">1</span>
@@ -139,7 +139,6 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
     -webkit-filter: drop-shadow(0 0 0.33ch var(--bg));
 
     & strong :nth-child(2n) {
-   
       background: var(--shadow);
     }
 
