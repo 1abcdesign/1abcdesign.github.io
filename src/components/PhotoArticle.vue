@@ -4,8 +4,7 @@
     <div class="article-info">
       <h3>
         <span class="group">{{ $t(`${group}00`) }}</span>
-        <br />
-        {{ title }}
+        <span>{{ title }}</span>
       </h3>
       <p>{{ description }}</p>
     </div>
@@ -22,7 +21,7 @@ const { image, title, description, isReverse, group } = defineProps([
 ])
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .photo-article {
   width: 100%;
   display: flex;
@@ -33,6 +32,10 @@ const { image, title, description, isReverse, group } = defineProps([
 
   h3 {
     margin-bottom: 0.2075em;
+
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   p {
