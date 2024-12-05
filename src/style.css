@@ -320,6 +320,17 @@ a:hover::after,
   position: relative;
 }
 
+.first-letter {
+  display: inline-block;
+}
+
+.first-letter::first-letter {
+  background: var(--color);
+  color: var(--bg);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+
 .bg-texture {
   backdrop-filter: blur(var(--blur-drop));
 }

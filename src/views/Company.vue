@@ -13,10 +13,10 @@
         <img :src="photos[0]" alt="V">
 
         <h3>
-          <span class="life-style">{{ $t('lifeStyle1') }}</span>
-          <span class="life-style">{{ $t('lifeStyle2') }}</span>
-          <span class="life-style">{{ $t('lifeStyle3') }}</span>
-          <span class="life-style">{{ $t('lifeStyle4') }}</span>
+          <span class="life-style first-letter">{{ $t('lifeStyle1') }}</span>
+          <span class="life-style first-letter">{{ $t('lifeStyle2') }}</span>
+          <span class="life-style first-letter">{{ $t('lifeStyle3') }}</span>
+          <span class="life-style first-letter">{{ $t('lifeStyle4') }}</span>
         </h3>
 
         <p>
@@ -128,17 +128,6 @@ const photos = [
 
       h3 {
         align-self: start;
-
-        span {
-          display: inline-block;
-
-          &::first-letter {
-            background: var(--color);
-            color: var(--bg);
-            text-decoration: underline;
-            text-decoration-color: transparent;
-          }
-        }
       }
 
       h3, p {

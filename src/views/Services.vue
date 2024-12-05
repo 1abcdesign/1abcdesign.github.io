@@ -6,7 +6,7 @@
 
     <section id="ambience">
       <div class="head box-shadow-1-05 bg-texture">
-        <h3>
+        <h3 class="group-header first-letter">
           {{ $t('a00') }}
         </h3>
 
@@ -18,7 +18,7 @@
 
     <section id="building">
       <div class="head box-shadow-1-05 bg-texture">
-        <h3>
+        <h3 class="group-header first-letter">
           {{ $t('b00') }}
         </h3>
 
@@ -30,7 +30,7 @@
 
     <section id="crafting">
       <div class="head box-shadow-1-05 bg-texture">
-        <h3>
+        <h3 class="group-header first-letter">
           {{ $t('c00') }}
         </h3>
 
@@ -42,7 +42,7 @@
 
     <section id="design">
       <div class="head box-shadow-1-05 bg-texture">
-        <h3>
+        <h3 class="group-header first-letter">
           {{ $t('d00') }}
         </h3>
 
@@ -95,17 +95,10 @@ onMounted(() => {
     position: sticky;
     top: 0;
     background: var(--bg-05);
+  }
 
-    h3:hover {
-      background: transparent;
-    }
-
-    h3::first-letter {
-      background: var(--color);
-      color: var(--bg);
-      text-decoration: underline;
-      text-decoration-color: transparent;
-    }
+  h3.group-header {
+    margin-bottom: 0.2075em;
   }
 
   h2,
