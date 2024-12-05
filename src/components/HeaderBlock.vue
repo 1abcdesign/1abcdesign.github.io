@@ -34,6 +34,7 @@
           </svg>
 
           <strong class="logo-strong grid-10">
+            <span class="logo-letter flex-center">1</span>
             <span class="logo-letter flex-center">A</span>
             <span class="logo-letter flex-center">B</span>
             <span class="logo-letter flex-center">C</span>
@@ -43,7 +44,6 @@
             <span class="logo-letter flex-center">I</span>
             <span class="logo-letter flex-center">G</span>
             <span class="logo-letter flex-center">N</span>
-            <span class="logo-letter flex-center">1</span>
           </strong>
         </router-link>
       </li>

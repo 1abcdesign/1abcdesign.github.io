@@ -1,7 +1,7 @@
 <template>
   <footer class="footer box-shadow-1-05 bg-texture">
     <section class="copy-right flex-align">
-      &copy;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;abcdesign1.com
+      &copy;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;1abcdesign.github.io
     </section>
 
     <section class="links">

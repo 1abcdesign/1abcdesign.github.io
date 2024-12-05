@@ -20,17 +20,6 @@
           </em>
         </p>
       </div>
-      <div class="person a box-shadow-1-05 bg-texture">
-        <img :src="photos[1]" alt="A">
-
-        <h3>{{ $t('lifeStyle3') }}</h3>
-
-        <p>
-          <em>
-            {{ $t('lifeStyle4') }}
-          </em>
-        </p>
-      </div>
     </section>
 
     <p>
@@ -112,12 +101,9 @@ const photos = [
   }
 
   .vip {
-    width: 100%;
     height: 27vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-content: center;
-    justify-items: center;
+    float: inline-start;
+
     gap: 0.5rem;
     padding: 0.5rem 0;
     text-align: center;

@@ -56,9 +56,9 @@ const closeMenu = () => {
 const setTitle = () => {
   const motto =
     i18n.global.locale === 'en'
-      ? 'Your turnkey choice that’s second to none!'
-      : 'Ваш вибір під ключ, що не має замін!'
-  document.title = `ABCDΞSIGN1 — ${motto}`
+      ? 'From ABC to All-Turnkey DESIGN!'
+      : 'Від ABC до Під-ключ-Все ДИЗАЙН!'
+  document.title = `1ABCDΞSIGN — ${motto}`
 }
 
 const updateIndexInfo = lang => {
@@ -70,27 +70,27 @@ const updateIndexInfo = lang => {
   const content = {
     uk: {
       description:
-        "ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін! Професійний дизайн інтер'єру, екстер'єру та ландшафтний дизайн в Україні.",
+        "1ABCDΞSIGN — Від ABC до Під-ключ-Все ДИЗАЙН! Професійний дизайн інтер'єру, екстер'єру та ландшафтний дизайн в Україні.",
       keywords:
-        "дизайн інтер'єру, екстер'єрний дизайн, ландшафтний дизайн, дизайнерські послуги, ABCDΞSIGN1, дизайн під ключ, Україна",
-      title: 'ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!',
-      ogTitle: 'ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!',
+        "дизайн інтер'єру, екстер'єрний дизайн, ландшафтний дизайн, дизайнерські послуги, 1ABCDΞSIGN, дизайн під ключ, Україна",
+      title: '1ABCDΞSIGN — Від ABC до Під-ключ-Все ДИЗАЙН!',
+      ogTitle: '1ABCDΞSIGN — Від ABC до Під-ключ-Все ДИЗАЙН!',
       ogDescription:
         'Від Ескізу до Дизайну Під Ключ — Все в Одному Місці. Надаємо комплексні дизайнерські послуги.',
-      twitterTitle: 'ABCDΞSIGN1 — Ваш вибір під ключ, що не має замін!',
+      twitterTitle: '1ABCDΞSIGN — Від ABC до Під-ключ-Все ДИЗАЙН!',
       twitterDescription:
         'Від Ескізу до Дизайну Під Ключ. Надаємо дизайнерські послуги для вашого простору.',
     },
     en: {
       description:
-        'ABCDΞSIGN1 — Your turnkey choice that’s second to none! Professional interior, exterior, and landscape design services in Ukraine.',
+        '1ABCDΞSIGN — From ABC to All-Turnkey DESIGN! Professional interior, exterior, and landscape design services in Ukraine.',
       keywords:
-        'interior design, exterior design, landscape design, design services, ABCDΞSIGN1, turnkey design, Ukraine',
-      title: 'ABCDΞSIGN1 — Your turnkey choice that’s second to none!',
-      ogTitle: 'ABCDΞSIGN1 — Your turnkey choice that’s second to none!',
+        'interior design, exterior design, landscape design, design services, 1ABCDΞSIGN, turnkey design, Ukraine',
+      title: '1ABCDΞSIGN — From ABC to All-Turnkey DESIGN!',
+      ogTitle: '1ABCDΞSIGN — From ABC to All-Turnkey DESIGN!',
       ogDescription:
         'From Sketch to Turnkey Design — All in One Place. We provide comprehensive design services.',
-      twitterTitle: 'ABCDΞSIGN1 — Your turnkey choice that’s second to none!',
+      twitterTitle: '1ABCDΞSIGN — From ABC to All-Turnkey DESIGN!',
       twitterDescription:
         'From Sketch to Turnkey Design. Providing design services for your space.',
     },

@@ -1,9 +1,10 @@
 <template>
   <main class="main home flex-align flex-col">
     <logo3d-view />
-
+    
     <section class="middle flex-align flex-col">
       <h1 class="main-header grid-10">
+        <span class="logo-letter flex-center">1</span>
         <span class="logo-letter flex-center">A</span>
         <span class="logo-letter flex-center">B</span>
         <span class="logo-letter flex-center">C</span>
@@ -13,14 +14,29 @@
         <span class="logo-letter flex-center">I</span>
         <span class="logo-letter flex-center">G</span>
         <span class="logo-letter flex-center">N</span>
-        <span class="logo-letter flex-center">1</span>
       </h1>
 
-      <router-link to="/contacts" :title="$t('moto_CTA')">
-          <strong class="moto">
-          <em :data-inner-text="$t('moto')">
-            {{ $t('moto') }}
-          </em>
+      <router-link to="/contacts" :title="$t('moto_CTA')" class="moto">
+        <strong>
+          <span class="moto-span">
+            {{ $t('moto1') }}
+          </span>
+          &nbsp;
+          <span class="moto-span">
+            {{ $t('moto2') }}
+          </span>
+          &nbsp;
+          <span class="moto-span">
+            {{ $t('moto3') }}
+          </span>
+          &nbsp;
+          <span class="moto-span">
+            {{ $t('moto4') }}
+          </span>
+          &nbsp;
+          <span class="moto-span">
+            {{ $t('moto5') }}
+          </span>
         </strong>
       </router-link>
 
@@ -105,34 +121,28 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
   }
 
   .moto {
-    position: relative;
     display: block;
+    text-decoration: none;
+    width: 100vw;
     height: calc(1.875 * var(--main-em) + 1px);
-    padding: max(calc(0.25 * var(--main-em)), 0.25rem) max(calc(0.25 * var(--main-em)), 0.25rem) 0;
+    padding: max(calc(0.33 * var(--main-em)), 0.33rem) max(calc(0.33 * var(--main-em)), 0.33rem) 0;
     background: linear-gradient(45deg, var(--color), transparent, var(--color));
     font-size: calc(1.25 * var(--main-em));
 
     --spacing: 0.125ch;
     letter-spacing: var(--spacing);
-    word-spacing: var(--spacing);
+    word-spacing: calc(var(--spacing) * -1);
 
-    & em {
-      position: relative;
-      display: inline-block;
-      width: 100vw;
-      font-weight: bold;
-      text-shadow: 0 0 0.5ch var(--bg);
-      filter: drop-shadow(0 0 0.33ch var(--bg));
-      -webkit-filter: drop-shadow(0 0 0.33ch var(--bg));
+    font-weight: bold;
+    text-shadow: 0 0 0.5ch var(--bg);
+    filter: drop-shadow(0 0 0.33ch var(--bg));
+    -webkit-filter: drop-shadow(0 0 0.33ch var(--bg));
 
-      &::after {
-        content: attr(data-inner-text);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-      }
+    & strong :nth-child(2n) {
+      border: 1px solid var(--color);
+      background: var(--grey);
     }
+
   }
 
   ol {
