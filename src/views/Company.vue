@@ -12,11 +12,16 @@
       <div class="person v box-shadow-1-05 bg-texture">
         <img :src="photos[0]" alt="V">
 
-        <h3>{{ $t('lifeStyle1') }}</h3>
+        <h3>
+          <span class="life-style">{{ $t('lifeStyle1') }}</span>
+          <span class="life-style">{{ $t('lifeStyle2') }}</span>
+          <span class="life-style">{{ $t('lifeStyle3') }}</span>
+          <span class="life-style">{{ $t('lifeStyle4') }}</span>
+        </h3>
 
         <p>
           <em>
-            {{ $t('lifeStyle2') }}
+            {{ $t('lifeStyle5') }}
           </em>
         </p>
       </div>
@@ -123,6 +128,17 @@ const photos = [
 
       h3 {
         align-self: start;
+
+        span {
+          display: inline-block;
+
+          &::first-letter {
+            background: var(--color);
+            color: var(--bg);
+            text-decoration: underline;
+            text-decoration-color: transparent;
+          }
+        }
       }
 
       h3, p {

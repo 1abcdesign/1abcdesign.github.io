@@ -149,8 +149,11 @@ const messages = {
     aboutUs22: '). This vision has inspired us to become a company fully charged with creating beauty, harmony, and thoughtful Design in all forms: from landscapes and exteriors to interiors and web. Still, our primary focus is on interior Design, finishing works, and decor.',
     aboutUs3: 'We excel in creating concrete structures, ranging from building frameworks to concrete furniture. We are proficient in setting up communication systems, mastering finishing techniques, and installing a variety of elements and equipment. We continually broaden our professional skills, enhance our experience, refine our tools, and grow our portfolio — all while increasing the number of satisfied clients.',
     aboutUs4: 'If you need help creating a functional and beautifully designed space “turnkey” and with all the right feng shui, reach out in the way that suits you best. We’d be thrilled to help bring your boldest, most intricate design projects to life.',
-    lifeStyle1: 'Auto-Biography-Coding-Designers',
-    lifeStyle2: 'Living to design, designing for life.',
+    lifeStyle1: 'Auto-',
+    lifeStyle2: 'Biography-',
+    lifeStyle3: 'Coding-',
+    lifeStyle4: 'Designers',
+    lifeStyle5: 'Living to design, designing for life.',
   },
   uk: {
     moto1: 'Від',
@@ -300,8 +303,11 @@ const messages = {
     aboutUs22: '). Саме це надихнуло нас стати компанією, зарядженою на створення краси, гармонії та продуманого до деталей Дизайну у всіх його проявах: ландшафтному, екстер’єрному, інтер’єрному та веб. Однак наш чіткий фокус — саме на Дизайні приміщень, оздоблювальних роботах та декорі.',
     aboutUs3: 'Ми також вміємо створювати бетонні конструкції — від каркасів будівель до бетонних меблів. Добре знаємося на облаштуванні комунікацій, володіємо багатьма оздоблювальними техніками та маємо багатий досвід монтажу різних елементів і приладів. Постійно розширюємо спектр своїх професійних компетенцій, досвід, інструментарій — і портфоліо, збільшуючи кількість задоволених клієнтів.',
     aboutUs4: 'Якщо вам потрібна допомога в облаштуванні простору “під ключ” і з усім феншуєм — звертайтеся зручним для вас способом. Будемо раді допомогти в реалізації ваших найсміливіших і комплексних дизайнерських проектів.',
-    lifeStyle1: 'Auto-Biography-Coding-Designers',
-    lifeStyle2: 'Жити дизайном, творити для життя.',
+    lifeStyle1: 'Auto-',
+    lifeStyle2: 'Biography-',
+    lifeStyle3: 'Coding-',
+    lifeStyle4: 'Designers',
+    lifeStyle5: 'Жити дизайном, творити для життя.',
   },
 }
 
