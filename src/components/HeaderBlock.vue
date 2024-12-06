@@ -177,7 +177,7 @@ header {
 }
 
 .logo-strong {
-  width: 4.2rem;
+  width: 4rem;
   height: 0.75rem;
   font-size: 0.75rem;
   box-shadow: 0 0 0.125rem 0.0625rem var(--shadow);

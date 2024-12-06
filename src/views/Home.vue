@@ -143,12 +143,9 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
     word-spacing: calc(var(--spacing) * -3);
 
     font-weight: bold;
-    text-shadow: 0 0 0.5ch var(--bg);
-    filter: drop-shadow(0 0 0.33ch var(--bg));
-    -webkit-filter: drop-shadow(0 0 0.33ch var(--bg));
-
-
-
+    text-shadow: 0 0 0.25ch var(--bg);
+    filter: drop-shadow(0 0 0.1ch var(--bg));
+    -webkit-filter: drop-shadow(0 0 0.1ch var(--bg));
   }
 
   ol {

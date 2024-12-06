@@ -2,7 +2,7 @@
   <div
     class="canvas-container flex-center"
     ref="canvasContainer"
-    style="width: 100%; height: calc(16.5 * var(--main-em)); background-color: transparent;"
+    style="width: 100%; height: calc(16.5 * var(--main-em)); background-color: transparent; "
   ></div>
 </template>
 

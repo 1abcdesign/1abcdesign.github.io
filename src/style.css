@@ -34,7 +34,6 @@
   --grey: #808080;
   --blur-img: 0.5px;
   --blur-drop: 0.142857rem;
-  --bg-img-op: 0.15;
   --tr-dur: 666ms; /* Initialize variable for transition duration */
   --safe-top: env(safe-area-inset-top);
   --safe-bottom: env(safe-area-inset-bottom);

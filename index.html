@@ -57,7 +57,6 @@
         --bg: #fff;
         --bg-05: #fff2;
         --bg-alt: #ddd;
-        --bg-img-op: 0.15;
         --color: #000;
         --color-alt: #222;
         --shadow: #8888;
@@ -74,7 +73,6 @@
         --bg: #000;
         --bg-05: #0002;
         --bg-alt: #222;
-        --bg-img-op: 0.2;
         --color: #fff;
         --color-alt: #ddd;
         --shadow: #8888;
@@ -90,6 +88,7 @@
       :root {
         --safe-top: env(safe-area-inset-top, 0px);
         --safe-bottom: env(safe-area-inset-bottom, 0px);
+        --bg-img-op: 0.1;
       }
 
       body, #logoOverlay {
@@ -109,7 +108,7 @@
         background-image: url('https://1abcdesign.github.io/logo.png');
         background-repeat: repeat;
         background-position: center;
-        opacity: var(--bg-img-op);
+        opacity: 0.1;
         z-index: -1;
         filter: blur(var(--blur-img));
         -webkit-filter: blur(var(--blur-img));
