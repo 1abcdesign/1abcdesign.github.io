@@ -20,31 +20,11 @@
         <span class="logo-letter flex-center">N</span>
       </h1>
 
-      <router-link to="/contacts" :title="$t('moto_CTA')" class="moto">
-        <strong>
-          <span class="moto-span">
-            {{ $t('moto1') }}
-          </span>
-          &nbsp;
-          <span class="moto-span">
-            {{ $t('moto2') }}
-          </span>
-          &nbsp;
-          <span class="moto-span">
-            {{ $t('moto3') }}
-          </span>
-          &nbsp;
-          <span class="moto-span">
-            {{ $t('moto4') }}
-          </span>
-          &nbsp;
-          <span class="moto-span">
-            {{ $t('moto5') }}
-          </span>
-          &nbsp;
-          <span class="moto-span">
-            {{ $t('moto6') }}
-          </span>
+      <router-link to="/contacts" :title="$t('moto_CTA')">
+        <strong class="moto">
+          <em :data-moto="$t('moto')">
+            {{ $t('moto') }}
+          </em>
         </strong>
       </router-link>
 
@@ -98,7 +78,7 @@ const ServicesSlider = defineAsyncComponent(() => import('@/components/ServicesS
 const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vue'))
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .home {
   justify-content: flex-start;
   overflow: hidden;
@@ -115,6 +95,7 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
     position: relative;
     width: calc(16 * var(--main-em));
     height: calc(3 * var(--main-em));
+    line-height: calc(3 * var(--main-em));
     border: calc(0.5 * var(--main-em)) solid transparent;
     margin: 0;
     font-size: calc(3 * var(--main-em));
@@ -124,28 +105,38 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
     -webkit-filter: drop-shadow(0 0 0.125ch var(--color-alt));
 
     .logo-letter {
-      top: 0.25ch;
+      line-height: calc(1.75 * var(--main-em));
+      padding-top: calc(0.4 * var(--main-em));
     }
   }
 
   .moto {
+    position: relative;
     display: block;
     text-decoration: none;
     width: 100vw;
     height: calc(1.875 * var(--main-em) + 1px);
     padding-top: max(calc(0.33 * var(--main-em)), 0.33rem);
-    padding-left: max(calc(1.5 * var(--main-em)), 1.5rem);
     background: linear-gradient(45deg, var(--color), transparent, var(--color));
     font-size: calc(1.25 * var(--main-em));
 
-    --spacing: 0.15ch;
-    letter-spacing: var(--spacing);
-    word-spacing: calc(var(--spacing) * -3);
+    & em {
+      position: relative;
+      display: inline-block;
+      width: 100vw;
+      font-weight: bold;
+      text-shadow: 0 0 0.5ch var(--bg);
+      filter: drop-shadow(0 0 0.33ch var(--bg));
+      -webkit-filter: drop-shadow(0 0 0.33ch var(--bg));
 
-    font-weight: bold;
-    text-shadow: 0 0 0.25ch var(--bg);
-    filter: drop-shadow(0 0 0.1ch var(--bg));
-    -webkit-filter: drop-shadow(0 0 0.1ch var(--bg));
+      &::after {
+        content: attr(data-moto);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
   }
 
   ol {

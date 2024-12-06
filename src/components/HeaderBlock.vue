@@ -44,6 +44,7 @@
             <span class="logo-letter flex-center">I</span>
             <span class="logo-letter flex-center">G</span>
             <span class="logo-letter flex-center">N</span>
+            <!-- 1ABCDΞSIGN -->
           </strong>
         </router-link>
       </li>
@@ -180,13 +181,15 @@ header {
   width: 4rem;
   height: 0.75rem;
   font-size: 0.75rem;
+  line-height: 0.75rem;
   box-shadow: 0 0 0.125rem 0.0625rem var(--shadow);
   filter: drop-shadow(0 0 0.125ch var(--color-alt));
   -webkit-filter: drop-shadow(0 0 0.125ch var(--color-alt));
   border: 0.125rem solid transparent;
 
   .logo-letter {
-    top: 0.3ch;
+    padding-top: 0.15rem;
+    line-height: 0.375rem;
   }
 }
 

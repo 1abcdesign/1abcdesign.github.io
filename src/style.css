@@ -312,24 +312,6 @@ a:hover::after,
   -webkit-filter: blur(var(--blur-img));
 }
 
-.logo-letter {
-  width: 100%;
-  align-self: center;
-  justify-self: center;
-  position: relative;
-}
-
-.first-letter {
-  display: inline-block;
-}
-
-.first-letter::first-letter {
-  background: var(--color);
-  color: var(--bg);
-  text-decoration: underline;
-  text-decoration-color: transparent;
-}
-
 .bg-texture {
   backdrop-filter: blur(var(--blur-drop));
 }
@@ -357,8 +339,26 @@ a:hover::after,
 .grid-10 {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
+  justify-content: center;
   justify-items: center;
-  align-content: center;
+}
+
+.logo-letter {
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  position: relative;
+}
+
+.first-letter {
+  display: inline-block;
+}
+
+.first-letter::first-letter {
+  background: var(--color);
+  color: var(--bg);
+  text-decoration: underline;
+  text-decoration-color: transparent;
 }
 
 .pac-container * {

@@ -2,12 +2,7 @@ import { createI18n } from 'vue-i18n'
 
 const messages = {
   en: {
-    moto1: 'ONE',
-    moto2: 'from',
-    moto3: '«A-B-C»',
-    moto4: 'to',
-    moto5: '«All-Turnkey»',
-    moto6: 'DESIGN!',
+    moto: 'ONE from «A-B-C» to «All-Turnkey» DESIGN!',
     headerTitle: 'ONE «A-B-C» DESIGN',
     transcription: 'One A-B-C Design',
     moto_CTA: 'Let’s start and finish your project together – cut the ribbon to success with us!',
@@ -159,12 +154,7 @@ const messages = {
     lifeStyle5: 'Living to design, designing for life.',
   },
   uk: {
-    moto1: 'ОДИН',
-    moto2: 'від',
-    moto3: '«А-Б-Ц»',
-    moto4: 'до',
-    moto5: '«Під-ключ-Все»',
-    moto6: 'ДИЗАЙН!',
+    moto: 'ОДИН від «А-Б-Ц» до «Під-ключ-Все» ДИЗАЙН!',
     headerTitle: 'ОДИН «А-Б-Ц» ДИЗАЙН',
     transcription: 'Один А-Б-Ц Дизайн',
     moto_CTA: 'Розпочнемо та завершимо ваш проєкт разом – переріжемо стрічку успіху!',
