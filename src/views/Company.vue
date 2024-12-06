@@ -10,7 +10,7 @@
 
     <section class="vip">
       <div class="person v box-shadow-1-05 bg-texture">
-        <img :src="photos[0]" alt="V">
+        <img :src="photo" alt="V">
 
         <h3>
           <span class="life-style first-letter">{{ $t('lifeStyle1') }}</span>
@@ -67,10 +67,7 @@
 
 <script setup>
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
-const photos = [
-  `${ASSETS_DIR}photo_v.webp`,
-  `${ASSETS_DIR}photo_a.webp`,
-]
+const photo = `${ASSETS_DIR}photo.webp`
 </script>
 
 <style lang="scss" scoped>
