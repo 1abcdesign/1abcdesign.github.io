@@ -21,7 +21,7 @@ const { image, title, description, isReverse, group } = defineProps([
 ])
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .photo-article {
   width: 100%;
   display: flex;

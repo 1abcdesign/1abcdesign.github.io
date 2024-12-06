@@ -3,7 +3,11 @@
     <logo3d-view />
 
     <section class="middle flex-align flex-col">
-      <h1 class="main-header grid-10">
+      <h1
+        class="main-header grid-10"
+        :title="$t('headerTitle')"
+        :area-label="$t('transcription')"
+      >
         <span class="logo-letter flex-center">1</span>
         <span class="logo-letter flex-center">A</span>
         <span class="logo-letter flex-center">B</span>
@@ -36,6 +40,10 @@
           &nbsp;
           <span class="moto-span">
             {{ $t('moto5') }}
+          </span>
+          &nbsp;
+          <span class="moto-span">
+            {{ $t('moto6') }}
           </span>
         </strong>
       </router-link>
@@ -125,22 +133,21 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
     text-decoration: none;
     width: 100vw;
     height: calc(1.875 * var(--main-em) + 1px);
-    padding: max(calc(0.33 * var(--main-em)), 0.33rem) max(calc(0.33 * var(--main-em)), 0.33rem) 0;
+    padding-top: max(calc(0.33 * var(--main-em)), 0.33rem);
+    padding-left: max(calc(1.5 * var(--main-em)), 1.5rem);
     background: linear-gradient(45deg, var(--color), transparent, var(--color));
     font-size: calc(1.25 * var(--main-em));
 
-    --spacing: 0.125ch;
+    --spacing: 0.15ch;
     letter-spacing: var(--spacing);
-    word-spacing: calc(var(--spacing) * -4);
+    word-spacing: calc(var(--spacing) * -3);
 
     font-weight: bold;
     text-shadow: 0 0 0.5ch var(--bg);
     filter: drop-shadow(0 0 0.33ch var(--bg));
     -webkit-filter: drop-shadow(0 0 0.33ch var(--bg));
 
-    & strong :nth-child(2n) {
-      background: var(--shadow);
-    }
+
 
   }
 

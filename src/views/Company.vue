@@ -66,8 +66,8 @@
 </template>
 
 <script setup>
-const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
-const photo = `${ASSETS_DIR}photo.webp`
+const BASE_URL = import.meta.env.BASE_URL
+const photo = `${BASE_URL}photo.webp`
 </script>
 
 <style lang="scss" scoped>

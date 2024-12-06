@@ -1,6 +1,6 @@
 # 1abcdesign.github.io
 
-This project is a modern web application built with Vue 3 and Vite, featuring a dynamic user interface, 3D rendering, internationalization, and contact functionalities. It serves as the frontend for **ABCDesignOne** and provides users with an interactive experience, showcasing various services and gallery items in a structured, multi-lingual format.
+This project is a modern web application built with Vue 3 and Vite, featuring a dynamic user interface, 3D rendering, internationalization, and contact functionalities. It serves as the frontend for **1ABCDESIGN** and provides users with an interactive experience, showcasing various services and gallery items in a structured, multi-lingual format.
 
 ## Table of Contents
 

@@ -56,8 +56,8 @@ const closeMenu = () => {
 const setTitle = () => {
   const motto =
     i18n.global.locale === 'en'
-      ? 'From ABC to All-Turnkey DESIGN!'
-      : 'Від ABC до Під-ключ-Все ДИЗАЙН!'
+      ? 'ONE from «A-B-C» to «All-Turnkey» DESIGN!'
+      : 'ОДИН від «А-Б-Ц» до «Під-ключ-Все» ДИЗАЙН!'
   document.title = `1ABCDΞSIGN — ${motto}`
 }
 
@@ -70,27 +70,27 @@ const updateIndexInfo = lang => {
   const content = {
     uk: {
       description:
-        "1ABCDΞSIGN — Від ABC до Під-ключ-Все ДИЗАЙН! Професійний дизайн інтер'єру, екстер'єру та ландшафтний дизайн в Україні.",
+        "1ABCDΞSIGN — ОДИН від «А-Б-Ц» до «Під-ключ-Все» ДИЗАЙН! Професійний дизайн інтер'єру, екстер'єру та ландшафтний дизайн в Україні.",
       keywords:
         "дизайн інтер'єру, екстер'єрний дизайн, ландшафтний дизайн, дизайнерські послуги, 1ABCDΞSIGN, дизайн під ключ, Україна",
-      title: '1ABCDΞSIGN — Від ABC до Під-ключ-Все ДИЗАЙН!',
-      ogTitle: '1ABCDΞSIGN — Від ABC до Під-ключ-Все ДИЗАЙН!',
+      title: '1ABCDΞSIGN — ОДИН від «А-Б-Ц» до «Під-ключ-Все» ДИЗАЙН!',
+      ogTitle: '1ABCDΞSIGN — ОДИН від «А-Б-Ц» до «Під-ключ-Все» ДИЗАЙН!',
       ogDescription:
         'Від Ескізу до Дизайну Під Ключ — Все в Одному Місці. Надаємо комплексні дизайнерські послуги.',
-      twitterTitle: '1ABCDΞSIGN — Від ABC до Під-ключ-Все ДИЗАЙН!',
+      twitterTitle: '1ABCDΞSIGN — ОДИН від «А-Б-Ц» до «Під-ключ-Все» ДИЗАЙН!',
       twitterDescription:
         'Від Ескізу до Дизайну Під Ключ. Надаємо дизайнерські послуги для вашого простору.',
     },
     en: {
       description:
-        '1ABCDΞSIGN — From ABC to All-Turnkey DESIGN! Professional interior, exterior, and landscape design services in Ukraine.',
+        '1ABCDΞSIGN — ONE from «A-B-C» to «All-Turnkey» DESIGN! Professional interior, exterior, and landscape design services in Ukraine.',
       keywords:
         'interior design, exterior design, landscape design, design services, 1ABCDΞSIGN, turnkey design, Ukraine',
-      title: '1ABCDΞSIGN — From ABC to All-Turnkey DESIGN!',
-      ogTitle: '1ABCDΞSIGN — From ABC to All-Turnkey DESIGN!',
+      title: '1ABCDΞSIGN — ONE from «A-B-C» to «All-Turnkey» DESIGN!',
+      ogTitle: '1ABCDΞSIGN — ONE from «A-B-C» to «All-Turnkey» DESIGN!',
       ogDescription:
         'From Sketch to Turnkey Design — All in One Place. We provide comprehensive design services.',
-      twitterTitle: '1ABCDΞSIGN — From ABC to All-Turnkey DESIGN!',
+      twitterTitle: '1ABCDΞSIGN — ONE from «A-B-C» to «All-Turnkey» DESIGN!',
       twitterDescription:
         'From Sketch to Turnkey Design. Providing design services for your space.',
     },
@@ -160,7 +160,7 @@ onMounted(async () => {
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .lang-switcher {
   cursor: pointer;
 }
@@ -170,6 +170,7 @@ onMounted(async () => {
   border-radius: 1.25rem;
   justify-content: space-between;
   overflow: hidden;
+  gap: 0.125rem;
 
   &::after {
     transition: all var(--tr-dur);
