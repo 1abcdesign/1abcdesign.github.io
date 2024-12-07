@@ -188,7 +188,7 @@ header {
   border: 0.125rem solid transparent;
 
   .logo-letter {
-    padding-top: 0.15rem;
+    padding-top: 0.1875rem;
     line-height: 0.375rem;
   }
 }

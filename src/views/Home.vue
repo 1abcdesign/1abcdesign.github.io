@@ -119,6 +119,9 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
     padding-top: max(calc(0.33 * var(--main-em)), 0.33rem);
     background: linear-gradient(45deg, var(--color), transparent, var(--color));
     font-size: calc(1.25 * var(--main-em));
+    --spacing: -0.033ch;
+    letter-spacing: var(--spacing);
+    word-spacing: var(--spacing);
 
     & em {
       position: relative;
