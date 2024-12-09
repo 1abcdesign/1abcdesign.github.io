@@ -1,10 +1,10 @@
 <template>
   <main class="company flex-align flex-col">
-    <p>
+    <p class="first-letter">
       {{ $t('aboutUs1') }}
     </p>
 
-    <p class="with-love">
+    <p class="with-love first-letter">
       {{ $t('aboutUs21') }}<span class="heart">❤</span>{{ $t('aboutUs22') }}
     </p>
 
@@ -27,7 +27,7 @@
       </div>
     </section>
 
-    <p>
+    <p class="first-letter">
       {{ $t('aboutUs3') }}
     </p>
 
@@ -73,15 +73,11 @@ const photo = `${BASE_URL}photo.webp`
 <style lang="scss" scoped>
 .company {
   padding: 1rem 0.5rem;
-  font-size: calc(var(--main-cent) * 2.2);
   text-align: left;
+  font-size: max(1rem, calc(0.9 * var(--main-em)));
 
-  p {
-    text-indent: 2ch;
-
-    &:not(.person p)::first-letter {
-      font-weight: bold;
-    }
+  p:not(.person p)::first-letter {
+    font-weight: bold;
   }
 
   max-width: 70ch;

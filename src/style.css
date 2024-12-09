@@ -313,6 +313,17 @@ a:hover::after,
   text-decoration-color: transparent;
 }
 
+.first-word {
+  display: inline-block;
+}
+
+.first-word::first-word {
+  background: var(--color);
+  color: var(--bg);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+
 .pac-container * {
   background-color: var(--bg);
   color: var(--color);
