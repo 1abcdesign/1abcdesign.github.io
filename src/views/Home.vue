@@ -4,11 +4,10 @@
 
     <section class="middle flex-align flex-col">
       <h1
-        class="main-header grid-10"
+        class="main-header grid-9"
         :title="$t('headerTitle')"
         :area-label="$t('transcription')"
       >
-        <span class="logo-letter flex-center">1</span>
         <span class="logo-letter flex-center">A</span>
         <span class="logo-letter flex-center">B</span>
         <span class="logo-letter flex-center">C</span>
@@ -118,10 +117,7 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
     height: calc(1.875 * var(--main-em) + 1px);
     padding-top: max(calc(0.33 * var(--main-em)), 0.33rem);
     background: linear-gradient(45deg, var(--color), transparent, var(--color));
-    font-size: calc(1.25 * var(--main-em));
-    --spacing: -0.033ch;
-    letter-spacing: var(--spacing);
-    word-spacing: var(--spacing);
+    font-size: calc(1.33 * var(--main-em));
 
     & em {
       position: relative;
@@ -148,6 +144,7 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     font-weight: bold;
+    overflow: hidden;
 
     @media (orientation: landscape) {
       border-left: 1px solid var(--shadow);
@@ -160,10 +157,12 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
 
       a {
         display: block;
-        line-height: calc(1.75 * var(--main-em));
-        font-size: calc(1.35 * var(--main-em));
+        line-height: calc(2.5 * var(--main-em));
+        font-size: calc(1.33 * var(--main-em));
         padding: 1px 0 0 0;
         text-decoration: none;
+        position: relative;
+        top: calc(-0.5 * var(--main-em));
       }
     }
 
@@ -177,12 +176,14 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
     }
 
     li::first-letter {
+      border: 1px solid var(--color);
       background: var(--color);
       color: var(--bg);
       text-decoration: underline transparent !important;
     }
 
     li:hover::first-letter {
+      border: 1px solid var(--bg);
       background: var(--bg);
       color: var(--color);
       text-decoration: underline var(--color) !important;

@@ -14,6 +14,7 @@
 }
 
 * {
+  text-shadow: 0 0 1.5px var(--gold);
   box-sizing: border-box; /* Ensures consistent box sizing across all elements */
   font-family: 'Sanserifing', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Sets the font family for all text */
   line-height: 100%; /* Sets the line height */
@@ -261,7 +262,7 @@ a:hover::after,
   height: 2.5rem;
   stroke: var(--color);
   filter: blur(var(--blur-img));
-  -webkit-filter: blur(var(--blur-img));
+  -webkit-filter: blur(var(--blur-img)) drop-shadow(0 0 1px var(--gold));
 }
 
 .bg-texture {
@@ -288,9 +289,9 @@ a:hover::after,
   justify-content: center;
 }
 
-.grid-10 {
+.grid-9 {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   justify-content: center;
   justify-items: center;
 }

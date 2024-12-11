@@ -56,9 +56,9 @@ const closeMenu = () => {
 const setTitle = () => {
   const motto =
     i18n.global.locale === 'en'
-      ? 'ONE from «A-B-C» to «All-Turnkey» DESIGN!'
-      : 'ОДИН від «А-Б-Ц» до «Під-ключ-Все» ДИЗАЙН!'
-  document.title = `1ABCDΞSIGN — ${motto}`
+      ? 'From «A-B-C» to «All-Turnkey» Design!'
+      : 'Від «А-Б-Ц» до «Під-ключ-Все» Дизайн!'
+  document.title = `ABCDΞSIGN — ${motto}`
 }
 
 const updateIndexInfo = lang => {
@@ -70,27 +70,27 @@ const updateIndexInfo = lang => {
   const content = {
     uk: {
       description:
-        "1ABCDΞSIGN — ОДИН від «А-Б-Ц» до «Під-ключ-Все» ДИЗАЙН! Професійний дизайн інтер'єру, екстер'єру та ландшафтний дизайн в Україні.",
+        "ABCDΞSIGN — Від «А-Б-Ц» до «Під-ключ-Все» Дизайн! Професійний дизайн інтер'єру, екстер'єру та ландшафтний дизайн в Україні.",
       keywords:
-        "дизайн інтер'єру, екстер'єрний дизайн, ландшафтний дизайн, дизайнерські послуги, 1ABCDΞSIGN, дизайн під ключ, Україна",
-      title: '1ABCDΞSIGN — ОДИН від «А-Б-Ц» до «Під-ключ-Все» ДИЗАЙН!',
-      ogTitle: '1ABCDΞSIGN — ОДИН від «А-Б-Ц» до «Під-ключ-Все» ДИЗАЙН!',
+        "дизайн інтер'єру, екстер'єрний дизайн, ландшафтний дизайн, дизайнерські послуги, ABCDΞSIGN, дизайн під ключ, Україна",
+      title: 'ABCDΞSIGN — Від «А-Б-Ц» до «Під-ключ-Все» Дизайн!',
+      ogTitle: 'ABCDΞSIGN — Від «А-Б-Ц» до «Під-ключ-Все» Дизайн!',
       ogDescription:
         'Від Ескізу до Дизайну Під Ключ — Все в Одному Місці. Надаємо комплексні дизайнерські послуги.',
-      twitterTitle: '1ABCDΞSIGN — ОДИН від «А-Б-Ц» до «Під-ключ-Все» ДИЗАЙН!',
+      twitterTitle: 'ABCDΞSIGN — Від «А-Б-Ц» до «Під-ключ-Все» Дизайн!',
       twitterDescription:
         'Від Ескізу до Дизайну Під Ключ. Надаємо дизайнерські послуги для вашого простору.',
     },
     en: {
       description:
-        '1ABCDΞSIGN — ONE from «A-B-C» to «All-Turnkey» DESIGN! Professional interior, exterior, and landscape design services in Ukraine.',
+        'ABCDΞSIGN — From «A-B-C» to «All-Turnkey» Design! Professional interior, exterior, and landscape design services in Ukraine.',
       keywords:
-        'interior design, exterior design, landscape design, design services, 1ABCDΞSIGN, turnkey design, Ukraine',
-      title: '1ABCDΞSIGN — ONE from «A-B-C» to «All-Turnkey» DESIGN!',
-      ogTitle: '1ABCDΞSIGN — ONE from «A-B-C» to «All-Turnkey» DESIGN!',
+        'interior design, exterior design, landscape design, design services, ABCDΞSIGN, turnkey design, Ukraine',
+      title: 'ABCDΞSIGN — From «A-B-C» to «All-Turnkey» Design!',
+      ogTitle: 'ABCDΞSIGN — From «A-B-C» to «All-Turnkey» Design!',
       ogDescription:
         'From Sketch to Turnkey Design — All in One Place. We provide comprehensive design services.',
-      twitterTitle: '1ABCDΞSIGN — ONE from «A-B-C» to «All-Turnkey» DESIGN!',
+      twitterTitle: 'ABCDΞSIGN — From «A-B-C» to «All-Turnkey» Design!',
       twitterDescription:
         'From Sketch to Turnkey Design. Providing design services for your space.',
     },

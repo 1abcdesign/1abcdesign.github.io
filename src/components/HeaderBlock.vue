@@ -18,7 +18,7 @@
             >
             <defs>
               <filter id="shadowInactive" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="var(--color)" flood-opacity="0.5" />
+                <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="var(--gold)" flood-opacity="1" />
               </filter>
             </defs>
             <!-- Vertical line -->
@@ -33,8 +33,7 @@
             <circle cx="200" cy="200" r="186" fill="none" />
           </svg>
 
-          <strong class="logo-strong grid-10">
-            <span class="logo-letter flex-center">1</span>
+          <strong class="logo-strong grid-9">
             <span class="logo-letter flex-center">A</span>
             <span class="logo-letter flex-center">B</span>
             <span class="logo-letter flex-center">C</span>
@@ -44,7 +43,7 @@
             <span class="logo-letter flex-center">I</span>
             <span class="logo-letter flex-center">G</span>
             <span class="logo-letter flex-center">N</span>
-            <!-- 1ABCDΞSIGN -->
+            <!-- ABCDΞSIGN -->
           </strong>
         </router-link>
       </li>

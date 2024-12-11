@@ -58,10 +58,10 @@ onMounted(() => {
   )
 
   // Lighting for better visibility of the model
-  const ambientLight = new AmbientLight(0x404040, 2) // soft white light
+  const ambientLight = new AmbientLight(0xffffff, 20) // soft white light
   scene.add(ambientLight)
 
-  const directionalLight = new DirectionalLight(0xffffff, 1)
+  const directionalLight = new DirectionalLight(0xd4af80, 10)
   directionalLight.position.set(1, 0, 5).normalize()
   scene.add(directionalLight)
 
