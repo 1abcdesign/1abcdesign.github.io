@@ -101,9 +101,8 @@
         --main-cent: calc((100svh - 2.75rem - 5.5rem) / 100);
         --main-em: calc((100svh - 2.75rem - 5.5rem) / 41.75);
         --blur-img: 0.5px;
-        --gold: #d4af37;
-        --gold-05: #d4af3780;
-        --gold-25: #d4af3740;
+        --metallic: #d4af37;
+        --metallic-25: #d4af3740;
       }
 
       body, #logoOverlay {
@@ -217,13 +216,21 @@
         }
         document.documentElement.setAttribute('data-theme', savedTheme);
 
+        let savedColor = localStorage.getItem('color');
+        if (!savedColor) {
+          savedColor = prefersDarkMode ? '#d4af37' : '#e6e8fa';
+          localStorage.setItem('color', savedColor);
+        }
+        document.documentElement.style.setProperty('--metallic', savedColor);
+        document.documentElement.style.setProperty('--metallic-25', savedColor + '40');
+
         const favicon = document.getElementById('favicon');
         favicon.href = savedTheme === 'dark' ? 'https://1abcdesign.github.io/favicon_dark.ico' : 'https://1abcdesign.github.io/favicon_light.ico';
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-vfhZ40HD.js"></script>
+    <script type="module" crossorigin src="/assets/index-C1K01LSQ.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vue-CSzecv1Y.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-DFdvID6q.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-JjfsAe3l.css">
   </head>
   <body>
     <!-- Adding structured Schema data for organization -->
