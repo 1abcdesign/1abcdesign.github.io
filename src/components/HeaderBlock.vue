@@ -1,6 +1,6 @@
 <template>
   <header class="box-shadow-1-05 bg-texture">
-    <menu>
+    <menu class="header-menu">
       <li class="logo_li flex-align">
         <router-link
           to="/"
@@ -18,7 +18,7 @@
             >
             <defs>
               <filter id="shadowInactive" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="var(--gold)" flood-opacity="1" />
+                <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="var(--metallic)" flood-opacity="1" />
               </filter>
             </defs>
             <!-- Vertical line -->
@@ -129,11 +129,17 @@
         </router-link>
       </li>
 
-      <li class="global-view flex-align flex-col">
-        <theme-switcher />
+      <li class="global">
+        <div class="global-view flex-col">
+          <theme-switcher />
 
-        <span class="lang-wrapper">
-          <lang-switcher />
+          <span class="lang-wrapper">
+            <lang-switcher />
+          </span>
+        </div>
+
+        <span class="color-wrapper">
+          <color-switcher />
         </span>
       </li>
     </menu>
@@ -144,6 +150,7 @@
 import { defineAsyncComponent } from 'vue'
 const ThemeSwitcher = defineAsyncComponent(() => import('./ThemeSwitcher.vue'))
 const LangSwitcher = defineAsyncComponent(() => import('./LangSwitcher.vue'))
+const ColorSwitcher = defineAsyncComponent(() => import('./ColorSwitcher.vue'))
 </script>
 
 <style lang="scss">
@@ -192,7 +199,7 @@ header {
   }
 }
 
-menu {
+.header-menu {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 
@@ -218,18 +225,34 @@ menu {
     text-decoration: underline;
   }
 
-  .global-view {
+  .global {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding: 0.125rem 0.25rem;
-    justify-content: space-between;
 
-    & > * {
+    .global-view {
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      justify-content: space-between;
+      align-content: flex-end;
+
+    }
+
+    .lang-wrapper,
+    .color-wrapper {
+      position: relative;
+    }
+
+    .color-wrapper {
+      align-self: center;
+    }
+
+    .global-view > *,
+    .color-switcher {
+      align-self: center;
       height: 2.5rem;
       width: 2.5rem;
       border-radius: 1.25rem;
-    }
-
-    .lang-wrapper {
-      position: relative;
     }
   }
 }

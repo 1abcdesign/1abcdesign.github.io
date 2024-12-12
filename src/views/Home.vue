@@ -4,7 +4,7 @@
 
     <section class="middle flex-align flex-col">
       <h1
-        class="main-header grid-9"
+        class="main-header grid-9 bg-texture"
         :title="$t('headerTitle')"
         :area-label="$t('transcription')"
       >

@@ -1,25 +1,24 @@
 <template>
-  <section class="lang-switcher" :title="$t('toggleLangTip')">
-    <menu
-      v-click-outside="closeMenu"
-      class="select flex-align flex-col"
-      :class="{ open: showOptions, close: !showOptions }"
+  <menu
+    :title="$t('toggleLangTip')"
+    v-click-outside="closeMenu"
+    class="lang-switcher select flex-align flex-col"
+    :class="{ open: showOptions, close: !showOptions }"
+  >
+    <li
+      v-for="(option, index) in sortedLanguageOptions"
+      @click="handleClick(option.value)"
+      :key="index"
+      :class="{ selected: selectedLanguage === option.value }"
+      class="select-option"
     >
-      <li
-        v-for="(option, index) in sortedLanguageOptions"
-        @click="handleClick(option.value)"
-        :key="index"
-        :class="{ selected: selectedLanguage === option.value }"
-        class="select-option"
-      >
-        <img
-          :src="option.image"
-          :alt="$t('lang') + ' flag'"
-          class="select-option-img"
-        />
-      </li>
-    </menu>
-  </section>
+      <img
+        :src="option.image"
+        :alt="$t('lang') + ' flag'"
+        class="select-option-img"
+      />
+    </li>
+  </menu>
 </template>
 
 <script setup>
@@ -35,9 +34,7 @@ const languageOptions = Object.keys(i18n.global.messages).map(locale => ({
 }))
 
 const sortedLanguageOptions = computed(() => {
-  return [...languageOptions].sort(o1 =>
-                                i18n.global.locale === o1.value ? -1 : 1
-                              )
+  return [...languageOptions].sort(o1 => i18n.global.locale === o1.value ? -1 : 1)
 })
 
 const selectedLanguage = ref(i18n.global.locale)
@@ -161,11 +158,8 @@ onMounted(async () => {
 </script>
 
 <style lang="scss">
-.lang-switcher {
-  cursor: pointer;
-}
-
 .select {
+  cursor: pointer;
   padding: 0.25rem 0 0 0;
   border-radius: 1.25rem;
   justify-content: space-between;
@@ -190,15 +184,16 @@ onMounted(async () => {
       -moz-object-fit: cover;
     }
   }
+
+  &.close,
+  &.close::after {
+    height: 2.5rem;
+  }
+
+  &.open,
+  &.open::after {
+    height: 5rem;
+  }
 }
 
-.close,
-.close::after {
-  height: 2.5rem !important;
-}
-
-.open,
-.open::after {
-  height: 5rem !important;
-}
 </style>

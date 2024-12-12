@@ -336,6 +336,7 @@ const submitForm = async () => {
       padding: 0 0.15ch 0 0.35ch;
       background: var(--bg);
       font-weight: bold;
+      z-index: 1;
     }
 
     &:has(:required)::after {

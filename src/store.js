@@ -9,4 +9,8 @@ export const state = reactive({
   setThemeColor(value) {
     this.themeColor = value
   },
+  color: localStorage.getItem('color') || '#e6e8fa',
+  setColor(value) {
+    this.color = value
+  },
 })

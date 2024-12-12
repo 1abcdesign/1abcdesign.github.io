@@ -13,7 +13,7 @@
         ref="logo2dCanvas"
         width="400"
         height="400"
-        style="stroke: var(--color)"
+        style="stroke: var(--color);"
       ></canvas>
       <svg
         id="svgPlaceholder"

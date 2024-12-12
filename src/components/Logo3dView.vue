@@ -2,12 +2,14 @@
   <div
     class="canvas-container flex-center"
     ref="canvasContainer"
-    style="width: 100%; height: calc(16.5 * var(--main-em)); background-color: transparent; "
+    style="width: 100%; height: calc(16.5 * var(--main-em)); background-color: transparent;   
+    filter: drop-shadow(0 0 calc(0.5 * var(--main-em)) var(--metallic-25));
+  -webkit-filter: drop-shadow(0 0 calc(0.5 * var(--main-em)) var(--metallic-25));"
   ></div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
 import {
   Scene,
   PerspectiveCamera,
@@ -16,14 +18,15 @@ import {
   DirectionalLight,
 } from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { state } from '@/store.js'
 
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
+const canvasContainer = ref(null)
+const color = ref(state.color || localStorage.getItem('color') || '#e6e8fa') // Reactive color state
 
-const canvasContainer = ref(null) // Reference to the div for rendering the 3D scene
-let model = null // Store the loaded model to rotate it later
+let model = null // Store the loaded model for rotation
 
 onMounted(() => {
-  // Initialize the Three.js scene
   const scene = new Scene()
   const camera = new PerspectiveCamera(
     76.5,
@@ -32,54 +35,49 @@ onMounted(() => {
     1000
   )
 
-  // Set renderer with alpha for transparency
   const renderer = new WebGLRenderer({ antialias: true, alpha: true })
   renderer.setSize(window.innerWidth, window.innerHeight)
-  renderer.setClearColor(0x000000, 0) // Transparent background
+  renderer.setClearColor(0x000000, 0)
 
-  canvasContainer.value.appendChild(renderer.domElement) // Append renderer to the DOM
-
-  // Adjust camera position
+  canvasContainer.value.appendChild(renderer.domElement)
   camera.position.z = 2
 
-  // Load the GLB model using GLTFLoader
   const loader = new GLTFLoader()
   loader.load(
     `${ASSETS_DIR}logo3d.glb`,
     gltf => {
-      model = gltf.scene // Store the model in a variable to rotate it
-      scene.add(model) // Add the loaded model to the scene
-      renderer.render(scene, camera) // Initial render
+      model = gltf.scene
+      scene.add(model)
+      renderer.render(scene, camera)
     },
     undefined,
     error => {
-      console.error('An error occurred while loading the model:', error)
+      console.error('Error loading model:', error)
     }
   )
 
-  // Lighting for better visibility of the model
-  const ambientLight = new AmbientLight(0xffffff, 20) // soft white light
-  scene.add(ambientLight)
-
-  const directionalLight = new DirectionalLight(0xd4af80, 10)
+  const directionalLight = new DirectionalLight(color.value, 2.5)
   directionalLight.position.set(1, 0, 5).normalize()
   scene.add(directionalLight)
 
-  // Animation loop to rotate the model and render the scene
+  // Watch for color changes and update light
+  watch(() => state.color, newColor => {
+    const colorValue = parseInt(newColor.slice(1), 16) || 0xe6e8fa
+    directionalLight.color.setHex(colorValue)
+    renderer.render(scene, camera)
+  })
+
+  // Animation loop
   const animate = () => {
     requestAnimationFrame(animate)
-
-    // Rotate the model on Y-axis if it's loaded
     if (model) {
-      model.rotation.y += 0.01 // Rotate model by 0.01 on each frame
+      model.rotation.y += 0.015
     }
-
-    // Render the scene and camera
     renderer.render(scene, camera)
   }
   animate()
 
-  // Adjust canvas size on window resize
+  // Resize handler
   const onResize = () => {
     camera.aspect = window.innerWidth / window.innerHeight
     camera.updateProjectionMatrix()
@@ -88,7 +86,7 @@ onMounted(() => {
 
   window.addEventListener('resize', onResize)
 
-  // Cleanup listener on unmount
+  // Cleanup
   onUnmounted(() => {
     window.removeEventListener('resize', onResize)
   })
