@@ -9,20 +9,25 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onUnmounted } from 'vue'
+import {
+  ref,
+  // watch,
+  onMounted,
+  onUnmounted
+} from 'vue'
 import {
   Scene,
   PerspectiveCamera,
   WebGLRenderer,
-  AmbientLight,
+  // AmbientLight,
   DirectionalLight,
 } from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { state } from '@/store.js'
+// import { state } from '@/store.js'
 
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
 const canvasContainer = ref(null)
-const color = ref(state.color || localStorage.getItem('color') || '#e6e8fa') // Reactive color state
+// const color = ref(state.color || localStorage.getItem('color') || '#e6e8fa') // Reactive color state
 
 let model = null // Store the loaded model for rotation
 
@@ -56,16 +61,17 @@ onMounted(() => {
     }
   )
 
-  const directionalLight = new DirectionalLight(color.value, 2.5)
+  // const directionalLight = new DirectionalLight(color.value, 2.5)
+  const directionalLight = new DirectionalLight(0xe6e8fa, 2.5)
   directionalLight.position.set(1, 0, 5).normalize()
   scene.add(directionalLight)
 
   // Watch for color changes and update light
-  watch(() => state.color, newColor => {
-    const colorValue = parseInt(newColor.slice(1), 16) || 0xe6e8fa
-    directionalLight.color.setHex(colorValue)
-    renderer.render(scene, camera)
-  })
+  // watch(() => state.color, newColor => {
+  //   const colorValue = parseInt(newColor.slice(1), 16) || 0xe6e8fa
+  //   directionalLight.color.setHex(colorValue)
+  //   renderer.render(scene, camera)
+  // })
 
   // Animation loop
   const animate = () => {
