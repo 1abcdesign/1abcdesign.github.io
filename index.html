@@ -216,14 +216,6 @@
         }
         document.documentElement.setAttribute('data-theme', savedTheme);
 
-        // let savedColor = localStorage.getItem('color');
-        // if (!savedColor) {
-        //   savedColor = prefersDarkMode ? '#d4af37' : '#e6e8fa';
-        //   localStorage.setItem('color', savedColor);
-        // }
-        // document.documentElement.style.setProperty('--metallic', savedColor);
-        // document.documentElement.style.setProperty('--metallic-25', savedColor + '40');
-
         const favicon = document.getElementById('favicon');
         favicon.href = savedTheme === 'dark' ? 'https://1abcdesign.github.io/favicon_dark.ico' : 'https://1abcdesign.github.io/favicon_light.ico';
       })();

@@ -2,7 +2,7 @@
   <div
     class="canvas-container flex-center"
     ref="canvasContainer"
-    style="width: 100%; height: calc(16.5 * var(--main-em)); background-color: transparent;   
+    style="width: 100%; height: calc(16.5 * var(--main-em)); background-color: transparent;
     filter: drop-shadow(0 0 calc(0.5 * var(--main-em)) var(--metallic-25));
   -webkit-filter: drop-shadow(0 0 calc(0.5 * var(--main-em)) var(--metallic-25));"
   ></div>
@@ -11,7 +11,6 @@
 <script setup>
 import {
   ref,
-  // watch,
   onMounted,
   onUnmounted
 } from 'vue'
@@ -19,17 +18,22 @@ import {
   Scene,
   PerspectiveCamera,
   WebGLRenderer,
-  // AmbientLight,
   DirectionalLight,
+  Color
 } from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-// import { state } from '@/store.js'
 
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
 const canvasContainer = ref(null)
-// const color = ref(state.color || localStorage.getItem('color') || '#e6e8fa') // Reactive color state
 
 let model = null // Store the loaded model for rotation
+
+// Utility: Parse a CSS variable into a Three.js compatible color
+const getCSSVar = (varName) => {
+  const style = getComputedStyle(document.documentElement)
+  const hexColor = style.getPropertyValue(varName).trim()
+  return new Color(hexColor) // Three.js Color class can parse hex strings like '#e6e8fa'
+}
 
 onMounted(() => {
   const scene = new Scene()
@@ -61,17 +65,10 @@ onMounted(() => {
     }
   )
 
-  // const directionalLight = new DirectionalLight(color.value, 2.5)
-  const directionalLight = new DirectionalLight(0xe6e8fa, 2.5)
+  const color = getCSSVar('--metallic')
+  const directionalLight = new DirectionalLight(color, 2.5)
   directionalLight.position.set(1, 0, 5).normalize()
   scene.add(directionalLight)
-
-  // Watch for color changes and update light
-  // watch(() => state.color, newColor => {
-  //   const colorValue = parseInt(newColor.slice(1), 16) || 0xe6e8fa
-  //   directionalLight.color.setHex(colorValue)
-  //   renderer.render(scene, camera)
-  // })
 
   // Animation loop
   const animate = () => {
