@@ -8,7 +8,7 @@
     :bullets="false"
     :fixed-height="true"
     class="no-shadow bg-texture main"
-    style="box-shadow: inset 0 0 1rem 0.5rem var(--shadow); border: none;"
+    style="box-shadow: inset 0 0 1rem 0.5rem var(--shadow); border: none"
   >
     <vueper-slide
       v-for="(slide, i) in slides"
@@ -58,7 +58,7 @@ const slides = ref(
   interleavedPhotos.map(photo => ({
     group: `${photo.charAt(0) + '00'}`,
     title: `${photo.slice(0, 3) + '_title'}`,
-    image: `${ASSETS_DIR}${photo}`
+    image: `${ASSETS_DIR}${photo}`,
   }))
 )
 </script>
@@ -78,7 +78,13 @@ const slides = ref(
   position: absolute;
   top: 0;
   width: 100%;
-  background: var(--s-t-gradient);
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    var(--bg-alt) 33%,
+    var(--bg) 66%,
+    transparent 100%
+  );
   backdrop-filter: blur(var(--blur-drop));
 }
 

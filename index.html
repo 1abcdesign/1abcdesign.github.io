@@ -13,7 +13,7 @@
     <meta property="og:title" content="ABCDΞSIGN — Від «А-Б-Ц» до «Під-ключ-Все» Дизайн!" />
     <meta property="og:description" content="Від Ескізу до Дизайну Під Ключ — Все в Одному Місці. Надаємо комплексні дизайнерські послуги." />
     <meta property="og:image" content="https://1abcdesign.github.io/logo.png" /> <!-- Replace with real image link -->
-    <meta property="og:url" content="https://1abcdesign.com" />
+    <meta property="og:url" content="https://abcd-sign.com" />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card for social media -->
@@ -24,7 +24,6 @@
 
     <!-- Favicon -->
     <link id="favicon" rel="shortcut icon" type="image/x-icon" href="https://1abcdesign.github.io/favicon_light.ico" />
-    <!-- <link rel="preload" href="https://1abcdesign.github.io/favicon_dark.ico" as="image"> -->
     <link rel="preload" href="https://1abcdesign.github.io/logo.png" as="image">
 
     <!-- Fonts -->
@@ -47,18 +46,19 @@
     <title>ABCDΞSIGN — Від «А-Б-Ц» до «Під-ключ-Все» Дизайн!</title>
 
     <!-- Canonical Link to avoid duplication -->
-    <link rel="canonical" href="https://1abcdesign.com" />
+    <link rel="canonical" href="https://abcd-sign.com" />
 
     <!-- Robots Meta for indexing -->
     <meta name="robots" content="index, follow">
 
     <style>
- [data-theme='light'] {
+      [data-theme='light'] {
         --bg: #fff;
         --semitransparent: #fff2;
         --bg-05: #fff2;
         --bg-alt: #ddd;
         --color: #000;
+        --color-25: #00000040;
         --color-alt: #222;
         --shadow: #8888;
         --gradient: linear-gradient(45deg, var(--grey) 0%, transparent 25%, transparent 75%, var(--color-alt) 100%);
@@ -76,6 +76,7 @@
         --bg-05: #0002;
         --bg-alt: #222;
         --color: #fff;
+        --color-25: #ffffff40;
         --color-alt: #ddd;
         --shadow: #8888;
         --gradient: linear-gradient(45deg, var(--color-alt) 0%, transparent 25%, transparent 66%, var(--color-alt) 100%);
@@ -94,7 +95,6 @@
         --safe-top: env(safe-area-inset-top);
         --safe-bottom: env(safe-area-inset-bottom);
         --moto-gradient: linear-gradient(45deg, var(--bg) 0%, var(--bg-alt) 12.5%, transparent 75%, var(--color) 100%);
-        --s-t-gradient: linear-gradient(45deg, transparent 0%, var(--bg-alt) 33%, var(--bg) 66%, transparent 100%);
         --vh: calc((100svh - var(--safe-top) - var(--safe-bottom)) / 100);
         font-size: min(calc(2 * var(--vh)), calc(20 / 5.5 * 1vmin));
         --main-h: calc(100svh - 2.75rem - 5.5rem);
@@ -132,6 +132,7 @@
           background-size: 14.2857%;
         }
       }
+
       @media (orientation: landscape) {
         body::after,
         #logoOverlay::after {
@@ -228,7 +229,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "ABCDΞSIGN",
-      "url": "https://1abcdesign.com",
+      "url": "https://abcd-sign.com",
       "logo": "https://1abcdesign.github.io/logo.png",
       "description": "ABCDΞSIGN — Від «А-Б-Ц» до «Під-ключ-Все» Дизайн! Компанія з надання дизайнерських послуг для інтер'єру, екстер'єру та ландшафтного дизайну.",
       "contactPoint": {

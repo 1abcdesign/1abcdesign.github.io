@@ -11,7 +11,6 @@
         >
           <svg
             id="logoImage"
-            ref="logoImage"
             class="icon"
             viewBox="0 0 400 400"
             xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +18,7 @@
             <desc>ABCD-SIGN Logo</desc>
             <defs>
               <filter id="shadowInactive" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="var(--metallic)" flood-opacity="1" />
+                <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="var(--color-25)" flood-opacity="1" />
               </filter>
             </defs>
             <!-- Vertical line -->
@@ -130,18 +129,10 @@
         </router-link>
       </li>
 
-      <li class="global flex-center">
-        <div class="global-view flex-col">
+      <li class="global-view flex-col">
           <theme-switcher />
 
-          <span class="lang-wrapper">
-            <lang-switcher />
-          </span>
-        </div>
-
-        <!-- <span class="color-wrapper">
-          <color-switcher />
-        </span> -->
+          <lang-switcher />
       </li>
     </menu>
   </header>
@@ -151,7 +142,6 @@
 import { defineAsyncComponent } from 'vue'
 const ThemeSwitcher = defineAsyncComponent(() => import('./ThemeSwitcher.vue'))
 const LangSwitcher = defineAsyncComponent(() => import('./LangSwitcher.vue'))
-// const ColorSwitcher = defineAsyncComponent(() => import('./ColorSwitcher.vue'))
 </script>
 
 <style lang="scss">
@@ -227,35 +217,17 @@ header {
     text-decoration: underline;
   }
 
-  .global {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
+  .global-view {
     padding: 0.125rem 0.25rem;
+    gap: 0.25rem;
+    justify-content: space-between;
+  }
 
-    .global-view {
-      flex-wrap: wrap;
-      gap: 0.25rem;
-      justify-content: space-between;
-      align-content: flex-end;
-
-    }
-
-    .lang-wrapper,
-    .color-wrapper {
-      position: relative;
-    }
-
-    .color-wrapper {
-      align-self: center;
-    }
-
-    .global-view > *,
-    .color-switcher {
-      align-self: center;
-      height: 2.5rem;
-      width: 2.5rem;
-      border-radius: 1.25rem;
-    }
+  .global-view > * {
+    align-self: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 1.25rem;
   }
 }
 

@@ -1,24 +1,26 @@
 <template>
-  <menu
-    :title="$t('toggleLangTip')"
-    v-click-outside="closeMenu"
-    class="lang-switcher select flex-align flex-col"
-    :class="{ open: showOptions, close: !showOptions }"
-  >
-    <li
-      v-for="(option, index) in sortedLanguageOptions"
-      @click="handleClick(option.value)"
-      :key="index"
-      :class="{ selected: selectedLanguage === option.value }"
-      class="select-option"
+  <div class="lang-swither-wrapper">
+    <menu
+      :title="$t('toggleLangTip')"
+      v-click-outside="closeMenu"
+      class="lang-switcher select flex-align flex-col"
+      :class="{ open: showOptions, close: !showOptions }"
     >
-      <img
-        :src="option.image"
-        :alt="$t('lang') + ' flag'"
-        class="select-option-img"
-      />
-    </li>
-  </menu>
+      <li
+        v-for="(option, index) in sortedLanguageOptions"
+        @click="handleClick(option.value)"
+        :key="index"
+        :class="{ selected: selectedLanguage === option.value }"
+        class="select-option"
+      >
+        <img
+          :src="option.image"
+          :alt="$t('lang') + ' flag'"
+          class="select-option-img"
+        />
+      </li>
+    </menu>
+  </div>
 </template>
 
 <script setup>
@@ -195,5 +197,4 @@ onMounted(async () => {
     height: 5rem;
   }
 }
-
 </style>

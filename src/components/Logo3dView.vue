@@ -2,38 +2,32 @@
   <div
     class="canvas-container flex-center"
     ref="canvasContainer"
-    style="width: 100%; height: calc(16.5 * var(--main-em)); background-color: transparent;
-    filter: drop-shadow(0 0 calc(0.5 * var(--main-em)) var(--metallic-25));
-  -webkit-filter: drop-shadow(0 0 calc(0.5 * var(--main-em)) var(--metallic-25));"
+    style="
+      width: 100%;
+      height: calc(16.5 * var(--main-em));
+      background-color: transparent;
+      filter: drop-shadow(0 0 calc(0.5 * var(--main-em)) var(--metallic-25));
+      -webkit-filter: drop-shadow(
+        0 0 calc(0.5 * var(--main-em)) var(--metallic-25)
+      );
+    "
   ></div>
 </template>
 
 <script setup>
-import {
-  ref,
-  onMounted,
-  onUnmounted
-} from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import {
   Scene,
   PerspectiveCamera,
   WebGLRenderer,
   DirectionalLight,
-  Color
+  Color,
 } from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 const ASSETS_DIR = import.meta.env.VITE_ASSETS_DIR || '/'
 const canvasContainer = ref(null)
-
 let model = null // Store the loaded model for rotation
-
-// Utility: Parse a CSS variable into a Three.js compatible color
-const getCSSVar = (varName) => {
-  const style = getComputedStyle(document.documentElement)
-  const hexColor = style.getPropertyValue(varName).trim()
-  return new Color(hexColor) // Three.js Color class can parse hex strings like '#e6e8fa'
-}
 
 onMounted(() => {
   const scene = new Scene()
@@ -65,7 +59,11 @@ onMounted(() => {
     }
   )
 
-  const color = getCSSVar('--metallic')
+  const color = new Color(
+    getComputedStyle(document.documentElement)
+      .getPropertyValue('--metallic')
+      .trim()
+  )
   const directionalLight = new DirectionalLight(color, 2.5)
   directionalLight.position.set(1, 0, 5).normalize()
   scene.add(directionalLight)
