@@ -76,7 +76,7 @@ const photo = `${BASE_URL}photo.webp`
   text-align: left;
   font-size: max(1rem, calc(0.9 * var(--main-em)));
 
-  p:not(.person p)::first-letter {
+  p:not(.person p, :last-of-type)::first-letter {
     font-weight: bold;
   }
 
