@@ -16,6 +16,7 @@
             viewBox="0 0 400 400"
             xmlns="http://www.w3.org/2000/svg"
             >
+            <desc>ABCD-SIGN Logo</desc>
             <defs>
               <filter id="shadowInactive" x="-50%" y="-50%" width="200%" height="200%">
                 <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="var(--metallic)" flood-opacity="1" />
@@ -129,7 +130,7 @@
         </router-link>
       </li>
 
-      <li class="global">
+      <li class="global flex-center">
         <div class="global-view flex-col">
           <theme-switcher />
 
@@ -138,9 +139,9 @@
           </span>
         </div>
 
-        <span class="color-wrapper">
+        <!-- <span class="color-wrapper">
           <color-switcher />
-        </span>
+        </span> -->
       </li>
     </menu>
   </header>
@@ -150,7 +151,7 @@
 import { defineAsyncComponent } from 'vue'
 const ThemeSwitcher = defineAsyncComponent(() => import('./ThemeSwitcher.vue'))
 const LangSwitcher = defineAsyncComponent(() => import('./LangSwitcher.vue'))
-const ColorSwitcher = defineAsyncComponent(() => import('./ColorSwitcher.vue'))
+// const ColorSwitcher = defineAsyncComponent(() => import('./ColorSwitcher.vue'))
 </script>
 
 <style lang="scss">
@@ -192,9 +193,10 @@ header {
   filter: drop-shadow(0 0 0.125ch var(--color-alt));
   -webkit-filter: drop-shadow(0 0 0.125ch var(--color-alt));
   border: 0.125rem solid transparent;
+  margin-top: 0.5px;
 
   .logo-letter {
-    padding-top: 0.1875rem;
+    padding-top: 0.166rem;
     line-height: 0.375rem;
   }
 }
@@ -226,8 +228,8 @@ header {
   }
 
   .global {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
     padding: 0.125rem 0.25rem;
 
     .global-view {

@@ -71,7 +71,7 @@ onMounted(() => {
   const animate = () => {
     requestAnimationFrame(animate)
     if (model) {
-      model.rotation.y += 0.015
+      model.rotation.y += 0.01
     }
     renderer.render(scene, camera)
   }

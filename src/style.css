@@ -182,7 +182,6 @@ a:not(.services-link):hover,
 .theme-switcher,
 .theme-switcher:hover {
   backdrop-filter: blur(1rem);
-  background-blend-mode: soft-light;
   background: var(--gradient);
 }
 
@@ -272,10 +271,10 @@ a:hover::after,
   /* background: var(--semitransparent); */
 }
 
-:not(:has(.bg-texture)) {
+/* :not(:has(.bg-texture)) {
   filter: drop-shadow(0 0 0.05px var(--metallic-25));
   -webkit-filter: drop-shadow(0 0 0.05px var(--metallic-25));
-}
+} */
 
 .box-shadow-1-05 {
   box-shadow: 0 0 1rem 0.5rem var(--shadow);

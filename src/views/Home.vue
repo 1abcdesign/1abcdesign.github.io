@@ -162,7 +162,7 @@ const Logo3dView = defineAsyncComponent(() => import('@/components/Logo3dView.vu
         padding: 1px 0 0 0;
         text-decoration: none;
         position: relative;
-        top: calc(-0.5 * var(--main-em));
+        top: calc(-0.45 * var(--main-em));
       }
     }
 
