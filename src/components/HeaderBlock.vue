@@ -66,25 +66,9 @@
           :title="$t('showcases')"
           class="flex-center flex-col"
         >
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon feather-briefcase"
-          >
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-          </svg> -->
-
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="icon"
+            class="icon header-icon"
             fill="none"
             viewBox="0 0 24 24"
             id="Delivery-Shipping-Fill--Streamline-Outlined-Fill-Expansion-Set"
@@ -116,28 +100,9 @@
           :title="$t('about')"
           class="flex-center flex-col"
         >
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon feather-circle"
-          >
-            <circle cx="12" cy="12" r="10.5"></circle>
-            <line x1="12" y1="22" x2="12" y2="2" />
-            <line x1="12" y1="2" x2="2" y2="12" />
-            <line x1="2" y1="12" x2="12" y2="12" />
-            <path d="M 12,2 A 5,5, 0 1 1 12,12" fill="none" />
-          </svg> -->
-
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="icon"
+            class="icon header-icon"
             fill="none"
             viewBox="0 0 24 24"
             id="Friendship-Fill--Streamline-Outlined-Fill-Expansion-Set"
@@ -169,25 +134,9 @@
           :title="$t('contactTip')"
           class="flex-center flex-col"
         >
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon feather-at-sign"
-          >
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
-          </svg> -->
-
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="icon"
+            class="icon header-icon"
             fill="none"
             viewBox="-0.5 -0.5 24 24"
             id="Person-Pin-Fill--Streamline-Outlined-Fill-Material-Symbols"
@@ -284,6 +233,7 @@ header {
   }
 
   a:not(#logoLink) {
+    gap: 0.25rem;
     padding: 0.5rem;
   }
 

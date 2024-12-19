@@ -251,12 +251,21 @@ a:hover::after,
   z-index: -1;
 }
 
-.icon {
+.icon:not(.header-icon) {
   width: 2.5rem;
   height: 2.5rem;
+}
+
+.icon,
+.header-icon {
   stroke: var(--color);
   filter: blur(var(--blur-img));
   -webkit-filter: blur(var(--blur-img));
+}
+
+.header-icon {
+  width: 1.66rem;
+  height: 1.66rem;
 }
 
 .bg-texture {

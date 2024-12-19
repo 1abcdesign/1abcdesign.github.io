@@ -15,7 +15,7 @@
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="icon feather-moon"
+      class="icon header-icon"
     >
       <path
         d="
@@ -38,7 +38,7 @@
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="icon feather-sun"
+      class="icon header-icon"
     >
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
