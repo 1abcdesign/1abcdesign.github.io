@@ -1,4 +1,4 @@
-# 1abcdesign.github.io
+# vadim4web.github.io/abcd-sign
 
 This project is a modern web application built with Vue 3 and Vite, featuring a dynamic user interface, 3D rendering, internationalization, and contact functionalities. It serves as the frontend for **1ABCDESIGN** and provides users with an interactive experience, showcasing various services and gallery items in a structured, multi-lingual format.
 
@@ -16,7 +16,7 @@ This project is a modern web application built with Vue 3 and Vite, featuring a 
 
 The main files and directories are organized as follows:
 ```arduino
-1abcdesign.github.io/
+vadim4web.github.io/abcd-sign/
 ├── public/ # Static public assets
 ├── src/ # Main source code directory
 │ ├── App.vue # Main app component
@@ -70,8 +70,8 @@ The main files and directories are organized as follows:
 To set up the project locally, clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/abcdesign1/1abcdesign.github.io.git
-cd 1abcdesign.github.io
+git clone https://github.com/abcdesign1/vadim4web.github.io/abcd-sign.git
+cd vadim4web.github.io/abcd-sign
 npm install
 ```
 
