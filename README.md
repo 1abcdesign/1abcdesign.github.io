@@ -1,6 +1,6 @@
 # vadim4web.github.io/abcd-sign
 
-This project is a modern web application built with Vue 3 and Vite, featuring a dynamic user interface, 3D rendering, internationalization, and contact functionalities. It serves as the frontend for **1ABCDESIGN** and provides users with an interactive experience, showcasing various services and gallery items in a structured, multi-lingual format.
+This project is a modern web application built with Vue 3 and Vite, featuring a dynamic user interface, 3D rendering, internationalization, and contact functionalities. It serves as the frontend for **vadim4web** and provides users with an interactive experience, showcasing various services and gallery items in a structured, multi-lingual format.
 
 ## Table of Contents
 
@@ -70,7 +70,7 @@ vadim4web.github.io/abcd-sign/
 To set up the project locally, clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/abcdesign1/vadim4web.github.io/abcd-sign.git
+git clone https://github.com/vadim4web/vadim4web.github.io/abcd-sign.git
 cd vadim4web.github.io/abcd-sign
 npm install
 ```

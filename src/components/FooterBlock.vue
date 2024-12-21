@@ -1,7 +1,7 @@
 <template>
   <footer class="footer box-shadow-1-05 bg-texture">
     <section class="copy-right flex-align">
-      &copy;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;vadim4web.github.io
+      &copy;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;VADIM4WEB
     </section>
 
     <section class="links">
@@ -34,7 +34,7 @@
       </a>
 
       <a
-        href="http://t.me/abcdesign1"
+        href="http://t.me/vadim4web"
         target="_blank"
         aria-label="telegram"
         :title="$t('chatDirect')"

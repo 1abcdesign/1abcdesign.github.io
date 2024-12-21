@@ -41,11 +41,11 @@
       {{ $t('contact_tg') }}:
 
       <a
-        href="http://t.me/abcdesign1"
+        href="http://t.me/vadim4web"
         :title="$t('chatDirect')"
         target="_blank"
       >
-        @abcdesign1
+        @vadim4web
       </a>
 
       <svg
